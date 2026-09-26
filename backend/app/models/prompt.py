@@ -32,5 +32,6 @@ class Prompt(Base):
     voice: Mapped[str | None] = mapped_column(String(64), nullable=True)
     animation: Mapped[str | None] = mapped_column(String(32), nullable=True)
     animation_value: Mapped[float | None] = mapped_column(Float, nullable=True)
+    animation_params: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     project: Mapped["Project"] = relationship(back_populates="prompts")  # noqa: F821

@@ -4,6 +4,8 @@ from dataclasses import dataclass, field
 
 from app.config import Settings
 from app.services.animations import ANIMATIONS, TEXT_REQUIRED
+from app.services.remotion import ParamError, TEMPLATES as REMOTION_TEMPLATES
+from app.services.remotion import parse_params, validate as validate_animation
 from app.services.style import (
     DEFAULT_TRANSITION_SECONDS,
     DEFAULT_ZOOM,
@@ -31,7 +33,11 @@ OPTIONAL_HEADERS = {
     "narration",
     "voice",
     "animation",
+    "animation_params",
 }
+#: Every word the `animation` column accepts — ffmpeg presets and Remotion
+#: templates live in one namespace so an author never picks an engine.
+ANIMATION_VOCABULARY = {**ANIMATIONS, **REMOTION_TEMPLATES}
 MAX_REPORTED_ERRORS = 25
 EPSILON = 0.001
 
@@ -57,6 +63,7 @@ class ParsedPrompt:
     voice: str | None = None
     animation: str | None = None
     animation_value: float | None = None
+    animation_params: str | None = None
 
     @property
     def duration(self) -> float:
@@ -174,6 +181,16 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
             continue  # tolerate blank trailing lines
 
         order_index += 1
+        # csv.DictReader files surplus values under None. A cell holding commas
+        # — an animation_params list, say — that was not quoted lands here, and
+        # silently losing half of it is worse than refusing the row.
+        if row.get(None):
+            result.errors.append(
+                f"Row {row_number}: more values than there are columns — a cell "
+                f"containing commas must be wrapped in double quotes "
+                f"(stray: {', '.join(str(extra) for extra in row[None])[:60]})"
+            )
+            continue
         if not raw_prompt:
             result.errors.append(f"Row {row_number}: prompt is empty")
             continue
@@ -208,9 +225,10 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
             grain = parse_grain(_cell(row, headers, "grain"))
             text_type = parse_text_type(_cell(row, headers, "text_type"))
             animation, animation_value = parse_valued(
-                _cell(row, headers, "animation"), ANIMATIONS, "animation"
+                _cell(row, headers, "animation"), ANIMATION_VOCABULARY, "animation"
             )
-        except StyleError as exc:
+            animation_params = parse_params(_cell(row, headers, "animation_params"))
+        except (StyleError, ParamError) as exc:
             result.errors.append(f"Row {row_number}: {exc}")
             continue
 
@@ -226,11 +244,28 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
             continue
 
         text_value = _cell(row, headers, "text_value")
-        if animation in TEXT_REQUIRED and not text_value:
-            result.errors.append(
-                f"Row {row_number}: animation '{animation}' needs a text_value to display"
-            )
-            continue
+        if animation in REMOTION_TEMPLATES:
+            problems = validate_animation(animation, animation_params, text_value)
+            if problems:
+                result.errors.extend(f"Row {row_number}: {problem}" for problem in problems)
+                continue
+            if animation_value is not None:
+                result.warnings.append(
+                    f"Row {row_number}: animation '{animation}' takes its settings from "
+                    "animation_params, so the ':value' is ignored"
+                )
+        else:
+            if animation in TEXT_REQUIRED and not text_value:
+                result.errors.append(
+                    f"Row {row_number}: animation '{animation}' needs a text_value to display"
+                )
+                continue
+            if animation_params:
+                result.errors.append(
+                    f"Row {row_number}: animation_params only applies to the Remotion "
+                    f"animations; '{animation or "none"}' is an ffmpeg effect"
+                )
+                continue
         if animation and (text_type or _cell(row, headers, "ken_burns")):
             result.warnings.append(
                 f"Row {row_number}: animation '{animation}' overrides ken_burns and text_type"
@@ -265,6 +300,7 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                 voice=_cell(row, headers, "voice") or None,
                 animation=animation or None,
                 animation_value=animation_value,
+                animation_params=_cell(row, headers, "animation_params") or None,
             )
         )
 

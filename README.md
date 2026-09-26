@@ -70,6 +70,37 @@ Both have been rendered end to end against a live backend.
 - Rows may be in any order; they are sorted by `start`
 - Validation runs on upload — an invalid CSV never starts a batch
 
+## The animation layer
+
+The `animation` column turns a scene from a still with a camera move into a piece of motion
+graphics — a title, a chapter card, a drawn timeline, a route across a map, a counting
+statistic. Two engines share one vocabulary:
+
+| Engine | Cost | What it is for |
+| ------ | ---- | -------------- |
+| ffmpeg presets | < 1s per scene | 28 texture and camera effects — grain, letterbox, handheld, punch-ins |
+| Remotion templates | 2-4s of CPU per second of video | 11 React + SVG + GSAP graphics — real eased motion, masked reveals, drawn paths |
+
+```csv
+start,end,prompt,text_value,animation,animation_params
+0,4,"a courtroom at dawn...",भीमराव रामजी आंबेडकर,title_reveal,size=0.085
+4,9,"a weathered map table...",आंबेडकर का जीवन,timeline,"from=1891;to=1956;marks=1891,1947,1956;highlight=1947"
+```
+
+Both kinds of clip come out at the same fps, SAR and pixel format, so they cut and blend
+together in the same film, and `grade`, `grain`, `transition`, narration and music apply to
+either. [`samples/remotion_showcase.csv`](samples/remotion_showcase.csv) exercises all eleven
+templates.
+
+Full column reference: [`docs/SMART_CSV.md`](docs/SMART_CSV.md). Architecture and how to add a
+template: [`docs/ANIMATION_LAYER.md`](docs/ANIMATION_LAYER.md).
+
+Remotion needs its dependencies installed once; without them the ffmpeg presets still work:
+
+```bash
+npm install --prefix remotion
+```
+
 ## What a batch does
 
 Every prompt is generated automatically, one after another. **A failed prompt never stops the
@@ -178,14 +209,15 @@ later; no application code changes.
 ## Tests
 
 ```bash
-cd backend && .venv/bin/python -m pytest      # 46 tests
+cd backend && .venv/bin/python -m pytest      # 150 tests
 cd frontend && npm run typecheck && npm run build
 ```
 
 The suite covers the full acceptance path end to end against the mock backend: timeline
 validation (gaps, overlaps, timecodes), rendering, **real durations probed back out of the
 rendered file with ffprobe**, download, failure handling, retry-failed, cancel, the disk guard,
-and expiry-based cleanup.
+and expiry-based cleanup. The animation tests also assert that the Python template table
+and the TypeScript template registry cannot drift apart.
 
 ## Docker
 

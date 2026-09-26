@@ -27,3 +27,7 @@ next-env.d.ts
 # os / editor
 .DS_Store
 *.swp
+
+# remotion build staging (fonts are staged from assets/fonts, stills per job)
+remotion/public/
+remotion/out/

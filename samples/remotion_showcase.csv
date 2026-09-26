@@ -1,0 +1,11 @@
+start,end,prompt,transition,grade,grain,text_value,animation,animation_params
+0,4,"cinematic documentary still, wide establishing shot of an old Indian city at dawn, 1900s stone architecture, low mist, warm first light, no people",,warm,,भीमराव रामजी आंबेडकर,title_reveal,size=0.085
+4,8,"cinematic documentary still, empty formal wooden chair behind a large official desk in a colonial-era Indian government room, shafts of window light",dissolve,warm,light,संविधान सभा की प्रारूप समिति,chapter_card,chapter=भाग एक
+8,12,"cinematic documentary still, a lone silhouetted figure walking away down a long colonnaded corridor, strong backlight, face not visible",dissolve,cold,,डॉ. बी. आर. आंबेडकर,lower_third,sub=प्रारूप समिति के अध्यक्ष
+12,17,"cinematic documentary still, an open handwritten manuscript on a dark wooden desk lit by a single lamp, no legible text",dissolve,,light,शिक्षित बनो संगठित रहो संघर्ष करो,quote,by=बाबासाहेब आंबेडकर
+17,22,"cinematic documentary still, a weathered map table in a dim study, brass instruments, warm lamp light",dissolve,warm,,आंबेडकर का जीवन,timeline,"from=1891;to=1956;marks=1891,1907,1923,1935,1947,1956;highlight=1947"
+22,27,"cinematic documentary still, aerial view of the Indian subcontinent coastline at dusk, cloud shadows, no text or labels",dissolve,cold,,महू से मुंबई तक,map_route,"path=32,22 40,38 46,52 52,68 58,80"
+27,31,"cinematic documentary still, a vast empty assembly hall with rows of wooden desks, tall windows, dust in the light",dissolve,,light,२९९,stat_counter,to=299;from=0;label=संविधान सभा के सदस्य
+31,36,"cinematic documentary still, stacks of bound legal volumes on a library shelf, warm side light, spines unreadable",dissolve,warm,,तुलना,bar_chart,"values=48,32,20;labels=पहला,दूसरा,तीसरा"
+36,40,"cinematic documentary still, a crowded 1930s Indian street gathering seen from a distance, backs of the crowd, faces not visible",dissolve,bleach,medium,महाड सत्याग्रह,highlight_callout,x=38;y=52;r=0.14
+40,45,"cinematic documentary still, sunrise over a wide Indian plain, a single road running to the horizon, no people",fade,warm,light,,ken_burns_pro,zoom=1.14;pan=right;curve=power2.inOut;travel=4

@@ -8,7 +8,14 @@ from PIL import Image
 
 from app.config import Settings
 from app.models import ItemStatus, Job, JobItem, utcnow
-from app.services.animations import ANIMATIONS, AnimationContext, build_animation
+from app.services.animations import (
+    ANIMATIONS,
+    SERIF_PRESETS,
+    AnimationContext,
+    build_animation,
+)
+from app.services.remotion import TEMPLATES as REMOTION_TEMPLATES, parse_params
+from app.services.remotion_service import RemotionError, RemotionSession, SceneRender
 from app.services.storage import JobStorage
 from app.services.style import (
     DEFAULT_TRANSITION_SECONDS,
@@ -86,7 +93,7 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
             seconds=seconds,
             fps=settings.video_fps,
             text=item.text_value or "",
-            font=_font_for(settings, serif=animation in {"doc_title_card", "vox_stat"}),
+            font=_font_for(settings, serif=animation in SERIF_PRESETS),
             value=item.animation_value,
         )
         motion, overlay = build_animation(animation, context)
@@ -193,6 +200,52 @@ def _render_scene(
         raise VideoBuildError(f"ffmpeg failed rendering scene {item.order_index}: " + " | ".join(tail))
 
 
+
+def remotion_template_for(item: JobItem) -> str | None:
+    """The Remotion template this scene asks for, if it asks for one."""
+    name = (item.animation or "").lower()
+    return name if name in REMOTION_TEMPLATES else None
+
+
+def _conform_clip(
+    source: Path,
+    target: Path,
+    item: JobItem,
+    settings: Settings,
+    binary: str,
+    width: int,
+    height: int,
+) -> None:
+    """Apply grade and grain to a Remotion clip and match the ffmpeg clips.
+
+    Remotion owns the animation, but the film's look is still the CSV's job, and
+    every clip in the xfade chain has to agree on fps, SAR and pixel format.
+    """
+    chain: list[str] = []
+    if item.grade and item.grade in GRADES:
+        chain.append(GRADES[item.grade])
+    if item.grain:
+        chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
+    chain += [f"scale={width}:{height}", f"fps={settings.video_fps}", "setsar=1", "format=yuv420p"]
+
+    command = [
+        binary, "-y", "-i", str(source),
+        "-vf", ",".join(chain),
+        "-an",
+        "-c:v", "libx264", "-preset", settings.video_preset, "-crf", str(settings.video_crf),
+        "-pix_fmt", "yuv420p",
+        str(target),
+    ]
+    completed = subprocess.run(
+        command, capture_output=True, text=True, timeout=settings.video_timeout_seconds
+    )
+    if completed.returncode != 0 or not target.is_file():
+        tail = (completed.stderr or "").strip().splitlines()[-6:]
+        raise VideoBuildError(
+            f"ffmpeg failed conforming animated scene {item.order_index}: " + " | ".join(tail)
+        )
+
+
 def _concat_plain(clips: list[Path], work_dir: Path, target: Path, settings: Settings, binary: str) -> None:
     """Fast path: every transition is a hard cut, so no re-encode is needed."""
     listing = work_dir / "clips.txt"
@@ -255,6 +308,76 @@ def _concat_with_transitions(
         raise VideoBuildError("ffmpeg failed blending scenes: " + " | ".join(tail))
 
 
+@dataclass(frozen=True)
+class _ScenePlan:
+    """One clip of the film, resolved but not yet rendered."""
+
+    item: JobItem
+    source: Path
+    clip: Path
+    seconds: float
+    template: str | None
+
+
+def _staged_name(order_index: int) -> str:
+    return f"{order_index:04d}.png"
+
+
+def _open_remotion_session(
+    plans: list["_ScenePlan"],
+    ordered: list[JobItem],
+    images_dir: Path,
+    work_dir: Path,
+    settings: Settings,
+) -> RemotionSession:
+    """Stage every still an animated scene references, then bundle once."""
+    session = RemotionSession(settings, work_dir / "remotion")
+    by_index = {item.order_index: item for item in ordered}
+
+    for plan in plans:
+        if not plan.template:
+            continue
+        session.stage_image(plan.source, _staged_name(plan.item.order_index))
+
+        # split_compare shows a second image: another scene's number, or a
+        # filename already sitting in this job's image folder.
+        reference = parse_params(plan.item.animation_params or "").get("second", "")
+        if not reference:
+            continue
+        if reference.isdigit():
+            other = by_index.get(int(reference))
+            source = images_dir / other.filename if other and other.filename else None
+            name = _staged_name(int(reference))
+        else:
+            source = images_dir / reference
+            name = reference
+        if source is not None and source.is_file():
+            session.stage_image(source, name)
+
+    session.bundle()
+    return session
+
+
+def _scene_render(plan: "_ScenePlan", images_dir: Path, width: int, height: int) -> SceneRender:
+    params = parse_params(plan.item.animation_params or "")
+    reference = params.get("second", "")
+    if reference:
+        params = {
+            **params,
+            "second": f"scenes/{_staged_name(int(reference)) if reference.isdigit() else reference}",
+        }
+    return SceneRender(
+        template=plan.template or "",
+        text=plan.item.text_value or "",
+        params=params,
+        image=f"scenes/{_staged_name(plan.item.order_index)}",
+        seconds=plan.seconds,
+        width=width,
+        height=height,
+        label=f"scene {plan.item.order_index}",
+    )
+
+
 def build_job_video(
     job: Job,
     items: list[JobItem],
@@ -292,9 +415,9 @@ def build_job_video(
         (max(blend, one_frame) if index else 0.0) if use_transitions else 0.0
         for index, blend in enumerate(authored)
     ]
-    clips: list[Path] = []
-    clip_durations: list[float] = []
-
+    # Work out every clip before rendering any of them: the Remotion bundle has
+    # to contain all the stills it will reference, and it is built once.
+    plans: list[_ScenePlan] = []
     for index, item in enumerate(ordered):
         scene_seconds = max(item.end_seconds - item.start_seconds, 0.0)
         if scene_seconds <= 0:
@@ -307,15 +430,43 @@ def build_job_video(
 
         pad_in = blends[index] / 2
         pad_out = blends[index + 1] / 2 if index + 1 < len(blends) else 0.0
-        clip_seconds = scene_seconds + pad_in + pad_out
+        plans.append(
+            _ScenePlan(
+                item=item,
+                source=source,
+                clip=work_dir / f"{item.order_index:04d}.mp4",
+                seconds=scene_seconds + pad_in + pad_out,
+                template=remotion_template_for(item),
+            )
+        )
 
-        clip = work_dir / f"{item.order_index:04d}.mp4"
-        _render_scene(item, source, clip, clip_seconds, settings, binary, width, height)
-        clips.append(clip)
-        clip_durations.append(clip_seconds)
-
-    if not clips:
+    if not plans:
         return None
+
+    session: RemotionSession | None = None
+    try:
+        if any(plan.template for plan in plans):
+            session = _open_remotion_session(plans, ordered, images_dir, work_dir, settings)
+
+        for plan in plans:
+            if plan.template and session is not None:
+                raw = plan.clip.with_suffix(".rem.mp4")
+                session.render(_scene_render(plan, images_dir, width, height), raw)
+                _conform_clip(raw, plan.clip, plan.item, settings, binary, width, height)
+                raw.unlink(missing_ok=True)
+            else:
+                _render_scene(
+                    plan.item, plan.source, plan.clip, plan.seconds,
+                    settings, binary, width, height,
+                )
+    except RemotionError as exc:
+        raise VideoBuildError(str(exc)) from exc
+    finally:
+        if session is not None:
+            session.close()
+
+    clips = [plan.clip for plan in plans]
+    clip_durations = [plan.seconds for plan in plans]
 
     final_path = storage.video_path(job.id)
     temp_path = final_path.with_name(final_path.name + ".tmp.mp4")

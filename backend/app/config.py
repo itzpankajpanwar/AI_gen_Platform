@@ -93,6 +93,17 @@ class Settings(BaseSettings):
     # audio - narration is synthesised first and its real length sets the scene
     timing_mode: str = "audio"
 
+    # ---------------------------------------------- remotion animation layer
+    # Scenes whose `animation` names a Remotion template are rendered in a
+    # headless browser instead of by an ffmpeg filter graph.
+    remotion_dir: Path = Path("remotion")
+    remotion_binary: str = "npx"
+    remotion_concurrency: int = 0  # 0 = let Remotion size it to the machine
+    remotion_timeout_seconds: float = 900.0
+    remotion_crf: int = 16
+    remotion_accent: str = "#E0A65C"
+    remotion_ink: str = "#0B0D10"
+
     # ------------------------------------------------------- styling assets
     font_sans: Path = Path("assets/fonts/NotoSansDevanagari-Regular.ttf")
     font_serif: Path = Path("assets/fonts/NotoSerifDevanagari-Regular.ttf")

@@ -1,12 +1,29 @@
 start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,narration,voice,animation
-0,4,"1950s Indian government office interior, warm light",,,,light,,,कानून मंत्री,,,vox_title
-4,8,"old Indian city street at dawn, stone architecture",dissolve,,,light,,,"महू छावनी, मध्य भारत",,,vox_lower_bar
-8,12,empty formal chair behind an official desk,dissolve,,,light,,,इस्तीफ़ा,,,vox_highlight
-12,16,"dark textured wall, minimal lighting",dissolve,,,light,,,1891,,,vox_stat
-16,20,"aerial view of central Indian plains, hazy daylight",dissolve,,,light,,,महू,,,map_zoom
-20,24,aerial view of an Indian village and fields,dissolve,,,light,,,नागपुर,,,map_pin
-24,28,wide aerial landscape of colonial-era India,dissolve,,,light,,,मध्य भारत,,,map_reveal
-28,32,"crowd at an outdoor public meeting, 1940s India",dissolve,,warm,light,,,1927,,,doc_archival
-32,36,portrait-style still life of books and spectacles,dissolve,,warm,light,,,शिक्षा,,,doc_photo
-36,40,dark empty room with a single shaft of light,dissolve,,warm,light,,,जाति का विनाश,,,doc_title_card
-40,44,long corridor of a government building,dissolve,,warm,light,,,1949,,,doc_timeline
+0,3,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene vox_title",,,,,,,कानून मंत्री,,,vox_title
+3,6,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene vox_lower_bar",dissolve,,,,,,"महू छावनी, मध्य भारत",,,vox_lower_bar
+6,9,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene vox_highlight",dissolve,,,,,,इस्तीफ़ा,,,vox_highlight
+9,12,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene vox_stat",dissolve,,,,,,1891,,,vox_stat
+12,15,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene map_zoom",dissolve,,,,,,महू,,,map_zoom
+15,18,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene map_pin",dissolve,,,,,,नागपुर,,,map_pin
+18,21,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene map_reveal",dissolve,,,,,,मध्य भारत,,,map_reveal
+21,24,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene doc_archival",dissolve,,,,,,1927,,,doc_archival
+24,27,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene doc_photo",dissolve,,,,,,शिक्षा,,,doc_photo
+27,30,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene doc_title_card",dissolve,,,,,,जाति का विनाश,,,doc_title_card
+30,33,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene doc_timeline",dissolve,,,,,,1949,,,doc_timeline
+33,36,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene cine_letterbox",dissolve,,,,,,1947,,,cine_letterbox
+36,39,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene cine_handheld",dissolve,,,,,,,,,cine_handheld
+39,42,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene cine_dolly",dissolve,,,,,,,,,cine_dolly
+42,45,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene cine_punch",dissolve,,,,,,,,,cine_punch
+45,48,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene reveal_wipe",dissolve,,,,,,,,,reveal_wipe
+48,51,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene reveal_bars",dissolve,,,,,,,,,reveal_bars
+51,54,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene reveal_iris",dissolve,,,,,,,,,reveal_iris
+54,57,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene reveal_fade_up",dissolve,,,,,,,,,reveal_fade_up
+57,60,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene type_quote",dissolve,,,,,,शिक्षा स्वाभिमान का साधन,,,type_quote
+60,63,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene type_stack",dissolve,,,,,,स्वतंत्रता|समानता|बंधुत्व,,,type_stack
+63,66,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene type_underline",dissolve,,,,,,अस्पृश्यता,,,type_underline
+66,69,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene type_counter",dissolve,,,,,,1956,,,type_counter
+69,72,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene beat_flash",dissolve,,,,,,,,,beat_flash
+72,75,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene beat_pulse",dissolve,,,,,,,,,beat_pulse
+75,78,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene beat_shake",dissolve,,,,,,,,,beat_shake
+78,81,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene paper_redact",dissolve,,,,,,दस्तावेज़,,,paper_redact
+81,84,"cinematic documentary still, historical India, muted warm palette, 35mm grain, scene paper_highlight",dissolve,,,,,,संविधान,,,paper_highlight

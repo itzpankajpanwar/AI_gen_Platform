@@ -30,15 +30,42 @@ def test_every_preset_produces_filters(name):
 
     assert motion, f"{name} produced no motion filters"
     assert all(isinstance(part, str) and part for part in motion + overlay)
-    # Nothing may leave an unresolved template placeholder in the graph.
-    assert not any("{" in part for part in motion + overlay)
+    # No unresolved python format placeholder may reach ffmpeg. `%{eif...}` is a
+    # legitimate ffmpeg text-expansion token, so only bare {name} braces count.
+    import re
+
+    for part in motion + overlay:
+        leftover = re.findall(r"(?<!%)\{[a-z_]+\}", part)
+        assert not leftover, f"{name} leaked {leftover}"
 
 
-@pytest.mark.parametrize("name", sorted(TEXT_REQUIRED))
+@pytest.mark.parametrize("name", sorted(TEXT_REQUIRED - {"type_counter"}))
 def test_text_presets_render_their_text(name):
     _, overlay = build_animation(name, context(text="भीमराव"))
 
     assert any("drawtext" in part and "भीमराव" in part for part in overlay)
+
+
+def test_counter_counts_up_to_its_number():
+    _, overlay = build_animation("type_counter", context(text="1891", seconds=4.0))
+    chain = "".join(overlay)
+
+    assert "eif" in chain          # ffmpeg evaluates the figure per frame
+    assert "1891" in chain
+    assert "drawtext" in chain
+
+
+def test_counter_survives_a_non_numeric_value():
+    _, overlay = build_animation("type_counter", context(text="not a number"))
+
+    assert "*0" in "".join(overlay)  # falls back to zero rather than crashing
+
+
+def test_stack_splits_lines_on_a_pipe():
+    _, overlay = build_animation("type_stack", context(text="पहली|दूसरी|तीसरी"))
+
+    assert len([part for part in overlay if "drawtext" in part]) == 3
+    assert all(any(word in part for part in overlay) for word in ("पहली", "दूसरी", "तीसरी"))
 
 
 def test_optional_text_presets_skip_text_when_empty():

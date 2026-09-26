@@ -102,6 +102,7 @@ class JobItemOut(ApiModel):
     narration: str | None = None
     voice: str | None = None
     animation: str | None = None
+    animation_params: str | None = None
     audio_seconds: float | None = None
     status: str
     filename: str | None = None

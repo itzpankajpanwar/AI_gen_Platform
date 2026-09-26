@@ -28,7 +28,8 @@ start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,nar
 | 10 | `text_value` | no | The exact text to display (Hindi supported) |
 | 11 | `narration` | no | Line to be spoken by TTS over this scene |
 | 12 | `voice` | no | Voice override for this row |
-| 13 | `animation` | no | **Animation preset — overrides `ken_burns` and `text_type`** |
+| 13 | `animation` | no | **Animation preset or template — overrides `ken_burns` and `text_type`** |
+| 14 | `animation_params` | no | `key=value;key=value` inputs for a Remotion template |
 
 ---
 
@@ -162,6 +163,74 @@ bigger box, `doc_archival:8` weaves more.
 
 `vox_title`, `vox_lower_bar`, `vox_stat`, `doc_title_card` and `doc_timeline`
 **require** a `text_value`. The rest show text only if you give them one.
+
+#### A limitation of the ffmpeg presets
+
+ffmpeg's `drawbox` filter has no `eval=frame` option, so any box it draws has
+its position and size frozen at the first frame. The presets built on boxes —
+`reveal_bars`, `reveal_wipe`, `reveal_iris`, `type_underline`, `paper_redact`
+and the bar in `vox_lower_bar` — therefore appear in place instead of growing
+or travelling. They are still usable graphics; they simply do not animate. The
+Remotion templates below exist because that ceiling is not liftable in ffmpeg.
+
+---
+
+### Remotion templates — the premium animation layer
+
+Names in the same `animation` column, but rendered by Remotion (React + SVG,
+with GSAP easing curves) in a headless browser rather than by a filter graph.
+They get real eased motion, masked reveals, SVG line drawing and proper
+Devanagari typography. Their inputs come from `animation_params`.
+
+| Value | Effect | `animation_params` |
+| ----- | ------ | ------------------ |
+| `ken_burns_pro` | Eased camera move that settles instead of stopping dead | `zoom`, `pan` (left/right/up/down), `curve`, `travel`, `dim`, `vignette`, `grain` |
+| `split_compare` | Two stills meeting at a travelling wipe line | `second` (**required**), `label_a`, `label_b` |
+| `title_reveal` | Masked headline wiping up behind a sweeping accent rule | `size` |
+| `lower_third` | Slab that slides in behind an accent edge, then slides out | `sub` |
+| `quote` | Pulled quotation revealed word by word | `by` |
+| `chapter_card` | Kicker, drawn rule, then the title word by word | `chapter` |
+| `timeline` | A year axis that draws itself, ticks landing one by one | `from`, `to`, `marks` (**required**), `highlight` |
+| `map_route` | A route drawing across the frame with a travelling head | `path` (**required**) |
+| `stat_counter` | A number counting up inside a ring that fills as it climbs | `to`, `from`, `suffix`, `label` |
+| `bar_chart` | Bars growing in sequence with their labels | `values` (**required**), `labels` |
+| `highlight_callout` | A ring drawn onto a point of the image, with a leader and caption | `x`, `y`, `r` |
+
+`title_reveal`, `lower_third`, `quote`, `chapter_card`, `stat_counter` and
+`highlight_callout` **require** a `text_value`.
+
+#### Writing `animation_params`
+
+Pairs are separated by `;`, so a value may contain commas:
+
+```
+from=1891;to=1956;marks=1891,1927,1947,1956;highlight=1947
+```
+
+Because the cell contains commas, **quote it in the CSV**:
+
+```csv
+...,timeline,"from=1891;to=1956;marks=1891,1927,1947,1956;highlight=1947"
+```
+
+An unquoted cell spills into the next column; the parser rejects the row and
+tells you which values were stray rather than silently dropping them.
+
+`x`, `y` and the points in `path` are percentages of the frame, so a template
+looks the same at 720p and 4K. `second` names another scene by its row number
+(`second=7`) or an image filename already in the job's folder.
+
+Unknown template names, unknown parameter keys and missing required parameters
+are all caught when the CSV is uploaded — never twenty minutes into a render.
+
+#### Cost
+
+A Remotion scene costs roughly 2-4 seconds of CPU per second of video, against
+well under a second for an ffmpeg preset. A job bundles the project once and
+then renders each animated scene from that bundle, so the overhead is paid per
+job, not per scene. Use Remotion for the scenes that carry information —
+titles, chapter openers, statistics, maps, timelines — and the ffmpeg presets
+for everything in between.
 
 ---
 
