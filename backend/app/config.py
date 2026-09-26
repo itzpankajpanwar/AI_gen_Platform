@@ -119,8 +119,8 @@ class Settings(BaseSettings):
     remotion_ink: str = "#0B0D10"
 
     # ------------------------------------------------------- styling assets
-    font_sans: Path = Path("assets/fonts/NotoSansDevanagari-Regular.ttf")
-    font_serif: Path = Path("assets/fonts/NotoSerifDevanagari-Regular.ttf")
+    font_sans: Path = Path("assets/fonts/Mukta-Regular.ttf")
+    font_serif: Path = Path("assets/fonts/Mukta-Bold.ttf")
     music_dir: Path = Path("assets/music")
     music_level_db: float = -22.0
     music_duck_db: float = -12.0

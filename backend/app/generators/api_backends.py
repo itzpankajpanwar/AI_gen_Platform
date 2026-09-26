@@ -254,8 +254,13 @@ class OpenAIImageGenerator(ImageGenerator):
             raise GenerationError("OPENAI_API_KEY is not set")
 
         started = time.perf_counter()
+        # The project carries a legacy cross-backend model label (e.g.
+        # "FLUX.1-schnell") that is meaningless to OpenAI, so honour request.model
+        # only when it names an OpenAI image model; otherwise use the configured one.
+        requested = (request.model or "").strip()
+        model = requested if requested.startswith(("gpt-image", "chatgpt-image", "dall-e")) else self.model
         payload = {
-            "model": request.model or self.model,
+            "model": model,
             "prompt": request.prompt,
             "n": 1,
             "size": self.size,

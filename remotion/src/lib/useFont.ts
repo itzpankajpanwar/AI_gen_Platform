@@ -5,8 +5,8 @@ export const SANS = "NotoDevanagariSans";
 export const SERIF = "NotoDevanagariSerif";
 
 const FACES: [string, string][] = [
-  [SANS, "fonts/NotoSansDevanagari-Regular.ttf"],
-  [SERIF, "fonts/NotoSerifDevanagari-Regular.ttf"],
+  [SANS, "fonts/Mukta-Regular.ttf"],
+  [SERIF, "fonts/Mukta-Bold.ttf"],
 ];
 
 /**
