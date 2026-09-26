@@ -69,7 +69,7 @@ class Settings(BaseSettings):
     recommended_min_prompts: int = 50
     max_csv_bytes: int = 5 * 1024 * 1024
 
-    zip_retention_hours: float = 10.0
+    zip_retention_hours: float = 24.0
     cleanup_interval_seconds: float = 300.0
 
     ffmpeg_binary: str = "ffmpeg"

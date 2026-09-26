@@ -34,3 +34,7 @@ remotion/out/
 
 # rendered sample clips (large binaries)
 samples/clips/
+
+# premium overnight build: large renders + image cache stay local (cached, reused)
+samples/film_premium/*.mp4
+assets/premium/
