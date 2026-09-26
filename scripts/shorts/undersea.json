@@ -1,0 +1,16 @@
+{
+  "accent": "#E0A65C",
+  "brand": "THE QUIET STORY",
+  "lines": [
+    { "text": "आपका इंटरनेट satellite से नहीं आता।", "scene": "keyword", "emphasis": "satellite", "params": { "emoji": "🛰️", "danger": "1" } },
+    { "text": "दुनिया का लगभग 99% इंटरनेट समुंदर के नीचे से गुज़रता है।", "scene": "globe", "emphasis": "99%" },
+    { "text": "ज़मीन नहीं, समुंदर की गहराई में बिछी हैं हज़ारों किलोमीटर लंबी cables।", "scene": "beam", "emphasis": "cables", "params": { "emoji": "🌊" } },
+    { "text": "यही optical fibre cables पूरे देशों को आपस में जोड़ती हैं।", "scene": "keyword", "emphasis": "cables", "params": { "emoji": "🔌" } },
+    { "text": "आपका WhatsApp, YouTube, banking, सब इन्हीं से चलता है।", "scene": "list", "params": { "items": "💬 WhatsApp,▶️ YouTube,🏦 Banking,📱 Apps,🌐 Web,☁️ Cloud" } },
+    { "text": "और सबसे चौंकाने वाली बात?", "scene": "hook", "emphasis": "चौंकाने", "params": { "mark": "?" } },
+    { "text": "एक जहाज़ का लंगर इन cables को काट सकता है।", "scene": "vehicle", "emphasis": "लंगर", "params": { "kind": "ship", "emoji": "⚓" } },
+    { "text": "और जब ये टूटती हैं, तो पूरे देश का इंटरनेट धीमा पड़ सकता है।", "scene": "keyword", "emphasis": "पूरे देश", "params": { "emoji": "🌐", "danger": "1" } },
+    { "text": "satellites इसमें सिर्फ एक छोटा हिस्सा हैं।", "scene": "keyword", "emphasis": "छोटा", "params": { "emoji": "🛰️" } },
+    { "text": "असली internet, समुंदर के नीचे छुपा है।", "scene": "beam", "emphasis": "समुंदर", "params": { "reveal": "1", "emoji": "🌊" } }
+  ]
+}

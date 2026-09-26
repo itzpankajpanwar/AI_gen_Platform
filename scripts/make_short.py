@@ -74,6 +74,7 @@ def main() -> None:
     ap.add_argument("--out", required=True)
     ap.add_argument("--accent", default=None)
     ap.add_argument("--brand", default=None)
+    ap.add_argument("--aspect", default="9x16", choices=["9x16", "16x9"])
     args = ap.parse_args()
 
     audio = Path(args.audio).expanduser().resolve()
@@ -91,11 +92,14 @@ def main() -> None:
     shutil.copyfile(audio, PUBLIC / staged)
     subprocess.run(["node", "stage-fonts.mjs"], cwd=REMOTION, capture_output=True)
 
+    w, h = (1920, 1080) if args.aspect == "16x9" else (1080, 1920)
     props = {
         "audio": staged,
         "accent": args.accent or spec.get("accent", "#E0A65C"),
         "brand": args.brand or spec.get("brand", "THE QUIET STORY"),
         "fps": FPS,
+        "width": w,
+        "height": h,
         "durationInFrames": round((duration + 0.2) * FPS),
         "segments": segs,
     }
