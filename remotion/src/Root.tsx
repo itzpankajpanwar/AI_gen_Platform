@@ -2,6 +2,7 @@ import React from "react";
 import { Composition } from "remotion";
 
 import { Scene } from "./Scene";
+import { GpsShort } from "./short/Short";
 import { DEFAULT_SCENE } from "./lib/types";
 
 /**
@@ -9,7 +10,8 @@ import { DEFAULT_SCENE } from "./lib/types";
  * --props, so one composition serves every scene in the film.
  */
 export const RemotionRoot: React.FC = () => (
-  <Composition
+  <>
+    <Composition
     id="Scene"
     component={Scene}
     durationInFrames={90}
@@ -24,4 +26,13 @@ export const RemotionRoot: React.FC = () => (
       height: (props as any).height ?? 1080,
     })}
   />
+    <Composition
+      id="GpsShort"
+      component={GpsShort}
+      durationInFrames={900}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+  </>
 );

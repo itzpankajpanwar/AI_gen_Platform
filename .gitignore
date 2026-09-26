@@ -31,3 +31,6 @@ next-env.d.ts
 # remotion build staging (fonts are staged from assets/fonts, stills per job)
 remotion/public/
 remotion/out/
+
+# rendered sample clips (large binaries)
+samples/clips/
