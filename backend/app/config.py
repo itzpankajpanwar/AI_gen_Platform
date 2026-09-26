@@ -123,6 +123,7 @@ class Settings(BaseSettings):
     font_serif: Path = Path("assets/fonts/Mukta-Bold.ttf")
     music_dir: Path = Path("assets/music")
     music_level_db: float = -22.0
+    master_lufs: float = -15.0  # final mix loudness target (YouTube ~-14 to -15)
     music_duck_db: float = -12.0
 
     estimated_image_mb: float = 5.0

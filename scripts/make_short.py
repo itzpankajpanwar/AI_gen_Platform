@@ -68,9 +68,18 @@ def generate_backgrounds(lines: list[dict], aspect: str) -> None:
         if not prompt:
             continue
         full = f"{prompt}, {STYLE}"
-        key = hashlib.md5(f"{full}|{size}".encode()).hexdigest()[:16]
+        # size-independent key so the same background is reused across aspects
+        # (cover-crop handles the rest — no re-spend when you switch 16:9 <-> 9:16)
+        key = hashlib.md5(full.encode()).hexdigest()[:16]
         rel = f"short_bg/{key}.png"
         path = cache / f"{key}.png"
+        if not path.is_file():
+            # reuse an image already generated for this prompt at any earlier size
+            for old_size in ("1536x1024", "1024x1536"):
+                legacy = cache / (hashlib.md5(f"{full}|{old_size}".encode()).hexdigest()[:16] + ".png")
+                if legacy.is_file():
+                    shutil.copyfile(legacy, path)
+                    break
         if not path.is_file():
             try:
                 gen.generate(GenerationRequest(prompt=full, output_path=path, width=w, height=h,

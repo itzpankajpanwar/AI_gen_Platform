@@ -142,7 +142,8 @@ def build_audio_track(
         )
 
     if voice_labels and music_labels:
-        # Duck the bed whenever the narrator speaks.
+        # Duck the bed whenever the narrator speaks, so the score never fights
+        # the voice — it swells in the gaps and sits under the words.
         steps.append("[voice]asplit=2[voice_out][key]")
         steps.append(
             f"[bed][key]sidechaincompress=threshold=0.05:ratio=8:attack=20:release=400[bed_duck]"
@@ -154,11 +155,15 @@ def build_audio_track(
     else:
         final = "[bed]"
 
+    # Master to a consistent broadcast loudness so every chapter sits at the same
+    # level and matches what YouTube expects (~-15 LUFS), with a little headroom.
+    steps.append(f"{final}loudnorm=I={settings.master_lufs}:TP=-1.5:LRA=11,aresample=44100[master]")
+
     target = storage.job_dir(job_id) / "audio_mix.m4a"
     command = [
         binary, "-y", *inputs,
         "-filter_complex", ";".join(steps),
-        "-map", final,
+        "-map", "[master]",
         "-t", f"{total_seconds:.3f}",
         "-c:a", "aac", "-b:a", "192k",
         str(target),
