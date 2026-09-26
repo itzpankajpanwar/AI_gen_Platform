@@ -7,7 +7,7 @@ into the film — timing, transition, motion, grade, grain, music, on-screen tex
 "don't apply this."**
 
 ```csv
-start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,narration,voice
+start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,narration,voice,animation
 ```
 
 ---
@@ -28,6 +28,7 @@ start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,nar
 | 10 | `text_value` | no | The exact text to display (Hindi supported) |
 | 11 | `narration` | no | Line to be spoken by TTS over this scene |
 | 12 | `voice` | no | Voice override for this row |
+| 13 | `animation` | no | **Animation preset — overrides `ken_burns` and `text_type`** |
 
 ---
 
@@ -123,6 +124,45 @@ dates, names and the occasional statement.
 `narration` is the line spoken over this scene. `voice` overrides the project default for that
 row — useful for a second narrator or a quoted passage.
 
+### `animation` — the animation layer
+
+When set, the preset takes over the scene's **motion and on-screen text**.
+`ken_burns` and `text_type` are ignored (the CSV warns you), while `grade` and
+`grain` still apply so an animated scene keeps the film's look. Presets that show
+text read it from `text_value`.
+
+**Vox family** — bold, graphic, explainer-style:
+
+| Value | Effect |
+| ----- | ------ |
+| `vox_title` | Accent bar wipes in from the left, bold text lands on it |
+| `vox_lower_bar` | Full-width bottom bar wipes in with a caption |
+| `vox_highlight` | Outline box draws itself around the centre, with a label |
+| `vox_stat` | One large figure rises into a dimmed frame — numbers, claims |
+
+**Map family** — location and movement:
+
+| Value | Effect |
+| ----- | ------ |
+| `map_zoom` | Accelerating push into the centre, like a map diving to a place |
+| `map_pin` | A marker drops, settles, then names the location |
+| `map_reveal` | Frame lifts out of darkness as a frame-line opens outward |
+
+**Documentary family** — archival texture:
+
+| Value | Effect |
+| ----- | ------ |
+| `doc_archival` | Vignette, heavy grain and slow gate weave — projector footage |
+| `doc_photo` | A bordered print on a dark table, slowly pushed into |
+| `doc_title_card` | Picture recedes to near-black so a statement carries the beat |
+| `doc_timeline` | A progress rule creeps along the foot under a year label |
+
+Optional intensity: `map_zoom:2.5` pushes harder, `vox_highlight:0.6` draws a
+bigger box, `doc_archival:8` weaves more.
+
+`vox_title`, `vox_lower_bar`, `vox_stat`, `doc_title_card` and `doc_timeline`
+**require** a `text_value`. The rest show text only if you give them one.
+
 ---
 
 ## Timing modes
@@ -177,18 +217,22 @@ matra shaping — without it Hindi renders as disconnected glyphs. Verified work
 ## Worked example
 
 ```csv
-start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,narration,voice
+start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,narration,voice,animation
 0,3,"old Indian city at dawn, 1900s stone architecture",fadeblack,zoom_in,warm,light,somber.mp3,,,"भारत के इतिहास में कुछ नाम ऐसे हैं",
 3,6,"empty formal chair behind an official desk",dissolve,pan_right,warm,light,,,,"जिन्हें सिर्फ उनके पद से नहीं समझा जा सकता",
 6,8,"long empty corridor of a government building",dissolve,zoom_out,cold,light,,,,"कुछ लोग मंत्री बने",
-13,15,"empty pale dawn sky over a central Indian plain",fade,zoom_in:1.12,warm,medium,,date_stamp,"14 अप्रैल, 1891","",
-15,17,"British Indian Army cantonment, whitewashed barracks",cut,pan_left,sepia,medium,,lower_third,"महू छावनी, मध्य भारत","मध्य भारत की महू छावनी",
+13,15,"empty pale dawn sky over a central Indian plain",fade,,warm,medium,,,"1891","",,vox_stat
+15,17,"British Indian Army cantonment, whitewashed barracks",cut,,sepia,medium,,,"महू छावनी, मध्य भारत","मध्य भारत की महू छावनी",,map_pin
 ```
 
 Reading row by row: the film fades up from black on a warm, lightly grained city at dawn with a
 slow push-in, while `somber.mp3` begins and the first line is narrated. The bed continues
-through every following row. Row 4 carries no narration — it's a held beat with a date stamp.
-Row 5 switches to a sepia grade and names the place in a lower third.
+through every following row. Row 4 hands the scene to `vox_stat`, which dims the frame and
+raises **1891** into it. Row 5 uses `map_pin` to drop a marker and name the cantonment, keeping
+the sepia grade underneath.
+
+A third example, [`samples/animation_showcase.csv`](../samples/animation_showcase.csv), runs all
+eleven presets back to back.
 
 ---
 

@@ -3,6 +3,7 @@ import io
 from dataclasses import dataclass, field
 
 from app.config import Settings
+from app.services.animations import ANIMATIONS, TEXT_REQUIRED
 from app.services.style import (
     DEFAULT_TRANSITION_SECONDS,
     DEFAULT_ZOOM,
@@ -29,6 +30,7 @@ OPTIONAL_HEADERS = {
     "text_value",
     "narration",
     "voice",
+    "animation",
 }
 MAX_REPORTED_ERRORS = 25
 EPSILON = 0.001
@@ -53,6 +55,8 @@ class ParsedPrompt:
     text_value: str | None = None
     narration: str | None = None
     voice: str | None = None
+    animation: str | None = None
+    animation_value: float | None = None
 
     @property
     def duration(self) -> float:
@@ -203,6 +207,9 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
             grade = parse_grade(_cell(row, headers, "grade"))
             grain = parse_grain(_cell(row, headers, "grain"))
             text_type = parse_text_type(_cell(row, headers, "text_type"))
+            animation, animation_value = parse_valued(
+                _cell(row, headers, "animation"), ANIMATIONS, "animation"
+            )
         except StyleError as exc:
             result.errors.append(f"Row {row_number}: {exc}")
             continue
@@ -219,12 +226,21 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
             continue
 
         text_value = _cell(row, headers, "text_value")
+        if animation in TEXT_REQUIRED and not text_value:
+            result.errors.append(
+                f"Row {row_number}: animation '{animation}' needs a text_value to display"
+            )
+            continue
+        if animation and (text_type or _cell(row, headers, "ken_burns")):
+            result.warnings.append(
+                f"Row {row_number}: animation '{animation}' overrides ken_burns and text_type"
+            )
         if text_type and not text_value:
             result.errors.append(
                 f"Row {row_number}: text_type '{text_type}' needs a text_value"
             )
             continue
-        if text_value and not text_type:
+        if text_value and not text_type and not animation:
             result.warnings.append(
                 f"Row {row_number}: text_value is set but text_type is empty — no text will show"
             )
@@ -247,6 +263,8 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                 text_value=text_value or None,
                 narration=_cell(row, headers, "narration") or None,
                 voice=_cell(row, headers, "voice") or None,
+                animation=animation or None,
+                animation_value=animation_value,
             )
         )
 

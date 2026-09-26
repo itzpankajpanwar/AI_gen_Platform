@@ -89,6 +89,8 @@ class JobItem(Base):
     text_value: Mapped[str | None] = mapped_column(Text, nullable=True)
     narration: Mapped[str | None] = mapped_column(Text, nullable=True)
     voice: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    animation: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    animation_value: Mapped[float | None] = mapped_column(Float, nullable=True)
     audio_filename: Mapped[str | None] = mapped_column(String(255), nullable=True)
     audio_seconds: Mapped[float | None] = mapped_column(Float, nullable=True)
 

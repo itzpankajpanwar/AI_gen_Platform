@@ -1,0 +1,12 @@
+start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,narration,voice,animation
+0,4,"1950s Indian government office interior, warm light",,,,light,,,कानून मंत्री,,,vox_title
+4,8,"old Indian city street at dawn, stone architecture",dissolve,,,light,,,"महू छावनी, मध्य भारत",,,vox_lower_bar
+8,12,empty formal chair behind an official desk,dissolve,,,light,,,इस्तीफ़ा,,,vox_highlight
+12,16,"dark textured wall, minimal lighting",dissolve,,,light,,,1891,,,vox_stat
+16,20,"aerial view of central Indian plains, hazy daylight",dissolve,,,light,,,महू,,,map_zoom
+20,24,aerial view of an Indian village and fields,dissolve,,,light,,,नागपुर,,,map_pin
+24,28,wide aerial landscape of colonial-era India,dissolve,,,light,,,मध्य भारत,,,map_reveal
+28,32,"crowd at an outdoor public meeting, 1940s India",dissolve,,warm,light,,,1927,,,doc_archival
+32,36,portrait-style still life of books and spectacles,dissolve,,warm,light,,,शिक्षा,,,doc_photo
+36,40,dark empty room with a single shaft of light,dissolve,,warm,light,,,जाति का विनाश,,,doc_title_card
+40,44,long corridor of a government building,dissolve,,warm,light,,,1949,,,doc_timeline

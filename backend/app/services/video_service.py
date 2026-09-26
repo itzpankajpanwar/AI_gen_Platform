@@ -8,6 +8,7 @@ from PIL import Image
 
 from app.config import Settings
 from app.models import ItemStatus, Job, JobItem, utcnow
+from app.services.animations import ANIMATIONS, AnimationContext, build_animation
 from app.services.storage import JobStorage
 from app.services.style import (
     DEFAULT_TRANSITION_SECONDS,
@@ -63,10 +64,42 @@ def transition_seconds_for(item: JobItem) -> float:
     return item.transition_seconds or DEFAULT_TRANSITION_SECONDS
 
 
+def _font_for(settings: Settings, serif: bool) -> str:
+    font_path = settings.asset_path(settings.font_serif if serif else settings.font_sans)
+    if not font_path.is_file():
+        raise VideoBuildError(f"font not found: {font_path}")
+    return str(font_path)
+
+
 def build_scene_filter(item: JobItem, settings: Settings, width: int, height: int, seconds: float) -> str:
     """Motion, grade, grain and text for a single still, as one filter chain."""
     frames = max(int(round(seconds * settings.video_fps)), 1)
     chain: list[str] = []
+
+    animation = (item.animation or "").lower()
+    if animation in ANIMATIONS:
+        # The animation owns framing, motion and text. Grade and grain still run
+        # between its motion and its overlays so the graphics stay ungraded.
+        context = AnimationContext(
+            width=width,
+            height=height,
+            seconds=seconds,
+            fps=settings.video_fps,
+            text=item.text_value or "",
+            font=_font_for(settings, serif=animation in {"doc_title_card", "vox_stat"}),
+            value=item.animation_value,
+        )
+        motion, overlay = build_animation(animation, context)
+        chain.extend(motion)
+        if item.grade and item.grade in GRADES:
+            chain.append(GRADES[item.grade])
+        if item.grain:
+            chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
+        chain.extend(overlay)
+        chain.append(f"fps={settings.video_fps}")
+        chain.append("setsar=1")
+        chain.append("format=yuv420p")
+        return ",".join(chain)
 
     move = (item.ken_burns or "static").lower()
     if move != "static" and move in KEN_BURNS:
@@ -102,10 +135,7 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
         style = TEXT_STYLES[item.text_type]
         if style.dim_background:
             chain.append(f"eq=brightness=-{style.dim_background * 0.5:.2f}")
-        font = settings.font_serif if style.serif else settings.font_sans
-        font_path = settings.asset_path(font)
-        if not font_path.is_file():
-            raise VideoBuildError(f"font not found: {font_path}")
+        font_path = _font_for(settings, serif=style.serif)
 
         fade = min(style.fade, seconds / 3)
         alpha = (

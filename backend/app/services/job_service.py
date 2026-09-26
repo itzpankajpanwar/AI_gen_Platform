@@ -100,6 +100,8 @@ def replace_prompts(
                 text_value=parsed.text_value,
                 narration=parsed.narration,
                 voice=parsed.voice,
+                animation=parsed.animation,
+                animation_value=parsed.animation_value,
             )
         )
     project.csv_filename = filename
@@ -209,6 +211,8 @@ def start_job(session: Session, project: Project, settings: Settings) -> Job:
                 text_value=prompt.text_value,
                 narration=prompt.narration,
                 voice=prompt.voice,
+                animation=prompt.animation,
+                animation_value=prompt.animation_value,
             )
         )
     session.commit()
