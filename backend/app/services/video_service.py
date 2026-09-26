@@ -10,6 +10,7 @@ from app.config import Settings
 from app.models import ItemStatus, Job, JobItem, utcnow
 from app.services.animations import (
     ANIMATIONS,
+    CAMERA_ONLY,
     SERIF_PRESETS,
     AnimationContext,
     build_animation,
@@ -78,6 +79,46 @@ def _font_for(settings: Settings, serif: bool) -> str:
     return str(font_path)
 
 
+def _text_overlay_filters(
+    item: JobItem, settings: Settings, width: int, height: int, seconds: float
+) -> list[str]:
+    """The drawtext (and optional dim) filters for this scene's `text_type`.
+
+    Returned as a list so it can be dropped into either the plain path or on top
+    of a camera-only animation preset — the one case where two animation layers
+    combine on one scene.
+    """
+    if not (item.text_type and item.text_value and item.text_type in TEXT_STYLES):
+        return []
+
+    style = TEXT_STYLES[item.text_type]
+    filters: list[str] = []
+    if style.dim_background:
+        filters.append(f"eq=brightness=-{style.dim_background * 0.5:.2f}")
+    font_path = _font_for(settings, serif=style.serif)
+
+    fade = min(style.fade, seconds / 3)
+    alpha = (
+        f"if(lt(t,{fade:.2f}),t/{fade:.2f},"
+        f"if(lt(t,{seconds - fade:.2f}),1,max(0,({seconds:.2f}-t)/{fade:.2f})))"
+        if fade > 0.05
+        else "1"
+    )
+    parts = [
+        f"fontfile='{font_path}'",
+        f"text='{_escape_text(item.text_value)}'",
+        f"fontcolor={style.colour}",
+        f"fontsize={max(int(height * style.size_ratio), 12)}",
+        f"x={style.x}",
+        f"y={style.y}",
+        f"alpha='{alpha}'",
+    ]
+    if style.box:
+        parts += ["box=1", "boxcolor=black@%.2f" % style.box_opacity, "boxborderw=18"]
+    filters.append("drawtext=" + ":".join(parts))
+    return filters
+
+
 def build_scene_filter(item: JobItem, settings: Settings, width: int, height: int, seconds: float) -> str:
     """Motion, grade, grain and text for a single still, as one filter chain."""
     frames = max(int(round(seconds * settings.video_fps)), 1)
@@ -85,8 +126,10 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
 
     animation = (item.animation or "").lower()
     if animation in ANIMATIONS:
-        # The animation owns framing, motion and text. Grade and grain still run
-        # between its motion and its overlays so the graphics stay ungraded.
+        # The animation owns framing, motion and (for most presets) text. Grade
+        # and grain run between its motion and its overlays so the graphics stay
+        # ungraded. A camera-only preset ignores text_value, so a text_type
+        # overlay is layered on top of it — motion and caption together.
         context = AnimationContext(
             width=width,
             height=height,
@@ -103,6 +146,8 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
         if item.grain:
             chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
         chain.extend(overlay)
+        if animation in CAMERA_ONLY:
+            chain.extend(_text_overlay_filters(item, settings, width, height, seconds))
         chain.append(f"fps={settings.video_fps}")
         chain.append("setsar=1")
         chain.append("format=yuv420p")
@@ -138,31 +183,7 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
     if item.grain:
         chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
 
-    if item.text_type and item.text_value and item.text_type in TEXT_STYLES:
-        style = TEXT_STYLES[item.text_type]
-        if style.dim_background:
-            chain.append(f"eq=brightness=-{style.dim_background * 0.5:.2f}")
-        font_path = _font_for(settings, serif=style.serif)
-
-        fade = min(style.fade, seconds / 3)
-        alpha = (
-            f"if(lt(t,{fade:.2f}),t/{fade:.2f},"
-            f"if(lt(t,{seconds - fade:.2f}),1,max(0,({seconds:.2f}-t)/{fade:.2f})))"
-            if fade > 0.05
-            else "1"
-        )
-        parts = [
-            f"fontfile='{font_path}'",
-            f"text='{_escape_text(item.text_value)}'",
-            f"fontcolor={style.colour}",
-            f"fontsize={max(int(height * style.size_ratio), 12)}",
-            f"x={style.x}",
-            f"y={style.y}",
-            f"alpha='{alpha}'",
-        ]
-        if style.box:
-            parts += ["box=1", "boxcolor=black@%.2f" % style.box_opacity, "boxborderw=18"]
-        chain.append("drawtext=" + ":".join(parts))
+    chain.extend(_text_overlay_filters(item, settings, width, height, seconds))
 
     # Every clip must expose identical stream properties or the xfade chain
     # fails with "Error reinitializing filters" when it meets the first mismatch.

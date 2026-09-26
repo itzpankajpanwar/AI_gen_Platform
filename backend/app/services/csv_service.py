@@ -3,7 +3,7 @@ import io
 from dataclasses import dataclass, field
 
 from app.config import Settings
-from app.services.animations import ANIMATIONS, TEXT_REQUIRED
+from app.services.animations import ANIMATIONS, CAMERA_ONLY, TEXT_REQUIRED
 from app.services.remotion import ParamError, TEMPLATES as REMOTION_TEMPLATES
 from app.services.remotion import parse_params, validate as validate_animation
 from app.services.style import (
@@ -266,9 +266,18 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                     f"animations; '{animation or "none"}' is an ffmpeg effect"
                 )
                 continue
-        if animation and (text_type or _cell(row, headers, "ken_burns")):
+        # A camera-only preset draws no text of its own, so a text_type layers
+        # on top of it — motion and caption together. Every other animation owns
+        # the scene's text, so text_type there is redundant.
+        text_layers = animation in CAMERA_ONLY and text_type
+        if animation and _cell(row, headers, "ken_burns"):
             result.warnings.append(
-                f"Row {row_number}: animation '{animation}' overrides ken_burns and text_type"
+                f"Row {row_number}: animation '{animation}' overrides ken_burns"
+            )
+        if animation and text_type and not text_layers:
+            result.warnings.append(
+                f"Row {row_number}: animation '{animation}' already handles its own text, "
+                f"so text_type is ignored"
             )
         if text_type and not text_value:
             result.errors.append(

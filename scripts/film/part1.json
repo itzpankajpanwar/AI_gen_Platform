@@ -60,7 +60,10 @@
     {
       "n": "इसका अर्थ केवल इतना नहीं था कि समाज में कुछ लोग उसे अपने से अलग मानते थे। अस्पृश्यता रोजमर्रा की जिंदगी को प्रभावित करती थी।",
       "p": "A queue of villagers waiting at a stone well in hot afternoon light, one small group standing markedly further back than the rest, all faces turned away from camera",
-      "shot": "medium"
+      "shot": "medium",
+      "anim": "cine_handheld",
+      "text_type": "subtitle",
+      "text": "अस्पृश्यता"
     },
     {
       "n": "पानी...",
@@ -93,12 +96,14 @@
     {
       "n": "और यहां तक कि दूसरे लोगों के साथ सामान्य सामाजिक व्यवहार तक।",
       "p": "Two men in 1890s Indian dress passing each other on a narrow lane, both turning their bodies away, deliberate distance between them, dust underfoot",
-      "shot": "medium"
+      "shot": "medium",
+      "anim": "cine_handheld"
     },
     {
       "n": "आज इन बातों की कल्पना करना कठिन है। लेकिन उन्नीसवीं सदी के अंत और बीसवीं सदी के शुरुआती भारत में, जाति केवल पहचान नहीं थी। वह सामाजिक संबंधों को निर्धारित करने वाली एक शक्ति थी।",
       "p": "A sprawling late nineteenth century Indian town seen from a hillside at dusk, its quarters visibly separated by open ground and low walls, cooking smoke rising",
-      "shot": "xwide"
+      "shot": "xwide",
+      "anim": "cine_dolly"
     },
     {
       "n": "इसी वातावरण में भीमराव बड़े हो रहे थे।",
@@ -126,7 +131,8 @@
     {
       "n": "क्योंकि अगर समाज किसी इंसान से उसकी बराबरी छीन ले... तो ज्ञान कम-से-कम उसे यह समझने की ताकत दे सकता है कि उसके साथ हो क्या रहा है।",
       "p": "An open page of printed Devanagari script under an oil lamp, a fingertip resting on a line, the rest of the room in deep darkness",
-      "shot": "detail"
+      "shot": "detail",
+      "anim": "cine_punch"
     },
     {
       "n": "और शायद यही वजह है कि आगे चलकर आंबेडकर के विचारों में शिक्षा सिर्फ नौकरी पाने का साधन नहीं रही। शिक्षा... स्वाभिमान का साधन बनी।",
@@ -136,7 +142,8 @@
     {
       "n": "लेकिन अभी कहानी बहुत शुरुआत में थी। क्योंकि जिस बच्चे को पढ़ने का अधिकार चाहिए था, उसे पहले यह साबित करना था कि वह पढ़ सकता है। और उससे भी बड़ी बात... कि वह इंसान की तरह जीने का अधिकार रखता है।",
       "p": "A single small figure walking away down a long dusty road at dawn toward a distant town, vast open sky, the road stretching far ahead",
-      "shot": "xwide"
+      "shot": "xwide",
+      "anim": "cine_dolly"
     }
   ]
 }

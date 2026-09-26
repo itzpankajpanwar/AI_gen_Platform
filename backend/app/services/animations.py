@@ -734,6 +734,20 @@ TEXT_REQUIRED = {
 # Presets whose text is a headline rather than a caption read better in serif.
 SERIF_PRESETS = {"doc_title_card", "vox_stat", "type_quote", "type_counter"}
 
+# Pure-motion presets that ignore ctx.text entirely. Because they draw nothing
+# of their own on top, a `text_type` overlay can ride on top of them without
+# colliding — the one place two animation layers combine on a single scene:
+# a camera-energy move plus a caption or lower third.
+CAMERA_ONLY = {
+    "cine_handheld",
+    "cine_dolly",
+    "cine_punch",
+    "beat_flash",
+    "beat_pulse",
+    "beat_shake",
+    "reveal_fade_up",
+}
+
 
 def build_animation(name: str, ctx: AnimationContext) -> tuple[list[str], list[str]]:
     preset = ANIMATIONS.get(name)

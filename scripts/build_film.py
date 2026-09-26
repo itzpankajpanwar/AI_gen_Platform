@@ -40,13 +40,13 @@ HOUSE_STYLE = (
 #: distant ones cut.
 SHOTS: dict[str, tuple[str, str, int]] = {
     "xwide":    ("extreme wide shot, vast scale, human figures small in frame", "pan_right", 0),
-    "wide":     ("wide shot", "zoom_in:1.06", 1),
-    "overhead": ("high overhead shot looking straight down", "zoom_out:1.14", 1),
-    "medium":   ("medium shot", "zoom_in:1.10", 2),
-    "over":     ("over-the-shoulder shot from behind", "zoom_in:1.08", 2),
-    "low":      ("low angle shot from ground level", "zoom_in:1.08", 2),
-    "close":    ("close shot", "zoom_out:1.12", 3),
-    "detail":   ("extreme close-up, detail shot", "zoom_in:1.18", 4),
+    "wide":     ("wide shot", "zoom_in:1.11", 1),
+    "overhead": ("high overhead shot looking straight down", "zoom_out:1.18", 1),
+    "medium":   ("medium shot", "zoom_in:1.15", 2),
+    "over":     ("over-the-shoulder shot from behind", "zoom_in:1.12", 2),
+    "low":      ("low angle shot from ground level", "zoom_in:1.13", 2),
+    "close":    ("close shot", "zoom_out:1.16", 3),
+    "detail":   ("extreme close-up, detail shot", "zoom_in:1.22", 4),
 }
 
 #: A wide frame that drifts right then right again reads as a mistake, so the

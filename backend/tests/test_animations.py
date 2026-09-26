@@ -134,7 +134,20 @@ def test_animation_warns_that_it_overrides_other_effects(settings):
     result = parse_csv(build('0,4,"scene",,zoom_in,,,,center_title,"x",,,vox_stat\n'), settings)
 
     assert result.valid, result.errors
-    assert any("overrides ken_burns and text_type" in w for w in result.warnings)
+    # vox_stat owns both the camera and its own text, so both are flagged.
+    assert any("overrides ken_burns" in w for w in result.warnings)
+    assert any("text_type is ignored" in w for w in result.warnings)
+
+
+def test_camera_only_preset_layers_text_without_warning(settings):
+    # A camera-only preset draws no text of its own, so a text_type overlay
+    # rides on top of it — the one case two animation layers combine on a scene.
+    result = parse_csv(build('0,4,"scene",,,,,,subtitle,"अस्पृश्यता",,,cine_handheld\n'), settings)
+
+    assert result.valid, result.errors
+    assert not any("text_type is ignored" in w for w in result.warnings)
+    assert result.prompts[0].animation == "cine_handheld"
+    assert result.prompts[0].text_type == "subtitle"
 
 
 # ------------------------------------------------------------- render wiring

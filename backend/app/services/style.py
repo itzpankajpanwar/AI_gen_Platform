@@ -8,7 +8,7 @@ validator and the renderer can never disagree about what a value means.
 from dataclasses import dataclass
 
 DEFAULT_TRANSITION_SECONDS = 0.5
-DEFAULT_ZOOM = 1.08
+DEFAULT_ZOOM = 1.14
 MAX_ZOOM = 2.0
 
 # ------------------------------------------------------------------ transitions
