@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, random } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, interpolate, random } from "remotion";
 import { eased, interpolateEased } from "../lib/anim";
 import { SANS } from "../lib/useFont";
 
@@ -162,3 +162,26 @@ export const Phone: React.FC<{ x: number; y: number; s?: number; children?: Reac
     {children}
   </g>
 );
+
+
+/** A photographic background (dimmed, slow Ken Burns) with the space look as
+ *  fallback. Motion graphics and captions render on top, so the dim is heavy
+ *  enough to keep white text readable over any image. */
+export const Backdrop: React.FC<{ bg?: string; danger?: number }> = ({ bg, danger = 0 }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  if (!bg) return <SpaceBackdrop danger={danger} />;
+  const t = eased(frame, 0, durationInFrames, "power1.inOut");
+  const scale = 1.06 + 0.08 * t;
+  return (
+    <AbsoluteFill style={{ backgroundColor: C.bg0, overflow: "hidden" }}>
+      <Img src={staticFile(bg)} style={{ width: "100%", height: "100%", objectFit: "cover",
+            transform: `scale(${scale})`, transformOrigin: "center" }} />
+      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(5,7,15,0.5) 0%, rgba(5,7,15,0.72) 55%, rgba(5,7,15,0.9) 100%)" }} />
+      {danger > 0 ? (
+        <AbsoluteFill style={{ background: `radial-gradient(80% 60% at 50% 42%, rgba(255,60,45,${0.3 * danger}), transparent 70%)` }} />
+      ) : null}
+      <AbsoluteFill style={{ boxShadow: "inset 0 0 300px rgba(0,0,0,0.8)" }} />
+    </AbsoluteFill>
+  );
+};

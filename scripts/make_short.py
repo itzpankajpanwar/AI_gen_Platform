@@ -14,7 +14,7 @@ Scenes available: keyword (emoji), list (items), hook, globe, vehicle, where,
 clock, beam, statement (default). Params are scene-specific (emoji, items, die,
 kind, reveal, mark, fail).
 """
-import argparse, json, re, shutil, subprocess, sys
+import argparse, hashlib, json, re, shutil, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,6 +36,53 @@ def silence_boundaries(path: Path) -> list[float]:
     for m in re.finditer(r"silence_end:\s*([0-9.]+)", out.stderr):
         ends.append(float(m.group(1)))
     return sorted(set(ends))
+
+def generate_backgrounds(lines: list[dict], aspect: str) -> None:
+    """Generate one photographic background per line that has a `bg` prompt.
+
+    Uses the project's OpenAI backend. Cached by prompt+size hash under
+    remotion/public/short_bg, so re-runs never re-spend on the same image.
+    Each line gets params.bg set to the staticFile path; failures fall back to
+    the animated space backdrop (no crash, no cost).
+    """
+    if not any(l.get("bg") for l in lines):
+        return
+    sys.path.insert(0, str(ROOT / "backend"))
+    from app.config import get_settings
+    from app.generators.api_backends import OpenAIImageGenerator
+    from app.generators.base import GenerationError, GenerationRequest
+    s = get_settings()
+    if not s.openai_api_key:
+        print("  (no OPENAI_API_KEY — skipping backgrounds, using animated space)")
+        return
+    w, h = (1920, 1080) if aspect == "16x9" else (1080, 1920)
+    size = "1536x1024" if aspect == "16x9" else "1024x1536"
+    gen = OpenAIImageGenerator(api_key=s.openai_api_key, model=s.openai_image_model,
+                               size=size, quality=s.openai_image_quality,
+                               base_url=s.openai_base_url, timeout_seconds=s.api_timeout_seconds)
+    cache = PUBLIC / "short_bg"; cache.mkdir(parents=True, exist_ok=True)
+    STYLE = ("cinematic, photorealistic, dark moody atmosphere, deep shadows, "
+             "muted teal and amber tones, subtle depth, no text, no watermark")
+    for i, line in enumerate(lines):
+        prompt = line.get("bg")
+        if not prompt:
+            continue
+        full = f"{prompt}, {STYLE}"
+        key = hashlib.md5(f"{full}|{size}".encode()).hexdigest()[:16]
+        rel = f"short_bg/{key}.png"
+        path = cache / f"{key}.png"
+        if not path.is_file():
+            try:
+                gen.generate(GenerationRequest(prompt=full, output_path=path, width=w, height=h,
+                             steps=1, seed=0, image_format="png"))
+                print(f"  [bg {i+1}] generated  {prompt[:44]}")
+            except GenerationError as e:
+                print(f"  [bg {i+1}] FAILED ({str(e)[:60]}) — using space backdrop")
+                continue
+        else:
+            print(f"  [bg {i+1}] cached     {prompt[:44]}")
+        line.setdefault("params", {})["bg"] = rel
+
 
 def char_weight(text: str) -> int:
     return max(1, len(re.sub(r"\s+", "", text)))
@@ -84,6 +131,7 @@ def main() -> None:
     lines = spec["lines"]
     duration = probe_duration(audio)
     boundaries = silence_boundaries(audio)
+    generate_backgrounds(lines, args.aspect)
     segs = build_segments(lines, duration, boundaries)
 
     # stage the audio where staticFile() can reach it

@@ -2,7 +2,7 @@ import React from "react";
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { eased, interpolateEased } from "../lib/anim";
 import { SANS, SERIF } from "../lib/useFont";
-import { Beam, C, Clock, Globe, Phone, Pin, PingRings, Satellite, SpaceBackdrop } from "./visuals";
+import { Backdrop, Beam, C, Clock, Globe, Phone, Pin, PingRings, Satellite, SpaceBackdrop } from "./visuals";
 
 /* --------------------------------------------------------------- data model */
 export interface ShortSeg { start: number; text: string; emphasis?: string; scene: string; params?: Record<string, string>; }
@@ -53,20 +53,21 @@ const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 /* ------------------------------------------------------ reusable scene library */
-const Statement: React.FC = () => {
+const Statement: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const { cx, cy } = useStage();
-  return <AbsoluteFill><SpaceBackdrop /><Svg><PingRings cx={cx} cy={cy} colour={C.accent} max={220} /></Svg></AbsoluteFill>;
+  return <AbsoluteFill><Backdrop bg={P(params, "bg")} /><Svg><PingRings cx={cx} cy={cy} colour={C.accent} max={220} /></Svg></AbsoluteFill>;
 };
 
 const Keyword: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const frame = useCurrentFrame();
   const { cx, cy, H } = useStage();
+  const bg = P(params, "bg");
   const emoji = P(params, "emoji", "✨");
   const pop = eased(frame, 2, 16, "back.out(1.8)");
   const danger = P(params, "danger") === "1" ? eased(frame, 26, 20) : 0;
   return (
     <AbsoluteFill>
-      <SpaceBackdrop danger={danger * 0.6} />
+      <Backdrop bg={bg} danger={danger * 0.6} />
       <Svg>{danger < 0.5 ? <PingRings cx={cx} cy={cy} colour={C.cyan} max={H * 0.09} /> : null}</Svg>
       <div style={{ position: "absolute", left: 0, right: 0, top: cy - H * 0.08, textAlign: "center" }}>
         <span style={{ fontSize: H * 0.16, display: "inline-block", transform: `scale(${pop})`, filter: `grayscale(${danger})` }}>{emoji}</span>
@@ -79,12 +80,13 @@ const Keyword: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
 const ListScene: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const frame = useCurrentFrame();
   const { H } = useStage();
+  const bg = P(params, "bg");
   const items = P(params, "items", "🏦 Banking,📡 Telecom,🖥️ Systems,💳 Payments,🌐 Networks,⚙️ Grid")
     .split(",").map((s) => s.trim()).filter(Boolean).slice(0, 6);
   const fail = P(params, "fail") === "1";
   return (
     <AbsoluteFill>
-      <SpaceBackdrop danger={fail ? eased(frame, 34, 22) * 0.6 : 0} />
+      <Backdrop bg={bg} danger={fail ? eased(frame, 34, 22) * 0.6 : 0} />
       <div style={{ position: "absolute", left: 0, right: 0, top: H * 0.12, height: H * 0.52, display: "grid",
                     gridTemplateColumns: "repeat(3,1fr)", alignContent: "center", justifyItems: "center", rowGap: H * 0.03 }}>
         {items.map((it, i) => {
@@ -108,11 +110,12 @@ const ListScene: React.FC<{ params?: Record<string, string> }> = ({ params }) =>
 const Hook: React.FC<{ params?: Record<string, string>; accent: string }> = ({ params, accent }) => {
   const frame = useCurrentFrame();
   const { height } = useVideoConfig();
+  const bg = P(params, "bg");
   const z = interpolateEased(frame, 0, 24, 0.6, 1, "power3.out");
   const pulse = 1 + Math.sin(frame * 0.4) * 0.04;
   return (
     <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", paddingBottom: height * 0.08 }}>
-      <SpaceBackdrop />
+      <Backdrop bg={bg} />
       <div style={{ transform: `scale(${z * pulse})`, fontSize: height * 0.30, fontWeight: 900, color: accent,
                     textShadow: `0 0 60px ${accent}99` }}>{P(params, "mark", "?")}</div>
     </AbsoluteFill>
@@ -122,12 +125,13 @@ const Hook: React.FC<{ params?: Record<string, string>; accent: string }> = ({ p
 const GlobeScene: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const frame = useCurrentFrame();
   const { cx, cy, H } = useStage();
+  const bg = P(params, "bg");
   const die = P(params, "die") === "1" ? eased(frame, 34, 20, "power2.in") : 0;
   const alive = 1 - die;
   const r = H * 0.10, orbit = H * 0.17;
   return (
     <AbsoluteFill>
-      <SpaceBackdrop danger={die} />
+      <Backdrop bg={bg} danger={die} />
       <Svg>
         {alive > 0.4 ? <PingRings cx={cx} cy={cy} colour={C.accent} max={H * 0.15} /> : null}
         <Globe cx={cx} cy={cy} r={r} spin={0.4} alive={alive} />
@@ -144,6 +148,7 @@ const GlobeScene: React.FC<{ params?: Record<string, string> }> = ({ params }) =
 const Vehicle: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const frame = useCurrentFrame();
   const { W, H, cy } = useStage();
+  const bg = P(params, "bg");
   const kind = P(params, "kind", "plane");
   const glyph = P(params, "emoji", kind === "ship" ? "🚢" : "✈️");
   const travel = interpolateEased(frame, 0, 60, 0.1, 0.9, "power1.inOut");
@@ -151,7 +156,7 @@ const Vehicle: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const x = W * travel, y = cy + wob;
   return (
     <AbsoluteFill>
-      <SpaceBackdrop danger={eased(frame, 24, 18) * 0.5} />
+      <Backdrop bg={bg} danger={eased(frame, 24, 18) * 0.5} />
       <Svg>
         <path d={`M ${W * 0.08} ${cy} Q ${W * 0.5} ${cy - 40}, ${W * 0.92} ${cy}`} fill="none"
               stroke={C.cyan} strokeOpacity={0.35} strokeWidth={3} strokeDasharray="4 12" />
@@ -163,13 +168,14 @@ const Vehicle: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   );
 };
 
-const Where: React.FC<{ accent: string }> = ({ accent }) => {
+const Where: React.FC<{ accent: string; params?: Record<string, string> }> = ({ accent, params }) => {
   const frame = useCurrentFrame();
   const { cx, cy, H } = useStage();
+  const bg = P(params, "bg");
   const drop = interpolateEased(frame, 4, 24, -H * 0.16, 0, "bounce.out");
   return (
     <AbsoluteFill>
-      <SpaceBackdrop />
+      <Backdrop bg={bg} />
       <Svg>
         <Globe cx={cx} cy={cy + H * 0.03} r={H * 0.09} spin={0.3} alive={1} />
         <PingRings cx={cx} cy={cy - H * 0.06 + drop} startFrame={22} colour={accent} max={H * 0.1} />
@@ -181,12 +187,13 @@ const Where: React.FC<{ accent: string }> = ({ accent }) => {
   );
 };
 
-const ClockScene: React.FC = () => {
+const ClockScene: React.FC<{ params?: Record<string, string> }> = ({ params }) => {
   const frame = useCurrentFrame();
   const { cx, cy, H } = useStage();
+  const bg = P(params, "bg");
   const grow = eased(frame, 2, 16, "back.out(1.4)");
   return (
-    <AbsoluteFill><SpaceBackdrop />
+    <AbsoluteFill><Backdrop bg={bg} />
       <Svg><g transform={`translate(${cx},${cy}) scale(${grow}) translate(${-cx},${-cy})`}>
         <Clock cx={cx} cy={cy} r={H * 0.10} startFrame={0} />
       </g></Svg>
@@ -197,11 +204,12 @@ const ClockScene: React.FC = () => {
 const BeamScene: React.FC<{ params?: Record<string, string>; accent: string }> = ({ params, accent }) => {
   const frame = useCurrentFrame();
   const { W, H } = useStage();
+  const bg = P(params, "bg");
   const reveal = P(params, "reveal") === "1";
   const satX = W / 2, satY = H * 0.20, phX = W / 2, phY = H * 0.62;
   return (
     <AbsoluteFill>
-      <SpaceBackdrop />
+      <Backdrop bg={bg} />
       <Svg>
         {[0, 1].map((i) => {
           const rad = (i * 180 + frame * 1.1) * Math.PI / 180;
@@ -226,10 +234,10 @@ function renderScene(scene: string, params: Record<string, string> | undefined, 
     case "hook": return <Hook params={params} accent={accent} />;
     case "globe": return <GlobeScene params={params} />;
     case "vehicle": return <Vehicle params={params} />;
-    case "where": return <Where accent={accent} />;
-    case "clock": return <ClockScene />;
+    case "where": return <Where accent={accent} params={params} />;
+    case "clock": return <ClockScene params={params} />;
     case "beam": return <BeamScene params={params} accent={accent} />;
-    default: return <Statement />;
+    default: return <Statement params={params} />;
   }
 }
 
