@@ -40,6 +40,7 @@ OPTIONAL_HEADERS = {
     "animation_params",
     "image",
     "ambience",
+    "source",
 }
 #: Every word the `animation` column accepts — ffmpeg presets and Remotion
 #: templates live in one namespace so an author never picks an engine.
@@ -64,6 +65,7 @@ class ParsedPrompt:
     grain: int | None = None
     music: str | None = None
     ambience: str | None = None
+    source: str | None = None
     text_type: str | None = None
     text_value: str | None = None
     narration: str | None = None
@@ -215,7 +217,8 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
             continue
         raw_animation = _cell(row, headers, "animation")
         anim_name = raw_animation.split(":")[0].strip().lower()
-        needs_image = _parse_image_flag(_cell(row, headers, "image"), anim_name)
+        has_source = bool(_cell(row, headers, "source"))
+        needs_image = False if has_source else _parse_image_flag(_cell(row, headers, "image"), anim_name)
         if needs_image and not raw_prompt:
             result.errors.append(
                 f"Row {row_number}: prompt is empty (set image=no for a self-drawing "
@@ -334,6 +337,7 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                 grain=grain,
                 music=_cell(row, headers, "music") or None,
                 ambience=_cell(row, headers, "ambience") or None,
+                source=_cell(row, headers, "source") or None,
                 text_type=text_type,
                 text_value=text_value or None,
                 narration=_cell(row, headers, "narration") or None,

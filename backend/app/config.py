@@ -124,10 +124,12 @@ class Settings(BaseSettings):
     music_dir: Path = Path("assets/music")
     ambience_dir: Path = Path("assets/ambience")
     sfx_dir: Path = Path("assets/sfx")
+    archival_dir: Path = Path("assets/archival")
     music_level_db: float = -22.0
     master_lufs: float = -15.0  # final mix loudness target (YouTube ~-14 to -15)
     ambience_level_db: float = -30.0  # atmosphere sits well under score + voice
     sfx_level_db: float = -13.0       # graphic accents (whoosh/tick/thud)
+    voice_master: bool = True         # EQ + compression on narration
     music_duck_db: float = -12.0
 
     estimated_image_mb: float = 5.0

@@ -27,6 +27,7 @@ class Prompt(Base):
     grain: Mapped[int | None] = mapped_column(Integer, nullable=True)
     music: Mapped[str | None] = mapped_column(String(255), nullable=True)
     ambience: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    source: Mapped[str | None] = mapped_column(String(255), nullable=True)
     text_type: Mapped[str | None] = mapped_column(String(32), nullable=True)
     text_value: Mapped[str | None] = mapped_column(Text, nullable=True)
     narration: Mapped[str | None] = mapped_column(Text, nullable=True)

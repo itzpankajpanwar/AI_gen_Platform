@@ -171,10 +171,17 @@ def build_audio_track(
     sfx_labels: list[str] = []
     stream = 0
 
+    voice_master = (
+        "highpass=f=80,"                                   # cut rumble
+        "equalizer=f=200:t=q:w=1.2:g=-2,"                  # tame boxiness
+        "equalizer=f=3200:t=q:w=1.6:g=2.5,"                # presence for clarity
+        "acompressor=threshold=-18dB:ratio=3:attack=5:release=120,"  # even out level
+        "alimiter=limit=0.95"
+    ) if settings.voice_master else "anull"
     for item, path in narration:
         inputs += ["-i", str(path)]
         delay_ms = int(item.start_seconds * 1000)
-        steps.append(f"[{stream}:a]aresample=44100,adelay={delay_ms}|{delay_ms}[v{stream}]")
+        steps.append(f"[{stream}:a]aresample=44100,{voice_master},adelay={delay_ms}|{delay_ms}[v{stream}]")
         voice_labels.append(f"[v{stream}]")
         stream += 1
 

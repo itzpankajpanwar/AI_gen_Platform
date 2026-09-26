@@ -19,6 +19,7 @@ from app.services.audio_service import (
     synthesize_narration,
 )
 from app.services.storage import JobStorage
+from app.services.subtitles import write_srt
 from app.services.video_service import VideoBuildError, build_job_video
 from app.tts import build_tts
 
@@ -40,6 +41,11 @@ def recover_interrupted_jobs() -> int:
                 .values(status=ItemStatus.PENDING)
             )
         return len(jobs)
+
+
+class _Ok:
+    seed = 0
+    duration_ms = 0
 
 
 class GenerationWorker(threading.Thread):
@@ -148,9 +154,27 @@ class GenerationWorker(threading.Thread):
                 cancelled = True
                 break
 
-            item_id, order_index, prompt_text, animation, needs_image = claimed
+            item_id, order_index, prompt_text, animation, needs_image, source = claimed
             output_path = self.storage.image_path(job_id, order_index, config["image_format"])
             seed = config["seed"] if config["seed"] is not None else random.randint(0, MAX_SEED)
+
+            # Real archival material: copy a local file (resized) instead of
+            # generating — no API call. Public-domain photos, scans, etc.
+            if source:
+                src_path = Path(source).expanduser()
+                if not src_path.is_absolute():
+                    src_path = self.settings.asset_path(self.settings.archival_dir) / source
+                try:
+                    from app.generators.base import GenerationRequest as _GR
+                    from app.generators.imageio import save_image_bytes as _save
+                    _save(src_path.read_bytes(), _GR(prompt="", output_path=output_path,
+                          width=config["width"], height=config["height"], steps=1, seed=0,
+                          image_format=config["image_format"]))
+                    self._record_item(job_id, item_id, _Ok(), None, output_path)
+                except Exception as exc:
+                    logger.warning("%s archival source '%s' failed: %s", job_id, source, exc)
+                    self._record_item(job_id, item_id, None, f"archival source failed: {exc}", output_path)
+                continue
 
             # A self-drawing animation (e.g. geo_map) uses no still, so skip the
             # generator: no API call, no spend. Mark it done and move on.
@@ -213,7 +237,7 @@ class GenerationWorker(threading.Thread):
             job.current_index = item.order_index
             job.current_prompt = item.prompt_text
             return (item.id, item.order_index, item.prompt_text,
-                    (item.animation or ""), bool(item.needs_image))
+                    (item.animation or ""), bool(item.needs_image), (item.source or ""))
 
     def _record_skipped(self, job_id: str, item_id: int) -> None:
         """Mark an image-less scene done without generating anything."""
@@ -297,6 +321,10 @@ class GenerationWorker(threading.Thread):
             job.cancel_requested = False
 
             if video is not None:
+                try:
+                    write_srt(items, video.path.with_suffix(".srt"))
+                except Exception:  # subtitles are a nicety, never fail the job for them
+                    logger.warning("%s subtitle generation failed", job_id)
                 try:
                     track = build_audio_track(
                         job_id, items, self.storage, self.settings, video.duration_seconds
