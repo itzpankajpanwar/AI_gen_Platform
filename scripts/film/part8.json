@@ -90,5 +90,6 @@
       "p": "An empty seat in a tiered assembly chamber with a stack of papers on its desk, the surrounding seats occupied, shafts of light from above",
       "shot": "medium"
     }
-  ]
+  ],
+  "ambience": "room.mp3"
 }

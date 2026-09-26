@@ -85,5 +85,6 @@
       "p": "An open doorway at the end of a dark corridor with strong daylight beyond, a single figure walking towards it seen from behind",
       "shot": "medium"
     }
-  ]
+  ],
+  "ambience": "room.mp3"
 }

@@ -55,7 +55,7 @@ PAN_ALTERNATES = {"pan_right": "pan_left", "pan_left": "pan_right"}
 
 COLUMNS = [
     "start", "end", "prompt", "transition", "ken_burns", "grade", "grain",
-    "music", "text_type", "text_value", "narration", "voice",
+    "music", "ambience", "text_type", "text_value", "narration", "voice",
     "animation", "animation_params",
 ]
 
@@ -121,6 +121,7 @@ def build_chapter(data: dict) -> tuple[list[dict], float]:
             "grade": scene.get("grade", data.get("grade", "")),
             "grain": scene.get("grain", data.get("grain", "")),
             "music": scene.get("music", data.get("music", "") if index == 0 else ""),
+            "ambience": scene.get("ambience", data.get("ambience", "") if index == 0 else ""),
             "text_type": scene.get("text_type", ""),
             "text_value": scene.get("text", ""),
             "narration": narration,

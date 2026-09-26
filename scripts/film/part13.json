@@ -67,5 +67,6 @@
       "p": "A single lamp flame burning steady against total darkness, nothing else in frame",
       "shot": "detail"
     }
-  ]
+  ],
+  "ambience": "room.mp3"
 }

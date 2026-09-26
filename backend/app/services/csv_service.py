@@ -39,6 +39,7 @@ OPTIONAL_HEADERS = {
     "animation",
     "animation_params",
     "image",
+    "ambience",
 }
 #: Every word the `animation` column accepts — ffmpeg presets and Remotion
 #: templates live in one namespace so an author never picks an engine.
@@ -62,6 +63,7 @@ class ParsedPrompt:
     grade: str | None = None
     grain: int | None = None
     music: str | None = None
+    ambience: str | None = None
     text_type: str | None = None
     text_value: str | None = None
     narration: str | None = None
@@ -331,6 +333,7 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                 grade=grade,
                 grain=grain,
                 music=_cell(row, headers, "music") or None,
+                ambience=_cell(row, headers, "ambience") or None,
                 text_type=text_type,
                 text_value=text_value or None,
                 narration=_cell(row, headers, "narration") or None,
@@ -405,18 +408,18 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
     return result
 
 
-def resolve_music_beds(prompts: list[ParsedPrompt]) -> list[tuple[str, float, float]]:
-    """Expand the sparse `music` column into (track, start, end) spans.
+def _resolve_beds(prompts: list[ParsedPrompt], attr: str) -> list[tuple[str, float, float]]:
+    """Expand a sparse bed column (music/ambience) into (track, start, end) spans.
 
     A value starts a bed that plays on until another value appears; the keyword
-    `stop` ends it. So authors set music once per chapter, not once per scene.
+    `stop` ends it. So authors set it once per chapter, not once per scene.
     """
     beds: list[tuple[str, float, float]] = []
     current: str | None = None
     started_at = 0.0
 
     for item in prompts:
-        cue = (item.music or "").strip()
+        cue = (getattr(item, attr) or "").strip()
         if not cue:
             continue
         if current is not None:
@@ -430,3 +433,11 @@ def resolve_music_beds(prompts: list[ParsedPrompt]) -> list[tuple[str, float, fl
     if current is not None and prompts:
         beds.append((current, started_at, prompts[-1].end_seconds))
     return [bed for bed in beds if bed[2] > bed[1]]
+
+
+def resolve_music_beds(prompts: list[ParsedPrompt]) -> list[tuple[str, float, float]]:
+    return _resolve_beds(prompts, "music")
+
+
+def resolve_ambience_beds(prompts: list[ParsedPrompt]) -> list[tuple[str, float, float]]:
+    return _resolve_beds(prompts, "ambience")

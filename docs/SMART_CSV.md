@@ -31,6 +31,10 @@ start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,nar
 | 13 | `animation` | no | **Animation preset or template — overrides `ken_burns` and `text_type`** |
 | 14 | `animation_params` | no | `key=value;key=value` inputs for a Remotion template |
 | 15 | `image` | no | `yes`/`no` — whether to generate an image (an API call) for this row |
+| 16 | `ambience` | no | Ambience bed (wind/room/crowd/ocean) — starts here, continues until changed |
+
+
+**Sound design:** set `music` to a score bed (somber/warm/tension/hopeful) and `ambience` to an atmosphere bed (wind/room/crowd/ocean); both are sparse cues that play until changed. SFX (whoosh on transitions, thud on map pins, shimmer on reveals, ticks on timelines) are placed **automatically** from each scene's transition and animation — no column needed. Generate the royalty-free libraries with `python scripts/make_music.py` and `python scripts/make_sfx.py`.
 
 **`image` flag:** self-drawing animations like `geo_map` need no still, so they default to `image=no` (no API call, and `prompt` may be left empty). Every other row defaults to `image=yes`. Set it explicitly to force either way — e.g. `image=no` on a normal row to reuse nothing but the animation, or `image=yes` on `geo_map` to generate a photographic backdrop under the map.
 

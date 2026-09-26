@@ -145,5 +145,6 @@
       "shot": "xwide",
       "anim": "cine_dolly"
     }
-  ]
+  ],
+  "ambience": "wind.mp3"
 }

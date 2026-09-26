@@ -92,5 +92,6 @@
       "p": "A small clay lamp being lit by unseen hands in a dark room, the flame taking hold, everything else black",
       "shot": "detail"
     }
-  ]
+  ],
+  "ambience": "room.mp3"
 }

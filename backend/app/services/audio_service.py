@@ -7,7 +7,7 @@ from pathlib import Path
 
 from app.config import Settings
 from app.models import JobItem
-from app.services.csv_service import resolve_music_beds
+from app.services.csv_service import resolve_ambience_beds, resolve_music_beds
 from app.services.storage import JobStorage
 from app.tts import SpeechRequest, SynthesisError, TextToSpeech
 
@@ -16,6 +16,52 @@ logger = logging.getLogger(__name__)
 
 class AudioBuildError(RuntimeError):
     pass
+
+
+def _sfx_events(ordered: list[JobItem], sfx_dir: Path) -> list[tuple[Path, float]]:
+    """One-shot sound effects placed on animation/transition events.
+
+    Derived from each scene — no authoring needed. A transition gets a whoosh;
+    the animation gets an accent that matches it (a thud when a map pin lands, a
+    shimmer on a reveal, ticks along a timeline, a low sub on a beat hit).
+    """
+    def sfx(name: str) -> Path | None:
+        p = sfx_dir / f"{name}.wav"
+        return p if p.is_file() else None
+
+    events: list[tuple[Path, float]] = []
+    for i, item in enumerate(ordered):
+        start = item.start_seconds
+        end = item.end_seconds
+        trans = (item.transition or "").lower()
+        anim = (item.animation or "").lower()
+
+        # a swish as one scene gives way to the next (skip hard cuts)
+        if i > 0 and trans and trans != "cut":
+            if w := sfx("whoosh"):
+                events.append((w, max(start - 0.12, 0.0)))
+
+        if not anim:
+            continue
+        if anim.startswith(("map", "geo_map", "where")):
+            if t := sfx("thud"):
+                events.append((t, start + 0.35))
+        elif anim.startswith(("timeline", "doc_timeline")):
+            if t := sfx("tick"):
+                for k in range(3):
+                    at = start + 0.5 + k * max((end - start - 0.8) / 3, 0.4)
+                    if at < end:
+                        events.append((t, at))
+        elif "counter" in anim or "stat" in anim:
+            if sh := sfx("shimmer"):
+                events.append((sh, start + max((end - start) * 0.7, 0.4)))
+        elif anim.startswith(("title", "chapter", "cutout", "reveal", "quote")):
+            if sh := sfx("shimmer"):
+                events.append((sh, start + 0.15))
+        elif anim.startswith("beat"):
+            if sb := sfx("sub"):
+                events.append((sb, start + 0.1))
+    return events
 
 
 def synthesize_narration(
@@ -103,61 +149,104 @@ def build_audio_track(
             continue
         beds.append((path, start, end))
 
-    if not narration and not beds:
+    ambience_dir = settings.asset_path(settings.ambience_dir)
+    ambiences = []
+    for track, start, end in resolve_ambience_beds(ordered):
+        path = ambience_dir / track
+        if not path.is_file():
+            logger.warning("%s ambience '%s' not found in %s — skipping", job_id, track, ambience_dir)
+            continue
+        ambiences.append((path, start, end))
+
+    sfx = _sfx_events(ordered, settings.asset_path(settings.sfx_dir))
+
+    if not narration and not beds and not ambiences and not sfx:
         return None
 
     inputs: list[str] = []
     steps: list[str] = []
     voice_labels: list[str] = []
     music_labels: list[str] = []
+    ambience_labels: list[str] = []
+    sfx_labels: list[str] = []
+    stream = 0
 
-    for index, (item, path) in enumerate(narration):
+    for item, path in narration:
         inputs += ["-i", str(path)]
         delay_ms = int(item.start_seconds * 1000)
-        steps.append(f"[{index}:a]aresample=44100,adelay={delay_ms}|{delay_ms}[v{index}]")
-        voice_labels.append(f"[v{index}]")
+        steps.append(f"[{stream}:a]aresample=44100,adelay={delay_ms}|{delay_ms}[v{stream}]")
+        voice_labels.append(f"[v{stream}]")
+        stream += 1
 
-    offset = len(narration)
-    for index, (path, start, end) in enumerate(beds):
-        stream = offset + index
-        inputs += ["-stream_loop", "-1", "-i", str(path)]
+    for path, start, end in beds:
         delay_ms = int(start * 1000)
         span = max(end - start, 0.1)
+        inputs += ["-stream_loop", "-1", "-i", str(path)]
         steps.append(
             f"[{stream}:a]aresample=44100,atrim=0:{span:.3f},asetpts=PTS-STARTPTS,"
             f"afade=t=in:st=0:d=1.5,afade=t=out:st={max(span - 2.0, 0):.3f}:d=2.0,"
-            f"volume={settings.music_level_db}dB,adelay={delay_ms}|{delay_ms}[m{index}]"
+            f"volume={settings.music_level_db}dB,adelay={delay_ms}|{delay_ms}[s{stream}]"
         )
-        music_labels.append(f"[m{index}]")
+        music_labels.append(f"[s{stream}]")
+        stream += 1
+
+    for path, start, end in ambiences:
+        delay_ms = int(start * 1000)
+        span = max(end - start, 0.1)
+        inputs += ["-stream_loop", "-1", "-i", str(path)]
+        steps.append(
+            f"[{stream}:a]aresample=44100,atrim=0:{span:.3f},asetpts=PTS-STARTPTS,"
+            f"afade=t=in:st=0:d=2.0,afade=t=out:st={max(span - 2.0, 0):.3f}:d=2.0,"
+            f"volume={settings.ambience_level_db}dB,adelay={delay_ms}|{delay_ms}[s{stream}]"
+        )
+        ambience_labels.append(f"[s{stream}]")
+        stream += 1
+
+    for path, at in sfx:
+        delay_ms = int(max(at, 0.0) * 1000)
+        inputs += ["-i", str(path)]
+        steps.append(
+            f"[{stream}:a]aresample=44100,volume={settings.sfx_level_db}dB,"
+            f"adelay={delay_ms}|{delay_ms}[s{stream}]"
+        )
+        sfx_labels.append(f"[s{stream}]")
+        stream += 1
 
     if voice_labels:
-        steps.append(
-            f"{''.join(voice_labels)}amix=inputs={len(voice_labels)}:"
-            f"duration=longest:normalize=0[voice]"
-        )
+        steps.append(f"{''.join(voice_labels)}amix=inputs={len(voice_labels)}:duration=longest:normalize=0[voice]")
     if music_labels:
-        steps.append(
-            f"{''.join(music_labels)}amix=inputs={len(music_labels)}:"
-            f"duration=longest:normalize=0[bed]"
-        )
+        steps.append(f"{''.join(music_labels)}amix=inputs={len(music_labels)}:duration=longest:normalize=0[music]")
+    if ambience_labels:
+        steps.append(f"{''.join(ambience_labels)}amix=inputs={len(ambience_labels)}:duration=longest:normalize=0[amb]")
+    if sfx_labels:
+        steps.append(f"{''.join(sfx_labels)}amix=inputs={len(sfx_labels)}:duration=longest:normalize=0[sfx]")
 
+    # Duck the score under the voice; ambience stays steady (atmosphere persists);
+    # SFX ride on top as transient accents. Then mix everything and master.
+    layers: list[str] = []
     if voice_labels and music_labels:
-        # Duck the bed whenever the narrator speaks, so the score never fights
-        # the voice — it swells in the gaps and sits under the words.
         steps.append("[voice]asplit=2[voice_out][key]")
-        steps.append(
-            f"[bed][key]sidechaincompress=threshold=0.05:ratio=8:attack=20:release=400[bed_duck]"
-        )
-        steps.append("[voice_out][bed_duck]amix=inputs=2:duration=longest:normalize=0[mix]")
-        final = "[mix]"
+        steps.append("[music][key]sidechaincompress=threshold=0.05:ratio=8:attack=20:release=400[music_duck]")
+        layers += ["[voice_out]", "[music_duck]"]
     elif voice_labels:
-        final = "[voice]"
-    else:
-        final = "[bed]"
+        layers.append("[voice]")
+    elif music_labels:
+        layers.append("[music]")
+    if ambience_labels:
+        layers.append("[amb]")
+    if sfx_labels:
+        layers.append("[sfx]")
 
-    # Master to a consistent broadcast loudness so every chapter sits at the same
-    # level and matches what YouTube expects (~-15 LUFS), with a little headroom.
-    steps.append(f"{final}loudnorm=I={settings.master_lufs}:TP=-1.5:LRA=11,aresample=44100[master]")
+    if len(layers) > 1:
+        steps.append(f"{''.join(layers)}amix=inputs={len(layers)}:duration=longest:normalize=0[mix]")
+        final = "[mix]"
+    else:
+        final = layers[0]
+
+    # Master to a consistent broadcast loudness (YouTube ~-15 LUFS) with headroom.
+    # apad fills to the full length so a short layer (e.g. only SFX) never lets
+    # the later -shortest mux trim the picture.
+    steps.append(f"{final}loudnorm=I={settings.master_lufs}:TP=-1.5:LRA=11,aresample=44100,apad[master]")
 
     target = storage.job_dir(job_id) / "audio_mix.m4a"
     command = [

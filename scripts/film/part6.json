@@ -107,5 +107,6 @@
       "p": "A vast dark landscape before dawn with one distant lamp burning in a doorway, sky beginning to lighten at the edge",
       "shot": "xwide"
     }
-  ]
+  ],
+  "ambience": "room.mp3"
 }
