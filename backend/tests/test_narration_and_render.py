@@ -108,7 +108,7 @@ def test_scene_filter_includes_requested_effects(settings):
     assert "colorchannelmixer" in chain  # sepia
     assert "noise=alls=20" in chain
     assert "drawtext" in chain
-    assert "NotoSansDevanagari" in chain
+    assert "Mukta" in chain  # font is now Mukta
 
 
 def test_scene_filter_without_effects_is_a_plain_fit(settings):

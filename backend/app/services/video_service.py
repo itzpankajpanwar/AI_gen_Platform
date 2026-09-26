@@ -15,7 +15,7 @@ from app.services.animations import (
     AnimationContext,
     build_animation,
 )
-from app.services.remotion import TEMPLATES as REMOTION_TEMPLATES, parse_params
+from app.services.remotion import CUTOUT_TEMPLATES, TEMPLATES as REMOTION_TEMPLATES, parse_params
 from app.services.remotion_service import RemotionError, RemotionSession, SceneRender
 from app.services.storage import JobStorage
 from app.services.style import (
@@ -360,6 +360,7 @@ class _ScenePlan:
     clip: Path
     seconds: float
     template: str | None
+    background: Path | None = None
 
 
 def _staged_name(order_index: int) -> str:
@@ -381,6 +382,11 @@ def _open_remotion_session(
         if not plan.template:
             continue
         session.stage_image(plan.source, _staged_name(plan.item.order_index))
+
+        # A cutout beat composites its (transparent) still over the previous
+        # beat's image, so that background has to be staged as well.
+        if plan.template in CUTOUT_TEMPLATES and plan.background is not None and plan.background.is_file():
+            session.stage_image(plan.background, f"bg_{plan.item.order_index:04d}.png")
 
         # split_compare shows a second image: another scene's number, or a
         # filename already sitting in this job's image folder.
@@ -409,11 +415,20 @@ def _scene_render(plan: "_ScenePlan", images_dir: Path, width: int, height: int)
             **params,
             "second": f"scenes/{_staged_name(int(reference)) if reference.isdigit() else reference}",
         }
+    own = f"scenes/{_staged_name(plan.item.order_index)}"
+    overlay = ""
+    image = own
+    if plan.template in CUTOUT_TEMPLATES:
+        # The beat's own still is a transparent cutout; it rides over the
+        # previous beat's image, passed in as the background.
+        overlay = own
+        image = f"scenes/bg_{plan.item.order_index:04d}.png" if plan.background is not None else own
     return SceneRender(
         template=plan.template or "",
         text=plan.item.text_value or "",
         params=params,
-        image=f"scenes/{_staged_name(plan.item.order_index)}",
+        image=image,
+        overlay=overlay,
         seconds=plan.seconds,
         width=width,
         height=height,
@@ -480,6 +495,7 @@ def build_job_video(
                 clip=work_dir / f"{item.order_index:04d}.mp4",
                 seconds=scene_seconds + pad_in + pad_out,
                 template=remotion_template_for(item),
+                background=plans[-1].source if plans else source,
             )
         )
 

@@ -40,11 +40,13 @@ class SceneRender:
     width: int
     height: int
     label: str  # for error messages: which scene failed
+    overlay: str = ""
 
     def props(self, settings: Settings) -> dict:
         frames = max(int(round(self.seconds * settings.video_fps)), 1)
         return {
             "image": self.image,
+            "overlay": self.overlay,
             "template": self.template,
             "text": self.text,
             "params": self.params,

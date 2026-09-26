@@ -192,3 +192,45 @@ export const ChapterCard: React.FC<SceneProps> = ({ image, text, accent, params 
     </AbsoluteFill>
   );
 };
+
+/**
+ * A single emphatic word or short phrase, centred, scaling in behind a drawn
+ * accent rule. Replaces the ffmpeg vox_title beats — same intent, but the text
+ * is shaped by the browser so Devanagari conjuncts and matras are correct.
+ *
+ * params: size=0.11
+ */
+export const WordMark: React.FC<SceneProps> = ({ image, text, accent, params }) => {
+  const frame = useCurrentFrame();
+  const { height, durationInFrames } = useVideoConfig();
+  const pop = eased(frame, 3, 16, "back.out(1.6)");
+  const opacity = fadeInOut(frame, durationInFrames, 6, 10);
+
+  return (
+    <AbsoluteFill>
+      <Backdrop image={image} zoomFrom={1.04} zoomTo={1.12} curve="power1.inOut" dim={0.5} />
+      <Vignette strength={0.5} />
+      <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+        <div
+          style={{
+            ...baseText,
+            fontFamily: `${SERIF}, sans-serif`,
+            fontSize: height * num(params, "size", 0.11),
+            fontWeight: 700,
+            textAlign: "center",
+            transform: `scale(${0.9 + pop * 0.1})`,
+            opacity,
+            textShadow: "0 3px 26px rgba(0,0,0,0.85)",
+            padding: "0 6%",
+          }}
+        >
+          {text}
+        </div>
+        <div style={{ marginTop: height * 0.03, opacity }}>
+          <DrawRule width={height * 0.14 * pop} height={4} colour={accent} startFrame={6} origin="center" />
+        </div>
+      </AbsoluteFill>
+      <Grain />
+    </AbsoluteFill>
+  );
+};

@@ -19,6 +19,7 @@ class GenerationRequest:
     model: str = ""
     image_format: str = "png"
     batch_size: int = 1
+    transparent: bool = False
     extra: dict[str, Any] = field(default_factory=dict)
 
 

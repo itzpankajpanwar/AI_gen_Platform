@@ -7,6 +7,8 @@ export interface SceneProps {
   text: string;
   /** Free-form template inputs from the CSV's animation_params column. */
   params: Record<string, string>;
+  /** Optional transparent cutout (PNG with alpha) composited over the image. */
+  overlay?: string;
   /** Accent colour for graphics, so a whole film can be re-themed at once. */
   accent: string;
   /** Ink colour used on light surfaces. */
@@ -17,6 +19,7 @@ export const DEFAULT_SCENE: SceneProps = {
   image: "",
   template: "ken_burns_pro",
   text: "",
+  overlay: "",
   params: {},
   accent: "#E0A65C",
   ink: "#0B0D10",

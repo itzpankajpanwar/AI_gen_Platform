@@ -62,12 +62,28 @@ TEMPLATES: dict[str, TemplateSpec] = {
         },
         required_params=("second",),
     ),
+    "cutout_reveal": TemplateSpec(
+        name="cutout_reveal",
+        summary="A transparent-background subject rising in over the previous image.",
+        text="optional",
+        params={
+            "from": "entrance direction: left | right | bottom (default bottom)",
+            "scale": "cutout height as a fraction of the frame (default 0.94)",
+            "dim": "0-1 darkening of the background (default 0.25)",
+        },
+    ),
     # --------------------------------------------------------------- text
     "title_reveal": TemplateSpec(
         name="title_reveal",
         summary="Masked headline wiping up behind a sweeping accent rule.",
         text="required",
         params={"size": "headline height as a fraction of the frame (default 0.085)"},
+    ),
+    "word_mark": TemplateSpec(
+        name="word_mark",
+        summary="A single emphatic word or short phrase scaling in over a drawn accent rule.",
+        text="required",
+        params={"size": "word height as a fraction of the frame (default 0.11)"},
     ),
     "lower_third": TemplateSpec(
         name="lower_third",
@@ -142,6 +158,9 @@ TEMPLATES: dict[str, TemplateSpec] = {
 
 TEMPLATE_NAMES = frozenset(TEMPLATES)
 TEXT_REQUIRED = frozenset(name for name, spec in TEMPLATES.items() if spec.text == "required")
+#: Templates whose own image is a transparent cutout composited over the
+#: previous scene's still (which is passed in as the background).
+CUTOUT_TEMPLATES = frozenset({"cutout_reveal"})
 
 
 def parse_params(raw: str) -> dict[str, str]:

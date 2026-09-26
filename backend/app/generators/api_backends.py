@@ -266,6 +266,10 @@ class OpenAIImageGenerator(ImageGenerator):
             "size": self.size,
             "quality": self.quality,
         }
+        if request.transparent:
+            # A cutout: subject on a transparent ground, returned as PNG with alpha.
+            payload["background"] = "transparent"
+            payload["output_format"] = "png"
         try:
             response = self._client.post(
                 f"{self.base_url}/images/generations",

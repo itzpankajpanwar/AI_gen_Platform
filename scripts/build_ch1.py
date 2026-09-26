@@ -74,21 +74,21 @@ SEGMENTS = [
   ("A dignified Mahar family in simple clothing standing at their doorway, warm light, photorealistic faces, honest documentary portrait, medium shot", kb("zoom_in:1.14"))],
  # 10
  [("A queue of villagers at a stone well in hot light, one small group kept markedly further back, medium shot",
-   {**cine("cine_handheld"), "text":("subtitle","अस्पृश्यता")}),
+   {**rem("word_mark"), "text":("center_title","अस्पृश्यता")}),
   ("Close portrait of a weary Indian woman waiting in the heat, dust on her shawl, photorealistic", kb("zoom_in:1.15")),
   ("An empty brass pot on cracked dry ground beside the well, harsh light, close shot", kb("zoom_out:1.16"))],
  # 11
  [("A brass pot overflowing at a village well, water breaking the surface, hands and forearms only, extreme close-up",
-   {**rem("vox_title"), "text":("center_title","पानी")})],
+   {**rem("word_mark"), "text":("center_title","पानी")})],
  # 12
  [("A child's slate and chalk on a bare earth floor set apart from a row of wooden school desks, extreme close-up",
-   {**rem("vox_title"), "text":("center_title","स्कूल")})],
+   {**rem("word_mark"), "text":("center_title","स्कूल")})],
  # 13
  [("A temple doorway from ground level at the foot of worn stone steps, dark interior beyond, low angle",
-   {**rem("vox_title"), "text":("center_title","मंदिर")})],
+   {**rem("word_mark"), "text":("center_title","मंदिर")})],
  # 14
  [("A village square at midday, a stone platform under a peepal tree, people seated in separate clusters, wide shot",
-   {**rem("vox_title"), "text":("center_title","सार्वजनिक स्थान")})],
+   {**rem("word_mark"), "text":("center_title","सार्वजनिक स्थान")})],
  # 15
  [("Two men in 1890s Indian dress passing on a narrow lane, both turning their bodies away, deliberate distance, medium shot", cine("cine_handheld")),
   ("Close on one man averting his gaze as he passes, tense, photorealistic", kb("zoom_in:1.14"))],
@@ -109,7 +109,7 @@ SEGMENTS = [
   ("A father in his 30s teaching a child by lamplight at night, the father's face warm and focused, the child seen from behind, photorealistic adult, medium shot", cine("cine_dolly")),
   ("Close on the exercise book and a slate side by side under the lamp, chalk dust, extreme close-up", kb("zoom_in:1.2")),
   ("A father and a child studying together seen from behind over their shoulders, warm pool of lamplight in the dark room, medium shot",
-   {**rem("vox_title"), "text":("center_title","शिक्षा")})],
+   {**rem("word_mark"), "text":("center_title","शिक्षा")})],
  # 20
  [("A spare one-room home at night lit by a single oil lamp, a family's few belongings against the wall, wide shot", kb("zoom_in:1.12")),
   ("A child reading on the floor by the oil lamp seen from behind, absorbed, face not visible, close shot", cine("cine_punch")),
@@ -124,7 +124,7 @@ SEGMENTS = [
   ("Close on a child's hands gripping chalk and pressing letters onto a slate, warm light, no face in frame", kb("zoom_in:1.15")),
   ("A small stack of well-worn books growing on a low table, morning light, close shot", kb("zoom_out:1.16")),
   ("A child holding a slate up seen from behind toward the light, quiet pride, face not visible, medium shot",
-   {**rem("vox_title"), "text":("center_title","स्वाभिमान")})],
+   {**rem("word_mark"), "text":("center_title","स्वाभिमान")})],
  # 23
  [("A small boy walking away down a long dusty road at dawn toward a distant town, vast sky, extreme wide shot", cine("cine_dolly")),
   ("The empty road stretching to the horizon, warm dust and light, wide shot", kb("pan_right")),

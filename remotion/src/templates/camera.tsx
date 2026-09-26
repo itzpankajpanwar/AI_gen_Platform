@@ -137,3 +137,58 @@ export const SplitCompare: React.FC<SceneProps> = ({ image, accent, params }) =>
     </AbsoluteFill>
   );
 };
+
+/**
+ * A transparent-background subject (a person, an object) sliding and rising in
+ * over a held background image — the "cutout over the previous image" move.
+ *
+ * The background (`image`) drifts slowly; the cutout (`overlay`, a PNG with
+ * alpha) eases up from below with a soft shadow, so a figure appears to step
+ * into the scene rather than cut to it.
+ *
+ * params: from=left|right|bottom (default bottom)  scale=0.92
+ */
+export const CutoutReveal: React.FC<SceneProps> = ({ image, overlay, text, accent, params }) => {
+  const frame = useCurrentFrame();
+  const { width, height, durationInFrames } = useVideoConfig();
+
+  const from = str(params, "from", "bottom");
+  const scale = num(params, "scale", 0.94);
+  const enter = eased(frame, 2, 22, "power3.out");
+  const settle = eased(frame, 20, durationInFrames - 20, "sine.inOut");
+
+  const offset = (1 - enter);
+  const tx = from === "left" ? -offset * width * 0.4 : from === "right" ? offset * width * 0.4 : 0;
+  const ty = from === "bottom" ? offset * height * 0.5 : 0;
+  const drift = (settle - 0.5) * 14; // gentle life once settled
+
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#000" }}>
+      <Backdrop image={image} zoomFrom={1.0} zoomTo={1.06} curve="power1.inOut" dim={num(params, "dim", 0.25)} />
+      <Vignette strength={num(params, "vignette", 0.4)} />
+      {overlay ? (
+        <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center" }}>
+          <Img
+            src={staticFile(overlay)}
+            style={{
+              height: `${scale * 100}%`,
+              objectFit: "contain",
+              transform: `translate(${tx + drift}px, ${ty}px) scale(${0.98 + enter * 0.02})`,
+              opacity: eased(frame, 0, 14),
+              filter: "drop-shadow(0 24px 40px rgba(0,0,0,0.6))",
+            }}
+          />
+        </AbsoluteFill>
+      ) : null}
+      {text ? (
+        <AbsoluteFill style={{ justifyContent: "flex-end", padding: height * 0.07 }}>
+          <div style={{ ...baseText, fontSize: height * 0.036, opacity: eased(frame, 16, 16),
+                        textShadow: "0 2px 18px rgba(0,0,0,0.85)" }}>
+            {text}
+          </div>
+        </AbsoluteFill>
+      ) : null}
+      <Grain />
+    </AbsoluteFill>
+  );
+};

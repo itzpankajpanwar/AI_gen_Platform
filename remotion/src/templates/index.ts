@@ -2,8 +2,8 @@ import type React from "react";
 
 import type { SceneProps } from "../lib/types";
 import { BarChart, HighlightCallout, MapRoute, StatCounter, Timeline } from "./graphics";
-import { KenBurnsPro, SplitCompare } from "./camera";
-import { ChapterCard, LowerThird, Quote, TitleReveal } from "./text";
+import { CutoutReveal, KenBurnsPro, SplitCompare } from "./camera";
+import { ChapterCard, LowerThird, Quote, TitleReveal, WordMark } from "./text";
 
 /**
  * The template registry.
@@ -15,7 +15,9 @@ import { ChapterCard, LowerThird, Quote, TitleReveal } from "./text";
 export const TEMPLATES: Record<string, React.FC<SceneProps>> = {
   ken_burns_pro: KenBurnsPro,
   split_compare: SplitCompare,
+  cutout_reveal: CutoutReveal,
   title_reveal: TitleReveal,
+  word_mark: WordMark,
   lower_third: LowerThird,
   quote: Quote,
   chapter_card: ChapterCard,

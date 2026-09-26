@@ -9,6 +9,7 @@ from sqlalchemy import select
 from app.config import Settings, get_settings
 from app.db import session_scope
 from app.generators import GenerationRequest, ImageGenerator, build_generator
+from app.services.remotion import CUTOUT_TEMPLATES
 from app.models import ItemStatus, Job, JobItem, JobStatus, Project, utcnow
 from app.services.audio_service import (
     AudioBuildError,
@@ -147,7 +148,7 @@ class GenerationWorker(threading.Thread):
                 cancelled = True
                 break
 
-            item_id, order_index, prompt_text = claimed
+            item_id, order_index, prompt_text, animation = claimed
             output_path = self.storage.image_path(job_id, order_index, config["image_format"])
             seed = config["seed"] if config["seed"] is not None else random.randint(0, MAX_SEED)
 
@@ -164,6 +165,7 @@ class GenerationWorker(threading.Thread):
                     model=config["model"],
                     image_format=config["image_format"],
                     batch_size=config["batch_size"],
+                    transparent=animation.lower() in CUTOUT_TEMPLATES,
                 )
                 try:
                     result = self.generator.generate(request)
@@ -204,7 +206,7 @@ class GenerationWorker(threading.Thread):
             item.attempts += 1
             job.current_index = item.order_index
             job.current_prompt = item.prompt_text
-            return item.id, item.order_index, item.prompt_text
+            return item.id, item.order_index, item.prompt_text, (item.animation or "")
 
     def _record_item(self, job_id: str, item_id: int, result, error: str | None, output_path) -> None:
         with session_scope() as session:
