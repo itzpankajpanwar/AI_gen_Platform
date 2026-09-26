@@ -123,6 +123,19 @@ TEMPLATES: dict[str, TemplateSpec] = {
         params={"path": "space-separated x,y points in percent, e.g. '12,78 34,62 86,32'"},
         required_params=("path",),
     ),
+    "geo_map": TemplateSpec(
+        name="geo_map",
+        summary="A real map of India (true borders and city coordinates) with an eased "
+                "camera push, dropping pins, drawn routes and optional state highlight.",
+        text="optional",
+        params={
+            "focus": "city to centre on: mhow, bombay, baroda, mahad, nashik, nagpur, delhi, london, newyork",
+            "scale": "final zoom (higher = closer, default 1400)",
+            "pins": "comma-separated cities to drop pins on",
+            "route": "comma-separated cities to draw a route through, in order",
+            "highlight": "a state name to emphasise, e.g. Maharashtra",
+        },
+    ),
     "stat_counter": TemplateSpec(
         name="stat_counter",
         summary="A number counting up inside a ring that fills as it climbs.",

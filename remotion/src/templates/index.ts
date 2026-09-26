@@ -2,6 +2,7 @@ import type React from "react";
 
 import type { SceneProps } from "../lib/types";
 import { BarChart, HighlightCallout, MapRoute, StatCounter, Timeline } from "./graphics";
+import { GeoMap } from "./geomap";
 import { CutoutReveal, KenBurnsPro, SplitCompare } from "./camera";
 import { ChapterCard, LowerThird, Quote, TitleReveal, WordMark } from "./text";
 
@@ -23,6 +24,7 @@ export const TEMPLATES: Record<string, React.FC<SceneProps>> = {
   chapter_card: ChapterCard,
   timeline: Timeline,
   map_route: MapRoute,
+  geo_map: GeoMap,
   stat_counter: StatCounter,
   bar_chart: BarChart,
   highlight_callout: HighlightCallout,
