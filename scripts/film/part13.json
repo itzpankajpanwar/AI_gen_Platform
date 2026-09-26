@@ -1,0 +1,71 @@
+{
+  "chapter": 13,
+  "title": "अंतिम वर्ष",
+  "palette": "intimate lamplight palette, warm pool of light in deep shadow, paper and wool",
+  "grade": "sepia",
+  "grain": "medium",
+  "music": "ch13.mp3",
+  "scenes": [
+    {
+      "n": "1950 के दशक के मध्य तक आंबेडकर का स्वास्थ्य गिर रहा था।",
+      "p": "A study at night lit by one desk lamp, a blanket over the chair back and a walking stick against the desk, papers everywhere",
+      "shot": "medium",
+      "anim": "chapter_card",
+      "params": "chapter=भाग तेरह",
+      "text": "अंतिम वर्ष"
+    },
+    {
+      "n": "लेकिन उनका काम रुका नहीं। वह लिखते रहे। सोचते रहे।",
+      "p": "A hand writing steadily on ruled paper in a pool of lamplight, the rest of the room in deep warm shadow, words not legible",
+      "shot": "close"
+    },
+    {
+      "n": "राजनीतिक और सामाजिक सवालों पर काम करते रहे। उन्होंने अपनी ऊर्जा अपने अंतिम बौद्धिक प्रोजेक्ट में लगाई। The Buddha and His Dhamma.",
+      "p": "Looking straight down at a desk where a thick manuscript lies open beside reference books and a cooling cup of tea",
+      "shot": "overhead",
+      "anim": "lower_third",
+      "params": "sub=अंतिम बौद्धिक कार्य",
+      "text": "The Buddha and His Dhamma"
+    },
+    {
+      "n": "यह पुस्तक उनके लिए सिर्फ धार्मिक ग्रंथ नहीं थी। यह उस बौद्ध दृष्टि की उनकी व्याख्या थी जिसे वह आधुनिक समाज के लिए प्रासंगिक मानते थे।",
+      "p": "A page of a manuscript held down by a brass paperweight, the margin dense with corrections, warm lamplight",
+      "shot": "detail"
+    },
+    {
+      "n": "उनकी जिंदगी में एक दिलचस्प विरोधाभास था। एक तरफ... वह संविधान के निर्माण में केंद्रीय भूमिका निभाने वाले व्यक्ति थे।",
+      "p": "A bound copy of a constitution standing upright on a shelf beside a row of religious texts, warm lamplight, deep shadow",
+      "shot": "medium"
+    },
+    {
+      "n": "दूसरी तरफ... वही व्यक्ति राजनीतिक व्यवस्था से बाहर निकलकर धर्म और समाज के बारे में नए सिरे से सोच रहा था।",
+      "p": "A study with its door standing open onto a dark corridor, the desk lamp the only light in the frame",
+      "shot": "wide"
+    },
+    {
+      "n": "क्यों? क्योंकि आंबेडकर के लिए कानून जरूरी था। लेकिन कानून अकेला पर्याप्त नहीं था।",
+      "p": "A gavel and a clay lamp side by side on a desk, the gavel in shadow and the lamp lit, deep warm blacks",
+      "shot": "close"
+    },
+    {
+      "n": "अगर समाज के मन में समानता का विचार नहीं होगा... तो कानून की सीमा भी होगी।",
+      "p": "A tall bookcase of law reports with one shelf left empty, warm lamplight raking across the spines",
+      "shot": "medium"
+    },
+    {
+      "n": "यही कारण है कि उनकी अंतिम राजनीति फिर से सामाजिक परिवर्तन की ओर लौटती दिखाई देती है।",
+      "p": "A village courtyard at dusk seen through a window frame from inside a lit room, people gathering outside in the blue hour",
+      "shot": "wide"
+    },
+    {
+      "n": "अब सवाल यह नहीं था कि कौन सत्ता में है। सवाल था— मनुष्य एक-दूसरे के साथ कैसे रहेंगे?",
+      "p": "A wide Indian landscape at last light with scattered lamps coming on across it, one road running through, deep warm dusk",
+      "shot": "xwide"
+    },
+    {
+      "n": "और शायद यही वह प्रश्न था जो उनकी पूरी जिंदगी के केंद्र में रहा।",
+      "p": "A single lamp flame burning steady against total darkness, nothing else in frame",
+      "shot": "detail"
+    }
+  ]
+}

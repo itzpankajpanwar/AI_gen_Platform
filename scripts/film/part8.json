@@ -1,0 +1,94 @@
+{
+  "chapter": 8,
+  "title": "युद्ध और सत्ता",
+  "palette": "desaturated wartime palette, khaki, blackout blue, map-table green",
+  "grade": "cold",
+  "grain": "medium",
+  "music": "ch08.mp3",
+  "scenes": [
+    {
+      "n": "1939। द्वितीय विश्व युद्ध शुरू हुआ। दुनिया बदल रही थी।",
+      "p": "A blacked-out European city skyline in 1939 under searchlights, barrage balloons above the rooftops, cold night",
+      "shot": "xwide",
+      "anim": "chapter_card",
+      "params": "chapter=१९३९",
+      "text": "युद्ध और सत्ता"
+    },
+    {
+      "n": "यूरोप युद्ध में जा चुका था। भारत ब्रिटिश साम्राज्य का हिस्सा था।",
+      "p": "A wartime map room with a large table map of Europe, weighted markers and rulers, officers seen from behind, green shaded lamps",
+      "shot": "wide"
+    },
+    {
+      "n": "और आंबेडकर की राजनीति भी एक नए चरण में प्रवेश कर रही थी। उन्होंने कई मुद्दों पर कांग्रेस की राजनीति से अलग रुख अपनाया।",
+      "p": "A colonial secretariat corridor in Delhi, rows of identical doors, a peon carrying a file seen from behind, flat institutional light",
+      "shot": "medium"
+    },
+    {
+      "n": "उनकी चिंता यह थी कि स्वतंत्र भारत की राजनीतिक व्यवस्था में वंचित वर्गों की वास्तविक भागीदारी कैसे सुनिश्चित होगी।",
+      "p": "Looking straight down at a table where a memorandum, a fountain pen and a pair of spectacles lie beside a folded map of India",
+      "shot": "overhead"
+    },
+    {
+      "n": "1942 में उन्हें Viceroy's Executive Council में Labour Member बनाया गया।",
+      "p": "A viceregal council chamber in 1942, a long table with high-backed chairs beneath a coffered ceiling, papers set at each place, nobody seated",
+      "shot": "wide",
+      "anim": "lower_third",
+      "params": "sub=Labour Member, १९४२",
+      "text": "Viceroy's Executive Council"
+    },
+    {
+      "n": "अब वह उस औपनिवेशिक सरकार के सबसे महत्वपूर्ण प्रशासनिक संस्थानों में से एक का हिस्सा थे, जिसका विरोध भारत का राष्ट्रीय आंदोलन कर रहा था।",
+      "p": "A heavy ministerial door with a brass plate scrubbed blank, a bearer standing beside it seen from behind, polished stone floor",
+      "shot": "medium"
+    },
+    {
+      "n": "यह स्थिति सरल नहीं थी। लेकिन आंबेडकर की राजनीति को सिर्फ 'ब्रिटिश समर्थक' या 'ब्रिटिश विरोधी' जैसे दो शब्दों में समझना इतिहास को बहुत सरल बना देना होगा।",
+      "p": "Two telephones and a bell push on an official desk, one receiver off its cradle, hard side light",
+      "shot": "close"
+    },
+    {
+      "n": "वह सत्ता के भीतर रहकर भी श्रमिकों और सामाजिक रूप से वंचित वर्गों से जुड़े मुद्दों पर काम कर रहे थे।",
+      "p": "A labour welfare office with a queue of workers waiting on benches along the wall, a clerk at a desk, all faces turned away",
+      "shot": "wide"
+    },
+    {
+      "n": "उनका ध्यान श्रम नीति, काम की परिस्थितियों, कल्याण और प्रशासनिक सुधारों पर था।",
+      "p": "Looking straight down at a desk of draft labour regulations, a rubber stamp, an ink pad and a stack of files tied with red tape",
+      "shot": "overhead"
+    },
+    {
+      "n": "युद्ध समाप्त हुआ। भारत में सत्ता हस्तांतरण की चर्चा तेज हुई।",
+      "p": "A troopship dock at the end of the war, crowds and crates, cranes above, grey overcast light",
+      "shot": "xwide"
+    },
+    {
+      "n": "अब सवाल था— स्वतंत्र भारत कैसा होगा? कौन शासन करेगा? अल्पसंख्यकों और वंचित समुदायों की सुरक्षा कैसे होगी?",
+      "p": "A packed public meeting in 1946 India, a raised platform and a microphone, the crowd seen from behind the platform, white caps everywhere",
+      "shot": "wide"
+    },
+    {
+      "n": "और सबसे महत्वपूर्ण... क्या नया भारत केवल राजनीतिक रूप से स्वतंत्र होगा? या सामाजिक लोकतंत्र की ओर भी बढ़ेगा?",
+      "p": "A printing press turning out newspapers at speed, a worker lifting a bundle, motion blur, warm lamp against grey daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "1946 में Constituent Assembly की प्रक्रिया शुरू हुई।",
+      "p": "The circular chamber of the Constituent Assembly in 1946, tiered desks under a high dome, members taking their places, dust in the shafts of light",
+      "shot": "wide",
+      "anim": "lower_third",
+      "params": "sub=प्रक्रिया आरंभ, १९४६",
+      "text": "संविधान सभा"
+    },
+    {
+      "n": "आंबेडकर को शुरुआत में बंगाल से संविधान सभा में स्थान मिला। लेकिन विभाजन के बाद वह सीट चली गई। फिर उन्हें बॉम्बे प्रांत से संविधान सभा में भेजा गया।",
+      "p": "A nameplate slot on a chamber desk, empty, brass and polished wood, shallow focus",
+      "shot": "detail"
+    },
+    {
+      "n": "अब वह उस संस्था के भीतर थे जो भारत के भविष्य की राजनीतिक संरचना तय करने वाली थी। और जल्द ही... उन्हें एक ऐसी जिम्मेदारी मिलने वाली थी जिसने इतिहास में उनका नाम हमेशा के लिए दर्ज कर दिया।",
+      "p": "An empty seat in a tiered assembly chamber with a stack of papers on its desk, the surrounding seats occupied, shafts of light from above",
+      "shot": "medium"
+    }
+  ]
+}

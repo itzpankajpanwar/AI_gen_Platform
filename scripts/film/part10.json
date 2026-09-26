@@ -1,0 +1,141 @@
+{
+  "chapter": 10,
+  "title": "संविधान",
+  "palette": "warm chamber palette, polished teak, brass lamps, long window light",
+  "grade": "warm",
+  "grain": "light",
+  "music": "ch10.mp3",
+  "scenes": [
+    {
+      "n": "संविधान लिखना केवल अनुच्छेद लिखना नहीं था। यह तय करना था कि राज्य और नागरिक के बीच संबंध क्या होगा।",
+      "p": "A drafting room with a long teak table covered in papers, brass lamps burning along its length, tall windows behind, nobody seated",
+      "shot": "wide",
+      "anim": "chapter_card",
+      "params": "chapter=भाग दस",
+      "text": "संविधान"
+    },
+    {
+      "n": "व्यक्ति के अधिकार क्या होंगे? सरकार की सीमाएं क्या होंगी?",
+      "p": "Looking straight down at a bare desk holding a single sheet of paper, a fountain pen and a pair of spectacles, warm lamplight",
+      "shot": "overhead"
+    },
+    {
+      "n": "किसी नागरिक के साथ भेदभाव होने पर कानून क्या करेगा? और सबसे महत्वपूर्ण— क्या भारत में हर नागरिक कानून की नजर में बराबर होगा?",
+      "p": "A courtroom bench and an empty witness box in an Indian high court, polished teak and brass rails, long window light",
+      "shot": "medium"
+    },
+    {
+      "n": "आंबेडकर की सोच में लोकतंत्र केवल चुनाव नहीं था।",
+      "p": "A rural polling station on election day, a queue stretching out of frame, a wooden ballot box on a table, dust and warm light",
+      "shot": "wide"
+    },
+    {
+      "n": "उनके लिए लोकतंत्र एक सामाजिक जीवन-पद्धति भी था। जिसमें स्वतंत्रता हो। समानता हो। और बंधुत्व हो।",
+      "p": "Three small brass weights of identical size set in a row on dark polished wood, single warm light source",
+      "shot": "detail"
+    },
+    {
+      "n": "यही तीन शब्द उनकी सोच में बार-बार दिखाई देते हैं। Liberty. Equality. Fraternity.",
+      "p": "Three identical clay lamps burning side by side on a teak table in a dark room, their flames steady",
+      "shot": "medium",
+      "anim": "vox_stat",
+      "text": "स्वतंत्रता · समानता · बंधुत्व"
+    },
+    {
+      "n": "अगर स्वतंत्रता है लेकिन समानता नहीं... तो स्वतंत्रता कुछ लोगों के हाथों में विशेषाधिकार बन सकती है।",
+      "p": "A brass balance scale with one pan raised high and the other resting on the table, warm lamplight, deep shadow",
+      "shot": "close"
+    },
+    {
+      "n": "अगर समानता है लेकिन स्वतंत्रता नहीं... तो व्यक्ति की स्वतंत्रता समाप्त हो सकती है।",
+      "p": "A brass balance scale locked level but clamped in a vice, warm lamplight, deep shadow",
+      "shot": "close"
+    },
+    {
+      "n": "और अगर दोनों हैं लेकिन बंधुत्व नहीं... तो समाज में विश्वास और एकता कमजोर हो सकती है।",
+      "p": "Two chairs set facing each other at a distance across a wide teak floor, an unbridged gap of polished wood between them",
+      "shot": "medium"
+    },
+    {
+      "n": "इसलिए आंबेडकर के लिए लोकतंत्र केवल राजनीतिक व्यवस्था नहीं था। यह सामाजिक संबंधों का भी प्रश्न था।",
+      "p": "A village meeting at dusk, people of different households seated together in one circle, lanterns being lit, warm light",
+      "shot": "wide"
+    },
+    {
+      "n": "4 नवंबर 1948 को संविधान सभा में बोलते हुए उन्होंने 'constitutional morality' की आवश्यकता पर जोर दिया।",
+      "p": "A speaker's lectern in a full assembly chamber lit by a single overhead shaft, members at tiered desks turned towards it",
+      "shot": "wide",
+      "anim": "lower_third",
+      "params": "sub=४ नवंबर १९४८",
+      "text": "Constitutional Morality"
+    },
+    {
+      "n": "अर्थात... संविधान सिर्फ कागज पर मौजूद होना पर्याप्त नहीं। उसे चलाने वालों में संवैधानिक मूल्यों के प्रति सम्मान भी होना चाहिए।",
+      "p": "A thick bound document lying closed on a desk beside a pair of empty spectacles, warm lamplight, deep shadow around",
+      "shot": "detail"
+    },
+    {
+      "n": "25 नवंबर 1949 को संविधान सभा में उनका अंतिम महत्वपूर्ण भाषण आया। भारत अगले ही वर्ष गणतंत्र बनने वाला था।",
+      "p": "The Constituent Assembly chamber on its last working day, members standing at their desks, papers gathered, light from the dome",
+      "shot": "wide",
+      "anim": "lower_third",
+      "params": "sub=अंतिम भाषण",
+      "text": "२५ नवंबर १९४९"
+    },
+    {
+      "n": "लेकिन आंबेडकर उत्सव के बीच एक चेतावनी दे रहे थे।",
+      "p": "A celebration in an assembly lobby, garlands and clasped hands, everyone seen from behind, bright daylight through tall doors",
+      "shot": "medium"
+    },
+    {
+      "n": "उन्होंने कहा कि भारत राजनीतिक रूप से समानता की ओर बढ़ रहा है, लेकिन सामाजिक और आर्थिक जीवन में असमानता बनी हुई है।",
+      "p": "Looking straight down at two maps of the same country laid side by side, one marked evenly and one marked in uneven patches",
+      "shot": "overhead"
+    },
+    {
+      "n": "एक व्यक्ति... एक वोट। एक वोट... एक मूल्य। लेकिन समाज में?",
+      "p": "Two identical ballot slips side by side on a table, one lying flat and one held down under a heavy brass weight, hard side light",
+      "shot": "detail",
+      "anim": "vox_stat",
+      "text": "एक व्यक्ति, एक वोट"
+    },
+    {
+      "n": "हर व्यक्ति का मूल्य बराबर नहीं माना जा रहा था। यही उनका सबसे बड़ा विरोधाभास था।",
+      "p": "A row of people standing shoulder to shoulder against a plain wall, all seen from behind, the floor beneath them stepped at different heights",
+      "shot": "medium"
+    },
+    {
+      "n": "भारत राजनीतिक लोकतंत्र में प्रवेश कर रहा था। लेकिन सामाजिक लोकतंत्र अभी अधूरा था।",
+      "p": "A grand staircase in a government building, the lower steps crowded and the upper steps empty, hard shaft of light from above",
+      "shot": "wide"
+    },
+    {
+      "n": "और आंबेडकर जानते थे— अगर सामाजिक और आर्थिक असमानता बहुत लंबे समय तक बनी रही... तो राजनीतिक लोकतंत्र भी खतरे में पड़ सकता है।",
+      "p": "A hairline crack running through a polished stone floor, brass lamp light raking across it, deep shadow",
+      "shot": "close"
+    },
+    {
+      "n": "यह चेतावनी 1949 में दी गई थी। लेकिन इसकी चिंता आज भी समझी जा सकती है।",
+      "p": "A stone foundation inscription panel left deliberately blank, weathered edges, raking afternoon light",
+      "shot": "medium"
+    },
+    {
+      "n": "26 नवंबर 1949 को संविधान अपनाया गया। और 26 जनवरी 1950 को भारत एक गणराज्य बना।",
+      "p": "A vast parade ground on Republic Day 1950, crowds along the avenue, flags without emblems, cold bright January light",
+      "shot": "xwide",
+      "anim": "lower_third",
+      "params": "sub=भारत गणराज्य",
+      "text": "२६ जनवरी १९५०"
+    },
+    {
+      "n": "आंबेडकर की जिंदगी का एक सबसे बड़ा अध्याय पूरा हुआ। लेकिन... उनका संघर्ष खत्म नहीं हुआ।",
+      "p": "An office at the end of a long working day, papers squared into a single stack, chair pushed back, low evening light",
+      "shot": "medium"
+    },
+    {
+      "n": "क्योंकि अब उन्हें एक ऐसे मुद्दे का सामना करना था जो भारतीय परिवार, विवाह, संपत्ति और महिलाओं के अधिकारों से सीधे जुड़ा था। Hindu Code Bill.",
+      "p": "A fresh unbound sheaf of draft legislation set down on an empty desk, a hand withdrawing, cold morning light",
+      "shot": "close"
+    }
+  ]
+}

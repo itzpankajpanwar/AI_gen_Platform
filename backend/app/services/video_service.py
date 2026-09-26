@@ -271,21 +271,42 @@ def _concat_with_transitions(
     settings: Settings,
     binary: str,
     names: list[str],
+    total_seconds: float,
 ) -> None:
-    """Chain xfade so each blend straddles its boundary and total length is preserved."""
+    """Chain xfade so each blend straddles its boundary and total length is preserved.
+
+    Chained xfade is deceptively fragile: an xfade's output lasts exactly
+    ``offset + duration_of_second_input``, and the next xfade needs its left
+    input to last ``offset + blend`` — which is that same value. That boundary
+    equality means a sub-frame rounding difference can leave the left input a
+    hair too short, and xfade then silently drops the incoming clip and every
+    clip after it. With many one-frame blends (hard cuts) over short scenes the
+    drift compounds and the film collapses to a few seconds.
+
+    The fix is headroom: ``tpad`` freezes a short tail onto every clip inside
+    the graph, so the left input always outlasts what the blend needs while the
+    offsets still ride the true (untailed) timeline. The tail is only ever
+    covered by the next clip or trimmed off the end, so it never shows. A final
+    ``-t`` trims the accumulated tails back to the exact timeline length.
+    """
+    tail = max(4.0 / settings.video_fps, 0.25)  # a few frames of frozen headroom
     inputs: list[str] = []
     for clip in clips:
         inputs += ["-i", str(clip)]
 
-    steps: list[str] = []
-    label = "0:v"
+    # Freeze a tail onto each input; xfade works on the padded copies.
+    steps: list[str] = [
+        f"[{index}:v]tpad=stop_mode=clone:stop_duration={tail:.3f}[p{index}]"
+        for index in range(len(clips))
+    ]
+    label = "p0"
     accumulated = durations[0]
     for index in range(1, len(clips)):
         blend = max(blends[index], 0.001)
         out = f"v{index}"
         offset = max(accumulated - blend, 0.0)
         steps.append(
-            f"[{label}][{index}:v]xfade=transition={names[index]}:"
+            f"[{label}][p{index}]xfade=transition={names[index]}:"
             f"duration={blend:.3f}:offset={offset:.3f}[{out}]"
         )
         accumulated += durations[index] - blend
@@ -295,6 +316,7 @@ def _concat_with_transitions(
         binary, "-y", *inputs,
         "-filter_complex", ";".join(steps),
         "-map", f"[{label}]",
+        "-t", f"{total_seconds:.3f}",
         "-r", str(settings.video_fps),
         "-c:v", "libx264", "-preset", settings.video_preset, "-crf", str(settings.video_crf),
         "-pix_fmt", "yuv420p", "-movflags", "+faststart",
@@ -476,8 +498,9 @@ def build_job_video(
         names = [
             TRANSITIONS.get((item.transition or "").lower(), "fade") or "fade" for item in ordered
         ]
+        total_seconds = max((item.end_seconds for item in ordered), default=0.0)
         _concat_with_transitions(
-            clips, clip_durations, blends, temp_path, settings, binary, names
+            clips, clip_durations, blends, temp_path, settings, binary, names, total_seconds
         )
     else:
         _concat_plain(clips, work_dir, temp_path, settings, binary)

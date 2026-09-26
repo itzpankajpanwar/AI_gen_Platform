@@ -1,0 +1,187 @@
+{
+  "chapter": 15,
+  "title": "सवाल",
+  "palette": "contemporary palette, clear modern daylight, colour returning to the film",
+  "grade": "neutral",
+  "grain": "light",
+  "music": "ch15.mp3",
+  "scenes": [
+    {
+      "n": "तो आखिर... डॉ. बी. आर. आंबेडकर कौन थे?",
+      "p": "A plain wooden chair standing alone in an empty room lit by a single tall window, clear modern daylight",
+      "shot": "medium",
+      "anim": "chapter_card",
+      "params": "chapter=भाग पंद्रह",
+      "text": "सवाल"
+    },
+    {
+      "n": "क्या वह केवल भारतीय संविधान के निर्माता थे? नहीं।",
+      "p": "A bound copy of a constitution lying closed on a plain table, clean daylight, nothing else in frame",
+      "shot": "close"
+    },
+    {
+      "n": "क्या वह केवल दलित अधिकारों के नेता थे? नहीं। क्या वह केवल एक राजनेता थे? नहीं।",
+      "p": "A modern Indian public library with long reading tables, a scattering of students at work, clear daylight through tall windows",
+      "shot": "wide"
+    },
+    {
+      "n": "वह इन सबके साथ-साथ एक अर्थशास्त्री थे। एक विधिवेत्ता थे। एक लेखक थे। एक पत्रकार थे। एक समाज चिंतक थे। एक राजनीतिक विचारक थे।",
+      "p": "Looking straight down at six objects laid in a row on a plain table — a law book, an economic ledger, a manuscript, a newspaper, a microphone and a clay lamp",
+      "shot": "overhead",
+      "anim": "vox_lower_bar",
+      "text": "अर्थशास्त्री · विधिवेत्ता · लेखक · पत्रकार · विचारक"
+    },
+    {
+      "n": "और सबसे महत्वपूर्ण... एक ऐसे व्यक्ति थे जो भारतीय समाज से लगातार एक ही मूल सवाल पूछते रहे— क्या हर इंसान की कीमत बराबर है?",
+      "p": "Two identical brass weights on the two pans of a balance, the beam perfectly level, clean bright light",
+      "shot": "medium"
+    },
+    {
+      "n": "उनकी जिंदगी को अगर एक लाइन में समझना हो, तो शायद वह लाइन यह होगी— राजनीतिक स्वतंत्रता तभी अर्थपूर्ण है जब वह सामाजिक स्वतंत्रता की ओर भी ले जाए।",
+      "p": "A wide modern Indian city skyline at sunrise, clear air, the streets below just beginning to fill",
+      "shot": "xwide",
+      "anim": "title_reveal",
+      "params": "size=0.058",
+      "text": "राजनीतिक स्वतंत्रता, सामाजिक स्वतंत्रता"
+    },
+    {
+      "n": "क्योंकि किसी देश का संविधान किसी व्यक्ति को वोट देने का अधिकार दे सकता है।",
+      "p": "A polling booth in a modern Indian school hall, a voting compartment and an inked finger raised, face out of frame",
+      "shot": "medium"
+    },
+    {
+      "n": "लेकिन अगर वही समाज उसे जन्म के कारण नीचा समझता है... तो लोकतंत्र अधूरा है।",
+      "p": "A crowded urban street where one figure stands still while the crowd flows around them, seen from behind, daylight",
+      "shot": "wide"
+    },
+    {
+      "n": "कानून बराबरी दे सकता है। लेकिन अगर समाज बराबरी को स्वीकार नहीं करता... तो संघर्ष जारी रहता है।",
+      "p": "A law book lying open on a table with a closed door visible behind it, clear daylight, text not legible",
+      "shot": "close"
+    },
+    {
+      "n": "आंबेडकर इस विरोधाभास को बहुत स्पष्ट रूप से समझते थे। इसीलिए 25 नवंबर 1949 को संविधान सभा में उन्होंने भारत के भविष्य को लेकर एक गंभीर चेतावनी दी थी।",
+      "p": "A speaker's lectern in a tiered assembly chamber lit by a single shaft from above, the seats empty, dust turning in the light",
+      "shot": "wide",
+      "anim": "lower_third",
+      "params": "sub=संविधान सभा, अंतिम भाषण",
+      "text": "२५ नवंबर १९४९"
+    },
+    {
+      "n": "उन्होंने कहा कि भारत राजनीतिक रूप से समानता के सिद्धांत को स्वीकार करने जा रहा है, लेकिन सामाजिक और आर्थिक जीवन में असमानता मौजूद रहेगी।",
+      "p": "Looking straight down at two maps of the same country, one shaded evenly and one shaded in strongly uneven patches, side by side",
+      "shot": "overhead"
+    },
+    {
+      "n": "और अगर यह विरोधाभास बहुत लंबे समय तक बना रहा... तो लोकतंत्र खतरे में पड़ सकता है।",
+      "p": "A hairline crack running across a polished stone surface, hard clean light raking along it",
+      "shot": "detail"
+    },
+    {
+      "n": "उन्होंने लोकतंत्र को केवल सरकार की व्यवस्था नहीं माना। उनके लिए लोकतंत्र एक सामाजिक संबंध था। जहां— स्वतंत्रता हो। समानता हो। और बंधुत्व हो।",
+      "p": "Three lamps burning together in a row on a plain table in a bright room, their flames steady",
+      "shot": "medium",
+      "anim": "vox_stat",
+      "text": "स्वतंत्रता · समानता · बंधुत्व"
+    },
+    {
+      "n": "और शायद यही वजह है कि आंबेडकर की विरासत सिर्फ संविधान की किताब में नहीं है। वह उन सवालों में है जो आज भी भारत के सामने खड़े हैं।",
+      "p": "A modern Indian classroom full of children at desks, seen from the back of the room, clear daylight through open windows",
+      "shot": "wide"
+    },
+    {
+      "n": "शिक्षा किसे मिलती है? संसाधनों तक किसकी पहुंच है? राजनीतिक प्रतिनिधित्व कैसा है?",
+      "p": "A queue at a public service counter in modern India, people waiting patiently, all seen from behind, flat daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "सामाजिक भेदभाव कितना बचा है? कानून और समाज के बीच कितनी दूरी है? और क्या हर भारतीय वास्तव में दूसरे भारतीय को बराबर मानता है?",
+      "p": "A village water point in modern India with people filling containers together, bright hard daylight, faces turned away",
+      "shot": "wide"
+    },
+    {
+      "n": "इन सवालों के जवाब समय के साथ बदल सकते हैं। लेकिन आंबेडकर का योगदान इन सवालों को भारतीय लोकतंत्र के केंद्र में लाने में था।",
+      "p": "A set of open reference books and a notebook on a student's desk by a window, pencil in hand, clear daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "उन्होंने केवल यह नहीं कहा कि अन्याय है। उन्होंने यह समझने की कोशिश की कि अन्याय पैदा कैसे होता है। कौन-सी सामाजिक संरचनाएं उसे बनाए रखती हैं।",
+      "p": "Looking straight down at a diagram of interlocking wooden blocks partly disassembled on a plain table, even light",
+      "shot": "overhead"
+    },
+    {
+      "n": "कानून उन्हें कैसे बदल सकता है। राजनीतिक प्रतिनिधित्व उस बदलाव में क्या भूमिका निभा सकता है।",
+      "p": "A courtroom doorway and a household doorway photographed side by side in one plain wall, clean daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "और अंततः... क्या एक समाज सिर्फ कानून से बदल सकता है? या उसे अपने विचार भी बदलने होंगे?",
+      "p": "A long straight road through modern Indian countryside with a fork far ahead, clear morning light, one cyclist in the distance",
+      "shot": "wide"
+    },
+    {
+      "n": "शायद इसी वजह से आंबेडकर की कहानी सिर्फ अतीत की कहानी नहीं है। यह एक लगातार चलने वाली बहस है।",
+      "p": "A public debate in a modern Indian hall, a standing microphone and a seated audience seen from behind, daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "भारत किस तरह का समाज बनेगा? किसे बराबरी मिलेगी? किसे प्रतिनिधित्व मिलेगा?",
+      "p": "A dense modern Indian city seen from above at midday, rooftops and lanes running to the horizon, clear air",
+      "shot": "xwide"
+    },
+    {
+      "n": "और लोकतंत्र कागज पर नहीं... बल्कि समाज की रोजमर्रा की जिंदगी में कितना दिखाई देगा?",
+      "p": "An ordinary residential lane in modern India in the early morning, neighbours' doorways opening onto the same street, soft light",
+      "shot": "wide"
+    },
+    {
+      "n": "14 अप्रैल 1891 को महू में जन्मा वह बच्चा... जिसके सामने जन्म से ही एक सामाजिक सीमा खींच दी गई थी...",
+      "p": "A wide dry plain in central India at first light with a single cart track running to the horizon, one distant figure walking",
+      "shot": "wide",
+      "anim": "timeline",
+      "params": "from=1891;to=1956;marks=1891,1907,1913,1923,1927,1936,1947,1950,1956;highlight=1891",
+      "text": "एक जीवन"
+    },
+    {
+      "n": "आखिरकार उसी सीमा को चुनौती देने वाला व्यक्ति बना। उसने शिक्षा को हथियार बनाया। कानून को माध्यम बनाया। राजनीति को मंच बनाया।",
+      "p": "A school desk, a law book and a public platform photographed together in one plain composition, clean even light",
+      "shot": "medium"
+    },
+    {
+      "n": "और संविधान को एक संस्थागत ढांचे में बदलने में अपना महत्वपूर्ण योगदान दिया।",
+      "p": "A bound constitution standing upright between two plain bookends on a shelf, clear daylight",
+      "shot": "close"
+    },
+    {
+      "n": "लेकिन उसकी सबसे बड़ी विरासत शायद कोई एक पद, कोई एक किताब या कोई एक दस्तावेज नहीं है। उसकी सबसे बड़ी विरासत एक सवाल है—",
+      "p": "A single unanswered question mark shape formed by a curl of lamp smoke against a dark ground, soft light",
+      "shot": "detail"
+    },
+    {
+      "n": "क्या लोकतंत्र सिर्फ यह है कि हर व्यक्ति को वोट देने का अधिकार मिले? या लोकतंत्र का असली अर्थ तब होगा... जब हर व्यक्ति को सम्मान के साथ जीने का अधिकार भी मिले?",
+      "p": "Two chairs of exactly equal height set facing each other at a plain table, clean bright daylight, nobody seated",
+      "shot": "medium"
+    },
+    {
+      "n": "यही वह सवाल है जो भीमराव आंबेडकर ने अपने जीवन से पूछा। और यही वह सवाल है जो उनकी मृत्यु के दशकों बाद भी भारत के सामने खड़ा है।",
+      "p": "A crowded modern Indian railway platform at dawn, people of every kind waiting together, soft first light",
+      "shot": "wide"
+    },
+    {
+      "n": "6 दिसंबर 1956 को आंबेडकर का शरीर चला गया। लेकिन उनके सवाल... अब भी जीवित हैं।",
+      "p": "A clay lamp burning steadily at the edge of a dark stone step, soft rain falling around it",
+      "shot": "detail",
+      "anim": "lower_third",
+      "params": "sub=शरीर गया, सवाल बाकी",
+      "text": "६ दिसंबर १९५६"
+    },
+    {
+      "n": "और शायद... किसी भी विचारक की सबसे बड़ी जीत यही होती है— कि उसकी जिंदगी खत्म हो जाए... लेकिन उसके सवाल आने वाली पीढ़ियों को सोचने के लिए मजबूर करते रहें।",
+      "p": "A vast dry plain in central India at sunrise, a single road running to the horizon, the sky opening wide above it",
+      "shot": "xwide",
+      "anim": "title_reveal",
+      "params": "size=0.078",
+      "text": "भीमराव रामजी आंबेडकर"
+    }
+  ]
+}

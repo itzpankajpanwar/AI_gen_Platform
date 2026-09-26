@@ -1,0 +1,111 @@
+{
+  "chapter": 6,
+  "title": "जाति का विनाश",
+  "palette": "high contrast lamplight palette, deep black, ink on paper, single light source",
+  "grade": "noir",
+  "grain": "medium",
+  "music": "ch06.mp3",
+  "scenes": [
+    {
+      "n": "1936। लाहौर।",
+      "p": "Lahore in 1936 seen from a rooftop at dusk, flat roofs and minarets receding into haze, kites in the distance",
+      "shot": "xwide",
+      "anim": "chapter_card",
+      "params": "chapter=१९३६ · लाहौर",
+      "text": "जाति का विनाश"
+    },
+    {
+      "n": "एक सामाजिक सुधार संगठन ने आंबेडकर को भाषण देने के लिए आमंत्रित किया। विषय था— जाति व्यवस्था का सुधार।",
+      "p": "A modest reform society meeting hall with rows of folding chairs being arranged, a table and microphone at the front, volunteers working, faces turned away",
+      "shot": "wide"
+    },
+    {
+      "n": "आंबेडकर ने भाषण लिखा।",
+      "p": "A hand writing rapidly in ink across ruled foolscap by lamplight, sheets already covered stacked beside it, words not legible",
+      "shot": "close"
+    },
+    {
+      "n": "लेकिन जब आयोजकों ने भाषण की सामग्री देखी... उन्हें लगा कि यह उनकी अपेक्षा से कहीं अधिक तीखा है।",
+      "p": "Three men seated around a table reading the same typed manuscript, heads bent, expressions hidden, harsh overhead light",
+      "shot": "medium"
+    },
+    {
+      "n": "आंबेडकर पीछे नहीं हटे। आखिरकार निमंत्रण वापस ले लिया गया।",
+      "p": "A typed letter being folded and placed into an envelope, a hand pressing the flap closed, single hard light source",
+      "shot": "detail"
+    },
+    {
+      "n": "लेकिन भाषण रुका नहीं। आंबेडकर ने उसे प्रकाशित किया। नाम था— Annihilation of Caste. हिंदी में— जाति का विनाश।",
+      "p": "A freshly bound book lying closed on a dark table under one lamp, plain cloth cover with no lettering, deep black around it",
+      "shot": "close",
+      "anim": "title_reveal",
+      "params": "size=0.075",
+      "text": "जाति का विनाश"
+    },
+    {
+      "n": "यह सिर्फ एक भाषण नहीं था। यह जाति व्यवस्था की बुनियाद पर एक वैचारिक हमला था।",
+      "p": "A printing plate under raking light, the type standing in deep relief, ink catching the edges",
+      "shot": "detail"
+    },
+    {
+      "n": "आंबेडकर का प्रश्न था— अगर समाज को वास्तव में बराबरी पर आधारित बनाना है, तो केवल अस्पृश्यता हटाने की बात क्यों? जाति की पूरी व्यवस्था पर सवाल क्यों नहीं?",
+      "p": "A masonry wall being examined by lamplight, one hand resting on a low foundation stone, the courses above disappearing into darkness",
+      "shot": "medium"
+    },
+    {
+      "n": "उनका तर्क था कि अगर जन्म के आधार पर सामाजिक श्रेणियां बनी रहेंगी, तो केवल ऊपरी स्तर पर सुधार असमानता को पूरी तरह खत्म नहीं कर पाएगा।",
+      "p": "A steep flight of stone steps in deep shadow lit by one lamp at the base, the upper steps invisible, nobody on them",
+      "shot": "wide"
+    },
+    {
+      "n": "उन्होंने जाति को केवल एक सामाजिक बुराई के रूप में नहीं देखा। उन्होंने उसे सामाजिक संगठन की एक ऐसी प्रणाली के रूप में देखा जो लोगों को जन्म के आधार पर अलग-अलग दर्जों में बांटती है।",
+      "p": "Looking straight down at a set of nested wooden boxes arranged largest to smallest on dark cloth, single hard light",
+      "shot": "overhead"
+    },
+    {
+      "n": "और इसी कारण उन्होंने केवल छुआछूत खत्म करने के बजाय जाति के विनाश की बात की।",
+      "p": "A chisel and hammer set against the base of a stone block, single light source, dust on the blade",
+      "shot": "detail"
+    },
+    {
+      "n": "इस पुस्तक ने एक और विवाद को जन्म दिया। महात्मा गांधी ने इसके कुछ तर्कों की आलोचना की। आंबेडकर ने जवाब दिया।",
+      "p": "Two newspapers lying open on a table beneath one lamp, columns dense and unreadable, deep shadow beyond",
+      "shot": "medium"
+    },
+    {
+      "n": "यह बहस भारतीय सामाजिक चिंतन के इतिहास में बहुत महत्वपूर्ण बन गई।",
+      "p": "A small lecture room at night with two lecterns facing each other and empty chairs between, one lamp burning",
+      "shot": "wide"
+    },
+    {
+      "n": "लेकिन यहां एक बात ध्यान देने लायक है। आंबेडकर का संघर्ष केवल हिंदू समाज की आलोचना तक सीमित नहीं था। वह यह भी पूछ रहे थे— भारत में लोकतंत्र कैसे काम करेगा?",
+      "p": "A packed public hall seen from behind the last row, every seat taken, a single shaft of light falling on the platform",
+      "shot": "wide"
+    },
+    {
+      "n": "क्योंकि लोकतंत्र केवल वोट डालने का नाम नहीं। अगर समाज में कुछ लोग जन्म से ऊंचे और कुछ जन्म से नीचे माने जाते हैं...",
+      "p": "A line of people waiting at a polling table, identical ballot slips in each hand, hard lamplight, all seen from behind",
+      "shot": "medium"
+    },
+    {
+      "n": "तो एक व्यक्ति का वोट बराबर होने के बावजूद उसकी सामाजिक स्थिति बराबर नहीं होती।",
+      "p": "Two identical ballot slips lying side by side on a table, one weighted down by a heavy stone, single hard light",
+      "shot": "detail",
+      "anim": "vox_stat",
+      "text": "एक व्यक्ति, एक वोट"
+    },
+    {
+      "n": "यही अंतर आगे चलकर उनकी 'social democracy' की अवधारणा में दिखाई देगा।",
+      "p": "A brass balance scale on a dark table with one pan held down by an unseen weight, single lamp, deep shadow",
+      "shot": "medium",
+      "anim": "lower_third",
+      "params": "sub=राजनीतिक नहीं, सामाजिक लोकतंत्र",
+      "text": "Social Democracy"
+    },
+    {
+      "n": "और इसीलिए आंबेडकर के लिए राजनीतिक स्वतंत्रता अपने आप में अंतिम लक्ष्य नहीं थी। वह पूछ रहे थे— क्या स्वतंत्र भारत सामाजिक रूप से भी स्वतंत्र भारत होगा?",
+      "p": "A vast dark landscape before dawn with one distant lamp burning in a doorway, sky beginning to lighten at the edge",
+      "shot": "xwide"
+    }
+  ]
+}

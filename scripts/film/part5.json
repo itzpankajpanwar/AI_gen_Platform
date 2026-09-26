@@ -1,0 +1,158 @@
+{
+  "chapter": 5,
+  "title": "दो रास्ते",
+  "palette": "split palette of London slate grey and Indian ochre, formal cold interiors",
+  "grade": "neutral",
+  "grain": "light",
+  "music": "ch05.mp3",
+  "scenes": [
+    {
+      "n": "आंबेडकर और गांधी... भारतीय इतिहास के दो अत्यंत प्रभावशाली नाम।",
+      "p": "Two plain wooden chairs facing each other across a bare table in an empty room, even daylight from a single window",
+      "shot": "medium",
+      "anim": "chapter_card",
+      "params": "chapter=भाग पाँच",
+      "text": "दो रास्ते"
+    },
+    {
+      "n": "दोनों अस्पृश्यता के खिलाफ थे। लेकिन दोनों के रास्ते, राजनीतिक रणनीतियां और सामाजिक परिवर्तन को लेकर विचार कई महत्वपूर्ण बिंदुओं पर अलग थे।",
+      "p": "Two pairs of round wire-rimmed spectacles lying side by side on dark cloth, one plain steel and one heavier, even museum light",
+      "shot": "detail"
+    },
+    {
+      "n": "और इस अंतर को समझे बिना आंबेडकर की राजनीति को समझना मुश्किल है।",
+      "p": "A large hall set with two speaking platforms at opposite ends and rows of chairs between them, empty, cold morning light",
+      "shot": "wide"
+    },
+    {
+      "n": "आंबेडकर के लिए दलितों की समस्या का समाधान सिर्फ सामाजिक सुधार से नहीं हो सकता था। उन्हें राजनीतिक शक्ति भी चाहिए थी।",
+      "p": "A law book and a ballot box standing together on a table in a plain room, a hand resting on the book's cover, flat daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "प्रतिनिधित्व चाहिए था। अपने नेताओं को चुनने की क्षमता चाहिए थी।",
+      "p": "A long queue of voters waiting outside a 1930s Indian polling place, all seen from behind, dust and shuttered shopfronts",
+      "shot": "wide"
+    },
+    {
+      "n": "और यही सवाल 1930 के दशक की ब्रिटिश राजनीति में बहुत बड़ा मुद्दा बन गया। लंदन में Round Table Conferences हो रही थीं।",
+      "p": "St James's Park and the government buildings of Whitehall in winter fog, 1930, bare trees and wet pavement, distant figures in overcoats",
+      "shot": "xwide",
+      "anim": "lower_third",
+      "params": "sub=लंदन, १९३०–३२",
+      "text": "गोलमेज सम्मेलन"
+    },
+    {
+      "n": "आंबेडकर ने तीनों सम्मेलनों में भाग लिया।",
+      "p": "A grand London conference room of the 1930s, a long polished table ringed with chairs, tall windows and heavy curtains, cold grey light",
+      "shot": "wide",
+      "anim": "timeline",
+      "params": "from=1930;to=1932;marks=1930,1931,1932;highlight=1931",
+      "text": "गोलमेज सम्मेलन"
+    },
+    {
+      "n": "वह वहां 'Depressed Classes' यानी उस समय सरकारी भाषा में इस्तेमाल होने वाले शब्द के तहत वंचित वर्गों के राजनीतिक अधिकारों की बात कर रहे थे।",
+      "p": "A place at a conference table with a folded nameplate turned away, a water glass, a stack of memoranda, cold window light",
+      "shot": "medium"
+    },
+    {
+      "n": "उनका तर्क था कि अगर सत्ता का हस्तांतरण केवल ब्रिटिश सरकार से भारतीय बहुसंख्यक राजनीतिक नेतृत्व को हो गया... लेकिन समाज के सबसे कमजोर वर्गों को वास्तविक राजनीतिक प्रतिनिधित्व नहीं मिला... तो उनके लिए स्वतंत्रता अधूरी रह जाएगी।",
+      "p": "Looking straight down at a conference table where a map of India lies unrolled and weighted at the corners, hands at the edges of frame",
+      "shot": "overhead"
+    },
+    {
+      "n": "फिर आया 1932। ब्रिटिश प्रधानमंत्री Ramsay MacDonald ने Communal Award की घोषणा की।",
+      "p": "A government despatch box open on a desk with printed papers inside, brass fittings, a hand lifting the top sheet",
+      "shot": "close",
+      "anim": "lower_third",
+      "params": "sub=१९३२",
+      "text": "Communal Award"
+    },
+    {
+      "n": "इसमें Depressed Classes के लिए अलग निर्वाचन मंडल यानी separate electorates का प्रावधान किया गया।",
+      "p": "A polling booth interior with two separate ballot boxes standing apart on a wooden table, a curtain half drawn, flat daylight",
+      "shot": "medium"
+    },
+    {
+      "n": "गांधी ने इसका विरोध किया। उन्होंने यरवदा जेल में आमरण अनशन शुरू किया।",
+      "p": "A prison courtyard in 1932 with a low cot set out under a neem tree, a crowd of officials standing at a respectful distance, harsh light",
+      "shot": "wide"
+    },
+    {
+      "n": "अब स्थिति बेहद जटिल थी। एक तरफ आंबेडकर थे, जो राजनीतिक प्रतिनिधित्व को वंचित वर्गों की सुरक्षा के लिए आवश्यक मानते थे।",
+      "p": "A newspaper office at night, a compositor's hands locking a metal forme into place, urgent movement, lamplight",
+      "shot": "medium"
+    },
+    {
+      "n": "दूसरी तरफ गांधी थे, जो अलग निर्वाचन व्यवस्था को हिंदू समाज के विभाजन के रूप में देखते थे।",
+      "p": "A crowd waiting outside a prison gate at dusk, hundreds of backs, lanterns beginning to show, tense stillness",
+      "shot": "wide"
+    },
+    {
+      "n": "तनाव बढ़ता गया। और अंततः... 24 सितंबर 1932 को आंबेडकर और गांधी के बीच समझौता हुआ।",
+      "p": "A small room with a table between two chairs, papers spread across it, two men leaning in from opposite sides seen only as shoulders and hands",
+      "shot": "medium",
+      "anim": "lower_third",
+      "params": "sub=२४ सितंबर १९३२",
+      "text": "पूना पैक्ट"
+    },
+    {
+      "n": "इसे इतिहास में पूना पैक्ट के नाम से जाना गया।",
+      "p": "A fountain pen being set down on a signed document, the ink still wet, two hands withdrawing, warm lamplight",
+      "shot": "detail"
+    },
+    {
+      "n": "Separate electorates की जगह आरक्षित सीटों की व्यवस्था स्वीकार की गई, जिसके तहत Depressed Classes के लिए विधानसभाओं में अधिक प्रतिनिधित्व की व्यवस्था बनी।",
+      "p": "An empty provincial legislative chamber with curved tiers of wooden benches, a portion of the seats marked with folded white cards, formal light",
+      "shot": "wide",
+      "anim": "bar_chart",
+      "params": "values=71,148;labels=Communal Award,पूना पैक्ट",
+      "text": "आरक्षित सीटें"
+    },
+    {
+      "n": "यह समझौता भारतीय राजनीति के इतिहास में एक निर्णायक मोड़ था। लेकिन इसका अर्थ यह नहीं था कि गांधी और आंबेडकर की सारी असहमति खत्म हो गई।",
+      "p": "Two men in white khadi photographed from behind walking away from a building in opposite directions, dust, midday glare",
+      "shot": "medium"
+    },
+    {
+      "n": "उनके बीच जाति, हिंदू समाज, सामाजिक सुधार, राजनीतिक प्रतिनिधित्व और राष्ट्र की कल्पना को लेकर मतभेद बने रहे।",
+      "p": "Two open books lying side by side on a dark desk, warm lamplight falling between them, pages out of focus",
+      "shot": "close"
+    },
+    {
+      "n": "और यही इस कहानी को दिलचस्प बनाता है। क्योंकि इतिहास हमेशा दो लोगों की कहानी नहीं होता जिसमें एक सही और दूसरा गलत हो।",
+      "p": "A single road forking around a large rock on an open Indian plain, both branches running to the same distant horizon, evening light",
+      "shot": "wide"
+    },
+    {
+      "n": "कई बार... दो लोग एक ही समस्या को देखते हैं। लेकिन उसके समाधान के रास्ते अलग-अलग चुनते हैं।",
+      "p": "A single road forking around a large rock on an open Indian plain seen from the other side, both branches visible, evening light",
+      "shot": "wide",
+      "anim": "split_compare",
+      "params": "second=20;label_a=एक ही समस्या;label_b=अलग रास्ते"
+    },
+    {
+      "n": "आंबेडकर का सवाल लगातार यही था— जिस समाज में किसी व्यक्ति को जन्म के कारण नीचा माना जाता है, वह समाज सिर्फ नैतिक अपील से कितना बदलेगा?",
+      "p": "A village assembly seated in a circle at dusk, one figure standing at the centre seen from behind, lanterns being lit",
+      "shot": "medium"
+    },
+    {
+      "n": "और अगर समाज नहीं बदलता... तो क्या कानून, राजनीतिक प्रतिनिधित्व और संवैधानिक अधिकार उस बदलाव का रास्ता बन सकते हैं?",
+      "p": "A gavel resting on a closed law book beside a small clay lamp, deep shadow, single warm light source",
+      "shot": "detail"
+    },
+    {
+      "n": "आने वाले वर्षों में आंबेडकर का जवाब भारतीय संविधान के भीतर दिखाई देने वाला था। लेकिन उससे पहले... उन्हें भारतीय समाज के सामने एक और चुनौती रखनी थी।",
+      "p": "A drafting room at night with a long table of papers and empty chairs, one lamp still burning at the far end",
+      "shot": "wide"
+    },
+    {
+      "n": "एक चुनौती... जो सिर्फ जाति की आलोचना नहीं थी। बल्कि जाति की पूरी संरचना को समझने की कोशिश थी। उसका नाम था— Annihilation of Caste.",
+      "p": "A stack of freshly printed pamphlets tied with string on a printer's table, ink smell implied, hard side light",
+      "shot": "close",
+      "anim": "title_reveal",
+      "params": "size=0.068",
+      "text": "Annihilation of Caste"
+    }
+  ]
+}

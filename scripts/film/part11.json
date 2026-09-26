@@ -1,0 +1,96 @@
+{
+  "chapter": 11,
+  "title": "हिंदू कोड बिल",
+  "palette": "cold institutional palette, pale green walls, fluorescent flatness, empty corridors",
+  "grade": "cold",
+  "grain": "light",
+  "music": "ch11.mp3",
+  "scenes": [
+    {
+      "n": "26 जनवरी 1950। भारत गणराज्य बन चुका था। संविधान लागू हो चुका था।",
+      "p": "A wide ceremonial avenue in Delhi on a cold January morning, thin winter light, crowds along the verges seen from far above",
+      "shot": "xwide",
+      "anim": "chapter_card",
+      "params": "chapter=भाग ग्यारह",
+      "text": "हिंदू कोड बिल"
+    },
+    {
+      "n": "डॉ. आंबेडकर अब स्वतंत्र भारत के कानून मंत्री थे।",
+      "p": "A law ministry office with pale green walls, a heavy desk and a wall of legal volumes, flat institutional light, nobody at the desk",
+      "shot": "medium"
+    },
+    {
+      "n": "लेकिन उनके सामने एक और बड़ा सवाल था। क्या कानून सिर्फ राज्य को बदलेगा? या समाज के भीतर परिवार और सामाजिक संबंधों को भी?",
+      "p": "A courtroom and a domestic doorway seen in the same frame through an open corridor, one formal and one ordinary, flat daylight",
+      "shot": "wide"
+    },
+    {
+      "n": "इसी संदर्भ में Hindu Code Bill आया।",
+      "p": "A thick unbound bill of draft legislation tied with tape on a desk, cold window light",
+      "shot": "close",
+      "anim": "lower_third",
+      "params": "sub=कानूनी बराबरी का प्रश्न",
+      "text": "Hindu Code Bill"
+    },
+    {
+      "n": "आंबेडकर महिलाओं के कानूनी अधिकारों को लेकर गंभीर थे।",
+      "p": "A woman's hands resting on a closed ledger on a table, plain sari sleeve, no face in frame, cold even light",
+      "shot": "medium"
+    },
+    {
+      "n": "विवाह। तलाक। संपत्ति। उत्तराधिकार।",
+      "p": "Looking straight down at four objects on a dark table — a marriage garland, a broken thread, a deed of property and a family register",
+      "shot": "overhead",
+      "anim": "vox_lower_bar",
+      "text": "विवाह · तलाक · संपत्ति · उत्तराधिकार"
+    },
+    {
+      "n": "इन मुद्दों पर हिंदू व्यक्तिगत कानून में सुधार की आवश्यकता पर बहस चल रही थी।",
+      "p": "A committee room mid-debate, papers in the air, empty chairs pushed back at odd angles, pale institutional light",
+      "shot": "wide"
+    },
+    {
+      "n": "आंबेडकर चाहते थे कि कानून महिलाओं को अधिक अधिकार दे।",
+      "p": "A woman seen from behind standing at the threshold of a courtroom doorway, light falling on her shoulders, the room beyond in shadow",
+      "shot": "medium"
+    },
+    {
+      "n": "लेकिन विधेयक को लेकर राजनीतिक विरोध और लंबी बहसें हुईं। प्रक्रिया धीमी पड़ती गई।",
+      "p": "A parliamentary chamber with many empty seats and a few members scattered across them, an unread bill on every desk, cold flat light",
+      "shot": "wide"
+    },
+    {
+      "n": "और अंततः... 27 अक्टूबर 1951 को आंबेडकर ने कानून मंत्री के पद से इस्तीफा दे दिया।",
+      "p": "A fountain pen laid down across a typed letter of resignation on a bare desk, cold window light, a hand withdrawing",
+      "shot": "close",
+      "anim": "lower_third",
+      "params": "sub=कानून मंत्री पद से इस्तीफा",
+      "text": "२७ अक्टूबर १९५१"
+    },
+    {
+      "n": "उनके इस्तीफे के पीछे कई राजनीतिक और नीतिगत असहमति थीं, लेकिन Hindu Code Bill की धीमी प्रगति इस प्रकरण का महत्वपूर्ण हिस्सा थी।",
+      "p": "An office being emptied, books packed into wooden crates, bare shelves behind, flat afternoon light",
+      "shot": "medium"
+    },
+    {
+      "n": "यह घटना महत्वपूर्ण थी। क्योंकि इससे पता चलता है कि संविधान बनने के बाद भी आंबेडकर की राजनीति का केंद्र सिर्फ संविधान नहीं था।",
+      "p": "A long empty ministry corridor with identical closed doors receding, one door standing open at the far end, institutional light",
+      "shot": "wide"
+    },
+    {
+      "n": "वह समाज के भीतर कानूनी बराबरी को भी उतना ही महत्वपूर्ण मानते थे। और शायद यही वजह है कि उनके लिए सामाजिक न्याय एक पूरा राजनीतिक कार्यक्रम था।",
+      "p": "A courtroom bench and a household threshold shown as two doorways side by side in a plain wall, even light",
+      "shot": "medium"
+    },
+    {
+      "n": "लेकिन अब उनकी राजनीति एक और मोड़ लेने वाली थी। उन्हें लगने लगा था कि राजनीतिक रास्ते सीमित हैं।",
+      "p": "A road running out of a city into open country at dusk, the buildings ending abruptly, a single figure walking away seen from behind",
+      "shot": "wide"
+    },
+    {
+      "n": "और उनके सामने धर्म का प्रश्न और अधिक स्पष्ट होता जा रहा था।",
+      "p": "A small clay lamp being lit by unseen hands in a dark room, the flame taking hold, everything else black",
+      "shot": "detail"
+    }
+  ]
+}

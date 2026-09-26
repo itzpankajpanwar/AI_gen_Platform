@@ -1,0 +1,76 @@
+{
+  "chapter": 14,
+  "title": "6 दिसंबर 1956",
+  "palette": "near-monochrome palette, rain, wet stone, cold grey with one warm point",
+  "grade": "noir",
+  "grain": "medium",
+  "music": "ch14.mp3",
+  "scenes": [
+    {
+      "n": "1956 के अंत तक आंबेडकर का शरीर उनका साथ तेजी से छोड़ रहा था।",
+      "p": "A bedroom window in winter with rain on the glass, a writing table drawn close to it, a blanket folded on the chair",
+      "shot": "medium",
+      "anim": "chapter_card",
+      "params": "chapter=भाग चौदह",
+      "text": "६ दिसंबर १९५६"
+    },
+    {
+      "n": "फिर भी उन्होंने काम जारी रखा। उन्होंने बौद्ध धर्म के प्रसार की योजना बनाई। और अधिक लोगों तक पहुंचने की इच्छा रखी।",
+      "p": "Looking straight down at a desk of travel notes, a railway timetable and a map of India marked with planned stops",
+      "shot": "overhead"
+    },
+    {
+      "n": "लेकिन वह समय नहीं आया।",
+      "p": "A packed but unopened travelling case standing beside a door, a coat still on its hook above, cold grey light",
+      "shot": "close"
+    },
+    {
+      "n": "6 दिसंबर 1956। दिल्ली। 26, अलीपुर रोड।",
+      "p": "A modest colonial bungalow behind a low wall on a Delhi road at dawn, bare trees, wet stone, nobody in the frame",
+      "shot": "wide",
+      "anim": "lower_third",
+      "params": "sub=६ दिसंबर १९५६",
+      "text": "२६ अलीपुर रोड, दिल्ली"
+    },
+    {
+      "n": "डॉ. भीमराव रामजी आंबेडकर का निधन हो गया। उम्र थी— 65 वर्ष।",
+      "p": "A pair of spectacles folded and set down on a closed manuscript, cold grey light from a window, deep shadow around",
+      "shot": "detail"
+    },
+    {
+      "n": "एक ऐसी जिंदगी समाप्त हुई जिसमें संघर्ष भी था, शिक्षा भी थी, राजनीति भी थी, कानून भी था, अर्थशास्त्र भी था, सामाजिक आंदोलन भी था और धर्म की खोज भी।",
+      "p": "An immense silent crowd filling a Bombay street in December 1956, seen from very high above, heads to the horizon, overcast light",
+      "shot": "xwide"
+    },
+    {
+      "n": "लेकिन अगर कहानी यहीं खत्म कर दें... तो शायद हम आंबेडकर को समझ ही नहीं पाएंगे।",
+      "p": "A row of people standing in the rain with folded hands, seen from behind, wet cloth and grey light",
+      "shot": "medium"
+    },
+    {
+      "n": "क्योंकि किसी व्यक्ति की मृत्यु उसके विचारों की मृत्यु नहीं होती।",
+      "p": "A single clay lamp still burning in steady rain on a stone step, water beading around it",
+      "shot": "close"
+    },
+    {
+      "n": "आंबेडकर के बाद उनके विचार और भी बड़े पैमाने पर भारतीय सार्वजनिक जीवन का हिस्सा बने। उनके लेख पढ़े गए। उनकी किताबें प्रकाशित हुईं।",
+      "p": "A printing press running at night, freshly printed pages stacking up fast, a worker's hands lifting a bundle, warm lamp in cold air",
+      "shot": "wide"
+    },
+    {
+      "n": "उनकी मूर्तियां बनीं। उनकी जयंती मनाई गई। राजनीतिक दलों ने उनके नाम और विचारों का इस्तेमाल किया।",
+      "p": "A public statue on a plinth seen from ground level against a bright open sky, garlands at its base, no facial detail visible",
+      "shot": "low"
+    },
+    {
+      "n": "लेकिन आंबेडकर को समझने के लिए सिर्फ उनकी तस्वीर देखना पर्याप्त नहीं है। उनकी किताबें पढ़नी होंगी। उनके भाषण सुनने होंगे।",
+      "p": "A reading room in a small town library, a shelf of well-worn books, a reader at a table seen from behind, warm lamp",
+      "shot": "medium"
+    },
+    {
+      "n": "उनकी बहसों को समझना होगा। और उन सवालों को देखना होगा जिनके कारण उन्होंने अपना पूरा जीवन लगा दिया।",
+      "p": "A crowded modern Indian street on 14 April, marigold garlands and blue flags without lettering, dense crowd seen from above",
+      "shot": "xwide"
+    }
+  ]
+}
