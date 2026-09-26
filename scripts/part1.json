@@ -1,0 +1,97 @@
+{
+  "style": ", cinematic documentary photography, historical India, muted desaturated warm palette, soft natural light, 35mm film grain, restrained minimal composition, shallow depth of field, no text, no lettering, no signage, 16:9",
+  "scenes": [
+    {
+      "narration": "भारत के इतिहास में कुछ नाम ऐसे हैं... जिन्हें सिर्फ उनके पद से नहीं समझा जा सकता।",
+      "prompt": "Sweeping establishing shot of an old Indian city at dawn, late 1800s stone architecture, narrow streets, low mist, warm first light, no people in the foreground, archival documentary mood"
+    },
+    {
+      "narration": "कुछ लोग मंत्री बने। कुछ नेता बने। कुछ विद्वान बने।",
+      "prompt": "An empty formal wooden chair behind a large official desk in a colonial-era Indian government room, shafts of window light, dust floating in the air, nobody present, quiet and symbolic"
+    },
+    {
+      "narration": "और कुछ... ऐसे लोग हुए जिन्होंने उस समाज से ही सवाल पूछ दिया, जिसमें वे पैदा हुए थे।",
+      "prompt": "A lone silhouetted figure standing apart, facing away from a distant seated gathering in a 1890s Indian village courtyard, strong backlight, clear separation and distance in the composition, face not visible"
+    },
+    {
+      "narration": "14 अप्रैल, 1891।",
+      "prompt": "Empty pale dawn sky over a flat central Indian plain, thin clouds catching the first warm light, a faint horizon line, nothing else in frame, quiet and expectant"
+    },
+    {
+      "narration": "मध्य भारत की महू छावनी।",
+      "prompt": "A British Indian Army cantonment in central India in the 1890s, long low whitewashed barracks buildings in rows, dusty parade ground, tall shade trees, early morning light, empty and still"
+    },
+    {
+      "narration": "यहीं एक बच्चे का जन्म हुआ। नाम था— भीमराव। पूरा नाम... भीमराव रामजी आंबेडकर।",
+      "prompt": "Interior of a very simple Indian family quarters in the 1890s, bare walls, a low wooden cot with folded cloth, a small oil lamp burning, soft light through a single window, nobody in the room, intimate and quiet"
+    },
+    {
+      "narration": "आगे चलकर यही बच्चा, भारत के सबसे प्रभावशाली विचारकों में से एक बनने वाला था। लेकिन उस समय... वह सिर्फ एक बच्चा था।",
+      "prompt": "Small child seen as a distant silhouette standing in a bright open doorway of a dim Indian dwelling, the figure tiny against a large rectangle of light, face not visible, symbolic and hopeful"
+    },
+    {
+      "narration": "और उसके जन्म के साथ ही उसकी जिंदगी पर एक ऐसी सामाजिक पहचान लिख दी गई थी, जिसे उसने खुद नहीं चुना था।",
+      "prompt": "A long hard shadow of a wall falling across a sunlit stone threshold, sharp dividing line between light and shade on the ground, nobody present, stark and symbolic"
+    },
+    {
+      "narration": "उसका परिवार उस समय की जाति व्यवस्था में 'अछूत' माने जाने वाले महार समुदाय से था।",
+      "prompt": "A small cluster of modest mud and thatch dwellings set well apart at the far edge of an Indian village, open dusty ground separating them from the main settlement in the distance, late afternoon light, seen from a distance"
+    },
+    {
+      "narration": "इसका अर्थ केवल इतना नहीं था कि समाज में कुछ लोग उसे अपने से अलग मानते थे। अस्पृश्यता रोजमर्रा की जिंदगी को प्रभावित करती थी।",
+      "prompt": "Two groups of villagers standing far apart on opposite sides of a wide dusty village path in 1890s India, wide empty space between them, seen from a distance, faces not discernible, tense and quiet"
+    },
+    {
+      "narration": "पानी...",
+      "prompt": "An old stone village well in India with a worn rope and a single clay pot resting on its rim, harsh midday sun, dry cracked ground around it, nobody present"
+    },
+    {
+      "narration": "स्कूल...",
+      "prompt": "An empty rural Indian schoolroom in the 1890s, rough earthen floor, low wooden writing slates stacked against a wall, light falling through a small window, completely empty of people"
+    },
+    {
+      "narration": "मंदिर...",
+      "prompt": "Worn stone steps leading up to the closed dark doorway of a small old Indian temple, carved stonework, deep shadow in the entrance, nobody on the steps, morning light"
+    },
+    {
+      "narration": "सार्वजनिक स्थान...",
+      "prompt": "An empty village square in 1890s India at midday, packed earth, a large shade tree, low stone platform, long shadows, completely deserted"
+    },
+    {
+      "narration": "और यहां तक कि दूसरे लोगों के साथ सामान्य सामाजिक व्यवहार तक।",
+      "prompt": "A single empty clay cup set alone on a stone ledge at a distance from a row of other cups, wide gap between them, plain background, harsh daylight, quiet and symbolic"
+    },
+    {
+      "narration": "आज इन बातों की कल्पना करना कठिन है। लेकिन उन्नीसवीं सदी के अंत और बीसवीं सदी के शुरुआती भारत में, जाति केवल पहचान नहीं थी। वह सामाजिक संबंधों को निर्धारित करने वाली एक शक्ति थी।",
+      "prompt": "Wide elevated view of an Indian village in the 1890s at golden hour, clearly separated clusters of dwellings with open ground between them, dust haze, the settlement pattern itself visible from above, no individual faces"
+    },
+    {
+      "narration": "इसी वातावरण में भीमराव बड़े हो रहे थे।",
+      "prompt": "A small child walking alone along a dusty rural path in 1890s India, seen from far behind, large open landscape around the small figure, warm late light, face not visible"
+    },
+    {
+      "narration": "उनके पिता रामजी मालोजी सकपाल, ब्रिटिश भारतीय सेना में कार्यरत थे।",
+      "prompt": "Close still life of a folded British Indian Army uniform tunic and a pair of worn leather boots on a simple wooden chair, brass buttons catching lamplight, dim barracks interior, nobody present"
+    },
+    {
+      "narration": "रामजी स्वयं शिक्षा के महत्व को समझते थे। और शायद यही वह पहली चीज थी, जिसने भीमराव के जीवन की दिशा बदल दी— शिक्षा।",
+      "prompt": "A small oil lamp burning beside an open book and a child's wooden writing slate on a low table, warm pool of light in a dark simple room, deep shadows around, nobody present"
+    },
+    {
+      "narration": "गरीबी थी। सामाजिक भेदभाव था। लेकिन परिवार में एक विचार था... कि पढ़ाई करनी है।",
+      "prompt": "Interior corner of a very poor Indian household in the 1890s, bare earthen floor, a rolled sleeping mat, a few brass vessels, and a small stack of books carefully placed on a ledge, single shaft of daylight"
+    },
+    {
+      "narration": "क्योंकि अगर समाज किसी इंसान से उसकी बराबरी छीन ले... तो ज्ञान कम-से-कम उसे यह समझने की ताकत दे सकता है कि उसके साथ हो क्या रहा है।",
+      "prompt": "Close overhead shot of a pair of small hands resting on the open pages of a book in warm lamplight, deep surrounding darkness, no face in frame, quiet and determined"
+    },
+    {
+      "narration": "और शायद यही वजह है कि आगे चलकर आंबेडकर के विचारों में शिक्षा सिर्फ नौकरी पाने का साधन नहीं रही। शिक्षा... स्वाभिमान का साधन बनी।",
+      "prompt": "A child's wooden writing slate and a piece of chalk resting on a windowsill with bright morning light streaming across them, dust motes in the air, simple and hopeful, nobody present"
+    },
+    {
+      "narration": "लेकिन अभी कहानी बहुत शुरुआत में थी। क्योंकि जिस बच्चे को पढ़ने का अधिकार चाहिए था, उसे पहले यह साबित करना था कि वह पढ़ सकता है। और उससे भी बड़ी बात... कि वह इंसान की तरह जीने का अधिकार रखता है।",
+      "prompt": "A long dusty road stretching away toward a distant horizon in rural 1890s India, low warm evening light, deep perspective, a single faint figure very far away, open sky above, sense of a long journey ahead"
+    }
+  ]
+}

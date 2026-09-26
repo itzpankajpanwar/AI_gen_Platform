@@ -1,0 +1,52 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATA_DIR: /data
+      RUN_WORKER_IN_API: "false"
+      GENERATOR_BACKEND: ${GENERATOR_BACKEND:-mock}
+      COMFYUI_BASE_URL: ${COMFYUI_BASE_URL:-http://comfyui:8188}
+      ZIP_RETENTION_HOURS: ${ZIP_RETENTION_HOURS:-10}
+    volumes:
+      - jobdata:/data
+    ports:
+      - "8200:8200"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8200/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # The only service that touches the model. Point it at a GPU host by
+  # changing GENERATOR_BACKEND / COMFYUI_BASE_URL — nothing else changes.
+  worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: ["python", "-m", "app.workers.runner"]
+    environment:
+      DATA_DIR: /data
+      GENERATOR_BACKEND: ${GENERATOR_BACKEND:-mock}
+      COMFYUI_BASE_URL: ${COMFYUI_BASE_URL:-http://comfyui:8188}
+      COMFYUI_WORKFLOW_PATH: /srv/comfyui/workflows/flux_schnell.json
+      ZIP_RETENTION_HOURS: ${ZIP_RETENTION_HOURS:-10}
+    volumes:
+      - jobdata:/data
+    depends_on:
+      - backend
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE: ${NEXT_PUBLIC_API_BASE:-http://localhost:8200}
+    ports:
+      - "3200:3200"
+    depends_on:
+      - backend
+
+volumes:
+  jobdata:
