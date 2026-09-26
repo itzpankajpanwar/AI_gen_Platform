@@ -39,12 +39,16 @@ class SarvamTextToSpeech(TextToSpeech):
     def __init__(
         self,
         api_key: str,
-        model: str = "bulbul:v2",
+        model: str = "bulbul:v3",
+        speaker: str = "ritu",
+        sample_rate: int = 22050,
         base_url: str = "https://api.sarvam.ai",
         timeout_seconds: float = 120.0,
     ) -> None:
         self.api_key = api_key
         self.model = model
+        self.speaker = speaker
+        self.sample_rate = sample_rate
         self.base_url = base_url.rstrip("/")
         self._client = httpx.Client(timeout=timeout_seconds)
 
@@ -52,15 +56,21 @@ class SarvamTextToSpeech(TextToSpeech):
         if not self.api_key:
             raise SynthesisError("SARVAM_API_KEY is not set")
 
+        # Mirrors the audited SDK call: text -> inputs[0], plus speaker, model,
+        # pace and sample rate. pitch/loudness are only sent when the row moves
+        # them off their neutral defaults, so bulbul:v3's own defaults stand.
         payload = {
             "inputs": [request.text],
             "target_language_code": request.language or "hi-IN",
-            "speaker": request.voice or None,
+            "speaker": request.voice or self.speaker or None,
             "model": request.model or self.model,
             "pace": request.pace,
-            "pitch": request.pitch,
-            "loudness": request.loudness,
+            "speech_sample_rate": self.sample_rate,
         }
+        if request.pitch:
+            payload["pitch"] = request.pitch
+        if request.loudness and request.loudness != 1.0:
+            payload["loudness"] = request.loudness
         payload = {key: value for key, value in payload.items() if value is not None}
 
         try:

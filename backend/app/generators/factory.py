@@ -1,7 +1,11 @@
 from collections.abc import Callable
 
 from app.config import Settings, get_settings
-from app.generators.api_backends import PollinationsImageGenerator, RunwareImageGenerator
+from app.generators.api_backends import (
+    OpenAIImageGenerator,
+    PollinationsImageGenerator,
+    RunwareImageGenerator,
+)
 from app.generators.base import ImageGenerator
 from app.generators.comfyui import ComfyUIImageGenerator
 from app.generators.mock import MockImageGenerator
@@ -34,6 +38,17 @@ def _build_runware(settings: Settings) -> ImageGenerator:
     )
 
 
+def _build_openai(settings: Settings) -> ImageGenerator:
+    return OpenAIImageGenerator(
+        api_key=settings.openai_api_key,
+        model=settings.openai_image_model,
+        size=settings.openai_image_size,
+        quality=settings.openai_image_quality,
+        base_url=settings.openai_base_url,
+        timeout_seconds=settings.api_timeout_seconds,
+    )
+
+
 def _build_pollinations(settings: Settings) -> ImageGenerator:
     return PollinationsImageGenerator(
         base_url=settings.pollinations_base_url,
@@ -47,6 +62,7 @@ REGISTRY: dict[str, Callable[[Settings], ImageGenerator]] = {
     "comfyui": _build_comfyui,
     "runware": _build_runware,
     "pollinations": _build_pollinations,
+    "openai": _build_openai,
 }
 
 

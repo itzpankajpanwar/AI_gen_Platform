@@ -46,6 +46,15 @@ class Settings(BaseSettings):
     pollinations_base_url: str = "https://image.pollinations.ai"
     pollinations_model: str = "flux"
 
+    # OpenAI image generation (gpt-image). Quality "low" is the budget tier we
+    # sized the film around; size is one of OpenAI's accepted values and the
+    # result is resized to the project resolution.
+    openai_api_key: str = ""
+    openai_image_model: str = "gpt-image-1"
+    openai_image_size: str = "1536x1024"
+    openai_image_quality: str = "low"
+    openai_base_url: str = "https://api.openai.com/v1"
+
     api_timeout_seconds: float = 240.0
 
     default_model: str = "FLUX.1-schnell"
@@ -84,7 +93,12 @@ class Settings(BaseSettings):
     tts_timeout_seconds: float = 120.0
     tts_mock_words_per_second: float = 3.5
 
+    # Defaults match the voice the user auditioned on Sarvam's site: bulbul:v3,
+    # speaker "ritu", 22.05 kHz. Any row can override voice/pace per scene.
     sarvam_api_key: str = ""
+    sarvam_model: str = "bulbul:v3"
+    sarvam_speaker: str = "ritu"
+    sarvam_sample_rate: int = 22050
     sarvam_base_url: str = "https://api.sarvam.ai"
     elevenlabs_api_key: str = ""
     elevenlabs_base_url: str = "https://api.elevenlabs.io/v1"

@@ -22,7 +22,9 @@ def _build_mock(settings: Settings) -> TextToSpeech:
 def _build_sarvam(settings: Settings) -> TextToSpeech:
     return SarvamTextToSpeech(
         api_key=settings.sarvam_api_key,
-        model=settings.tts_model or "bulbul:v2",
+        model=settings.tts_model or settings.sarvam_model,
+        speaker=settings.tts_voice or settings.sarvam_speaker,
+        sample_rate=settings.sarvam_sample_rate,
         base_url=settings.sarvam_base_url,
         timeout_seconds=settings.tts_timeout_seconds,
     )

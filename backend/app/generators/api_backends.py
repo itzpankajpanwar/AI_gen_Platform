@@ -215,3 +215,111 @@ class PollinationsImageGenerator(ImageGenerator):
 
     def close(self) -> None:
         self._client.close()
+
+
+class OpenAIImageGenerator(ImageGenerator):
+    """OpenAI image generation (gpt-image).
+
+    gpt-image always returns base64 (never a URL), accepts only a fixed set of
+    sizes, and takes a `quality` tier rather than a step count — so `steps` and
+    `seed` from the request are ignored. The returned image is resized to the
+    project's exact resolution by save_image_bytes, so the model's own size is
+    only ever a cost/aspect choice.
+    """
+
+    name = "openai"
+
+    # Sizes gpt-image accepts. The request's real size is honoured on save.
+    _ALLOWED_SIZES = {"1024x1024", "1536x1024", "1024x1536", "auto"}
+
+    def __init__(
+        self,
+        api_key: str,
+        model: str = "gpt-image-1",
+        size: str = "1536x1024",
+        quality: str = "low",
+        base_url: str = "https://api.openai.com/v1",
+        timeout_seconds: float = 240.0,
+    ) -> None:
+        self.api_key = api_key
+        self.model = model
+        self.size = size if size in self._ALLOWED_SIZES else "1536x1024"
+        self.quality = quality
+        self.base_url = base_url.rstrip("/")
+        self.timeout_seconds = timeout_seconds
+        self._client = httpx.Client(timeout=timeout_seconds)
+
+    def generate(self, request: GenerationRequest) -> GenerationResult:
+        if not self.api_key:
+            raise GenerationError("OPENAI_API_KEY is not set")
+
+        started = time.perf_counter()
+        payload = {
+            "model": request.model or self.model,
+            "prompt": request.prompt,
+            "n": 1,
+            "size": self.size,
+            "quality": self.quality,
+        }
+        try:
+            response = self._client.post(
+                f"{self.base_url}/images/generations",
+                json=payload,
+                headers={
+                    "Authorization": f"Bearer {self.api_key}",
+                    "Content-Type": "application/json",
+                },
+            )
+        except httpx.HTTPError as exc:
+            raise GenerationError(f"Cannot reach OpenAI: {exc}") from exc
+
+        if response.status_code >= 400:
+            raise GenerationError(f"OpenAI rejected the request: {response.text[:600]}")
+
+        body = response.json()
+        data = body.get("data") or []
+        if not data or not data[0].get("b64_json"):
+            raise GenerationError(f"OpenAI returned no image: {str(body)[:400]}")
+
+        import base64
+
+        save_image_bytes(base64.b64decode(data[0]["b64_json"]), request)
+
+        usage = body.get("usage") or {}
+        return GenerationResult(
+            output_path=request.output_path,
+            seed=request.seed,
+            duration_ms=int((time.perf_counter() - started) * 1000),
+            backend=self.name,
+            metadata={
+                "model": payload["model"],
+                "size": self.size,
+                "quality": self.quality,
+                "usage": usage,
+            },
+        )
+
+    def health_check(self) -> HealthStatus:
+        if not self.api_key:
+            return HealthStatus(False, self.name, "OPENAI_API_KEY is not set", {"model": self.model})
+        # A free, non-billable check that the key is live and the model exists.
+        try:
+            response = self._client.get(
+                f"{self.base_url}/models/{self.model}",
+                headers={"Authorization": f"Bearer {self.api_key}"},
+            )
+        except httpx.HTTPError as exc:
+            return HealthStatus(False, self.name, f"cannot reach OpenAI: {exc}", {})
+        if response.status_code >= 400:
+            return HealthStatus(
+                False, self.name,
+                f"key or model rejected: {response.text[:200]}",
+                {"model": self.model},
+            )
+        return HealthStatus(
+            True, self.name, "key valid, model available",
+            {"model": self.model, "size": self.size, "quality": self.quality},
+        )
+
+    def close(self) -> None:
+        self._client.close()
