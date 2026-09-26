@@ -4,7 +4,11 @@ from dataclasses import dataclass, field
 
 from app.config import Settings
 from app.services.animations import ANIMATIONS, CAMERA_ONLY, TEXT_REQUIRED
-from app.services.remotion import ParamError, TEMPLATES as REMOTION_TEMPLATES
+from app.services.remotion import (
+    NO_IMAGE_TEMPLATES,
+    ParamError,
+    TEMPLATES as REMOTION_TEMPLATES,
+)
 from app.services.remotion import parse_params, validate as validate_animation
 from app.services.style import (
     DEFAULT_TRANSITION_SECONDS,
@@ -34,6 +38,7 @@ OPTIONAL_HEADERS = {
     "voice",
     "animation",
     "animation_params",
+    "image",
 }
 #: Every word the `animation` column accepts — ffmpeg presets and Remotion
 #: templates live in one namespace so an author never picks an engine.
@@ -64,6 +69,7 @@ class ParsedPrompt:
     animation: str | None = None
     animation_value: float | None = None
     animation_params: str | None = None
+    needs_image: bool = True
 
     @property
     def duration(self) -> float:
@@ -136,6 +142,20 @@ def _parse_seconds(raw: str) -> float:
     return float(value)
 
 
+def _parse_image_flag(raw: str, animation_name: str) -> bool:
+    """Whether this row needs a generated image (an API hit).
+
+    Explicit yes/no wins; a blank cell defaults to no for self-drawing
+    animations (geo_map) and yes for everything else.
+    """
+    text = (raw or "").strip().lower()
+    if text in {"no", "false", "0", "n", "off", "skip"}:
+        return False
+    if text in {"yes", "true", "1", "y", "on"}:
+        return True
+    return animation_name not in NO_IMAGE_TEMPLATES
+
+
 def _cell(row: dict, headers: dict[str, str], name: str) -> str:
     key = headers.get(name)
     if key is None:
@@ -191,9 +211,17 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                 f"(stray: {', '.join(str(extra) for extra in row[None])[:60]})"
             )
             continue
-        if not raw_prompt:
-            result.errors.append(f"Row {row_number}: prompt is empty")
+        raw_animation = _cell(row, headers, "animation")
+        anim_name = raw_animation.split(":")[0].strip().lower()
+        needs_image = _parse_image_flag(_cell(row, headers, "image"), anim_name)
+        if needs_image and not raw_prompt:
+            result.errors.append(
+                f"Row {row_number}: prompt is empty (set image=no for a self-drawing "
+                f"animation like geo_map, which needs no image)"
+            )
             continue
+        if not raw_prompt:
+            raw_prompt = f"({anim_name or 'graphic'})"  # placeholder text; no image is generated
         try:
             start_seconds = _parse_seconds(raw_start)
             end_seconds = _parse_seconds(raw_end)
@@ -310,6 +338,7 @@ def parse_csv(data: bytes, settings: Settings) -> CsvValidationResult:
                 animation=animation or None,
                 animation_value=animation_value,
                 animation_params=_cell(row, headers, "animation_params") or None,
+                needs_image=needs_image,
             )
         )
 

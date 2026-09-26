@@ -92,6 +92,7 @@ class JobItem(Base):
     animation: Mapped[str | None] = mapped_column(String(32), nullable=True)
     animation_value: Mapped[float | None] = mapped_column(Float, nullable=True)
     animation_params: Mapped[str | None] = mapped_column(Text, nullable=True)
+    needs_image: Mapped[bool] = mapped_column(Boolean, default=True, nullable=True)
     audio_filename: Mapped[str | None] = mapped_column(String(255), nullable=True)
     audio_seconds: Mapped[float | None] = mapped_column(Float, nullable=True)
 

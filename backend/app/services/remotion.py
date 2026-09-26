@@ -174,6 +174,9 @@ TEXT_REQUIRED = frozenset(name for name, spec in TEMPLATES.items() if spec.text 
 #: Templates whose own image is a transparent cutout composited over the
 #: previous scene's still (which is passed in as the background).
 CUTOUT_TEMPLATES = frozenset({"cutout_reveal"})
+#: Templates that draw their own scene and never use a generated still, so
+#: a row using one needs no image and should not spend an API call.
+NO_IMAGE_TEMPLATES = frozenset({"geo_map"})
 
 
 def parse_params(raw: str) -> dict[str, str]:

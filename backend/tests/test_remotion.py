@@ -156,3 +156,28 @@ def test_availability_reports_why_it_cannot_run(settings, tmp_path):
     settings.remotion_dir = tmp_path / "absent"
     available, reason = is_available(settings)
     assert not available and "not found" in reason
+
+
+# ------------------------------------------------------- image flag (API gate)
+
+def test_geo_map_needs_no_image_and_allows_empty_prompt(settings):
+    result = parse_csv(
+        "start,end,prompt,animation,animation_params\n0,4,,geo_map,focus=mhow\n".encode("utf-8"),
+        settings,
+    )
+    assert result.valid, result.errors
+    assert result.prompts[0].needs_image is False
+
+
+def test_plain_scene_needs_an_image_and_a_prompt(settings):
+    ok = parse_csv("start,end,prompt\n0,4,a courtroom\n".encode("utf-8"), settings)
+    assert ok.valid and ok.prompts[0].needs_image is True
+    empty = parse_csv("start,end,prompt\n0,4,\n".encode("utf-8"), settings)
+    assert not empty.valid
+
+
+def test_image_flag_can_be_forced_either_way(settings):
+    off = parse_csv("start,end,prompt,image\n0,4,a courtroom,no\n".encode("utf-8"), settings)
+    assert off.valid and off.prompts[0].needs_image is False
+    on = parse_csv("start,end,prompt,animation,image\n0,4,a map,geo_map,yes\n".encode("utf-8"), settings)
+    assert on.valid and on.prompts[0].needs_image is True

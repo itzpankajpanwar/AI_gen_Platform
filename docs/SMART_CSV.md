@@ -30,6 +30,9 @@ start,end,prompt,transition,ken_burns,grade,grain,music,text_type,text_value,nar
 | 12 | `voice` | no | Voice override for this row |
 | 13 | `animation` | no | **Animation preset or template — overrides `ken_burns` and `text_type`** |
 | 14 | `animation_params` | no | `key=value;key=value` inputs for a Remotion template |
+| 15 | `image` | no | `yes`/`no` — whether to generate an image (an API call) for this row |
+
+**`image` flag:** self-drawing animations like `geo_map` need no still, so they default to `image=no` (no API call, and `prompt` may be left empty). Every other row defaults to `image=yes`. Set it explicitly to force either way — e.g. `image=no` on a normal row to reuse nothing but the animation, or `image=yes` on `geo_map` to generate a photographic backdrop under the map.
 
 ---
 

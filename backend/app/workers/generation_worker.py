@@ -148,9 +148,15 @@ class GenerationWorker(threading.Thread):
                 cancelled = True
                 break
 
-            item_id, order_index, prompt_text, animation = claimed
+            item_id, order_index, prompt_text, animation, needs_image = claimed
             output_path = self.storage.image_path(job_id, order_index, config["image_format"])
             seed = config["seed"] if config["seed"] is not None else random.randint(0, MAX_SEED)
+
+            # A self-drawing animation (e.g. geo_map) uses no still, so skip the
+            # generator: no API call, no spend. Mark it done and move on.
+            if not needs_image:
+                self._record_skipped(job_id, item_id)
+                continue
 
             error: str | None = None
             result = None
@@ -206,7 +212,20 @@ class GenerationWorker(threading.Thread):
             item.attempts += 1
             job.current_index = item.order_index
             job.current_prompt = item.prompt_text
-            return item.id, item.order_index, item.prompt_text, (item.animation or "")
+            return (item.id, item.order_index, item.prompt_text,
+                    (item.animation or ""), bool(item.needs_image))
+
+    def _record_skipped(self, job_id: str, item_id: int) -> None:
+        """Mark an image-less scene done without generating anything."""
+        with session_scope() as session:
+            item = session.get(JobItem, item_id)
+            job = session.get(Job, job_id)
+            if item is None or job is None:
+                return
+            item.status = ItemStatus.SUCCESS
+            item.filename = None
+            item.error = None
+            job.successful += 1
 
     def _record_item(self, job_id: str, item_id: int, result, error: str | None, output_path) -> None:
         with session_scope() as session:

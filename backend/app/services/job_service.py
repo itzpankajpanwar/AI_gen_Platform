@@ -103,6 +103,7 @@ def replace_prompts(
                 animation=parsed.animation,
                 animation_value=parsed.animation_value,
                 animation_params=parsed.animation_params,
+                needs_image=parsed.needs_image,
             )
         )
     project.csv_filename = filename
@@ -215,6 +216,7 @@ def start_job(session: Session, project: Project, settings: Settings) -> Job:
                 animation=prompt.animation,
                 animation_value=prompt.animation_value,
                 animation_params=prompt.animation_params,
+                needs_image=prompt.needs_image,
             )
         )
     session.commit()

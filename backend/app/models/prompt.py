@@ -1,4 +1,4 @@
-from sqlalchemy import Float, ForeignKey, Integer, String, Text
+from sqlalchemy import Boolean, Float, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import Base
@@ -33,5 +33,6 @@ class Prompt(Base):
     animation: Mapped[str | None] = mapped_column(String(32), nullable=True)
     animation_value: Mapped[float | None] = mapped_column(Float, nullable=True)
     animation_params: Mapped[str | None] = mapped_column(Text, nullable=True)
+    needs_image: Mapped[bool] = mapped_column(Boolean, default=True, nullable=True)
 
     project: Mapped["Project"] = relationship(back_populates="prompts")  # noqa: F821
