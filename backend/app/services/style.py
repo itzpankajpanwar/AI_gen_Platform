@@ -6,6 +6,7 @@ validator and the renderer can never disagree about what a value means.
 """
 
 from dataclasses import dataclass
+from pathlib import Path
 
 DEFAULT_TRANSITION_SECONDS = 0.5
 DEFAULT_ZOOM = 1.14
@@ -28,6 +29,25 @@ TRANSITIONS: dict[str, str] = {
     "slideright": "slideright",
     "slideup": "slideup",
     "slidedown": "slidedown",
+    # cinematic reveals
+    "smoothleft": "smoothleft",
+    "smoothright": "smoothright",
+    "smoothup": "smoothup",
+    "smoothdown": "smoothdown",
+    "circleopen": "circleopen",
+    "circleclose": "circleclose",
+    "radial": "radial",
+    "zoomin": "zoomin",
+    "pixelize": "pixelize",
+    "diagtl": "diagtl",
+    "diagtr": "diagtr",
+    "squeezeh": "squeezeh",
+    "squeezev": "squeezev",
+    "fadegrays": "fadegrays",
+    "hlwind": "hlwind",
+    # whip-pan aliases (use a short duration for the whip feel)
+    "whipleft": "slideleft",
+    "whipright": "slideright",
 }
 
 # ------------------------------------------------------------------ ken burns
@@ -58,6 +78,10 @@ GRADES: dict[str, str] = {
     "cold": "colorbalance=rs=-0.06:gs=-0.01:bs=0.08:rm=-0.03:bm=0.05,eq=contrast=1.06:saturation=0.88",
     "sepia": "colorchannelmixer=.393:.769:.189:0:.349:.686:.168:0:.272:.534:.131,eq=contrast=1.05:brightness=0.02",
     "bleach": "eq=contrast=1.28:saturation=0.45:brightness=0.02",
+    # cinematic looks
+    "teal_orange": "curves=all='0/0.03 0.5/0.5 1/0.97',colorbalance=rs=-0.05:bs=0.06:rm=0.06:bm=-0.05:rh=0.08:bh=-0.06,eq=contrast=1.08:saturation=1.08",
+    "film": "curves=all='0/0.04 0.25/0.2 0.75/0.8 1/0.96',eq=contrast=1.06:saturation=0.94:gamma=1.02,colorbalance=rm=0.03:bm=-0.03",
+    "cold_film": "curves=all='0/0.04 0.5/0.48 1/0.95',colorbalance=rs=-0.06:bs=0.08:bm=0.04,eq=contrast=1.07:saturation=0.85",
     "noir": "hue=s=0,eq=contrast=1.35:brightness=-0.02",
 }
 
@@ -151,3 +175,16 @@ def parse_text_type(raw: str) -> str | None:
             f"unknown text_type '{raw}' (expected one of: {', '.join(sorted(TEXT_STYLES))})"
         )
     return text
+
+
+def grade_filter(grade: str | None, settings) -> str | None:
+    """Resolve a grade name to an ffmpeg filter — a built-in look, or an external
+    .cube LUT when grade=='lut' and LUT_FILE is configured (a filmic per-project LUT)."""
+    if not grade:
+        return None
+    if grade == "lut":
+        path = getattr(settings, "lut_file", "")
+        if path and Path(path).is_file():
+            return f"lut3d='{path}'"
+        return None
+    return GRADES.get(grade)

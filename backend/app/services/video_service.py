@@ -22,6 +22,7 @@ from app.services.style import (
     DEFAULT_TRANSITION_SECONDS,
     DEFAULT_ZOOM,
     GRADES,
+    grade_filter,
     KEN_BURNS,
     TEXT_STYLES,
     TRANSITIONS,
@@ -141,8 +142,9 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
         )
         motion, overlay = build_animation(animation, context)
         chain.extend(motion)
-        if item.grade and item.grade in GRADES:
-            chain.append(GRADES[item.grade])
+        _g = grade_filter(item.grade, settings)
+        if _g:
+            chain.append(_g)
         if item.grain:
             chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
         chain.extend(overlay)
@@ -178,8 +180,9 @@ def build_scene_filter(item: JobItem, settings: Settings, width: int, height: in
             f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2"
         )
 
-    if item.grade and item.grade in GRADES:
-        chain.append(GRADES[item.grade])
+    _g = grade_filter(item.grade, settings)
+    if _g:
+        chain.append(_g)
     if item.grain:
         chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
 
@@ -243,8 +246,9 @@ def _conform_clip(
     every clip in the xfade chain has to agree on fps, SAR and pixel format.
     """
     chain: list[str] = []
-    if item.grade and item.grade in GRADES:
-        chain.append(GRADES[item.grade])
+    _g = grade_filter(item.grade, settings)
+    if _g:
+        chain.append(_g)
     if item.grain:
         chain.append(f"noise=alls={int(item.grain)}:allf=t+u")
     chain += [f"scale={width}:{height}", f"fps={settings.video_fps}", "setsar=1", "format=yuv420p"]

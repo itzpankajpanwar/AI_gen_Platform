@@ -62,6 +62,30 @@ TEMPLATES: dict[str, TemplateSpec] = {
         },
         required_params=("second",),
     ),
+    "parallax": TemplateSpec(
+        name="parallax",
+        summary="2.5D multiplane parallax from a single still (far + near planes move at different rates).",
+        text="optional",
+        params={"dir": "left | right", "depth": "parallax strength (default 1)", "dim": "0-1", "vignette": "0-1"},
+    ),
+    "pull_quote": TemplateSpec(
+        name="pull_quote",
+        summary="A pulled quotation with giant serif quote marks, revealing words and attribution.",
+        text="required",
+        params={"by": "attribution line"},
+    ),
+    "intro_card": TemplateSpec(
+        name="intro_card",
+        summary="Opening title: brand mark ring + title reveal.",
+        text="required",
+        params={"brand": "channel name", "kicker": "small label above the title"},
+    ),
+    "end_card": TemplateSpec(
+        name="end_card",
+        summary="Closing card: subscribe button + a next-up hook.",
+        text="optional",
+        params={"brand": "channel name", "next": "what to watch next"},
+    ),
     "cutout_reveal": TemplateSpec(
         name="cutout_reveal",
         summary="A transparent-background subject rising in over the previous image.",
@@ -176,7 +200,7 @@ TEXT_REQUIRED = frozenset(name for name, spec in TEMPLATES.items() if spec.text 
 CUTOUT_TEMPLATES = frozenset({"cutout_reveal"})
 #: Templates that draw their own scene and never use a generated still, so
 #: a row using one needs no image and should not spend an API call.
-NO_IMAGE_TEMPLATES = frozenset({"geo_map"})
+NO_IMAGE_TEMPLATES = frozenset({"geo_map", "intro_card", "end_card"})
 
 
 def parse_params(raw: str) -> dict[str, str]:

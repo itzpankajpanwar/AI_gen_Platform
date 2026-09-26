@@ -96,7 +96,7 @@ def generate_backgrounds(lines: list[dict], aspect: str) -> None:
 def char_weight(text: str) -> int:
     return max(1, len(re.sub(r"\s+", "", text)))
 
-def build_segments(lines: list[dict], duration: float, boundaries: list[float]) -> list[dict]:
+def build_segments(lines: list[dict], duration: float, boundaries: list[float], bpm: float = 0.0) -> list[dict]:
     lead = min(0.2, boundaries[1] if len(boundaries) > 1 else 0.2)
     weights = [char_weight(l["text"]) for l in lines]
     span = duration - lead
@@ -106,9 +106,13 @@ def build_segments(lines: list[dict], duration: float, boundaries: list[float]) 
         start = float(line["start"]) if "start" in line else cursor
         # snap to the nearest real pause within 0.7s for tight sync
         if "start" not in line:
-            near = min(boundaries, key=lambda b: abs(b - start))
-            if abs(near - start) <= 0.7:
-                start = near
+            if bpm > 0:
+                beat = 60.0 / bpm
+                start = round(start / beat) * beat  # snap to the musical beat grid
+            else:
+                near = min(boundaries, key=lambda b: abs(b - start))
+                if abs(near - start) <= 0.7:
+                    start = near
         segs.append({
             "start": round(start, 3),
             "text": line["text"],
@@ -131,6 +135,7 @@ def main() -> None:
     ap.add_argument("--accent", default=None)
     ap.add_argument("--brand", default=None)
     ap.add_argument("--aspect", default="9x16", choices=["9x16", "16x9"])
+    ap.add_argument("--bpm", type=float, default=0.0, help="snap scene cuts to this musical beat grid")
     args = ap.parse_args()
 
     audio = Path(args.audio).expanduser().resolve()
@@ -141,7 +146,7 @@ def main() -> None:
     duration = probe_duration(audio)
     boundaries = silence_boundaries(audio)
     generate_backgrounds(lines, args.aspect)
-    segs = build_segments(lines, duration, boundaries)
+    segs = build_segments(lines, duration, boundaries, args.bpm)
 
     # stage the audio where staticFile() can reach it
     PUBLIC.mkdir(parents=True, exist_ok=True)

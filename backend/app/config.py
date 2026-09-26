@@ -122,6 +122,7 @@ class Settings(BaseSettings):
     font_sans: Path = Path("assets/fonts/Mukta-Regular.ttf")
     font_serif: Path = Path("assets/fonts/Mukta-Bold.ttf")
     music_dir: Path = Path("assets/music")
+    lut_file: str = ""  # optional .cube LUT; use grade=lut to apply it
     ambience_dir: Path = Path("assets/ambience")
     sfx_dir: Path = Path("assets/sfx")
     archival_dir: Path = Path("assets/archival")
