@@ -1,0 +1,16 @@
+{
+  "accent": "#E0A65C",
+  "brand": "THE QUIET STORY",
+  "lines": [
+    { "text": "अगर कल सुबह दुनिया का GPS बंद हो जाए…", "scene": "globe", "emphasis": "GPS", "params": { "die": "1" } },
+    { "text": "तो सिर्फ Google Maps ही बंद नहीं होगा।", "scene": "keyword", "emphasis": "Google Maps", "params": { "emoji": "📱", "danger": "1" } },
+    { "text": "Planes को navigation में problems होंगी।", "scene": "vehicle", "emphasis": "Planes", "params": { "kind": "plane" } },
+    { "text": "Ships को routes maintain करने में दिक्कत आएगी।", "scene": "vehicle", "emphasis": "Ships", "params": { "kind": "ship" } },
+    { "text": "Banking systems, telecom networks और कई modern systems भी प्रभावित हो सकते हैं।", "scene": "list", "emphasis": "systems", "params": { "items": "🏦 Banking,📡 Telecom,🖥️ Systems,💳 Payments,🌐 Networks,⚙️ Grid", "fail": "1" } },
+    { "text": "क्योंकि GPS सिर्फ ये बताने के लिए नहीं है कि आप कहां हैं।", "scene": "where", "emphasis": "आप कहां हैं" },
+    { "text": "ये दुनिया के कई systems को एक बेहद precise time signal भी देता है।", "scene": "clock", "emphasis": "time signal" },
+    { "text": "और सबसे interesting बात?", "scene": "hook", "emphasis": "interesting", "params": { "mark": "?" } },
+    { "text": "आपके फोन में GPS सिर्फ satellites से location नहीं पूछता…", "scene": "beam", "emphasis": "location", "params": { "emoji": "📍" } },
+    { "text": "वो अंतरिक्ष में घूम रहे satellites से time भी मांगता है।", "scene": "beam", "emphasis": "time", "params": { "reveal": "1" } }
+  ]
+}
