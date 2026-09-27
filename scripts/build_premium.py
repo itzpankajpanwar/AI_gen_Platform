@@ -192,11 +192,11 @@ def main(N):
             tts.synthesize(SpeechRequest(text=sc["n"], output_path=clip, voice=s.sarvam_speaker,
                            language="hi-IN", model=s.sarvam_model, pace=1.15)); made_n+=1
         sc["_dur"] = dur(clip)
-        prompts = scene_prompts(sc)
-        sc["_prompts"] = prompts
         sc["_geo"] = sc.get("geo")   # explicit opt-in only — a city mention never hijacks a scene
         if sc["_geo"]:
-            continue  # geo_map draws itself, no image
+            continue  # geo_map draws itself: no image, no prompts needed
+        prompts = scene_prompts(sc)
+        sc["_prompts"] = prompts
 
         nbeats = choose_beats(sc["_dur"], len(prompts))
         sc["_nbeats"] = nbeats
