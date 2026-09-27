@@ -101,6 +101,36 @@ Remotion needs its dependencies installed once; without them the ffmpeg presets 
 npm install --prefix remotion
 ```
 
+## The documentary film pipeline
+
+On top of the generic CSV→video engine sits a **premium documentary pipeline** —
+the one that produces cinematic, narrated, scored film chapters (built for the
+channel *The Quiet Story* and its 15-part **Dr. B. R. Ambedkar** film).
+
+Instead of a flat CSV, each chapter is a small JSON script
+([`scripts/film/part{N}.json`](scripts/film/)), and one command builds the whole
+chapter — generating and caching images (OpenAI) and narration (Sarvam), then
+rendering:
+
+```bash
+python scripts/build_premium.py 5          # build chapter 5
+bash   deploy/build_all.sh                  # build all 15 chapters
+python scripts/shotlist.py                  # dump a per-beat shot list to review/
+```
+
+What it adds over the base engine:
+
+- **Distinct-image beats** — every scene is cut into ≤3s beats, each a *different*
+  image (documentary coverage), while keeping one narration clip per scene.
+- **Verified fact/date cards** and **animated India maps** placed automatically.
+- **Intro / end cards**, per-chapter **colour grade**, film grain, transitions.
+- **Full sound design** — narration mastered over a ducked music bed, ambience,
+  and auto-placed SFX, mixed to −15 LUFS; **`.srt`** subtitles.
+- **Generate-once / reuse** — re-running never re-spends on cached images/audio.
+
+Full details, spec format, the 11 premium features, cost/performance and the
+name convention: **[`docs/FILM_PIPELINE.md`](docs/FILM_PIPELINE.md)**.
+
 ## What a batch does
 
 Every prompt is generated automatically, one after another. **A failed prompt never stops the
@@ -113,7 +143,7 @@ re-renders the video.
 
 ## Retention
 
-A finished video is downloadable for **10 hours** (`ZIP_RETENTION_HOURS`). A cleanup worker runs
+A finished video is downloadable for a configurable window (`ZIP_RETENTION_HOURS`, currently **24 hours**). A cleanup worker runs
 every 5 minutes and deletes the video, the images and the temporary job files of jobs whose
 expiry has actually passed — nothing else.
 
@@ -140,9 +170,15 @@ class ImageGenerator(ABC):
 | Backend      | `GENERATOR_BACKEND` | Use                                                  |
 | ------------ | ------------------- | ---------------------------------------------------- |
 | Mock         | `mock`              | Local development and CI — no GPU, no model          |
+| OpenAI       | `openai`            | Hosted `gpt-image` (used by the documentary pipeline)|
 | Runware      | `runware`           | Hosted FLUX.1-schnell, ~$0.0006/image, no infra      |
 | Pollinations | `pollinations`      | Free hosted API, no key — rate limited, watermarked  |
 | ComfyUI      | `comfyui`           | Self-hosted FLUX (or any graph) via ComfyUI HTTP     |
+
+**Narration (text-to-speech)** is pluggable the same way behind `TextToSpeech`:
+`TTS_PROVIDER=mock` (silent clips of realistic length, no key), `sarvam`
+(Indian-language voices — the documentary uses `bulbul:v3`, speaker `ritu`), or
+`elevenlabs`. The scene timeline re-flows to the real length of each clip.
 
 **No GPU anywhere?** Use `runware`: set `RUNWARE_API_KEY` and a 100-prompt batch costs
 roughly $0.06 with nothing running between batches. `pollinations` needs no key at all and is
@@ -230,9 +266,30 @@ is the only service that needs to reach the model.
 
 ---
 
-## Infrastructure
+## Deploy to a VM
 
-Deliberately undecided. No VM, GPU, machine type or cloud provider is assumed anywhere in this
-repository. Once a VM exists, the remaining work is: inspect the hardware, install ComfyUI and
-FLUX, benchmark, point `GENERATOR_BACKEND=comfyui` at it, and deploy. `.github/workflows/deploy.yml`
-stays inert until a `DEPLOY_HOST` secret is configured.
+The whole stack — UI + API + generation/render worker — runs on one Linux VM. A
+turn-key kit lives in [`deploy/`](deploy/):
+
+```bash
+# on the VM host (needs your cloud login), from the repo on your machine
+bash deploy/push_to_vm.sh      # rsync repo (incl. cached assets) + provision + start services
+```
+
+`deploy/setup_vm.sh` installs ffmpeg, Node, the headless-Chrome libraries
+Remotion needs, the Mukta fonts, a Python venv, builds the frontend, adds swap,
+and installs two systemd services (API+worker `:8200`, web `:3200`, bound to
+localhost — reach them over an SSH tunnel, or open one port to your IP). Full
+runbook: [`deploy/README.md`](deploy/README.md).
+
+Because inference is hosted (OpenAI images, Sarvam TTS), **no GPU is required** —
+a general-purpose/compute-optimized VM (e.g. `c2d-standard-8`, 8 vCPU / 32 GB)
+runs everything. If you prefer self-hosted models, the image backend is still
+swappable to ComfyUI/FLUX as above.
+
+## Infrastructure notes
+
+Nothing in the app assumes a specific provider — `GENERATOR_BACKEND` /
+`TTS_PROVIDER` decide where inference happens, and the queue lives in the
+database so the worker can be its own container (`docker-compose.yml`) or a
+separate machine sharing `DATA_DIR`.

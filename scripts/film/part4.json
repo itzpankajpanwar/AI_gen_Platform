@@ -3,116 +3,146 @@
   "title": "महाड़ और नासिक",
   "palette": "bleached hot midday palette, white glare, dust and standing water",
   "grade": "bleach",
-  "grain": "medium",
+  "grain": "light",
   "music": "tension.mp3",
+  "ambience": "crowd.mp3",
   "scenes": [
     {
       "n": "किसी समाज में अगर किसी इंसान को पानी पीने के लिए भी अनुमति चाहिए... तो समस्या केवल पानी की नहीं होती। समस्या होती है— बराबरी की।",
-      "p": "A cupped hand held out empty beneath a village tap that is not running, hard white light, cracked earth below",
-      "shot": "detail",
-      "anim": "chapter_card",
-      "params": "chapter=भाग चार",
-      "text": "पानी का अधिकार"
+      "beats": [
+        "A cupped hand held out empty beneath a village tap that is not running, hard white light, cracked earth below",
+        "Cracked dry earth beneath a dripless village tap, hard white light, close shot",
+        "A row of empty brass pots set in the dust waiting by a closed water source, hard glare, wide shot"
+      ]
     },
     {
-      "n": "1920 के दशक में आंबेडकर का आंदोलन इसी मूल सवाल पर केंद्रित होने लगा।",
-      "p": "A 1920s Maharashtra town square at noon, white glare on lime-washed walls, small groups of people standing well apart in the heat",
-      "shot": "wide"
+      "n": "1920 के दशक में डॉ. आंबेडकर का आंदोलन इसी मूल सवाल पर केंद्रित होने लगा।",
+      "beats": [
+        "A 1920s Maharashtra town square at noon, white glare on lime-washed walls, small groups of people standing well apart in the heat",
+        "Long midday shadows of separated groups across a lime-washed square, white glare, wide shot"
+      ]
     },
     {
       "n": "महाड़। महाराष्ट्र का एक शहर।",
-      "p": "An aerial view of the western Indian coastline and the hills of the Konkan at midday, rivers and small towns far below, heat haze",
-      "shot": "xwide",
-      "anim": "map_route",
-      "params": "path=58,20 52,34 46,48 42,58",
-      "text": "महाड़, महाराष्ट्र"
+      "geo": "mahad",
+      "geo_label": "महाड़, महाराष्ट्र",
+      "geo_date": "1927"
     },
     {
       "n": "वहां चवदार तालाब था। सार्वजनिक पानी का स्रोत।",
-      "p": "A large public water tank in a Maharashtra town, stone steps descending into still green water, low buildings around it, nobody at the water's edge",
-      "shot": "wide"
+      "p": "A large public water tank in a Maharashtra town, stone steps descending into still green water, low buildings around it, nobody at the water's edge"
     },
     {
       "n": "लेकिन सामाजिक व्यवस्था ने अछूत माने जाने वाले लोगों को उस पानी तक पहुंच से रोक रखा था।",
-      "p": "A rope barrier and a line of stones laid across the approach to a public water tank, a group of people standing behind it in the heat, all seen from behind",
-      "shot": "medium"
+      "beats": [
+        "A rope barrier and a line of stones laid across the approach to a public water tank, a group of people standing behind it in the heat, all seen from behind",
+        "A line of stones and a rope laid across the steps down to water, people waiting behind in the heat, seen from behind, wide shot"
+      ]
     },
     {
-      "n": "1927 में आंबेडकर ने महाड़ में आंदोलन का नेतृत्व किया। हजारों लोग वहां पहुंचे।",
-      "p": "An enormous crowd gathered on open ground beside a water tank in 1927, thousands of white-clad figures seen from a high distance, banners without lettering",
-      "shot": "xwide",
-      "anim": "lower_third",
-      "params": "sub=महाड़ सत्याग्रह",
-      "text": "२० मार्च १९२७"
+      "n": "1927 में डॉ. आंबेडकर ने महाड़ में आंदोलन का नेतृत्व किया। हजारों लोग वहां पहुंचे।",
+      "beats": [
+        "An enormous crowd gathered on open ground beside a water tank in 1927, thousands of white-clad figures seen from a high distance, banners without lettering",
+        "A vast crowd converging on open ground by a water tank, white cloth to the horizon, high angle, wide shot"
+      ]
     },
     {
       "n": "मुद्दा बहुत साधारण था— अगर तालाब सार्वजनिक है, तो सार्वजनिक पानी पर अधिकार सबका होना चाहिए।",
-      "p": "Dozens of cupped hands lifting water from a stone tank at once, water breaking the surface, bright hard sunlight",
-      "shot": "detail"
+      "beats": [
+        "Dozens of cupped hands lifting water from a stone tank at once, water breaking the surface, bright hard sunlight",
+        "Water breaking the surface of a stone tank as many hands dip in at once, bright hard light, close shot"
+      ]
     },
     {
       "n": "यह आंदोलन केवल पानी पीने के लिए नहीं था। यह उस विचार को चुनौती थी कि जन्म के आधार पर किसी इंसान को सार्वजनिक संसाधनों से दूर रखा जा सकता है।",
-      "p": "A dense crowd moving together down a narrow town street towards a water tank, seen from behind at shoulder height, dust and white cloth",
-      "shot": "medium"
+      "beats": [
+        "A dense crowd moving together down a narrow town street towards a water tank, seen from behind at shoulder height, dust and white cloth",
+        "A crowd flowing down a narrow town lane toward the tank, dust and white cloth, seen from behind, wide shot",
+        "Bare feet moving together over hot stone toward the water, dust, close shot"
+      ]
     },
     {
-      "n": "और फिर... आंबेडकर ने एक और कदम उठाया। मनुस्मृति की प्रतियां सार्वजनिक रूप से जलाई गईं।",
-      "p": "Pages of an old bound book curling and blackening in a small fire on open ground, smoke, hands at the edge of frame stepping back",
-      "shot": "close"
+      "n": "और फिर... डॉ. आंबेडकर ने एक और कदम उठाया। मनुस्मृति की प्रतियां सार्वजनिक रूप से जलाई गईं।",
+      "beats": [
+        "Pages of an old bound book curling and blackening in a small fire on open ground, smoke, hands at the edge of frame stepping back",
+        "An old bound book fully alight on open ground, smoke rising, hands withdrawing, close shot"
+      ]
     },
     {
       "n": "यह घटना बेहद प्रतीकात्मक थी।",
-      "p": "A crowd standing in a wide circle around a low fire on open ground at dusk, silhouettes against the last light, smoke drifting upward",
-      "shot": "wide"
+      "p": "A crowd standing in a wide circle around a low fire on open ground at dusk, silhouettes against the last light, smoke drifting upward"
     },
     {
-      "n": "आंबेडकर का संघर्ष किसी व्यक्ति विशेष के खिलाफ नहीं, बल्कि उन सामाजिक और धार्मिक व्याख्याओं के खिलाफ था जिन्हें वह जातिगत असमानता को बनाए रखने वाला मानते थे।",
-      "p": "A heavy carved stone lintel above a doorway, worn smooth by centuries, a figure standing beneath it in shadow seen from behind",
-      "shot": "medium"
+      "n": "डॉ. आंबेडकर का संघर्ष किसी व्यक्ति विशेष के खिलाफ नहीं, बल्कि उन सामाजिक और धार्मिक व्याख्याओं के खिलाफ था जिन्हें वह जातिगत असमानता को बनाए रखने वाला मानते थे।",
+      "beats": [
+        "A heavy carved stone lintel above a doorway, worn smooth by centuries, a figure standing beneath it in shadow seen from behind",
+        "A centuries-worn temple lintel above a dark doorway, a figure beneath in shadow, medium shot",
+        "A closed old text on a stone ledge under hard light, deep shadow, close shot",
+        "A hand resting flat against ancient carved stone, hard side light, close shot"
+      ]
     },
     {
       "n": "लेकिन उनका आंदोलन यहीं नहीं रुका। 1930 में नासिक के कालाराम मंदिर में मंदिर प्रवेश आंदोलन शुरू हुआ।",
-      "p": "The stepped entrance of a large old temple in Nashik, carved stone tower above, a crowd gathered on the road outside behind a line of police, 1930",
-      "shot": "wide",
-      "anim": "lower_third",
-      "params": "sub=नासिक, १९३०",
-      "text": "कालाराम मंदिर सत्याग्रह"
+      "beats": [
+        "The stepped entrance of a large old temple in Nashik, carved stone tower above, a crowd gathered on the road outside behind a line of police, 1930",
+        "A carved temple tower rising above a crowd held back by a line of police, 1930, wide shot"
+      ]
     },
     {
       "n": "सवाल फिर वही था— अगर भगवान सबके हैं, तो मंदिर का दरवाजा जन्म के आधार पर कुछ लोगों के लिए बंद क्यों?",
-      "p": "Closed temple doors seen from ground level at the top of worn steps, iron studs and heavy bolts, hard shadow across the stone",
-      "shot": "low"
+      "beats": [
+        "Closed temple doors seen from ground level at the top of worn steps, iron studs and heavy bolts, hard shadow across the stone",
+        "Heavy iron-studded temple doors bolted shut, hard shadow across worn stone, close shot"
+      ]
     },
     {
-      "n": "यहां से आंबेडकर की राजनीति का एक महत्वपूर्ण सिद्धांत साफ दिखाई देता है। वह केवल दया नहीं चाहते थे। वह बराबरी चाहते थे।",
-      "p": "Two pairs of hands meeting level across a table, neither above the other, even daylight, dark simple background",
-      "shot": "medium"
+      "n": "यहां से डॉ. आंबेडकर की राजनीति का एक महत्वपूर्ण सिद्धांत साफ दिखाई देता है। वह केवल दया नहीं चाहते थे। वह बराबरी चाहते थे।",
+      "beats": [
+        "Two pairs of hands meeting level across a table, neither above the other, even daylight, dark simple background",
+        "Two hands clasped exactly level, neither above the other, even daylight, close shot",
+        "A balance beam sitting perfectly level between two open palms, dark background, close shot"
+      ]
     },
     {
       "n": "वह किसी ऊंची जाति के व्यक्ति से यह नहीं कह रहे थे कि वह गरीब या दलित व्यक्ति पर कृपा करे। वह कह रहे थे— कानून और समाज दोनों में इंसान की गरिमा जन्म से तय नहीं होनी चाहिए।",
-      "p": "A brass balance scale in perfect equilibrium on a dark table, bright side light, dust in the air",
-      "shot": "close"
+      "beats": [
+        "A brass balance scale in perfect equilibrium on a dark table, bright side light, dust in the air",
+        "A brass scale in perfect balance, bright side light, dust in the air, close shot",
+        "Two equal stones resting in two level pans, hard light, close shot",
+        "A level horizon line splitting light and shadow equally, abstract, wide shot"
+      ]
     },
     {
       "n": "और इसी समय भारत की राष्ट्रीय राजनीति भी तेजी से बदल रही थी। ब्रिटिश शासन के खिलाफ स्वतंत्रता आंदोलन तेज हो रहा था।",
-      "p": "A vast independence-era political rally on open ground in 1930s India, white khadi caps to the horizon, banners without lettering, dust and heat",
-      "shot": "xwide"
+      "beats": [
+        "A vast independence-era political rally on open ground in 1930s India, white khadi caps to the horizon, banners without lettering, dust and heat",
+        "White khadi caps stretching to the horizon at a 1930s rally, banners without lettering, dust, wide shot",
+        "A raised dais above a huge seated crowd, seen from the rear, heat haze, wide shot"
+      ]
     },
     {
       "n": "कांग्रेस का प्रभाव बढ़ रहा था। महात्मा गांधी देश के सबसे प्रमुख नेताओं में से एक बन चुके थे।",
-      "p": "A packed Congress session pandal of the 1930s, rows of seated delegates in white, a raised dais with an empty chair, seen from the rear of the crowd",
-      "shot": "wide"
+      "beats": [
+        "A packed Congress session pandal of the 1930s, rows of seated delegates in white, a raised dais with an empty chair, seen from the rear of the crowd",
+        "Rows of white-clad delegates seated in a session pandal, an empty dais chair, seen from the rear, wide shot"
+      ]
     },
     {
-      "n": "लेकिन आंबेडकर के सामने एक अलग सवाल था। अगर अंग्रेज चले भी गए... तो क्या जाति व्यवस्था अपने आप खत्म हो जाएगी?",
-      "p": "A pair of dirt roads diverging from a single point across an open Indian landscape at evening, one figure standing at the fork seen from behind",
-      "shot": "medium"
+      "n": "लेकिन डॉ. आंबेडकर के सामने एक अलग सवाल था। अगर अंग्रेज चले भी गए... तो क्या जाति व्यवस्था अपने आप खत्म हो जाएगी?",
+      "beats": [
+        "A pair of dirt roads diverging from a single point across an open Indian landscape at evening, one figure standing at the fork seen from behind",
+        "A single figure standing at a fork of two dirt roads on an open plain at evening, seen from behind, wide shot",
+        "Two tracks parting around scrub on a dry plain, evening shadow, wide shot"
+      ]
     },
     {
-      "n": "अगर भारत राजनीतिक रूप से स्वतंत्र हो गया... तो क्या हर भारतीय सामाजिक रूप से भी स्वतंत्र होगा? यहीं से आंबेडकर और गांधी के बीच एक गहरा राजनीतिक और वैचारिक मतभेद सामने आने वाला था।",
-      "p": "Looking straight down at two sets of footprints in dust leading away from one another from a single point, hard evening shadow",
-      "shot": "overhead"
+      "n": "अगर भारत राजनीतिक रूप से स्वतंत्र हो गया... तो क्या हर भारतीय सामाजिक रूप से भी स्वतंत्र होगा? यहीं से डॉ. आंबेडकर और गांधी के बीच एक गहरा राजनीतिक और वैचारिक मतभेद सामने आने वाला था।",
+      "beats": [
+        "Looking straight down at two sets of footprints in dust leading away from one another from a single point, hard evening shadow",
+        "Two sets of footprints leading apart from one point in dust, hard evening shadow, overhead shot",
+        "A dry plain at dusk where one path splits into two toward different horizons, wide shot",
+        "Two long shadows stretching in different directions from a single point, hard light, wide shot"
+      ]
     }
-  ],
-  "ambience": "crowd.mp3"
+  ]
 }

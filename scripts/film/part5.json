@@ -5,155 +5,191 @@
   "grade": "neutral",
   "grain": "light",
   "music": "tension.mp3",
+  "ambience": "room.mp3",
   "scenes": [
     {
-      "n": "आंबेडकर और गांधी... भारतीय इतिहास के दो अत्यंत प्रभावशाली नाम।",
-      "p": "Two plain wooden chairs facing each other across a bare table in an empty room, even daylight from a single window",
-      "shot": "medium",
-      "anim": "chapter_card",
-      "params": "chapter=भाग पाँच",
-      "text": "दो रास्ते"
+      "n": "डॉ. आंबेडकर और गांधी... भारतीय इतिहास के दो अत्यंत प्रभावशाली नाम।",
+      "beats": [
+        "Two empty wooden chairs facing each other across a bare table in a plain room, a single shaft of cold window light between them, wide shot",
+        "Two framed portraits turned face-away on a mantel, only their backs and the bare wall between them visible, museum light, medium shot"
+      ]
     },
     {
       "n": "दोनों अस्पृश्यता के खिलाफ थे। लेकिन दोनों के रास्ते, राजनीतिक रणनीतियां और सामाजिक परिवर्तन को लेकर विचार कई महत्वपूर्ण बिंदुओं पर अलग थे।",
-      "p": "Two pairs of round wire-rimmed spectacles lying side by side on dark cloth, one plain steel and one heavier, even museum light",
-      "shot": "detail"
+      "beats": [
+        "Two pairs of round wire-rimmed spectacles resting side by side on dark cloth, one plain steel one heavier, cold even light, extreme close-up",
+        "A dusty open plain where a single footpath splits into two diverging tracks running to different horizons, evening light, wide shot",
+        "A large hall with two speaking platforms at opposite ends and empty chairs between them, cold morning light, wide shot"
+      ]
     },
     {
-      "n": "और इस अंतर को समझे बिना आंबेडकर की राजनीति को समझना मुश्किल है।",
-      "p": "A large hall set with two speaking platforms at opposite ends and rows of chairs between them, empty, cold morning light",
-      "shot": "wide"
+      "n": "और इस अंतर को समझे बिना डॉ. आंबेडकर की राजनीति को समझना मुश्किल है।",
+      "beats": [
+        "A single lamp lighting two open books angled apart on a dark desk, their pages out of focus, close shot",
+        "Two long shadows of standing men thrown in opposite directions across a bare stone floor, harsh side light, wide shot"
+      ]
     },
     {
-      "n": "आंबेडकर के लिए दलितों की समस्या का समाधान सिर्फ सामाजिक सुधार से नहीं हो सकता था। उन्हें राजनीतिक शक्ति भी चाहिए थी।",
-      "p": "A law book and a ballot box standing together on a table in a plain room, a hand resting on the book's cover, flat daylight",
-      "shot": "medium"
+      "n": "डॉ. आंबेडकर के लिए दलितों की समस्या का समाधान सिर्फ सामाजिक सुधार से नहीं हो सकता था। उन्हें राजनीतिक शक्ति भी चाहिए थी।",
+      "beats": [
+        "A worn law book and a sealed wooden ballot box standing together on a plain table, a hand resting on the book's cover, flat daylight, medium shot",
+        "An official brass seal and a thick stack of petitions on a government desk, cold light, close shot",
+        "An empty legislative bench seen down the aisle, rows of vacant wooden seats receding, formal light, wide shot"
+      ]
     },
     {
       "n": "प्रतिनिधित्व चाहिए था। अपने नेताओं को चुनने की क्षमता चाहिए थी।",
-      "p": "A long queue of voters waiting outside a 1930s Indian polling place, all seen from behind, dust and shuttered shopfronts",
-      "shot": "wide"
+      "beats": [
+        "A long queue of voters seen only from behind outside a 1930s Indian polling place, dust and shuttered shopfronts, wide shot",
+        "A hand dropping a folded paper slip into the slot of a wooden ballot box, flat daylight, close shot"
+      ]
     },
     {
       "n": "और यही सवाल 1930 के दशक की ब्रिटिश राजनीति में बहुत बड़ा मुद्दा बन गया। लंदन में Round Table Conferences हो रही थीं।",
-      "p": "St James's Park and the government buildings of Whitehall in winter fog, 1930, bare trees and wet pavement, distant figures in overcoats",
-      "shot": "xwide",
-      "anim": "lower_third",
-      "params": "sub=लंदन, १९३०–३२",
-      "text": "गोलमेज सम्मेलन"
+      "beats": [
+        "St James's Park and the Whitehall government buildings in winter fog, 1930, bare trees, wet pavement, distant figures in overcoats, extreme wide shot",
+        "A grand London conference room of the 1930s, a long polished table ringed with empty chairs, tall windows and heavy curtains, cold grey light, wide shot"
+      ]
     },
     {
-      "n": "आंबेडकर ने तीनों सम्मेलनों में भाग लिया।",
-      "p": "A grand London conference room of the 1930s, a long polished table ringed with chairs, tall windows and heavy curtains, cold grey light",
-      "shot": "wide",
-      "anim": "timeline",
-      "params": "from=1930;to=1932;marks=1930,1931,1932;highlight=1931",
-      "text": "गोलमेज सम्मेलन"
+      "n": "डॉ. आंबेडकर ने तीनों सम्मेलनों में भाग लिया।",
+      "p": "A single place at a conference table with a folded nameplate and a glass of water, the chair pushed slightly back, cold window light, medium shot"
     },
     {
       "n": "वह वहां 'Depressed Classes' यानी उस समय सरकारी भाषा में इस्तेमाल होने वाले शब्द के तहत वंचित वर्गों के राजनीतिक अधिकारों की बात कर रहे थे।",
-      "p": "A place at a conference table with a folded nameplate turned away, a water glass, a stack of memoranda, cold window light",
-      "shot": "medium"
+      "beats": [
+        "A folded conference nameplate turned away from camera, a stack of typed memoranda beside it, cold light, close shot",
+        "A printed memorandum with one heavy underlined paragraph, a fountain pen laid across it, extreme close-up",
+        "A single empty chair at the far end of a long committee table, the other seats occupied only by shadows, wide shot"
+      ]
     },
     {
       "n": "उनका तर्क था कि अगर सत्ता का हस्तांतरण केवल ब्रिटिश सरकार से भारतीय बहुसंख्यक राजनीतिक नेतृत्व को हो गया... लेकिन समाज के सबसे कमजोर वर्गों को वास्तविक राजनीतिक प्रतिनिधित्व नहीं मिला... तो उनके लिए स्वतंत्रता अधूरी रह जाएगी।",
-      "p": "Looking straight down at a conference table where a map of India lies unrolled and weighted at the corners, hands at the edges of frame",
-      "shot": "overhead"
+      "beats": [
+        "Two hands passing a heavy brass key across a polished table, neither face shown, cold light, close shot",
+        "A grand doorway with one group in fine coats entering while a ragged group is left waiting outside in the rain, wide shot",
+        "An ornate ceremonial chair on a raised dais, empty, draped cloth, formal light, medium shot",
+        "A cracked stone threshold half in sunlight and half in shadow, a single bare foot at the shadow's edge, close shot"
+      ]
     },
     {
       "n": "फिर आया 1932। ब्रिटिश प्रधानमंत्री Ramsay MacDonald ने Communal Award की घोषणा की।",
-      "p": "A government despatch box open on a desk with printed papers inside, brass fittings, a hand lifting the top sheet",
-      "shot": "close",
-      "anim": "lower_third",
-      "params": "sub=१९३२",
-      "text": "Communal Award"
+      "beats": [
+        "A government despatch box open on a desk with printed papers inside, brass fittings, a hand lifting the top sheet, close shot",
+        "A wireless set on an official desk beside a curling printed announcement, lamplight, medium shot"
+      ]
     },
     {
       "n": "इसमें Depressed Classes के लिए अलग निर्वाचन मंडल यानी separate electorates का प्रावधान किया गया।",
-      "p": "A polling booth interior with two separate ballot boxes standing apart on a wooden table, a curtain half drawn, flat daylight",
-      "shot": "medium"
+      "beats": [
+        "A polling booth interior with two separate ballot boxes standing apart on a wooden table, a curtain half drawn, flat daylight, medium shot",
+        "A printed electoral roll divided into two columns by a heavy ruled line, extreme close-up"
+      ]
     },
     {
       "n": "गांधी ने इसका विरोध किया। उन्होंने यरवदा जेल में आमरण अनशन शुरू किया।",
-      "p": "A prison courtyard in 1932 with a low cot set out under a neem tree, a crowd of officials standing at a respectful distance, harsh light",
-      "shot": "wide"
+      "beats": [
+        "A prison courtyard in 1932 with a low cot set out under a neem tree, officials standing at a respectful distance, harsh light, wide shot",
+        "An untouched plate and a glass of water on the ground beside a rough charpai, a long shadow, close shot"
+      ]
     },
     {
-      "n": "अब स्थिति बेहद जटिल थी। एक तरफ आंबेडकर थे, जो राजनीतिक प्रतिनिधित्व को वंचित वर्गों की सुरक्षा के लिए आवश्यक मानते थे।",
-      "p": "A newspaper office at night, a compositor's hands locking a metal forme into place, urgent movement, lamplight",
-      "shot": "medium"
+      "n": "अब स्थिति बेहद जटिल थी। एक तरफ डॉ. आंबेडकर थे, जो राजनीतिक प्रतिनिधित्व को वंचित वर्गों की सुरक्षा के लिए आवश्यक मानते थे।",
+      "beats": [
+        "A newspaper office at night, a compositor's hands locking a metal forme into place, urgent movement, lamplight, medium shot",
+        "A telephone lying off its hook on a cluttered desk, scattered papers, lamplight, close shot",
+        "A wall map with two pins and a taut thread stretched tight between them, cold light, medium shot"
+      ]
     },
     {
       "n": "दूसरी तरफ गांधी थे, जो अलग निर्वाचन व्यवस्था को हिंदू समाज के विभाजन के रूप में देखते थे।",
-      "p": "A crowd waiting outside a prison gate at dusk, hundreds of backs, lanterns beginning to show, tense stillness",
-      "shot": "wide"
+      "beats": [
+        "A crowd waiting outside a prison gate at dusk, hundreds of backs, lanterns beginning to show, tense stillness, wide shot",
+        "A single cracked earthen bowl set on the ground before a closed prison door, dusk, close shot"
+      ]
     },
     {
-      "n": "तनाव बढ़ता गया। और अंततः... 24 सितंबर 1932 को आंबेडकर और गांधी के बीच समझौता हुआ।",
-      "p": "A small room with a table between two chairs, papers spread across it, two men leaning in from opposite sides seen only as shoulders and hands",
-      "shot": "medium",
-      "anim": "lower_third",
-      "params": "sub=२४ सितंबर १९३२",
-      "text": "पूना पैक्ट"
+      "n": "तनाव बढ़ता गया। और अंततः... 24 सितंबर 1932 को डॉ. आंबेडकर और गांधी के बीच समझौता हुआ।",
+      "beats": [
+        "A small room with a table between two chairs, papers spread across it, two men leaning in seen only as shoulders and hands, medium shot",
+        "A clock on a bare wall reading late afternoon, a slice of window light climbing its face, close shot"
+      ]
     },
     {
       "n": "इसे इतिहास में पूना पैक्ट के नाम से जाना गया।",
-      "p": "A fountain pen being set down on a signed document, the ink still wet, two hands withdrawing, warm lamplight",
-      "shot": "detail"
+      "p": "A fountain pen being set down on a freshly signed document, the ink still wet, two hands withdrawing, warm lamplight, extreme close-up"
     },
     {
       "n": "Separate electorates की जगह आरक्षित सीटों की व्यवस्था स्वीकार की गई, जिसके तहत Depressed Classes के लिए विधानसभाओं में अधिक प्रतिनिधित्व की व्यवस्था बनी।",
-      "p": "An empty provincial legislative chamber with curved tiers of wooden benches, a portion of the seats marked with folded white cards, formal light",
-      "shot": "wide",
-      "anim": "bar_chart",
-      "params": "values=71,148;labels=Communal Award,पूना पैक्ट",
-      "text": "आरक्षित सीटें"
+      "beats": [
+        "An empty provincial legislative chamber with curved tiers of wooden benches, formal light, wide shot",
+        "A portion of the benches marked with folded white reservation cards while the rest stay bare, medium shot",
+        "A hand placing a single white card upright on one specific seat, close shot",
+        "A ledger sheet with two very different tally numbers written large, a pen resting on the larger one, extreme close-up"
+      ]
     },
     {
-      "n": "यह समझौता भारतीय राजनीति के इतिहास में एक निर्णायक मोड़ था। लेकिन इसका अर्थ यह नहीं था कि गांधी और आंबेडकर की सारी असहमति खत्म हो गई।",
-      "p": "Two men in white khadi photographed from behind walking away from a building in opposite directions, dust, midday glare",
-      "shot": "medium"
+      "n": "यह समझौता भारतीय राजनीति के इतिहास में एक निर्णायक मोड़ था। लेकिन इसका अर्थ यह नहीं था कि गांधी और डॉ. आंबेडकर की सारी असहमति खत्म हो गई।",
+      "beats": [
+        "Two men in white khadi photographed from behind walking away from a building in opposite directions, dust, midday glare, medium shot",
+        "A single road forking around a large rock on an open plain, both branches running to the same distant horizon, evening light, wide shot",
+        "Two sets of footprints leading apart from one spot in fine dust, close shot"
+      ]
     },
     {
       "n": "उनके बीच जाति, हिंदू समाज, सामाजिक सुधार, राजनीतिक प्रतिनिधित्व और राष्ट्र की कल्पना को लेकर मतभेद बने रहे।",
-      "p": "Two open books lying side by side on a dark desk, warm lamplight falling between them, pages out of focus",
-      "shot": "close"
+      "beats": [
+        "Two open books lying side by side on a dark desk, warm lamplight falling between them, pages out of focus, close shot",
+        "A chessboard mid-game seen from directly above, two hands poised over different pieces, overhead shot",
+        "Two cloth banners hanging apart and motionless in the still air of a dim hall, medium shot"
+      ]
     },
     {
       "n": "और यही इस कहानी को दिलचस्प बनाता है। क्योंकि इतिहास हमेशा दो लोगों की कहानी नहीं होता जिसमें एक सही और दूसरा गलत हो।",
-      "p": "A single road forking around a large rock on an open Indian plain, both branches running to the same distant horizon, evening light",
-      "shot": "wide"
+      "beats": [
+        "A brass weighing scale held in perfect balance with two different stones in its pans, neutral grey light, close shot",
+        "The forked road again seen from the far side, both branches visible converging near the horizon, evening light, wide shot",
+        "Two shadows meeting and crossing on a plaster wall, neither one dominant, soft light, medium shot"
+      ]
     },
     {
       "n": "कई बार... दो लोग एक ही समस्या को देखते हैं। लेकिन उसके समाधान के रास्ते अलग-अलग चुनते हैं।",
-      "p": "A single road forking around a large rock on an open Indian plain seen from the other side, both branches visible, evening light",
-      "shot": "wide",
-      "anim": "split_compare",
-      "params": "second=20;label_a=एक ही समस्या;label_b=अलग रास्ते"
+      "beats": [
+        "One large rock on an open Indian plain with a path parting around it, seen head-on at eye level, evening light, wide shot",
+        "Two lanterns carried down two different lanes of the same night village, seen from above, overhead shot"
+      ]
     },
     {
-      "n": "आंबेडकर का सवाल लगातार यही था— जिस समाज में किसी व्यक्ति को जन्म के कारण नीचा माना जाता है, वह समाज सिर्फ नैतिक अपील से कितना बदलेगा?",
-      "p": "A village assembly seated in a circle at dusk, one figure standing at the centre seen from behind, lanterns being lit",
-      "shot": "medium"
+      "n": "डॉ. आंबेडकर का सवाल लगातार यही था— जिस समाज में किसी व्यक्ति को जन्म के कारण नीचा माना जाता है, वह समाज सिर्फ नैतिक अपील से कितना बदलेगा?",
+      "beats": [
+        "A village assembly seated in a circle at dusk, one figure standing at the centre seen from behind, lanterns being lit, medium shot",
+        "A closed heavy wooden door with a worn brass handle and no one before it, cold light, close shot",
+        "A steep stone staircase with a single figure standing at the bottom looking up, seen from behind, wide shot"
+      ]
     },
     {
       "n": "और अगर समाज नहीं बदलता... तो क्या कानून, राजनीतिक प्रतिनिधित्व और संवैधानिक अधिकार उस बदलाव का रास्ता बन सकते हैं?",
-      "p": "A gavel resting on a closed law book beside a small clay lamp, deep shadow, single warm light source",
-      "shot": "detail"
+      "beats": [
+        "A gavel resting on a closed law book beside a small clay lamp, deep shadow, a single warm light source, detail shot",
+        "A stone milestone standing on an empty road, pointing ahead into dusk, close shot",
+        "An unrolled blank scroll and an inkpot waiting on a plain table, cold light, medium shot"
+      ]
     },
     {
-      "n": "आने वाले वर्षों में आंबेडकर का जवाब भारतीय संविधान के भीतर दिखाई देने वाला था। लेकिन उससे पहले... उन्हें भारतीय समाज के सामने एक और चुनौती रखनी थी।",
-      "p": "A drafting room at night with a long table of papers and empty chairs, one lamp still burning at the far end",
-      "shot": "wide"
+      "n": "आने वाले वर्षों में डॉ. आंबेडकर का जवाब भारतीय संविधान के भीतर दिखाई देने वाला था। लेकिन उससे पहले... उन्हें भारतीय समाज के सामने एक और चुनौती रखनी थी।",
+      "beats": [
+        "A drafting room at night with a long table of papers and empty chairs, one lamp still burning at the far end, wide shot",
+        "A closed leather folder with a fountain pen resting on top, alone on a bare desk, close shot",
+        "A tall pair of doors standing slightly ajar with light spilling through the gap into a dark corridor, medium shot"
+      ]
     },
     {
       "n": "एक चुनौती... जो सिर्फ जाति की आलोचना नहीं थी। बल्कि जाति की पूरी संरचना को समझने की कोशिश थी। उसका नाम था— Annihilation of Caste.",
-      "p": "A stack of freshly printed pamphlets tied with string on a printer's table, ink smell implied, hard side light",
-      "shot": "close",
-      "anim": "title_reveal",
-      "params": "size=0.068",
-      "text": "Annihilation of Caste"
+      "beats": [
+        "A stack of freshly printed pamphlets tied with string on a printer's table, hard raking side light, close shot",
+        "A printer's tray of loose metal type with a hand selecting individual letters, lamplight, extreme close-up",
+        "A single pamphlet standing upright against a dark wall, one hard light raking across its plain cover, medium shot"
+      ]
     }
-  ],
-  "ambience": "room.mp3"
+  ]
 }

@@ -3,88 +3,115 @@
   "title": "अर्थशास्त्री",
   "palette": "industrial palette, soot and brass, mill light through high windows",
   "grade": "warm",
-  "grain": "medium",
+  "grain": "light",
   "music": "warm.mp3",
+  "ambience": "room.mp3",
   "scenes": [
     {
-      "n": "आंबेडकर को अक्सर सिर्फ संविधान निर्माता या दलित अधिकारों के नेता के रूप में याद किया जाता है।",
-      "p": "A public library reading room with a long shelf of bound legal volumes, one reader at a distant table, warm light through high windows",
-      "shot": "wide",
-      "anim": "chapter_card",
-      "params": "chapter=भाग सात",
-      "text": "अर्थशास्त्री"
+      "n": "डॉ. आंबेडकर को अक्सर सिर्फ संविधान निर्माता या दलित अधिकारों के नेता के रूप में याद किया जाता है।",
+      "beats": [
+        "A public library reading room with a long shelf of bound legal volumes, one reader at a distant table, warm light through high windows, wide shot",
+        "A row of leather-bound book spines of collected works on a shelf, warm window light raking across them, close shot"
+      ]
     },
     {
       "n": "लेकिन उनके बौद्धिक काम का एक बहुत बड़ा हिस्सा अर्थशास्त्र से जुड़ा था।",
-      "p": "Looking straight down at a desk covered in statistical tables, a slide rule, an inkwell and a folded railway map of India, brass lamp at the edge",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at a desk covered in statistical tables, a slide rule, an inkwell and a folded railway map of India, brass lamp at the edge, overhead shot",
+        "A blackboard covered in economic equations and supply-and-demand curves, chalk dust drifting in window light, medium shot"
+      ]
     },
     {
       "n": "उन्होंने भारत की वित्तीय व्यवस्था पर अध्ययन किया। प्रांतीय वित्त पर शोध किया। मुद्रा व्यवस्था पर लिखा।",
-      "p": "A column of handwritten revenue figures in a bound ledger, ink and blotting paper, brass lamp, numbers soft and unreadable",
-      "shot": "detail"
+      "beats": [
+        "A column of handwritten revenue figures in a bound ledger, ink and blotting paper, brass lamp, numbers soft and unreadable, close shot",
+        "A bound doctoral thesis lying open to dense financial tables, warm lamp, close shot",
+        "A folded map of British India weighted at the corners with coins on a desk, high window light, overhead shot"
+      ]
     },
     {
       "n": "'The Problem of the Rupee' उनके आर्थिक चिंतन का महत्वपूर्ण उदाहरण है।",
-      "p": "A row of Indian silver rupees standing on edge on dark cloth, one fallen, hard raking light",
-      "shot": "close",
-      "anim": "lower_third",
-      "params": "sub=मुद्रा और औपनिवेशिक वित्त",
-      "text": "The Problem of the Rupee"
+      "beats": [
+        "A row of Indian silver rupees standing on edge on dark cloth, one fallen flat, hard raking light, close shot",
+        "A single silver rupee held between two fingers up into a shaft of window light, extreme close-up"
+      ]
     },
     {
       "n": "लेकिन उनके आर्थिक विचार सिर्फ किताबों तक सीमित नहीं थे। वे कृषि, औद्योगिकीकरण, श्रम, जल संसाधन, राज्य की भूमिका और आर्थिक लोकतंत्र जैसे विषयों पर भी सोचते थे।",
-      "p": "A 1930s Indian industrial river valley at dawn, mill chimneys and irrigation channels, fields beyond, smoke lying flat in the cold air",
-      "shot": "xwide"
+      "beats": [
+        "A 1930s Indian industrial river valley at dawn, mill chimneys and irrigation channels, fields beyond, smoke lying flat in cold air, extreme wide shot",
+        "Irrigation channels cutting across dark fields at dawn, water catching the first light, wide shot",
+        "A river dam wall and sluice gates under construction in the 1940s, scaffolding, cold light, wide shot",
+        "A line of factory chimneys against a pale industrial sky, smoke lying flat, extreme wide shot"
+      ]
     },
     {
       "n": "उनके लिए गरीबी सिर्फ व्यक्तिगत असफलता का परिणाम नहीं थी। वह सामाजिक और आर्थिक संरचनाओं से भी जुड़ी थी।",
-      "p": "A tenement doorway in a 1930s Bombay mill district, washing strung above, children's feet on the step, hard morning light",
-      "shot": "medium"
+      "beats": [
+        "A tenement doorway in a 1930s Bombay mill district, washing strung above, children's feet on the step, hard morning light, medium shot",
+        "A ration queue outside a provision shop, thin figures seen from behind, hard morning light, wide shot",
+        "A pair of worn bare feet on a cold stone step, a patched cloth hem above, close shot"
+      ]
     },
     {
       "n": "इसीलिए उन्होंने मजदूरों के अधिकारों, काम के घंटे, सामाजिक सुरक्षा और आर्थिक अवसरों जैसे मुद्दों पर भी बात की।",
-      "p": "The floor of a 1930s cotton mill, rows of spinning frames, workers between them seen from behind, cotton dust hanging in the light",
-      "shot": "wide"
+      "beats": [
+        "The floor of a 1930s cotton mill, rows of spinning frames, workers between them seen from behind, cotton dust hanging in the light, wide shot",
+        "A factory wall clock mounted above a punch-card rack in a mill, soot and brass, medium shot",
+        "A worker's calloused hands gripping a lever on a spinning frame, cotton dust, hard side light, close shot"
+      ]
     },
     {
       "n": "1930 के दशक में उन्होंने Independent Labour Party का गठन किया।",
-      "p": "A trade union office of the 1930s, a table with a cash box and a membership ledger, two men standing at it seen from behind",
-      "shot": "medium",
-      "anim": "lower_third",
-      "params": "sub=स्थापना, १९३६",
-      "text": "Independent Labour Party"
+      "beats": [
+        "A trade union office of the 1930s, a table with a cash box and a membership ledger, two men standing at it seen from behind, medium shot",
+        "A stack of party membership pamphlets and a tin cash box on a plain table, high window light, close shot"
+      ]
     },
     {
       "n": "उन्होंने चुनाव लड़ा। और बॉम्बे विधान सभा के सदस्य बने।",
-      "p": "A 1930s Bombay legislative chamber, curved tiers of wooden benches and a central podium, half the seats occupied, tall windows",
-      "shot": "wide"
+      "beats": [
+        "A 1930s Bombay legislative chamber, curved tiers of wooden benches and a central podium, half the seats occupied, tall windows, wide shot",
+        "A printed election result sheet with one line underlined, a pen laid across it, warm lamp, close shot"
+      ]
     },
     {
       "n": "यहां उनकी राजनीति का एक और रूप सामने आया। अब वह केवल अस्पृश्यता के खिलाफ आंदोलन नहीं कर रहे थे।",
-      "p": "A speaker's dispatch box on a legislature bench with papers stacked on it, hands resting on either side, formal daylight",
-      "shot": "medium"
+      "beats": [
+        "A speaker's dispatch box on a legislature bench with papers stacked on it, hands resting on either side, formal daylight, medium shot",
+        "A member rising at a bench seen from behind, order papers in hand, the chamber beyond in soft light, medium shot"
+      ]
     },
     {
       "n": "वह मजदूरों, किसानों और आर्थिक रूप से कमजोर लोगों के मुद्दों को भी राजनीतिक मंच पर उठा रहे थे।",
-      "p": "A vast worked field in western India at harvest, dozens of bent figures spread across it, a bullock cart on the track, low golden light",
-      "shot": "xwide"
+      "beats": [
+        "A vast worked field in western India at harvest, dozens of bent figures spread across it, a bullock cart on the track, low golden light, extreme wide shot",
+        "A bullock cart loaded with sacks on a dusty track in low golden light, the driver seen from behind, wide shot"
+      ]
     },
     {
       "n": "जमींदारी और भूमि संबंधी व्यवस्था, श्रमिक अधिकार, हड़ताल का अधिकार... ये सब उनके राजनीतिक एजेंडे का हिस्सा बने।",
-      "p": "A worker's hands holding a wooden tool worn smooth by use, cracked skin, hard side light",
-      "shot": "detail"
+      "beats": [
+        "A worker's hands holding a wooden tool worn smooth by use, cracked skin, hard side light, close shot",
+        "A landlord's leather-bound land record ledger closed with a brass clasp on a dark desk, one lamp, close shot",
+        "A mill gate chained shut during a strike, a notice pinned to it, workers' shadows across it, hard light, medium shot"
+      ]
     },
     {
-      "n": "इससे एक बात स्पष्ट होती है— आंबेडकर की राजनीति को केवल जाति के एक मुद्दे तक सीमित करना उनके काम को अधूरा समझना होगा।",
-      "p": "A crowd of mill workers pouring out of a factory gate at the end of a shift, seen from above and behind, cloth caps and lunch tins",
-      "shot": "wide"
+      "n": "इससे एक बात स्पष्ट होती है— डॉ. आंबेडकर की राजनीति को केवल जाति के एक मुद्दे तक सीमित करना उनके काम को अधूरा समझना होगा।",
+      "beats": [
+        "A crowd of mill workers pouring out of a factory gate at the end of a shift, seen from above and behind, cloth caps and lunch tins, wide shot",
+        "A wide rally of workers and farmers with raised hands seen from behind a speaker, dusty light, wide shot",
+        "A labour newspaper's desk with headlines and a fountain pen, warm lamp, overhead shot"
+      ]
     },
     {
       "n": "उनकी मूल चिंता थी— मनुष्य की स्वतंत्रता। और उस स्वतंत्रता के लिए सामाजिक समानता के साथ आर्थिक अवसर भी जरूरी थे।",
-      "p": "An open doorway at the end of a dark corridor with strong daylight beyond, a single figure walking towards it seen from behind",
-      "shot": "medium"
+      "beats": [
+        "An open doorway at the end of a dark corridor with strong daylight beyond, a single figure walking towards it seen from behind, medium shot",
+        "A single green seedling pushing up through cracked dry earth toward the light, close shot",
+        "A wide open field road running to a bright horizon at dawn, one figure far ahead, extreme wide shot"
+      ]
     }
-  ],
-  "ambience": "room.mp3"
+  ]
 }

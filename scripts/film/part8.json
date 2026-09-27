@@ -3,93 +3,124 @@
   "title": "युद्ध और सत्ता",
   "palette": "desaturated wartime palette, khaki, blackout blue, map-table green",
   "grade": "cold",
-  "grain": "medium",
+  "grain": "light",
   "music": "tension.mp3",
+  "ambience": "room.mp3",
   "scenes": [
     {
       "n": "1939। द्वितीय विश्व युद्ध शुरू हुआ। दुनिया बदल रही थी।",
-      "p": "A blacked-out European city skyline in 1939 under searchlights, barrage balloons above the rooftops, cold night",
-      "shot": "xwide",
-      "anim": "chapter_card",
-      "params": "chapter=१९३९",
-      "text": "युद्ध और सत्ता"
+      "beats": [
+        "A blacked-out European city skyline in 1939 under searchlights, barrage balloons above the rooftops, cold night, wide shot",
+        "A stack of wartime newspapers with a bold blank banner headline on a news-stand, blackout-blue dusk, close shot"
+      ]
     },
     {
       "n": "यूरोप युद्ध में जा चुका था। भारत ब्रिटिश साम्राज्य का हिस्सा था।",
-      "p": "A wartime map room with a large table map of Europe, weighted markers and rulers, officers seen from behind, green shaded lamps",
-      "shot": "wide"
+      "beats": [
+        "A wartime map room with a large table map of Europe, weighted markers and rulers, officers seen from behind, green-shaded lamps, medium shot",
+        "A wall of blank wartime poster boards in an Indian bazaar, a cyclist passing seen from behind, desaturated light, wide shot"
+      ]
     },
     {
-      "n": "और आंबेडकर की राजनीति भी एक नए चरण में प्रवेश कर रही थी। उन्होंने कई मुद्दों पर कांग्रेस की राजनीति से अलग रुख अपनाया।",
-      "p": "A colonial secretariat corridor in Delhi, rows of identical doors, a peon carrying a file seen from behind, flat institutional light",
-      "shot": "medium"
+      "n": "और डॉ. आंबेडकर की राजनीति भी एक नए चरण में प्रवेश कर रही थी। उन्होंने कई मुद्दों पर कांग्रेस की राजनीति से अलग रुख अपनाया।",
+      "beats": [
+        "A colonial secretariat corridor in Delhi, rows of identical doors, a peon carrying a file seen from behind, flat institutional light, wide shot",
+        "A file with a red tag being carried down an institutional corridor, seen from behind, flat light, medium shot",
+        "Two corridors branching from one hall, one lit and one dim, a lone figure at the fork, wide shot"
+      ]
     },
     {
       "n": "उनकी चिंता यह थी कि स्वतंत्र भारत की राजनीतिक व्यवस्था में वंचित वर्गों की वास्तविक भागीदारी कैसे सुनिश्चित होगी।",
-      "p": "Looking straight down at a table where a memorandum, a fountain pen and a pair of spectacles lie beside a folded map of India",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at a table where a memorandum, a fountain pen and a pair of spectacles lie beside a folded map of India, overhead shot",
+        "A blank organizational chart pinned to a wall, empty boxes joined by connecting lines, flat light, medium shot",
+        "A single empty chair drawn up to a large official table among high-backed occupied chairs, wide shot"
+      ]
     },
     {
       "n": "1942 में उन्हें Viceroy's Executive Council में Labour Member बनाया गया।",
-      "p": "A viceregal council chamber in 1942, a long table with high-backed chairs beneath a coffered ceiling, papers set at each place, nobody seated",
-      "shot": "wide",
-      "anim": "lower_third",
-      "params": "sub=Labour Member, १९४२",
-      "text": "Viceroy's Executive Council"
+      "beats": [
+        "A viceregal council chamber in 1942, a long table with high-backed chairs beneath a coffered ceiling, papers set at each place, nobody seated, wide shot",
+        "A brass nameplate holder on a council desk holding a blank card, coffered ceiling above, cold light, close shot"
+      ]
     },
     {
       "n": "अब वह उस औपनिवेशिक सरकार के सबसे महत्वपूर्ण प्रशासनिक संस्थानों में से एक का हिस्सा थे, जिसका विरोध भारत का राष्ट्रीय आंदोलन कर रहा था।",
-      "p": "A heavy ministerial door with a brass plate scrubbed blank, a bearer standing beside it seen from behind, polished stone floor",
-      "shot": "medium"
+      "beats": [
+        "A heavy ministerial door with a brass plate scrubbed blank, a bearer standing beside it seen from behind, polished stone floor, medium shot",
+        "A polished stone floor reflecting tall windows in an administrative hall, a lone figure crossing seen from behind, wide shot",
+        "A wall of pigeonhole shelves stuffed with government files, a hand reaching to one, flat light, medium shot"
+      ]
     },
     {
-      "n": "यह स्थिति सरल नहीं थी। लेकिन आंबेडकर की राजनीति को सिर्फ 'ब्रिटिश समर्थक' या 'ब्रिटिश विरोधी' जैसे दो शब्दों में समझना इतिहास को बहुत सरल बना देना होगा।",
-      "p": "Two telephones and a bell push on an official desk, one receiver off its cradle, hard side light",
-      "shot": "close"
+      "n": "यह स्थिति सरल नहीं थी। लेकिन डॉ. आंबेडकर की राजनीति को सिर्फ 'ब्रिटिश समर्थक' या 'ब्रिटिश विरोधी' जैसे दो शब्दों में समझना इतिहास को बहुत सरल बना देना होगा।",
+      "beats": [
+        "Two telephones and a bell push on an official desk, one receiver off its cradle, hard side light, close shot",
+        "Two doors with blank brass plates side by side, one ajar and one shut, hard side light, medium shot",
+        "A coin standing balanced on its edge on a desk, neither face up, hard side light, extreme close-up",
+        "A single taut wire stretched across a dim institutional hall, nobody on it, wide shot"
+      ]
     },
     {
       "n": "वह सत्ता के भीतर रहकर भी श्रमिकों और सामाजिक रूप से वंचित वर्गों से जुड़े मुद्दों पर काम कर रहे थे।",
-      "p": "A labour welfare office with a queue of workers waiting on benches along the wall, a clerk at a desk, all faces turned away",
-      "shot": "wide"
+      "beats": [
+        "A labour welfare office with a queue of workers waiting on benches along the wall, a clerk at a desk, all faces turned away, wide shot",
+        "A stamped welfare order sliding across a clerk's counter to a waiting worker's hand, flat light, close shot"
+      ]
     },
     {
       "n": "उनका ध्यान श्रम नीति, काम की परिस्थितियों, कल्याण और प्रशासनिक सुधारों पर था।",
-      "p": "Looking straight down at a desk of draft labour regulations, a rubber stamp, an ink pad and a stack of files tied with red tape",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at a desk of draft labour regulations, a rubber stamp, an ink pad and files tied with red tape, overhead shot",
+        "A wall chart of factory working-hour schedules, a hand adjusting a pin on it, flat light, medium shot"
+      ]
     },
     {
       "n": "युद्ध समाप्त हुआ। भारत में सत्ता हस्तांतरण की चर्चा तेज हुई।",
-      "p": "A troopship dock at the end of the war, crowds and crates, cranes above, grey overcast light",
-      "shot": "xwide"
+      "beats": [
+        "A troopship dock at the end of the war, crowds and crates, cranes above, grey overcast light, wide shot",
+        "A wireless set on a table surrounded by leaning listeners seen from behind, grey light, medium shot"
+      ]
     },
     {
       "n": "अब सवाल था— स्वतंत्र भारत कैसा होगा? कौन शासन करेगा? अल्पसंख्यकों और वंचित समुदायों की सुरक्षा कैसे होगी?",
-      "p": "A packed public meeting in 1946 India, a raised platform and a microphone, the crowd seen from behind the platform, white caps everywhere",
-      "shot": "wide"
+      "beats": [
+        "A packed public meeting in 1946 India, a raised platform and a microphone, the crowd seen from behind the platform, white caps everywhere, wide shot",
+        "A show of raised hands in a crowded hall seen from the front, faces soft, grey daylight, wide shot",
+        "A blank ballot box on an empty platform with a single microphone, dust in the light, medium shot"
+      ]
     },
     {
       "n": "और सबसे महत्वपूर्ण... क्या नया भारत केवल राजनीतिक रूप से स्वतंत्र होगा? या सामाजिक लोकतंत्र की ओर भी बढ़ेगा?",
-      "p": "A printing press turning out newspapers at speed, a worker lifting a bundle, motion blur, warm lamp against grey daylight",
-      "shot": "medium"
+      "beats": [
+        "A printing press turning out newspapers at speed, a worker lifting a bundle, motion blur, warm lamp against grey daylight, medium shot",
+        "A pavement news-stand mobbed by reaching hands, motion, grey light, medium shot",
+        "Two roads diverging from a city gate at dawn, one paved and one rough, extreme wide shot"
+      ]
     },
     {
       "n": "1946 में Constituent Assembly की प्रक्रिया शुरू हुई।",
-      "p": "The circular chamber of the Constituent Assembly in 1946, tiered desks under a high dome, members taking their places, dust in the shafts of light",
-      "shot": "wide",
-      "anim": "lower_third",
-      "params": "sub=प्रक्रिया आरंभ, १९४६",
-      "text": "संविधान सभा"
+      "beats": [
+        "The circular chamber of the Constituent Assembly in 1946, tiered desks under a high dome, members taking their places, dust in the shafts of light, wide shot",
+        "Members filing into a domed chamber through tall doors seen from behind, shafts of light, wide shot"
+      ]
     },
     {
-      "n": "आंबेडकर को शुरुआत में बंगाल से संविधान सभा में स्थान मिला। लेकिन विभाजन के बाद वह सीट चली गई। फिर उन्हें बॉम्बे प्रांत से संविधान सभा में भेजा गया।",
-      "p": "A nameplate slot on a chamber desk, empty, brass and polished wood, shallow focus",
-      "shot": "detail"
+      "n": "डॉ. आंबेडकर को शुरुआत में बंगाल से संविधान सभा में स्थान मिला। लेकिन विभाजन के बाद वह सीट चली गई। फिर उन्हें बॉम्बे प्रांत से संविधान सभा में भेजा गया।",
+      "beats": [
+        "A nameplate slot on a chamber desk, empty, brass and polished wood, shallow focus, close shot",
+        "A political map with one province shaded then crossed out and another circled, weighted corners, overhead shot",
+        "A single suitcase and a bundle of files by a railway platform bench, a figure boarding seen from behind, grey light, wide shot"
+      ]
     },
     {
       "n": "अब वह उस संस्था के भीतर थे जो भारत के भविष्य की राजनीतिक संरचना तय करने वाली थी। और जल्द ही... उन्हें एक ऐसी जिम्मेदारी मिलने वाली थी जिसने इतिहास में उनका नाम हमेशा के लिए दर्ज कर दिया।",
-      "p": "An empty seat in a tiered assembly chamber with a stack of papers on its desk, the surrounding seats occupied, shafts of light from above",
-      "shot": "medium"
+      "beats": [
+        "An empty seat in a tiered assembly chamber with a stack of papers on its desk, the surrounding seats occupied, shafts of light from above, wide shot",
+        "A gavel resting on a closed folder on a chairman's desk, a shaft of light across it, close shot",
+        "A tall pair of chamber doors opening onto light, silhouetted members beyond, wide shot",
+        "A single lamp lighting a thick blank-spined volume standing upright on a desk, deep shadow, medium shot"
+      ]
     }
-  ],
-  "ambience": "room.mp3"
+  ]
 }

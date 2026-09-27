@@ -1,0 +1,19 @@
+{
+  "chapter": 99,
+  "title": "टेस्ट क्लिप",
+  "palette": "cool grey-blue schoolroom palette, hard north daylight, chalk and worn wood",
+  "grade": "cold",
+  "grain": "light",
+  "music": "somber.mp3",
+  "ambience": "room.mp3",
+  "scenes": [
+    {
+      "n": "वहां उनकी जाति उनके साथ जाती थी। कक्षा में बैठने से लेकर पानी पीने तक... सामाजिक भेदभाव का असर दिखाई देता था।",
+      "beats": [
+        "test beat one — reuses cached image 001",
+        "test beat two — reuses cached image 002",
+        "test beat three — reuses cached image 003"
+      ]
+    }
+  ]
+}

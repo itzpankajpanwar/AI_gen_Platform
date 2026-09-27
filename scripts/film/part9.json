@@ -5,109 +5,136 @@
   "grade": "warm",
   "grain": "light",
   "music": "hopeful.mp3",
+  "ambience": "crowd.mp3",
   "scenes": [
     {
       "n": "15 अगस्त 1947। भारत स्वतंत्र हुआ।",
-      "p": "A vast crowd filling a Delhi avenue at dawn on 15 August 1947, flags without emblems, first light on the buildings, seen from high above",
-      "shot": "xwide",
-      "anim": "chapter_card",
-      "params": "chapter=१५ अगस्त १९४७",
-      "text": "स्वतंत्रता"
+      "p": "A vast crowd filling a Delhi avenue at dawn on 15 August 1947, flags without emblems, first light on the buildings, seen from high above, wide shot"
     },
     {
       "n": "सदियों के औपनिवेशिक शासन का अंत हुआ।",
-      "p": "An empty flagpole seen from ground level against a brightening sky, the halyard moving in the wind",
-      "shot": "low"
+      "p": "An empty flagpole seen from ground level against a brightening sky, the halyard moving in the wind, low angle wide shot"
     },
     {
       "n": "लेकिन स्वतंत्रता के साथ एक नई जिम्मेदारी भी आई। अब देश को चलाने के लिए नई संस्थाएं चाहिए थीं। नया कानून चाहिए था। नया संविधान चाहिए था।",
-      "p": "A government building at sunrise with every window lit, people gathering on the steps below seen from behind, long shadows",
-      "shot": "wide"
+      "beats": [
+        "A government building at sunrise with every window lit, people gathering on the steps below seen from behind, long shadows, wide shot",
+        "A row of empty new offices with fresh desks and blank nameplates, morning light, wide shot",
+        "A freshly set foundation stone with mortar still wet, morning light, close shot"
+      ]
     },
     {
-      "n": "और इसी स्वतंत्र भारत में भीमराव आंबेडकर बने— पहले कानून मंत्री।",
-      "p": "A ministerial office on its first morning, bare desk, one chair, a stack of blank foolscap and an inkwell, window light",
-      "shot": "medium",
-      "anim": "lower_third",
-      "params": "sub=स्वतंत्र भारत",
-      "text": "पहले कानून मंत्री"
+      "n": "और इसी स्वतंत्र भारत में डॉ. भीमराव आंबेडकर बने— पहले कानून मंत्री।",
+      "beats": [
+        "A ministerial office on its first morning, a bare desk, one chair, a stack of blank foolscap and an inkwell, window light, medium shot",
+        "A brass door-plate holder holding a blank card outside a ministry office, warm light, close shot"
+      ]
     },
     {
       "n": "यह एक महत्वपूर्ण क्षण था। क्योंकि जिस व्यक्ति ने जीवन का बड़ा हिस्सा सामाजिक भेदभाव और असमानता के खिलाफ संघर्ष में बिताया था, अब वह स्वतंत्र भारत की सरकार के कानून निर्माण के केंद्र में था।",
-      "p": "A pair of hands opening the first page of a blank bound register on a desk, morning light across the paper",
-      "shot": "close"
+      "beats": [
+        "A pair of hands opening the first page of a blank bound register on a desk, morning light across the paper, close shot",
+        "A tall window throwing morning light across an empty ministerial chair and desk, wide shot",
+        "A stack of blank foolscap squared on a desk beside an inkwell, warm light, close shot",
+        "A single figure standing at a high window looking out over the waking city, seen from behind, wide shot"
+      ]
     },
     {
       "n": "उधर Constituent Assembly संविधान पर काम कर रही थी। 29 अगस्त 1947 को Drafting Committee बनाई गई।",
-      "p": "A committee room with seven chairs drawn up to a round table, papers set at each place, warm morning light through tall windows",
-      "shot": "wide",
-      "anim": "lower_third",
-      "params": "sub=२९ अगस्त १९४७",
-      "text": "प्रारूप समिति"
+      "beats": [
+        "A committee room with seven chairs drawn up to a round table, papers set at each place, warm morning light through tall windows, wide shot",
+        "Seven blank name cards laid around a committee table, warm light, overhead shot"
+      ]
     },
     {
-      "n": "और आंबेडकर इसके अध्यक्ष चुने गए।",
-      "p": "A chairman's seat at a committee table, slightly larger than the rest, a gavel and a water glass before it, nobody seated",
-      "shot": "medium"
+      "n": "और डॉ. आंबेडकर इसके अध्यक्ष चुने गए।",
+      "p": "A chairman's seat at a committee table, slightly larger than the rest, a gavel and a water glass before it, nobody seated, medium shot"
     },
     {
       "n": "अब उनका काम था— विभिन्न समितियों, प्रस्तावों, बहसों और संवैधानिक सिद्धांतों को एक ऐसे कानूनी दस्तावेज में बदलना जिसे एक विशाल, विविध और विभाजित देश स्वीकार कर सके।",
-      "p": "Looking straight down at a table strewn with draft articles, marginal corrections in red ink, several hands working at the edges",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at a table strewn with draft articles, marginal corrections in red ink, several hands working at the edges, overhead shot",
+        "A wall of pinned draft articles connected by threads, a hand adding a card, even light, medium shot",
+        "Many paper streams converging into one bound volume on a desk, conceptual arrangement, overhead shot",
+        "A large map of India weighted on a table beside a thick draft, hands smoothing it, overhead shot"
+      ]
     },
     {
-      "n": "लेकिन यहां एक महत्वपूर्ण तथ्य है। आंबेडकर को 'संविधान का अकेला लेखक' कहना इतिहास को अत्यधिक सरल बनाना होगा।",
-      "p": "A drafting office at night, a dozen desks all occupied, lamps burning over each, everyone seen from behind",
-      "shot": "wide"
+      "n": "लेकिन यहां एक महत्वपूर्ण तथ्य है। डॉ. आंबेडकर को 'संविधान का अकेला लेखक' कहना इतिहास को अत्यधिक सरल बनाना होगा।",
+      "beats": [
+        "A drafting office at night, a dozen desks all occupied, lamps burning over each, everyone seen from behind, wide shot",
+        "Many hands from around a table all resting on the same document, even light, overhead shot",
+        "A long row of lamps burning over occupied drafting desks seen down the line, warm light, wide shot"
+      ]
     },
     {
       "n": "संविधान एक सामूहिक प्रक्रिया थी। Constituent Assembly में सैकड़ों सदस्य थे। अलग-अलग समितियां थीं।",
-      "p": "The Constituent Assembly chamber full to capacity, hundreds of members at tiered desks beneath the dome, seen from the gallery",
-      "shot": "xwide",
-      "anim": "stat_counter",
-      "params": "to=299;label=संविधान सभा के सदस्य",
-      "text": "२९९"
+      "beats": [
+        "The Constituent Assembly chamber full to capacity, hundreds of members at tiered desks beneath the dome, seen from the gallery, wide shot",
+        "A wall of committee door-plates, each left blank, in an institutional corridor, even light, medium shot"
+      ]
     },
     {
       "n": "Constitutional Adviser बी. एन. राऊ का महत्वपूर्ण काम था। Chief Draftsman एस. एन. मुखर्जी और उनकी टीम ने कानूनी भाषा को अंतिम रूप देने में महत्वपूर्ण भूमिका निभाई।",
-      "p": "Three desks side by side stacked with different bundles of draft papers, three pairs of hands working, even daylight",
-      "shot": "medium"
+      "beats": [
+        "Three desks side by side stacked with different bundles of draft papers, three pairs of hands working, even daylight, wide shot",
+        "A single desk stacked with the tallest bundle of draft papers under a green-shaded lamp, warm light, close shot",
+        "A typist's hands over a manual typewriter mid-line, a fresh sheet in the roller, warm lamp, close shot",
+        "A red-ink correction being made in the margin of a typed legal page, extreme close-up"
+      ]
     },
     {
-      "n": "और स्वयं आंबेडकर ने 25 नवंबर 1949 को अपने भाषण में Drafting Committee को मिले श्रेय को कई अन्य लोगों के साथ साझा किया था।",
-      "p": "A page of typed draft text heavily marked with pencil corrections, the words blurred beyond reading, raking light",
-      "shot": "detail"
+      "n": "और स्वयं डॉ. आंबेडकर ने 25 नवंबर 1949 को अपने भाषण में Drafting Committee को मिले श्रेय को कई अन्य लोगों के साथ साझा किया था।",
+      "beats": [
+        "A page of typed draft text heavily marked with pencil corrections, the words blurred beyond reading, raking light, close shot",
+        "A speaker at a lectern gesturing toward the whole chamber, seen from behind, a shaft of light, wide shot",
+        "Many name cards fanned out across a desk in a spread, warm light, overhead shot"
+      ]
     },
     {
-      "n": "लेकिन इसका अर्थ यह भी नहीं कि आंबेडकर का योगदान मामूली था। वह Drafting Committee के अध्यक्ष थे। उन्होंने Assembly में मसौदे का बचाव किया।",
-      "p": "A speaker's lectern in a full assembly chamber seen from the rear benches, members turned towards it, shafts of light from the dome",
-      "shot": "wide"
+      "n": "लेकिन इसका अर्थ यह भी नहीं कि डॉ. आंबेडकर का योगदान मामूली था। वह Drafting Committee के अध्यक्ष थे। उन्होंने Assembly में मसौदे का बचाव किया।",
+      "beats": [
+        "A speaker's lectern in a full assembly chamber seen from the rear benches, members turned towards it, shafts of light from the dome, wide shot",
+        "A chairman's gavel raised over a sounding block, motion, a shaft of light, close shot",
+        "A thick annotated draft open on a lectern, a hand flat on the page, warm light, medium shot"
+      ]
     },
     {
       "n": "प्रावधानों पर सवालों के जवाब दिए। और विभिन्न विचारों के बीच कानूनी तथा राजनीतिक संतुलन बनाने में महत्वपूर्ण भूमिका निभाई।",
-      "p": "A stenographer's desk in an assembly chamber, shorthand pad and pencils, hands mid-stroke, flat light",
-      "shot": "medium"
+      "beats": [
+        "A stenographer's desk in an assembly chamber, a shorthand pad and pencils, hands mid-stroke, flat light, close shot",
+        "Rows of members' hands raised in a vote across a chamber, seen from the side, a shaft of light, wide shot",
+        "A ledger of divisions and tallies open on a clerk's desk, a pen ticking a line, close shot"
+      ]
     },
     {
       "n": "यह एक विशाल कार्य था। और देश के सामने समस्याएं भी कम नहीं थीं। विभाजन। शरणार्थी। सांप्रदायिक हिंसा।",
-      "p": "A refugee column crossing open country in 1947, carts and bundles stretching to the horizon, dust and hard afternoon light",
-      "shot": "xwide"
+      "beats": [
+        "A refugee column crossing open country in 1947, carts and bundles stretching to the horizon, dust and hard afternoon light, extreme wide shot",
+        "A crowded railway platform of displaced families with bundles, seen from above, hard light, wide shot"
+      ]
     },
     {
       "n": "रियासतों का एकीकरण। गरीबी। अशिक्षा। जातिगत असमानता। भाषाई और सांस्कृतिक विविधता।",
-      "p": "A relief camp of canvas tents laid out in rows on open ground, queues at a water point, seen from a rise",
-      "shot": "wide"
+      "beats": [
+        "A relief camp of canvas tents laid out in rows on open ground, queues at a water point, seen from a rise, wide shot",
+        "A political map of India dense with small princely-state borders, weighted at the corners, overhead shot"
+      ]
     },
     {
       "n": "इन सबके बीच भारत को एक लोकतांत्रिक संविधान देना था।",
-      "p": "Looking straight down at a large political map of India with princely states marked in different tones, weighted at the corners",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at a large political map of India with princely states in different tones, weighted at the corners, overhead shot",
+        "A thick draft constitution set at the centre of a cleared table under warm light, hands framing it, overhead shot"
+      ]
     },
     {
-      "n": "और आंबेडकर के लिए यह संविधान सिर्फ सरकार बनाने की किताब नहीं थी। यह उस समाज को बदलने का एक संस्थागत साधन भी था जिसमें जन्म के आधार पर असमानता गहरी थी।",
-      "p": "A thick bound volume being closed on a desk, a hand flat on the cover, warm lamplight, deep shadow beyond",
-      "shot": "close"
+      "n": "और डॉ. आंबेडकर के लिए यह संविधान सिर्फ सरकार बनाने की किताब नहीं थी। यह उस समाज को बदलने का एक संस्थागत साधन भी था जिसमें जन्म के आधार पर असमानता गहरी थी।",
+      "beats": [
+        "A thick bound volume being closed on a desk, a hand flat on the cover, warm lamplight, deep shadow beyond, close shot",
+        "A key set on top of a closed constitution volume, warm lamp, close shot",
+        "A single seedling in a small pot placed on top of a thick bound volume, warm window light, medium shot"
+      ]
     }
-  ],
-  "ambience": "crowd.mp3"
+  ]
 }

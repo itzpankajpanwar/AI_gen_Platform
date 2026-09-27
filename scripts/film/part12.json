@@ -5,104 +5,131 @@
   "grade": "neutral",
   "grain": "light",
   "music": "hopeful.mp3",
+  "ambience": "crowd.mp3",
   "scenes": [
     {
-      "n": "आंबेडकर के जीवन को समझने के लिए उनके धर्म संबंधी विचारों को समझना जरूरी है।",
-      "p": "A wide open maidan at dawn under an immense pale sky, a low white platform at its centre, nobody there yet",
-      "shot": "xwide",
-      "anim": "chapter_card",
-      "params": "chapter=भाग बारह",
-      "text": "धम्म दीक्षा"
+      "n": "डॉ. आंबेडकर के जीवन को समझने के लिए उनके धर्म संबंधी विचारों को समझना जरूरी है।",
+      "beats": [
+        "A wide open maidan at dawn under an immense pale sky, a low white platform at its centre, nobody there yet, wide shot",
+        "A single white cotton cloth spread on a bare platform under an immense pale sky, nobody there, wide shot"
+      ]
     },
     {
       "n": "उन्होंने सिर्फ यह नहीं पूछा कि इंसान किस धर्म में पैदा हुआ है। उन्होंने पूछा— क्या धर्म इंसान को बराबरी देता है?",
-      "p": "Four religious buildings of different faiths photographed as a row of doorways along one street, morning light, nobody in frame",
-      "shot": "medium"
+      "beats": [
+        "Four religious buildings of different faiths photographed as a row of doorways along one street, morning light, nobody in frame, wide shot",
+        "A row of four different lamps on one long ledge, morning light, medium shot",
+        "A single open hand held out empty against a pale sky, asking, close shot"
+      ]
     },
     {
       "n": "क्या वह व्यक्ति की गरिमा स्वीकार करता है? क्या वह सामाजिक बंधुत्व पैदा करता है? या जन्म के आधार पर लोगों को अलग-अलग दर्जों में बांटता है?",
-      "p": "Looking straight down at a set of scriptures from several traditions laid open side by side on a dark table, even light, text not legible",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at scriptures from several traditions laid open side by side on a dark table, even light, text not legible, overhead shot",
+        "A brass balance weighing a scripture against a single plain stone, even light, close shot",
+        "A doorway that admits some and bars others, a rope tied across half of it, morning light, medium shot"
+      ]
     },
     {
-      "n": "आंबेडकर का धर्म के साथ संबंध सरल नहीं था। उन्होंने लंबे समय तक हिंदू समाज के भीतर सुधार की संभावनाओं पर विचार किया।",
-      "p": "A study lined floor to ceiling with books of comparative religion, a ladder, a single reading chair, warm afternoon light",
-      "shot": "wide"
+      "n": "डॉ. आंबेडकर का धर्म के साथ संबंध सरल नहीं था। उन्होंने लंबे समय तक हिंदू समाज के भीतर सुधार की संभावनाओं पर विचार किया।",
+      "beats": [
+        "A study lined floor to ceiling with books of comparative religion, a ladder, a single reading chair, warm afternoon light, wide shot",
+        "A single reading chair in a pool of afternoon light before a wall of religious books, wide shot",
+        "A hand tracing a line down a page of comparative notes, pencil, warm light, close shot"
+      ]
     },
     {
       "n": "लेकिन धीरे-धीरे उनका निष्कर्ष और अधिक स्पष्ट होता गया। 1935 में उन्होंने धर्म परिवर्तन की संभावना की घोषणा की।",
-      "p": "A public meeting platform at dusk in 1935, a microphone and a crowd of white-clad listeners seen from behind the speaker",
-      "shot": "medium",
-      "anim": "lower_third",
-      "params": "sub=धर्म परिवर्तन की घोषणा",
-      "text": "१९३५ — येवला"
+      "beats": [
+        "A public meeting platform at dusk in 1935, a microphone and a crowd of white-clad listeners seen from behind the speaker, wide shot",
+        "A crowd of white-clad listeners seen from behind a speaker at dusk, raised faces, wide shot",
+        "A hand-written declaration set down on a lectern under a single light, dusk, close shot"
+      ]
     },
     {
       "n": "उन्होंने कहा कि वह हिंदू के रूप में पैदा हुए हैं, लेकिन हिंदू के रूप में मरेंगे नहीं।",
-      "p": "A single lamp flame reflected in a pair of spectacle lenses lying on a dark table, everything else in shadow",
-      "shot": "detail"
+      "beats": [
+        "A single lamp flame reflected in a pair of spectacle lenses lying on a dark table, everything else in shadow, close shot",
+        "A pair of folded spectacles resting on a closed book, one lamp, deep shadow, extreme close-up"
+      ]
     },
     {
       "n": "इसके बाद लगभग दो दशकों तक उन्होंने विभिन्न धार्मिक परंपराओं का अध्ययन किया। बौद्ध धर्म। सिख धर्म। ईसाई धर्म। इस्लाम। और अन्य धार्मिक विचार।",
-      "p": "Looking straight down at a desk where a reader's notes lie between five different open books, pencil and ruler, even light",
-      "shot": "overhead"
+      "beats": [
+        "Looking straight down at a desk where a reader's notes lie between five different open books, pencil and ruler, even light, overhead shot",
+        "Five different scriptures standing upright in a row on a shelf, warm light, medium shot",
+        "A hand moving one book forward from a row of five, marking a choice, close shot"
+      ]
     },
     {
       "n": "उनके लिए धर्म सिर्फ व्यक्तिगत आस्था नहीं था। वह सामाजिक नैतिकता का प्रश्न भी था।",
-      "p": "A bare meditation hall with a plain floor and one open window, light falling in a single rectangle, nobody present",
-      "shot": "medium"
+      "beats": [
+        "A bare meditation hall with a plain floor and one open window, light falling in a single rectangle, nobody present, wide shot",
+        "A single rectangle of daylight falling on a bare floor in an empty hall, wide shot"
+      ]
     },
     {
       "n": "आखिरकार उन्होंने बौद्ध धर्म को अपनाने का निर्णय लिया।",
-      "p": "A plain white cotton cloth folded and set on a low wooden table, soft diffuse daylight, nothing else in frame",
-      "shot": "close"
+      "beats": [
+        "A plain white cotton cloth folded and set on a low wooden table, soft diffuse daylight, nothing else in frame, close shot",
+        "A pair of hands folding a plain white cotton cloth in soft daylight, close shot"
+      ]
     },
     {
       "n": "14 अक्टूबर 1956। नागपुर। दीक्षाभूमि।",
-      "p": "An immense open ground in Nagpur filled with hundreds of thousands of people in white, seen from very high above, soft October afternoon light",
-      "shot": "xwide",
-      "anim": "lower_third",
-      "params": "sub=नागपुर, दीक्षाभूमि",
-      "text": "१४ अक्टूबर १९५६"
+      "geo": "nagpur",
+      "geo_label": "नागपुर — दीक्षाभूमि",
+      "geo_date": "14 अक्टूबर 1956"
     },
     {
       "n": "एक विशाल सभा।",
-      "p": "A sea of white-clad people stretching past the horizon seen from a high platform, a low dais at the centre, banners without lettering",
-      "shot": "xwide"
+      "p": "A sea of white-clad people stretching past the horizon seen from a high platform, a low dais at the centre, banners without lettering, wide shot"
     },
     {
-      "n": "आंबेडकर ने बौद्ध धर्म की दीक्षा ली। उनके साथ बड़ी संख्या में उनके अनुयायियों ने भी बौद्ध धर्म अपनाया।",
-      "p": "Rows of people standing with palms joined, seen from behind and slightly above, white cotton and soft afternoon light",
-      "shot": "medium"
+      "n": "डॉ. आंबेडकर ने बौद्ध धर्म की दीक्षा ली। उनके साथ बड़ी संख्या में उनके अनुयायियों ने भी बौद्ध धर्म अपनाया।",
+      "beats": [
+        "Rows of people standing with palms joined, seen from behind and slightly above, white cotton and soft afternoon light, wide shot",
+        "A single pair of hands joined in front of white cotton, soft light, close shot",
+        "An ocean of joined hands raised together across open ground, diffuse light, wide shot"
+      ]
     },
     {
       "n": "यह उनके जीवन का एक बहुत बड़ा मोड़ था। यह सिर्फ व्यक्तिगत धर्म परिवर्तन नहीं था। यह एक सामाजिक घोषणा भी थी।",
-      "p": "A crowd turning together to face one direction on open ground, an ocean of shoulders and white cloth, diffuse light",
-      "shot": "wide"
+      "beats": [
+        "A crowd turning together to face one direction on open ground, an ocean of shoulders and white cloth, diffuse light, wide shot",
+        "Thousands of faces lifted the same way under a pale sky, seen from the dais, wide shot",
+        "A wave of movement crossing a vast standing crowd, seen from very high above, overhead shot"
+      ]
     },
     {
       "n": "एक ऐसी पहचान से बाहर निकलने की घोषणा जिसे वे जातिगत असमानता से जुड़ा हुआ मानते थे।",
-      "p": "A pair of hands releasing a length of thread, the strands falling loose against a white cloth, soft daylight",
-      "shot": "detail"
+      "beats": [
+        "A pair of hands releasing a length of thread, the strands falling loose against a white cloth, soft daylight, close shot",
+        "A broken thread lying loose on white cloth, soft daylight, extreme close-up"
+      ]
     },
     {
       "n": "और एक ऐसे नैतिक ढांचे को अपनाने की घोषणा जिसमें समानता, तर्क, करुणा और मानवीय गरिमा महत्वपूर्ण थीं।",
-      "p": "A small plain Buddha figure on a low table draped in white cloth, soft diffuse daylight, saffron edge at the frame",
-      "shot": "close"
+      "beats": [
+        "A small plain Buddha figure on a low table draped in white cloth, soft diffuse daylight, a saffron edge at the frame, close shot",
+        "A single lit lamp set before a plain Buddha figure draped in white, soft light, close shot"
+      ]
     },
     {
       "n": "उन्होंने बौद्ध धर्म को अपने तरीके से समझा। और अपने अंतिम वर्षों में उन्होंने 'The Buddha and His Dhamma' पर काम किया।",
-      "p": "A writing desk by a window with a manuscript in progress, a blanket over the chair back, weak late daylight",
-      "shot": "medium",
-      "anim": "lower_third",
-      "params": "sub=अंतिम प्रमुख लेखन",
-      "text": "The Buddha and His Dhamma"
+      "beats": [
+        "A writing desk by a window with a manuscript in progress, a blanket over the chair back, weak late daylight, medium shot",
+        "A thick manuscript closed with a hand resting on its cover by a window, late daylight, close shot",
+        "A blank title page waiting at the front of a manuscript under weak window light, close shot"
+      ]
     },
     {
       "n": "उनकी मृत्यु से पहले यह उनका अंतिम प्रमुख लेखन बना। लेकिन उनका शरीर अब लगातार कमजोर हो रहा था। समय बहुत कम बचा था।",
-      "p": "A hand resting on a half-written page, the pen set aside, the light from the window failing",
-      "shot": "close"
+      "beats": [
+        "A hand resting on a half-written page, the pen set aside, the light from the window failing, close shot",
+        "A window losing its last light over an unfinished page, warm turning to grey, medium shot",
+        "A single lamp turned low beside a closed manuscript, deep shadow gathering, close shot"
+      ]
     }
-  ],
-  "ambience": "crowd.mp3"
+  ]
 }

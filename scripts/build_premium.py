@@ -33,14 +33,23 @@ STYLE = ("photorealistic, authentic early-1900s India, period-accurate, natural 
          "volumetric light, shot on 35mm, shallow depth of field, fine film grain, cinematic "
          "documentary still, no on-image text, no watermark, 16:9")
 
-CH = {
-    2: dict(title="स्कूल और अपमान", kicker="भाग दो", grade="cold_film", music="somber.mp3",
-            ambience="room.mp3", nxt="विदेश में शिक्षा"),
-    3: dict(title="विदेश में शिक्षा", kicker="भाग तीन", grade="film", music="hopeful.mp3",
-            ambience="room.mp3", nxt="महाड़ और नासिक"),
-    4: dict(title="महाड़ और नासिक", kicker="भाग चार", grade="teal_orange", music="tension.mp3",
-            ambience="crowd.mp3", nxt="दो रास्ते"),
-}
+KICKER = {1:"भाग एक", 2:"भाग दो", 3:"भाग तीन", 4:"भाग चार", 5:"भाग पाँच",
+          6:"भाग छह", 7:"भाग सात", 8:"भाग आठ", 9:"भाग नौ", 10:"भाग दस",
+          11:"भाग ग्यारह", 12:"भाग बारह", 13:"भाग तेरह", 14:"भाग चौदह", 15:"भाग पंद्रह"}
+
+def load_part(n):
+    return json.loads((ROOT/f"scripts/film/part{n}.json").read_text(encoding="utf-8"))
+
+def chapter_cfg(N, data):
+    """Chapter framing derived from the spec itself — no per-chapter hardcoding.
+    `nxt` is the following chapter's title, for the end card."""
+    nxt = ""
+    nxt_path = ROOT/f"scripts/film/part{N+1}.json"
+    if nxt_path.is_file():
+        nxt = json.loads(nxt_path.read_text(encoding="utf-8")).get("title", "")
+    return dict(title=data.get("title", ""), kicker=KICKER.get(N, f"भाग {N}"),
+                grade=data.get("grade", "neutral"), music=data.get("music"),
+                ambience=data.get("ambience"), nxt=nxt)
 GEO = {"महाड़":"mahad","नासिक":"nashik","बॉम्बे":"bombay","बम्बई":"bombay","बड़ौदा":"baroda",
        "नागपुर":"nagpur","दिल्ली":"delhi","मुंबई":"bombay"}
 
@@ -69,6 +78,60 @@ FACTS = {
      ("महाड़ में आंदोलन", dict(title="महाड़ सत्याग्रह", date="20 मार्च 1927",
         lines=["चवदार तालाब — सार्वजनिक जल का अधिकार", "हज़ारों सत्याग्रही"])),
      ("कालाराम", dict(title="कालाराम मंदिर सत्याग्रह", date="2 मार्च 1930", lines=["मंदिर प्रवेश आंदोलन"]))],
+ 5: [("Round Table", dict(title="गोलमेज सम्मेलन", date="1930–1932",
+        lines=["लंदन", "तीनों सम्मेलनों में भागीदारी", "Depressed Classes का प्रतिनिधित्व"])),
+     ("Communal Award", dict(title="Communal Award", date="1932",
+        lines=["ब्रिटिश PM रैमसे मैकडॉनल्ड", "वंचित वर्गों हेतु पृथक निर्वाचन"])),
+     ("24 सितंबर", dict(title="पूना पैक्ट", date="24 सितंबर 1932",
+        lines=["आंबेडकर – गांधी समझौता", "पृथक निर्वाचन → आरक्षित सीटें", "यरवदा जेल उपवास के बाद"])),
+     ("Annihilation of Caste", dict(title="Annihilation of Caste", date="1936",
+        lines=["जाति व्यवस्था की संरचनात्मक आलोचना", "हिंदी: जाति का विनाश"]))],
+ 6: [("Annihilation of Caste", dict(title="Annihilation of Caste", date="1936",
+        lines=["मूल रूप से जात-पात तोड़क मंडल, लाहौर हेतु", "अदत्त भाषण → स्वयं प्रकाशित"])),
+     ("social democracy", dict(title="सामाजिक लोकतंत्र", date="",
+        lines=["राजनीतिक + सामाजिक + आर्थिक समानता", "केवल मताधिकार पर्याप्त नहीं"]))],
+ 7: [("The Problem of the Rupee", dict(title="The Problem of the Rupee", date="1923",
+        lines=["भारतीय मुद्रा एवं विनिमय", "लंदन D.Sc. शोध का आधार"])),
+     ("Independent Labour Party", dict(title="Independent Labour Party", date="1936",
+        lines=["श्रमिक–किसान राजनीति"])),
+     ("बॉम्बे विधान सभा", dict(title="बॉम्बे विधान सभा", date="1937",
+        lines=["निर्वाचित सदस्य", "श्रमिक अधिकारों का मंच"]))],
+ 8: [("Viceroy's Executive Council", dict(title="वायसराय कार्यकारी परिषद", date="1942",
+        lines=["श्रम सदस्य (Labour Member)", "श्रम नीति एवं कल्याण"])),
+     ("Constituent Assembly", dict(title="संविधान सभा", date="1946",
+        lines=["भारत के संविधान का निर्माण", "बॉम्बे प्रांत से सदस्य"]))],
+ 9: [("पहले कानून मंत्री", dict(title="स्वतंत्र भारत के प्रथम कानून मंत्री", date="1947",
+        lines=["नेहरू मंत्रिमंडल", "विधि एवं न्याय"])),
+     ("29 अगस्त 1947", dict(title="प्रारूप समिति", date="29 अगस्त 1947",
+        lines=["अध्यक्ष: डॉ. बी. आर. आंबेडकर", "सात सदस्य"])),
+     ("25 नवंबर 1949", dict(title="संविधान सभा — अंतिम भाषण", date="25 नवंबर 1949",
+        lines=["श्रेय अनेक सहयोगियों के साथ साझा"]))],
+ 10: [("Liberty. Equality. Fraternity", dict(title="स्वतंत्रता · समता · बंधुता", date="",
+        lines=["लोकतंत्र = सामाजिक जीवन-पद्धति", "तीनों परस्पर अनिवार्य"])),
+      ("constitutional morality", dict(title="संवैधानिक नैतिकता", date="4 नवंबर 1948",
+        lines=["संविधान सभा में भाषण", "केवल पाठ नहीं, आचरण भी"])),
+      ("26 जनवरी 1950", dict(title="भारत गणराज्य", date="26 जनवरी 1950",
+        lines=["संविधान लागू", "26 नवंबर 1949 को अंगीकृत"]))],
+ 11: [("संदर्भ में Hindu Code Bill", dict(title="हिंदू कोड बिल", date="",
+        lines=["विवाह · तलाक · संपत्ति · उत्तराधिकार", "महिलाओं के कानूनी अधिकार"])),
+      ("इस्तीफा", dict(title="कानून मंत्री पद से त्यागपत्र", date="27 अक्टूबर 1951",
+        lines=["हिंदू कोड बिल की धीमी प्रगति", "नीतिगत असहमतियाँ"]))],
+ 12: [("बौद्ध धर्म की दीक्षा", dict(title="धम्म दीक्षा", date="14 अक्टूबर 1956",
+        lines=["नागपुर — दीक्षाभूमि", "लाखों अनुयायियों सहित धर्मांतरण"])),
+      ("The Buddha and His Dhamma", dict(title="The Buddha and His Dhamma", date="1957 (मरणोपरांत)",
+        lines=["आंबेडकर की बौद्ध व्याख्या", "अंतिम प्रमुख ग्रंथ"])),
+      ("1935", dict(title="धर्म परिवर्तन की घोषणा", date="1935",
+        lines=["येवला सम्मेलन", "\"हिंदू के रूप में नहीं मरूँगा\""]))],
+ 13: [("The Buddha and His Dhamma", dict(title="The Buddha and His Dhamma", date="अंतिम वर्षों में",
+        lines=["आंबेडकर का अंतिम बौद्धिक ग्रंथ", "आधुनिक समाज हेतु बौद्ध दृष्टि"]))],
+ 14: [("6 दिसंबर 1956", dict(title="महापरिनिर्वाण", date="6 दिसंबर 1956",
+        lines=["नई दिल्ली — 26 अलीपुर रोड", "आयु 65 वर्ष"]))],
+ 15: [("25 नवंबर 1949", dict(title="संविधान सभा — चेतावनी", date="25 नवंबर 1949",
+        lines=["राजनीतिक बनाम सामाजिक-आर्थिक समानता", "लोकतंत्र की रक्षा"])),
+      ("14 अप्रैल 1891", dict(title="जन्म", date="14 अप्रैल 1891",
+        lines=["महू, मध्य प्रदेश", "सामाजिक सीमा से महानायक तक"])),
+      ("6 दिसंबर 1956", dict(title="महापरिनिर्वाण", date="6 दिसंबर 1956",
+        lines=["शरीर गया, सवाल जीवित"]))],
 }
 
 def fact_for(n, text):
@@ -76,6 +139,25 @@ def fact_for(n, text):
         if kw in text:
             return info
     return None
+
+def scene_prompts(sc):
+    """Distinct beat prompts for a scene. `beats` (a list) is preferred; a lone
+    `p` is the single-image fallback (back-compat)."""
+    beats = sc.get("beats")
+    if isinstance(beats, list) and beats:
+        return [str(x) for x in beats if str(x).strip()]
+    return [sc["p"]]
+
+def choose_beats(d, nprompts, max_beat=MAX_BEAT, min_beat=1.15):
+    """How many <=3s beats to cut this scene into.
+
+    Lower bound keeps every beat <=3s; upper bound stops cuts getting machine-gun
+    fast; within that window we show as many of the distinct images as fit. Author
+    generously — extra prompts are simply unused on short scenes, never crammed in.
+    """
+    min_beats = max(1, math.ceil(d / max_beat))
+    max_beats = max(1, int(d // min_beat))
+    return max(min_beats, min(nprompts, max_beats))
 
 def dur(p): return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",str(p)],capture_output=True,text=True).stdout or 0)
 
@@ -85,13 +167,14 @@ def geo_city(text):
     return None
 
 def main(N):
-    cfg = CH[N]
+    data = load_part(N)
+    cfg = chapter_cfg(N, data)
     s = get_settings(); s.min_prompts=1; s.max_prompts=400; s.ensure_directories()
     W,H = s.default_width, s.default_height
     JOB = f"JOB-20{N}"
     storage = JobStorage(s)
-    scenes = json.loads((ROOT/f"scripts/film/part{N}.json").read_text(encoding="utf-8"))["scenes"]
-    palette = json.loads((ROOT/f"scripts/film/part{N}.json").read_text(encoding="utf-8"))["palette"]
+    scenes = data["scenes"]
+    palette = data["palette"]
 
     narr_dir = ROOT/f"assets/narration/ch{N:02d}"; narr_dir.mkdir(parents=True, exist_ok=True)
     img_dir = ROOT/f"assets/premium/ch{N:02d}"; img_dir.mkdir(parents=True, exist_ok=True)
@@ -101,7 +184,7 @@ def main(N):
                                size=s.openai_image_size, quality=s.openai_image_quality,
                                base_url=s.openai_base_url, timeout_seconds=s.api_timeout_seconds)
 
-    # 1. narration (cache) + 2. images (cache)
+    # 1. narration (cache, one clip per scene) + 2. images (cache, one per BEAT)
     made_n = made_i = 0
     for i, sc in enumerate(scenes, start=1):
         clip = narr_dir/f"{i:03d}.m4a"
@@ -109,18 +192,30 @@ def main(N):
             tts.synthesize(SpeechRequest(text=sc["n"], output_path=clip, voice=s.sarvam_speaker,
                            language="hi-IN", model=s.sarvam_model, pace=1.15)); made_n+=1
         sc["_dur"] = dur(clip)
-        sc["_geo"] = geo_city(sc["n"]) or geo_city(sc["p"])
+        prompts = scene_prompts(sc)
+        sc["_prompts"] = prompts
+        sc["_geo"] = sc.get("geo")   # explicit opt-in only — a city mention never hijacks a scene
         if sc["_geo"]:
             continue  # geo_map draws itself, no image
-        img = img_dir/f"{i:03d}.png"
-        if not img.is_file():
-            prompt = f"{sc['p'].rstrip('. ')}, {palette}, {STYLE}"
-            try:
-                gen.generate(GenerationRequest(prompt=prompt, output_path=img, width=W, height=H,
-                             steps=1, seed=0, image_format="png")); made_i+=1
-            except GenerationError as e:
-                print(f"  scene {i} image blocked ({str(e)[:50]}) -> placeholder"); _placeholder(img, W, H)
-        sc["_img"] = img
+
+        nbeats = choose_beats(sc["_dur"], len(prompts))
+        sc["_nbeats"] = nbeats
+        # which distinct prompts actually get screen time, spread across the beats
+        used = sorted({b * len(prompts) // nbeats for b in range(nbeats)})
+        sc["_imgs"] = {}
+        for idx in used:
+            legacy = img_dir/f"{i:03d}.png"            # image from the single-prompt era
+            img = img_dir/f"{i:03d}_{idx}.png"
+            if idx == 0 and not img.is_file() and legacy.is_file():
+                img = legacy                            # REUSE — never regenerate what exists
+            elif not img.is_file():
+                prompt = f"{prompts[idx].rstrip('. ')}, {palette}, {STYLE}"
+                try:
+                    gen.generate(GenerationRequest(prompt=prompt, output_path=img, width=W, height=H,
+                                 steps=1, seed=0, image_format="png")); made_i+=1
+                except GenerationError as e:
+                    print(f"  scene {i} beat {idx} blocked ({str(e)[:50]}) -> placeholder"); _placeholder(img, W, H)
+            sc["_imgs"][idx] = img
     print(f"ch{N}: narration {made_n} new / images {made_i} new (rest cached)")
 
     # 3. build beats (fixed timeline; intro 3.5s + scenes + end 4s)
@@ -139,7 +234,9 @@ def main(N):
         shutil.copyfile(narr_dir/f"{i:03d}.m4a", adir/f"{i:03d}.m4a")
         if sc["_geo"]:
             oi+=1
-            label, gdate = GEO_LABEL.get(sc["_geo"], ("", ""))
+            dlabel, ddate = GEO_LABEL.get(sc["_geo"], ("", ""))
+            label = sc.get("geo_label", dlabel)
+            gdate = sc.get("geo_date", ddate)
             gp = f"focus={sc['_geo']};pins={sc['_geo']};scale=1650"
             if gdate: gp += f";date={gdate}"
             items.append(JobItem(job_id=JOB, prompt_id=oi, order_index=oi, external_id=str(oi),
@@ -152,13 +249,16 @@ def main(N):
                 audio_filename=f"{i:03d}.m4a", audio_seconds=d,
                 status=ItemStatus.SUCCESS, filename=None, needs_image=False))
             continue
-        # copy scene image into job images dir once
-        fn = f"{i:03d}.png"; shutil.copyfile(sc["_img"], images/fn)
-        nbeats = max(1, math.ceil(d / MAX_BEAT))   # strict <=3s per beat
+        prompts = sc["_prompts"]; nbeats = sc["_nbeats"]
         seg = d / nbeats
-        fact = fact_for(N, sc["n"]) or fact_for(N, sc["p"])
+        # copy each distinct beat image into the job images dir once
+        for idx, img in sc["_imgs"].items():
+            shutil.copyfile(img, images/f"{i:03d}_{idx}.png")
+        fact = fact_for(N, sc["n"]) or fact_for(N, " ".join(prompts))
         for b in range(nbeats):
             oi+=1; bs = start + b*seg; be = start + (b+1)*seg
+            idx = b * len(prompts) // nbeats           # distinct image for this beat
+            fn = f"{i:03d}_{idx}.png"
             if b == 0 and fact:
                 anim = "info_card"
                 params = f"lines={'|'.join(fact.get('lines',[]))}" + (f";date={fact['date']}" if fact.get('date') else "")
@@ -168,7 +268,7 @@ def main(N):
                 params = None; tval = None
             kb = None if (b==0 and fact) else KB[(i + b) % len(KB)]
             items.append(JobItem(job_id=JOB, prompt_id=oi, order_index=oi, external_id=str(oi),
-                prompt_text=sc["p"], start_seconds=round(bs,3), end_seconds=round(be,3),
+                prompt_text=prompts[idx], start_seconds=round(bs,3), end_seconds=round(be,3),
                 transition=("dissolve" if b>0 else ("dissolve" if i>1 else "fadeblack")),
                 grade=cfg["grade"], grain=6, ken_burns=kb, ken_burns_scale=None,
                 animation=anim, animation_params=params, text_value=tval,

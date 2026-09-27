@@ -3,70 +3,87 @@
   "title": "अंतिम वर्ष",
   "palette": "intimate lamplight palette, warm pool of light in deep shadow, paper and wool",
   "grade": "sepia",
-  "grain": "medium",
+  "grain": "light",
   "music": "somber.mp3",
+  "ambience": "room.mp3",
   "scenes": [
     {
-      "n": "1950 के दशक के मध्य तक आंबेडकर का स्वास्थ्य गिर रहा था।",
-      "p": "A study at night lit by one desk lamp, a blanket over the chair back and a walking stick against the desk, papers everywhere",
-      "shot": "medium",
-      "anim": "chapter_card",
-      "params": "chapter=भाग तेरह",
-      "text": "अंतिम वर्ष"
+      "n": "1950 के दशक के मध्य तक डॉ. आंबेडकर का स्वास्थ्य गिर रहा था।",
+      "beats": [
+        "A study at night lit by one desk lamp, a blanket over the chair back and a walking stick against the desk, papers everywhere, wide shot",
+        "A walking stick leaning against a lamplit desk, a blanket over the chair, deep warm shadow, medium shot"
+      ]
     },
     {
       "n": "लेकिन उनका काम रुका नहीं। वह लिखते रहे। सोचते रहे।",
-      "p": "A hand writing steadily on ruled paper in a pool of lamplight, the rest of the room in deep warm shadow, words not legible",
-      "shot": "close"
+      "p": "A hand writing steadily on ruled paper in a pool of lamplight, the rest of the room in deep warm shadow, words not legible, close shot"
     },
     {
       "n": "राजनीतिक और सामाजिक सवालों पर काम करते रहे। उन्होंने अपनी ऊर्जा अपने अंतिम बौद्धिक प्रोजेक्ट में लगाई। The Buddha and His Dhamma.",
-      "p": "Looking straight down at a desk where a thick manuscript lies open beside reference books and a cooling cup of tea",
-      "shot": "overhead",
-      "anim": "lower_third",
-      "params": "sub=अंतिम बौद्धिक कार्य",
-      "text": "The Buddha and His Dhamma"
+      "beats": [
+        "Looking straight down at a desk where a thick manuscript lies open beside reference books and a cooling cup of tea, overhead shot",
+        "A thick manuscript with a plain blank cover under a lamp, warm light, close shot",
+        "A row of reference books left open face-down around a manuscript, warm shadow, medium shot"
+      ]
     },
     {
       "n": "यह पुस्तक उनके लिए सिर्फ धार्मिक ग्रंथ नहीं थी। यह उस बौद्ध दृष्टि की उनकी व्याख्या थी जिसे वह आधुनिक समाज के लिए प्रासंगिक मानते थे।",
-      "p": "A page of a manuscript held down by a brass paperweight, the margin dense with corrections, warm lamplight",
-      "shot": "detail"
+      "beats": [
+        "A page of a manuscript held down by a brass paperweight, the margin dense with corrections, warm lamplight, close shot",
+        "A single corrected line under lamplight, ink dense in the margin, extreme close-up",
+        "A closed manuscript with a hand resting flat on its cover, warm light, close shot"
+      ]
     },
     {
       "n": "उनकी जिंदगी में एक दिलचस्प विरोधाभास था। एक तरफ... वह संविधान के निर्माण में केंद्रीय भूमिका निभाने वाले व्यक्ति थे।",
-      "p": "A bound copy of a constitution standing upright on a shelf beside a row of religious texts, warm lamplight, deep shadow",
-      "shot": "medium"
+      "beats": [
+        "A bound copy of a constitution standing upright on a shelf beside a row of religious texts, warm lamplight, deep shadow, medium shot",
+        "A law volume and a religious text leaning together on a shelf, warm lamp, close shot",
+        "A single lamp between a stack of legal reports and a stack of scriptures, deep shadow, medium shot"
+      ]
     },
     {
       "n": "दूसरी तरफ... वही व्यक्ति राजनीतिक व्यवस्था से बाहर निकलकर धर्म और समाज के बारे में नए सिरे से सोच रहा था।",
-      "p": "A study with its door standing open onto a dark corridor, the desk lamp the only light in the frame",
-      "shot": "wide"
+      "beats": [
+        "A study with its door standing open onto a dark corridor, the desk lamp the only light in the frame, wide shot",
+        "A threshold between a lamplit room and a dark corridor seen from inside, medium shot",
+        "A figure seen from behind stepping out of lamplight into shadow, wide shot"
+      ]
     },
     {
-      "n": "क्यों? क्योंकि आंबेडकर के लिए कानून जरूरी था। लेकिन कानून अकेला पर्याप्त नहीं था।",
-      "p": "A gavel and a clay lamp side by side on a desk, the gavel in shadow and the lamp lit, deep warm blacks",
-      "shot": "close"
+      "n": "क्यों? क्योंकि डॉ. आंबेडकर के लिए कानून जरूरी था। लेकिन कानून अकेला पर्याप्त नहीं था।",
+      "beats": [
+        "A gavel and a clay lamp side by side on a desk, the gavel in shadow and the lamp lit, deep warm blacks, close shot",
+        "A gavel alone in deep shadow, one edge caught by lamplight, close shot"
+      ]
     },
     {
       "n": "अगर समाज के मन में समानता का विचार नहीं होगा... तो कानून की सीमा भी होगी।",
-      "p": "A tall bookcase of law reports with one shelf left empty, warm lamplight raking across the spines",
-      "shot": "medium"
+      "beats": [
+        "A tall bookcase of law reports with one shelf left empty, warm lamplight raking across the spines, medium shot",
+        "One empty gap in a full shelf of law reports, warm raking light, close shot"
+      ]
     },
     {
       "n": "यही कारण है कि उनकी अंतिम राजनीति फिर से सामाजिक परिवर्तन की ओर लौटती दिखाई देती है।",
-      "p": "A village courtyard at dusk seen through a window frame from inside a lit room, people gathering outside in the blue hour",
-      "shot": "wide"
+      "beats": [
+        "A village courtyard at dusk seen through a window frame from inside a lit room, people gathering outside in the blue hour, medium shot",
+        "A lit window looking out on a darkening courtyard where figures gather, seen from inside, medium shot"
+      ]
     },
     {
       "n": "अब सवाल यह नहीं था कि कौन सत्ता में है। सवाल था— मनुष्य एक-दूसरे के साथ कैसे रहेंगे?",
-      "p": "A wide Indian landscape at last light with scattered lamps coming on across it, one road running through, deep warm dusk",
-      "shot": "xwide"
+      "beats": [
+        "A wide Indian landscape at last light with scattered lamps coming on across it, one road running through, deep warm dusk, wide shot",
+        "Scattered lamps coming on one by one across a darkening plain, seen from a height, wide shot"
+      ]
     },
     {
       "n": "और शायद यही वह प्रश्न था जो उनकी पूरी जिंदगी के केंद्र में रहा।",
-      "p": "A single lamp flame burning steady against total darkness, nothing else in frame",
-      "shot": "detail"
+      "beats": [
+        "A single lamp flame burning steady against total darkness, nothing else in frame, close shot",
+        "One steady flame filling the frame against pure black, extreme close-up"
+      ]
     }
-  ],
-  "ambience": "room.mp3"
+  ]
 }
