@@ -37,10 +37,11 @@ export const GeoMap: React.FC<SceneProps> = ({ text, accent, ink, params }) => {
 
   const focus = str(params, "focus", "mhow");
   const centre = PLACES[focus]?.c ?? [79, 22];
-  const endScale = num(params, "scale", 1400);
-  const startScale = endScale * 0.72;
-  // eased camera push in
-  const scale = interpolateEased(frame, 0, durationInFrames, startScale, endScale, "power2.out");
+  const scale = num(params, "scale", 1500);
+  const date = str(params, "date");
+  // Ken-Burns move over the whole map so it never feels static
+  const kz = interpolateEased(frame, 0, durationInFrames, 1.03, 1.18, "power1.inOut");
+  const kx = interpolateEased(frame, 0, durationInFrames, 2.5, -2.5, "power1.inOut");
 
   const pins = list(params, "pins").filter((p) => PLACES[p]);
   const route = list(params, "route").filter((p) => PLACES[p]);
@@ -48,6 +49,7 @@ export const GeoMap: React.FC<SceneProps> = ({ text, accent, ink, params }) => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#0d0f13" }}>
+     <AbsoluteFill style={{ transform: `scale(${kz}) translate(${kx}%, 0%)`, transformOrigin: "50% 45%" }}>
       <ComposableMap
         width={width}
         height={height}
@@ -122,15 +124,22 @@ export const GeoMap: React.FC<SceneProps> = ({ text, accent, ink, params }) => {
           );
         })}
       </ComposableMap>
+     </AbsoluteFill>
 
       <Vignette strength={0.5} />
-      {text ? (
+      {(text || date) ? (
         <AbsoluteFill style={{ justifyContent: "flex-start", padding: height * 0.07 }}>
-          <div style={{ fontFamily: `${SERIF}, sans-serif`, color: "white", fontWeight: 700,
-                        fontSize: height * 0.05, opacity: eased(frame, 4, 16),
-                        textShadow: "0 2px 18px rgba(0,0,0,0.8)" }}>
-            {text}
-          </div>
+          {date ? (
+            <div style={{ display: "inline-block", alignSelf: "flex-start", background: accent, color: "#0d0f13",
+                          fontFamily: `${SANS}, sans-serif`, fontWeight: 800, fontSize: height * 0.028,
+                          padding: `${height*0.006}px ${height*0.02}px`, borderRadius: 6,
+                          marginBottom: height * 0.02, opacity: eased(frame, 6, 12) }}>{date}</div>
+          ) : null}
+          {text ? (
+            <div style={{ fontFamily: `${SERIF}, serif`, color: "white", fontWeight: 700,
+                          fontSize: height * 0.056, opacity: eased(frame, 4, 16),
+                          textShadow: "0 2px 18px rgba(0,0,0,0.85)" }}>{text}</div>
+          ) : null}
         </AbsoluteFill>
       ) : null}
       <Grain opacity={0.05} />

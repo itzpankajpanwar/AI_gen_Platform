@@ -16,6 +16,12 @@ from app.models import JobItem, Job, ItemStatus
 JOB = "JOB-101"
 NARR = ROOT / "assets/narration/ch01/narration.m4a"
 OUT = ROOT / "samples/film_premium/chapter1.mp4"
+DEV = str.maketrans("०१२३४५६७८९", "0123456789")
+KB = ["zoom_in:1.12","zoom_out:1.14","pan_left","pan_right","zoom_in:1.18","pan_up"]
+CH1_FACTS = {
+  "अप्रैल": dict(title="जन्म", date="14 अप्रैल 1891", lines=["महू छावनी, मध्य भारत","महार समुदाय"]),
+  "रामजी मालोजी": dict(title="रामजी मालोजी सकपाल", date="", lines=["ब्रिटिश भारतीय सेना — सूबेदार"]),
+}
 WIDE = re.compile(r"vast|wide|aerial|plain|town|road|landscape|hillside|cantonment|horizon|parade ground|dawn|sky", re.I)
 
 def dur(p):
@@ -29,22 +35,31 @@ def main():
     assert r.valid, r.errors
     images = storage.images_dir(JOB)
 
-    items=[]; pdir=0
-    for p in r.prompts:
+    items=[]
+    for idx, p in enumerate(r.prompts):
         fn = f"{p.order_index:03d}.png"
         anim = p.animation or ""
         params = p.animation_params or ""
         kb = p.ken_burns or ""
-        if not anim and WIDE.search(p.text):
-            anim = "parallax"; pdir^=1
-            params = f"dir={'right' if pdir else 'left'};depth=1.15;dim=0.28"
-            kb = ""
+        tval = (p.text_value or "").translate(DEV)  # Western numerals
+        # date/name cards -> richer info_card (verified)
+        fact = None
+        for kw, info in CH1_FACTS.items():
+            if (p.text_value and kw in p.text_value):
+                fact = info; break
+        if fact:
+            anim = "info_card"
+            params = f"lines={'|'.join(fact['lines'])}" + (f";date={fact['date']}" if fact['date'] else "")
+            tval = fact["title"]; kb = ""
+        elif not anim:
+            # every plain beat gets a real camera move (no parallax)
+            kb = kb or KB[idx % len(KB)]
         items.append(JobItem(job_id=JOB, prompt_id=p.order_index, order_index=p.order_index,
             external_id=str(p.order_index), prompt_text=p.text,
             start_seconds=p.start_seconds, end_seconds=p.end_seconds,
             transition=p.transition, transition_seconds=p.transition_seconds,
             ken_burns=kb or None, grade="film", grain=p.grain, text_type=p.text_type,
-            text_value=p.text_value, animation=anim or None, animation_params=params or None,
+            text_value=tval, animation=anim or None, animation_params=params or None,
             status=ItemStatus.SUCCESS, filename=fn))
     beats_end = items[-1].end_seconds
     # end card (no image)

@@ -44,6 +44,39 @@ CH = {
 GEO = {"महाड़":"mahad","नासिक":"nashik","बॉम्बे":"bombay","बम्बई":"bombay","बड़ौदा":"baroda",
        "नागपुर":"nagpur","दिल्ली":"delhi","मुंबई":"bombay"}
 
+# Ken-Burns rotation (replaces parallax) — varied real camera moves per beat.
+KB = ["zoom_in:1.12", "zoom_out:1.14", "pan_left", "pan_right", "zoom_in:1.18", "pan_up"]
+
+# Hindi label + a contextual date for geo_map scenes.
+GEO_LABEL = {"mahad": ("महाड़, महाराष्ट्र", "1927"), "nashik": ("नासिक", "1930"),
+             "baroda": ("बड़ौदा रियासत", "1913"), "bombay": ("बॉम्बे", ""),
+             "nagpur": ("नागपुर", ""), "delhi": ("दिल्ली", ""), "mhow": ("महू, मध्य प्रदेश", "1891")}
+
+# Verified fact overlays (info_card) keyed by a phrase in the narration.
+# Dates cross-checked; kept consistent with the spoken narration.
+FACTS = {
+ 2: [("कोलंबिया", dict(title="कोलंबिया विश्वविद्यालय", date="1913",
+        lines=["न्यूयॉर्क, अमेरिका", "M.A. — 1915", "Ph.D. अर्थशास्त्र — 1927", "गुरु: प्रो. जॉन ड्यूई"])),
+     ("एल्फिंस्टन", dict(title="एल्फिंस्टन कॉलेज", date="", lines=["बॉम्बे विश्वविद्यालय", "अर्थशास्त्र एवं राजनीति"])),
+     ("मैट्रिक", dict(title="मैट्रिक परीक्षा पास", date="1907", lines=["बॉम्बे प्रेसिडेंसी"])),
+     ("मास्टर डिग्री", dict(title="M.A. पूर्ण", date="1915", lines=["कोलंबिया विश्वविद्यालय"]))],
+ 3: [("लंदन", dict(title="London School of Economics", date="1916–1923",
+        lines=["अर्थशास्त्र में D.Sc.", "Gray's Inn — बैरिस्टर (1922)"])),
+     ("Rupee", dict(title="The Problem of the Rupee", date="1923", lines=["भारतीय मुद्रा एवं औपनिवेशिक वित्त"])),
+     ("बहिष्कृत हितकारिणी", dict(title="बहिष्कृत हितकारिणी सभा", date="1924",
+        lines=["शिक्षा · संगठन · सामाजिक सुधार"]))],
+ 4: [("मनुस्मृति", dict(title="मनुस्मृति दहन", date="25 दिसंबर 1927", lines=["महाड़ — प्रतीकात्मक विरोध"])),
+     ("महाड़ में आंदोलन", dict(title="महाड़ सत्याग्रह", date="20 मार्च 1927",
+        lines=["चवदार तालाब — सार्वजनिक जल का अधिकार", "हज़ारों सत्याग्रही"])),
+     ("कालाराम", dict(title="कालाराम मंदिर सत्याग्रह", date="2 मार्च 1930", lines=["मंदिर प्रवेश आंदोलन"]))],
+}
+
+def fact_for(n, text):
+    for kw, info in FACTS.get(n, []):
+        if kw in text:
+            return info
+    return None
+
 def dur(p): return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",str(p)],capture_output=True,text=True).stdout or 0)
 
 def geo_city(text):
@@ -106,30 +139,39 @@ def main(N):
         shutil.copyfile(narr_dir/f"{i:03d}.m4a", adir/f"{i:03d}.m4a")
         if sc["_geo"]:
             oi+=1
+            label, gdate = GEO_LABEL.get(sc["_geo"], ("", ""))
+            gp = f"focus={sc['_geo']};pins={sc['_geo']};scale=1650"
+            if gdate: gp += f";date={gdate}"
             items.append(JobItem(job_id=JOB, prompt_id=oi, order_index=oi, external_id=str(oi),
                 prompt_text=sc["p"], start_seconds=round(start,3), end_seconds=round(end,3),
                 transition=("dissolve" if i>1 else "fadeblack"),
                 grade=cfg["grade"], animation="geo_map",
-                animation_params=f"focus={sc['_geo']};pins={sc['_geo']};scale=1600",
-                text_value="", narration=sc["n"], music=(cfg["music"] if i==1 else None),
+                animation_params=gp,
+                text_value=label, narration=sc["n"], music=(cfg["music"] if i==1 else None),
                 ambience=(cfg["ambience"] if i==1 else None),
                 audio_filename=f"{i:03d}.m4a", audio_seconds=d,
                 status=ItemStatus.SUCCESS, filename=None, needs_image=False))
             continue
         # copy scene image into job images dir once
         fn = f"{i:03d}.png"; shutil.copyfile(sc["_img"], images/fn)
-        nbeats = max(1, min(4, math.ceil(d / MAX_BEAT)))
+        nbeats = max(1, math.ceil(d / MAX_BEAT))   # strict <=3s per beat
         seg = d / nbeats
+        fact = fact_for(N, sc["n"]) or fact_for(N, sc["p"])
         for b in range(nbeats):
             oi+=1; bs = start + b*seg; be = start + (b+1)*seg
-            if b == 0:
-                anim, params = "parallax", f"dir={'right' if pdir else 'left'};depth=1.15;dim=0.3"; pdir^=1
+            if b == 0 and fact:
+                anim = "info_card"
+                params = f"lines={'|'.join(fact.get('lines',[]))}" + (f";date={fact['date']}" if fact.get('date') else "")
+                tval = fact.get("title","")
             else:
-                anim, params = "parallax", f"dir={'left' if pdir else 'right'};depth=1.25;dim=0.3"; pdir^=1
+                anim = None  # ffmpeg ken-burns move (fast, reliable, looks good)
+                params = None; tval = None
+            kb = None if (b==0 and fact) else KB[(i + b) % len(KB)]
             items.append(JobItem(job_id=JOB, prompt_id=oi, order_index=oi, external_id=str(oi),
                 prompt_text=sc["p"], start_seconds=round(bs,3), end_seconds=round(be,3),
                 transition=("dissolve" if b>0 else ("dissolve" if i>1 else "fadeblack")),
-                grade=cfg["grade"], grain=6, animation=anim, animation_params=params,
+                grade=cfg["grade"], grain=6, ken_burns=kb, ken_burns_scale=None,
+                animation=anim, animation_params=params, text_value=tval,
                 narration=(sc["n"] if b==0 else None),
                 music=(cfg["music"] if (i==1 and b==0) else None),
                 ambience=(cfg["ambience"] if (i==1 and b==0) else None),

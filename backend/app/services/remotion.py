@@ -68,6 +68,12 @@ TEMPLATES: dict[str, TemplateSpec] = {
         text="optional",
         params={"dir": "left | right", "depth": "parallax strength (default 1)", "dim": "0-1", "vignette": "0-1"},
     ),
+    "info_card": TemplateSpec(
+        name="info_card",
+        summary="Scene image + a panel with heading, detail lines and a date badge (rich facts).",
+        text="required",
+        params={"lines": "detail lines separated by ;", "date": "date badge", "title": "heading if text unused"},
+    ),
     "pull_quote": TemplateSpec(
         name="pull_quote",
         summary="A pulled quotation with giant serif quote marks, revealing words and attribution.",

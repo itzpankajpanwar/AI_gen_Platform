@@ -5,7 +5,7 @@ import { BarChart, HighlightCallout, MapRoute, StatCounter, Timeline } from "./g
 import { GeoMap } from "./geomap";
 import { CutoutReveal, KenBurnsPro, SplitCompare } from "./camera";
 import { ChapterCard, LowerThird, Quote, TitleReveal, WordMark } from "./text";
-import { EndCard, IntroCard, Parallax, PullQuote } from "./premium";
+import { EndCard, InfoCard, IntroCard, Parallax, PullQuote } from "./premium";
 
 /**
  * The template registry.
@@ -28,6 +28,7 @@ export const TEMPLATES: Record<string, React.FC<SceneProps>> = {
   geo_map: GeoMap,
   parallax: Parallax,
   pull_quote: PullQuote,
+  info_card: InfoCard,
   intro_card: IntroCard,
   end_card: EndCard,
   stat_counter: StatCounter,

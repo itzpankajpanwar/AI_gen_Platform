@@ -156,3 +156,51 @@ export const EndCard: React.FC<SceneProps> = ({ image, text, accent, params }) =
     </AbsoluteFill>
   );
 };
+
+/**
+ * #3 (rich text) — an information card: the scene image, dimmed, with a panel
+ * carrying a heading, up to three detail lines revealing in turn, and a date
+ * badge. For "when he studied at Columbia → the details" moments.
+ *
+ * params: title=... lines=a;b;c date=1913  sub=(optional single subtitle)
+ */
+export const InfoCard: React.FC<SceneProps> = ({ image, text, accent, params }) => {
+  const frame = useCurrentFrame();
+  const { width, height } = useVideoConfig();
+  const lines = str(params, "lines").split("|").map((l) => l.trim()).filter(Boolean);
+  const date = str(params, "date");
+  const heading = text || str(params, "title");
+  const slab = eased(frame, 3, 18, "power4.out");
+
+  return (
+    <AbsoluteFill>
+      <Backdrop image={image} zoomFrom={1.04} zoomTo={1.11} curve="power1.inOut" dim={0.5} />
+      <Vignette strength={0.5} />
+      <AbsoluteFill style={{ justifyContent: "center", paddingLeft: width * 0.07 }}>
+        <div style={{ transform: `translateX(${(slab - 1) * 30}%)`, opacity: slab,
+                      borderLeft: `4px solid ${accent}`, paddingLeft: width * 0.02,
+                      maxWidth: width * 0.6 }}>
+          {date ? (
+            <div style={{ ...baseText, display: "inline-block", background: accent, color: "#07090f",
+                          fontFamily: `${SANS}, sans-serif`, fontWeight: 800, fontSize: height * 0.03,
+                          padding: `${height*0.006}px ${height*0.02}px`, borderRadius: 6,
+                          marginBottom: height * 0.025, opacity: eased(frame, 8, 12) }}>{date}</div>
+          ) : null}
+          <div style={{ ...baseText, fontFamily: `${SERIF}, serif`, fontWeight: 700,
+                        fontSize: height * 0.058, lineHeight: 1.15,
+                        textShadow: "0 2px 16px rgba(0,0,0,0.8)" }}>{heading}</div>
+          {lines.map((ln, i) => (
+            <div key={i} style={{ ...baseText, fontFamily: `${SANS}, sans-serif`,
+                        fontSize: height * 0.03, color: "rgba(255,255,255,0.85)",
+                        marginTop: height * 0.014, opacity: eased(frame, 16 + i * 6, 14),
+                        transform: `translateX(${(1 - eased(frame, 16 + i*6, 14)) * 20}px)`,
+                        textShadow: "0 2px 12px rgba(0,0,0,0.85)" }}>
+              <span style={{ color: accent, marginRight: "0.5em" }}>›</span>{ln}
+            </div>
+          ))}
+        </div>
+      </AbsoluteFill>
+      <Grain />
+    </AbsoluteFill>
+  );
+};
