@@ -65,7 +65,7 @@ def rows_for(N):
     t = 0.0
     rows.append(dict(scene="—", beat="—", start="0.0", end="3.5", kind="INTRO CARD",
                      anim="intro_card", ken_burns="", transition="fade", grade="",
-                     card="", narration="", prompt=f"{data.get('title','')} / {KICKER.get(N,'')}"))
+                     card="", narration="", prompt=f"{data.get('title','')} / {data.get('kicker', KICKER.get(N,''))}"))
     t = 3.5
     for i, sc in enumerate(data["scenes"], 1):
         clip = narr_dir / f"{i:03d}.m4a"

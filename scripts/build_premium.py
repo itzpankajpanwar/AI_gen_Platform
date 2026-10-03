@@ -29,9 +29,13 @@ from app.models import JobItem, Job, ItemStatus
 from app.services.video_service import _placeholder
 
 MAX_BEAT = 3.0
-STYLE = ("photorealistic, authentic early-1900s India, period-accurate, natural skin texture, "
-         "volumetric light, shot on 35mm, shallow depth of field, fine film grain, cinematic "
-         "documentary still, no on-image text, no watermark, 16:9")
+# Default global image style, appended to every beat prompt. It is tuned for the
+# Ambedkar film (early-1900s India); any chapter can override it per-film with a
+# top-level "style" key in its part{N}.json, so a different era/subject (e.g. the
+# 18th-century Jaipur film) is not forced into this look.
+DEFAULT_STYLE = ("photorealistic, authentic early-1900s India, period-accurate, natural skin texture, "
+                 "volumetric light, shot on 35mm, shallow depth of field, fine film grain, cinematic "
+                 "documentary still, no on-image text, no watermark, 16:9")
 
 KICKER = {1:"भाग एक", 2:"भाग दो", 3:"भाग तीन", 4:"भाग चार", 5:"भाग पाँच",
           6:"भाग छह", 7:"भाग सात", 8:"भाग आठ", 9:"भाग नौ", 10:"भाग दस",
@@ -47,7 +51,9 @@ def chapter_cfg(N, data):
     nxt_path = ROOT/f"scripts/film/part{N+1}.json"
     if nxt_path.is_file():
         nxt = json.loads(nxt_path.read_text(encoding="utf-8")).get("title", "")
-    return dict(title=data.get("title", ""), kicker=KICKER.get(N, f"भाग {N}"),
+    return dict(title=data.get("title", ""),
+                kicker=data.get("kicker", KICKER.get(N, f"भाग {N}")),
+                brand=data.get("brand", "THE QUIET STORY"),
                 grade=data.get("grade", "neutral"), music=data.get("music"),
                 ambience=data.get("ambience"), nxt=nxt)
 GEO = {"महाड़":"mahad","नासिक":"nashik","बॉम्बे":"bombay","बम्बई":"bombay","बड़ौदा":"baroda",
@@ -175,6 +181,7 @@ def main(N):
     storage = JobStorage(s)
     scenes = data["scenes"]
     palette = data["palette"]
+    style = data.get("style", DEFAULT_STYLE)   # per-film image style; Ambedkar default otherwise
 
     narr_dir = ROOT/f"assets/narration/ch{N:02d}"; narr_dir.mkdir(parents=True, exist_ok=True)
     img_dir = ROOT/f"assets/premium/ch{N:02d}"; img_dir.mkdir(parents=True, exist_ok=True)
@@ -209,7 +216,7 @@ def main(N):
             if idx == 0 and not img.is_file() and legacy.is_file():
                 img = legacy                            # REUSE — never regenerate what exists
             elif not img.is_file():
-                prompt = f"{prompts[idx].rstrip('. ')}, {palette}, {STYLE}"
+                prompt = f"{prompts[idx].rstrip('. ')}, {palette}, {style}"
                 try:
                     gen.generate(GenerationRequest(prompt=prompt, output_path=img, width=W, height=H,
                                  steps=1, seed=0, image_format="png")); made_i+=1
@@ -226,7 +233,7 @@ def main(N):
     oi+=1
     items.append(JobItem(job_id=JOB, prompt_id=oi, order_index=oi, external_id=str(oi), prompt_text="intro",
         start_seconds=0.0, end_seconds=3.5, transition="fade", animation="intro_card",
-        animation_params=f"brand=THE QUIET STORY;kicker={cfg['kicker']}", text_value=cfg["title"],
+        animation_params=f"brand={cfg['brand']};kicker={cfg['kicker']}", text_value=cfg["title"],
         status=ItemStatus.SUCCESS, filename=None, needs_image=False))
     for i, sc in enumerate(scenes, start=1):
         d = sc["_dur"]; start = cursor; end = cursor + d; cursor = end
@@ -282,7 +289,7 @@ def main(N):
     oi+=1
     items.append(JobItem(job_id=JOB, prompt_id=oi, order_index=oi, external_id=str(oi), prompt_text="end",
         start_seconds=round(cursor,3), end_seconds=round(cursor+4,3), transition="dissolve",
-        animation="end_card", animation_params=f"brand=THE QUIET STORY;next={cfg['nxt']}",
+        animation="end_card", animation_params=f"brand={cfg['brand']};next={cfg['nxt']}",
         text_value="SUBSCRIBE", status=ItemStatus.SUCCESS, filename=None, needs_image=False))
     total = cursor + 4
     npar = sum(1 for it in items if it.animation=="parallax")
