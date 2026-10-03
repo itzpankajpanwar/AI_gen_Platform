@@ -1,0 +1,984 @@
+{
+  "chapter": 16,
+  "title": "जयपुर — एक शहर जिसे पहले नक्शे पर बनाया गया",
+  "palette": "warm rose-sandstone and ochre Jaipur palette, hazy golden Rajasthan light, dust suspended in low sun, 18th-century Rajput architecture, earth tones",
+  "grade": "warm",
+  "grain": "light",
+  "music": "warm.mp3",
+  "ambience": "wind.mp3",
+  "scenes": [
+    {
+      "n": "आज अगर आप जयपुर की किसी चौड़ी सड़क पर खड़े हों… और अपने आसपास की इमारतों, बाजारों और रास्तों को देखें… तो शायद आपको यह एक खूबसूरत ऐतिहासिक शहर ही दिखाई देगा।",
+      "beats": [
+        "Street-level view standing in the middle of a wide avenue in the old pink-sandstone city of Jaipur at golden hour, symmetrical carved facades and arched shopfronts receding on both sides, a lone figure seen from behind",
+        "Ground-level view of a bustling arched bazaar colonnade with uniform rose-coloured facades, hazy warm light, people small in frame",
+        "A historic Rajput sandstone gateway with lattice windows, wide cinematic frame, dust in low sun"
+      ]
+    },
+    {
+      "n": "लेकिन कुछ सेकंड के लिए… ऊपर से पूरे जयपुर को देखने की कोशिश कीजिए।",
+      "beats": [
+        "Slow aerial rising shot lifting up from a single street to reveal the vast layout of an old walled Indian city from above, golden haze",
+        "High overhead aerial of a dense historic walled city laid out in rectangular blocks, warm evening light"
+      ]
+    },
+    {
+      "n": "सीधी सड़कें। एक-दूसरे को काटती हुई मुख्य सड़कें। उनके बीच बने बड़े-बड़े शहरी हिस्से।",
+      "beats": [
+        "Top-down aerial of long perfectly straight avenues crossing at right angles in an old walled Indian city, sandstone rooftops",
+        "Overhead view of two broad arterial roads intersecting at a grand crossroads",
+        "High aerial of large uniform urban blocks separated by straight wide streets"
+      ]
+    },
+    {
+      "n": "बाजारों की एक जैसी अग्रभाग वाली इमारतें। चौक… गलियां… और चारों ओर फैला हुआ एक व्यवस्थित ढांचा।",
+      "beats": [
+        "Aerial of a market street lined with identical repeating facades on both sides, orderly rhythm of arches",
+        "Overhead of a large public square where streets meet, surrounded by uniform buildings",
+        "High aerial revealing an orderly geometric lattice of squares, lanes and blocks across the whole city"
+      ]
+    },
+    {
+      "n": "पूरा शहर… मानो किसी विशाल नक्शे पर पहले से खींच दिया गया हो।",
+      "beats": [
+        "An antique hand-drawn 18th-century town plan on aged parchment, a ruled grid of streets and blocks in ink, brass dividers and a scale rule resting on it",
+        "A parchment city plan dissolving to align perfectly with an aerial view of the real walled city below"
+      ]
+    },
+    {
+      "n": "लेकिन यहां सबसे दिलचस्प बात यह है… कि यह शहर आज से 20 या 50 साल पहले नहीं बना था। यह कहानी लगभग तीन सौ साल पुरानी है।",
+      "beats": [
+        "A weathered carved stone foundation inscription in old masonry, extreme close-up, warm raking light",
+        "An aged manuscript page with faded 18th-century ink, antique paper texture",
+        "Wide aerial of the old city bathed in antique sepia-warm light, timeless"
+      ]
+    },
+    {
+      "n": "जब हमारे पास— न satellite imagery थी, न GIS, न CAD software, न computer, और न ही आज जैसी आधुनिक urban-planning technology।",
+      "beats": [
+        "An empty 18th-century drafting table with quills, ink pots, brass dividers and a ruled sheet, no modern tools, lamplight",
+        "Close-up of hand-drawn survey lines and measurements on parchment with a brass compass and plumb line",
+        "A surveyor's rope, measuring chain and wooden stakes laid on bare earth at dawn"
+      ]
+    },
+    {
+      "n": "और फिर भी… 18वीं शताब्दी में एक ऐसा शहर बसाया गया… जिसकी मूल योजना आज भी उसकी पहचान बनी हुई है।",
+      "beats": [
+        "Sweeping aerial of a perfectly planned old walled city at sunrise, its grid unmistakable from above",
+        "Antique plan edges matching the modern city's streets, warm light"
+      ]
+    },
+    {
+      "n": "सवाल है— आखिर यह कैसे संभव हुआ? और उससे भी बड़ा सवाल… जयपुर को बसाने की जरूरत ही क्यों पड़ी?",
+      "beats": [
+        "A single oil lamp on a plan-covered 18th-century table at night, shallow focus, question hanging in the quiet",
+        "Silhouette of a thoughtful robed figure studying a city plan by lamplight, seen from behind"
+      ]
+    },
+    {
+      "n": "इस कहानी को समझने के लिए… हमें वापस जाना होगा… 18वीं शताब्दी के राजस्थान में।",
+      "beats": [
+        "Wide golden-hour landscape of 18th-century Rajasthan, Aravalli hills, a dusty caravan track, timeless",
+        "Aerial drift over arid Rajasthan hills and open plains at dawn, haze and warm dust"
+      ]
+    },
+    {
+      "n": "उस समय कच्छवाहा राजवंश की राजधानी थी— आमेर।",
+      "beats": [
+        "The hilltop fort-palace of Amer among rugged Aravalli hills at golden hour, 18th century, wide establishing shot"
+      ]
+    },
+    {
+      "n": "पहाड़ियों के बीच बसा आमेर… सुरक्षा और किलेबंदी के लिए एक शानदार स्थान था।",
+      "beats": [
+        "Massive fortified ramparts of a Rajput hill fort hugging a ridge line, defensive walls winding over the hills",
+        "View from a fort watchtower over a narrow valley, a strong strategic vantage, warm light"
+      ]
+    },
+    {
+      "n": "ऊंचाई पर राजमहल और किला… और उसके नीचे फैली हुई बस्ती।",
+      "beats": [
+        "A Rajput palace and fort crowning a hilltop, a cramped settlement spilling down the slope below",
+        "Aerial of a dense hill-hugging town constrained by steep terrain"
+      ]
+    },
+    {
+      "n": "लेकिन समय के साथ… राजधानी के सामने एक नई समस्या खड़ी होने लगी।",
+      "beats": [
+        "The crowded hill town at dusk, lamps flickering, a sense of pressure and limits"
+      ]
+    },
+    {
+      "n": "आबादी बढ़ रही थी। व्यापार बढ़ रहा था। प्रशासनिक गतिविधियां बढ़ रही थीं।",
+      "beats": [
+        "A teeming 18th-century market lane packed with people and goods, overcrowded",
+        "Laden camels and bullock carts of a trade caravan crowding a narrow town entrance",
+        "A busy courtly administrative courtyard with clerks, scrolls and petitioners"
+      ]
+    },
+    {
+      "n": "और पहाड़ी भूभाग में शहर का विस्तार आसान नहीं था।",
+      "beats": [
+        "Houses jammed against steep rocky hillsides with no room to grow, 18th century"
+      ]
+    },
+    {
+      "n": "नई बस्ती के लिए जगह सीमित थी… और बढ़ते हुए शहर के लिए संसाधनों की जरूरत भी बढ़ रही थी।",
+      "beats": [
+        "A dry hillside with scarce flat ground and a few cramped dwellings, hard terrain",
+        "Women carrying water pots up a steep hill path, scarcity of water and space"
+      ]
+    },
+    {
+      "n": "ऐसे में एक सवाल सामने था— क्या राजधानी को उसी जगह लगातार फैलाया जाए? या… एक नई राजधानी बसाई जाए?",
+      "beats": [
+        "A ruler and advisors on a fort terrace looking out over the constrained hill town, deliberating, seen from behind",
+        "Two paths diverging from a hill fort, one back into the crowded town, one toward the open plains below"
+      ]
+    },
+    {
+      "n": "यहीं से सामने आते हैं— महाराजा सवाई जयसिंह द्वितीय।",
+      "beats": [
+        "A dignified 18th-century Rajput maharaja in royal attire standing on a palace terrace, commanding presence, warm light, face partly in shadow"
+      ]
+    },
+    {
+      "n": "सवाई जयसिंह द्वितीय केवल एक शासक नहीं थे। उन्हें गणित और खगोल विज्ञान में गहरी रुचि थी।",
+      "beats": [
+        "A royal study filled with astronomical instruments, astrolabes, star charts and geometry manuscripts, 18th century",
+        "Close-up of a brass astrolabe and compasses resting on a manuscript of geometric diagrams, lamplight"
+      ]
+    },
+    {
+      "n": "वे समय की गणना… दिशाओं… आकाशीय पिंडों… और उनकी गति को समझने में विशेष रुचि रखते थे।",
+      "beats": [
+        "Hands adjusting a large brass astronomical instrument, measuring the sky at dawn",
+        "An 18th-century star chart with planetary paths traced in ink, candlelight",
+        "A sundial casting a sharp shadow at a precise hour, close detail"
+      ]
+    },
+    {
+      "n": "और आगे चलकर… उनकी यह वैज्ञानिक जिज्ञासा जयपुर की कहानी में भी दिखाई देती है।",
+      "beats": [
+        "A geometric city plan and an astronomical diagram lying side by side on a table, drawn by the same precise hand"
+      ]
+    },
+    {
+      "n": "जयसिंह द्वितीय ने राजधानी को आमेर की पहाड़ियों से निकालकर… एक अपेक्षाकृत समतल क्षेत्र में बसाने का निर्णय लिया।",
+      "beats": [
+        "Aerial moving from rugged hills down onto a broad open flat plain below, 18th-century Rajasthan, dawn",
+        "A ruler and planners on horseback surveying an open flat valley, pointing across empty ground"
+      ]
+    },
+    {
+      "n": "यह क्षेत्र आमेर के दक्षिण में था। चारों ओर अरावली की पहाड़ियां थीं… लेकिन बीच का भूभाग इतना खुला था… कि यहां एक नई राजधानी को योजनाबद्ध तरीके से विकसित किया जा सकता था।",
+      "beats": [
+        "A wide flat valley ringed by Aravalli hills, open empty ground ready to be built, golden light",
+        "High overhead of an empty flat plain enclosed by hills, a blank canvas for a city",
+        "Surveyors planting stakes and stretching ropes across open ground to lay out a plan"
+      ]
+    },
+    {
+      "n": "और यहीं से शुरू हुआ— जयपुर का निर्माण।",
+      "beats": [
+        "First foundation stones and lime being laid on open ground, labourers at dawn, 18th century"
+      ]
+    },
+    {
+      "n": "सन 1727। एक नई राजधानी।",
+      "beats": [
+        "A weathered foundation stone beside an antique parchment, the year 1727 in faded ink, close-up, warm light"
+      ]
+    },
+    {
+      "n": "लेकिन इस बार शहर को अपने आप बढ़ने के लिए नहीं छोड़ा गया। इसे… पहले योजना में बनाया गया। और फिर… जमीन पर उतारा गया।",
+      "beats": [
+        "A detailed ink city plan on parchment being drawn with a ruler and dividers",
+        "The same plan's grid lines marked out with rope and lime on bare earth, aerial",
+        "A dissolve between the drawn plan and the staked-out ground aligning"
+      ]
+    },
+    {
+      "n": "लेकिन एक सवाल अभी भी बाकी था। इतने बड़े शहर की योजना बनाएगा कौन?",
+      "beats": [
+        "An unrolled blank parchment and drafting tools waiting on a table, lamplight"
+      ]
+    },
+    {
+      "n": "ऐसा शहर… जहां राजा का महल हो। प्रशासनिक केंद्र हों। मंदिर हों। बाजार हों।",
+      "beats": [
+        "Architectural elevation sketches of a royal palace on parchment",
+        "Ink plan drawings of administrative halls and temples",
+        "A drawn market street layout with repeating shopfronts"
+      ]
+    },
+    {
+      "n": "कारीगरों के मोहल्ले हों। व्यापारियों के लिए जगह हो। और हजारों लोगों के रहने के लिए व्यवस्थित आवास हो।",
+      "beats": [
+        "An ink plan of artisan quarters and workshops",
+        "A layout of merchant houses and courtyards on a city plan",
+        "A grid of residential blocks and courtyards drawn on parchment"
+      ]
+    },
+    {
+      "n": "इस योजना में एक महत्वपूर्ण नाम सामने आता है— विद्याधर भट्टाचार्य।",
+      "beats": [
+        "A learned 18th-century scholar-architect bent over a large city plan at a drafting table, lamplight, seen from the side"
+      ]
+    },
+    {
+      "n": "बंगाल से आए विद्याधर भट्टाचार्य एक विद्वान और वास्तुकार थे, जिन्होंने जयपुर की नगर योजना को आकार देने में महत्वपूर्ण भूमिका निभाई।",
+      "beats": [
+        "A scholar-architect's hands drawing precise streets with a ruler and compass on parchment",
+        "Shelves of manuscripts on architecture and geometry behind a working draftsman, 18th century"
+      ]
+    },
+    {
+      "n": "सवाई जयसिंह द्वितीय और उनके नियोजकों के सामने चुनौती केवल सुंदर शहर बनाने की नहीं थी।",
+      "beats": [
+        "The ruler and his planners gathered around a large plan in intense discussion, lamplight"
+      ]
+    },
+    {
+      "n": "उन्हें एक ऐसा शहर बनाना था… जो राजधानी भी हो। व्यापारिक केंद्र भी हो। और आने वाली पीढ़ियों के लिए… एक व्यवस्थित शहर भी हो।",
+      "beats": [
+        "A plan showing a palace, markets and a residential grid all together",
+        "An aerial vision of a complete planned city overlaid faintly on open ground"
+      ]
+    },
+    {
+      "n": "इसके लिए जयपुर की योजना में भारतीय वास्तु परंपराओं के साथ-साथ उस समय की अन्य नगर-योजना परंपराओं के विचारों का भी उपयोग किया गया।",
+      "beats": [
+        "An old Vastu Shastra manuscript with a mandala town-planning diagram, ink and ochre",
+        "Comparative plan sketches blending a mandala grid with practical street layouts"
+      ]
+    },
+    {
+      "n": "अब अगर हम जयपुर को ऊपर से देखें… तो इसकी सबसे पहली खासियत सामने आती है— Grid।",
+      "beats": [
+        "A dramatic top-down aerial revealing the city's clean rectangular grid of streets, warm rooftops"
+      ]
+    },
+    {
+      "n": "सीधी सड़कें। एक-दूसरे को काटती हुई मुख्य सड़कें। और उनके बीच बने बड़े-बड़े शहरी हिस्से।",
+      "beats": [
+        "Overhead of long straight avenues meeting at right angles",
+        "Aerial of large rectangular city sectors between broad roads"
+      ]
+    },
+    {
+      "n": "ऐतिहासिक जयपुर को मूल रूप से नौ प्रमुख चौकरियों, यानी नौ बड़े सेक्टरों में व्यवस्थित किया गया था।",
+      "beats": [
+        "Top-down aerial showing nine large rectangular sectors of a walled city in an ordered arrangement",
+        "An antique plan highlighting nine great blocks of the city in ink"
+      ]
+    },
+    {
+      "n": "इन बड़े हिस्सों के भीतर… फिर छोटी सड़कें बनीं। फिर गलियां। और फिर मोहल्ले।",
+      "beats": [
+        "Aerial zooming into one large block to reveal smaller streets within",
+        "Narrow lanes branching inside a city block, aerial",
+        "Dense residential neighbourhoods inside a block, rooftops and courtyards"
+      ]
+    },
+    {
+      "n": "यानी शहर को केवल एक स्तर पर नहीं बनाया गया था। एक बड़े Grid के भीतर छोटे-छोटे Grid बनाए गए।",
+      "beats": [
+        "Aerial showing a large grid containing smaller nested grids, fractal order",
+        "A plan diagram of grids within grids on parchment"
+      ]
+    },
+    {
+      "n": "और यही वह दृश्य है… जो आज भी satellite map पर जयपुर को बाकी शहरों से अलग पहचान देता है।",
+      "beats": [
+        "A clean geometric grid city contrasted against an irregular organic town nearby, aerial comparison"
+      ]
+    },
+    {
+      "n": "लेकिन जयपुर की यह योजना सिर्फ ज्यामिति नहीं थी। इसके पीछे धार्मिक और वास्तु संबंधी विचार भी थे।",
+      "beats": [
+        "A Vastu mandala diagram glowing faintly over a city grid, sacred geometry"
+      ]
+    },
+    {
+      "n": "शहर की योजना में वास्तु शास्त्र और प्राचीन भारतीय नगर-योजना की परंपराओं का प्रभाव दिखाई देता है।",
+      "beats": [
+        "An illuminated Vastu Shastra mandala manuscript in ochre and gold",
+        "A plan oriented to the cardinal directions with a compass rose on parchment"
+      ]
+    },
+    {
+      "n": "साथ ही… मुगल और समकालीन नगर-योजना के कुछ विचारों का भी प्रभाव देखा जाता है।",
+      "beats": [
+        "A symmetrical charbagh garden and axial layout, Mughal influence, aerial"
+      ]
+    },
+    {
+      "n": "यानी जयपुर किसी एक विचार की सीधी नकल नहीं था। यह था— परंपरा, विज्ञान, भूगोल और व्यावहारिक जरूरतों का एक मिश्रण।",
+      "beats": [
+        "Layers of a Vastu mandala, geometric survey lines and terrain contours blending into one city plan",
+        "A composite plan on parchment weaving tradition, science and landscape"
+      ]
+    },
+    {
+      "n": "अब इस पूरे शहर के नक्शे पर… एक रेखा पर ध्यान दीजिए।",
+      "beats": [
+        "Aerial with one long straight main axis road standing out across the city grid"
+      ]
+    },
+    {
+      "n": "पश्चिम में— चांदपोल। और पूर्व में— सूरजपोल।",
+      "beats": [
+        "An 18th-century fortified city gate in warm sandstone on the western edge, establishing shot",
+        "A grand 18th-century city gate on the east catching sunrise light"
+      ]
+    },
+    {
+      "n": "इन दोनों दिशाओं को जोड़ने वाली प्रमुख सड़क… पुराने जयपुर की सबसे महत्वपूर्ण शहरी धुरियों में से एक थी।",
+      "beats": [
+        "A long straight grand avenue running east-west across the old city, aerial",
+        "Ground view down a broad ceremonial main street lined with uniform facades"
+      ]
+    },
+    {
+      "n": "और इसी मुख्य ढांचे से जुड़ती हुई उत्तर-दक्षिण दिशा की सड़कें… शहर को अलग-अलग हिस्सों में बांटती थीं।",
+      "beats": [
+        "Aerial showing north-south roads crossing the main axis and dividing the city into sectors"
+      ]
+    },
+    {
+      "n": "यानी यहां सड़कें… शहर बनने के बाद धीरे-धीरे नहीं निकली थीं। सड़कें पहले से योजना का हिस्सा थीं।",
+      "beats": [
+        "Rope lines and stakes marking future streets on open ground before any building, aerial",
+        "A plan where the street network is drawn first and buildings come later"
+      ]
+    },
+    {
+      "n": "और उन्हीं सड़कों के बीच… जयपुर की चौकरियां विकसित हुईं।",
+      "beats": [
+        "City blocks filling in between pre-laid streets, aerial"
+      ]
+    },
+    {
+      "n": "लेकिन जहां बड़ी सड़कें एक-दूसरे से मिलती थीं… वहां सिर्फ चौराहा नहीं बनाया गया। वहां बनाए गए— बड़े सार्वजनिक चौक।",
+      "beats": [
+        "A large open public square where two grand avenues meet, 18th-century city, aerial",
+        "Ground view of a spacious ceremonial square framed by uniform sandstone facades"
+      ]
+    },
+    {
+      "n": "इन्हें कहा गया— चौपड़।",
+      "beats": [
+        "A grand public square bustling at golden hour, wide view"
+      ]
+    },
+    {
+      "n": "आज भी जयपुर में बड़ी चौपड़ और छोटी चौपड़ इस ऐतिहासिक योजना की पहचान हैं। और रामगंज चौपड़ भी पुराने शहर के महत्वपूर्ण सार्वजनिक स्थानों में शामिल है।",
+      "beats": [
+        "Aerial of a major square at the crossing of main roads",
+        "Another public square along the main axis with people gathering, warm light",
+        "A busy historic square surrounded by market colonnades"
+      ]
+    },
+    {
+      "n": "ये केवल सड़क के बीच खाली जगह नहीं थीं। ये शहर के सामाजिक और आर्थिक जीवन के केंद्र थे।",
+      "beats": [
+        "A lively square full of traders, buyers and gatherings, the social heart of the city"
+      ]
+    },
+    {
+      "n": "लोग यहां आते थे। बाजार इनके आसपास विकसित होते थे। व्यापारिक गतिविधियां होती थीं। और शहर की अलग-अलग सड़कों को जोड़ने में इनका महत्वपूर्ण स्थान था।",
+      "beats": [
+        "Crowds converging on a public square from several streets",
+        "Markets and stalls clustered around the edges of a square",
+        "Aerial showing a square as a hub connecting many radiating streets"
+      ]
+    },
+    {
+      "n": "यानी जयपुर में… सड़क सिर्फ आने-जाने का रास्ता नहीं थी। सड़क… खुद शहर के जीवन का हिस्सा थी।",
+      "beats": [
+        "A broad street alive with commerce and people, a living space not just a passage, golden hour"
+      ]
+    },
+    {
+      "n": "अब इस Grid के बीच… हम शहर के सबसे महत्वपूर्ण क्षेत्र की ओर आते हैं। सिटी पैलेस।",
+      "beats": [
+        "Aerial pushing toward a grand palace complex at the centre of the city grid",
+        "City Palace courtyards and gateways in warm sandstone and stucco, 18th century"
+      ]
+    },
+    {
+      "n": "राजसत्ता का केंद्र। और इसके आसपास… जयपुर की धार्मिक और राजकीय पहचान से जुड़े महत्वपूर्ण स्थल।",
+      "beats": [
+        "An ornate palace audience hall with columns, the seat of royal power",
+        "Temples and royal buildings clustered around the palace, aerial"
+      ]
+    },
+    {
+      "n": "इन्हीं में एक प्रमुख स्थान था— गोविंद देव जी मंदिर।",
+      "beats": [
+        "A serene 18th-century temple within palace gardens at dawn, devotees small in frame"
+      ]
+    },
+    {
+      "n": "जयपुर की योजना में धार्मिक और राजनीतिक केंद्र को विशेष महत्व दिया गया था।",
+      "beats": [
+        "A plan showing the palace and temple placed at the honoured centre of the city"
+      ]
+    },
+    {
+      "n": "यानी शहर केवल लोगों को बसाने के लिए नहीं बनाया जा रहा था। उसका एक केंद्र था। एक राजकीय पहचान थी। एक धार्मिक पहचान थी।",
+      "beats": [
+        "The palace-and-temple core glowing at the heart of the city, aerial, golden light",
+        "A royal banner and a temple spire together above the city centre"
+      ]
+    },
+    {
+      "n": "और उसके आसपास… बाकी शहर को व्यवस्थित किया गया।",
+      "beats": [
+        "Aerial of the ordered city radiating outward from its central core"
+      ]
+    },
+    {
+      "n": "बाद में इसी केंद्रीय क्षेत्र और उसके आसपास… जंतर-मंतर और हवा महल जैसे प्रतिष्ठित स्मारक भी जयपुर की पहचान का हिस्सा बने।",
+      "beats": [
+        "The geometric masonry instruments of the Jantar Mantar observatory under open sky",
+        "The honeycombed pink facade of Hawa Mahal with its many lattice windows, warm light"
+      ]
+    },
+    {
+      "n": "अब कल्पना कीजिए… 18वीं शताब्दी का जयपुर। आप एक मुख्य सड़क पर चल रहे हैं।",
+      "beats": [
+        "A first-person-feel walk down a grand 18th-century Jaipur street, uniform shopfronts on both sides, warm bustle"
+      ]
+    },
+    {
+      "n": "आपके दोनों तरफ दुकानें हैं। उनके पीछे और ऊपर आवासीय स्थान हैं।",
+      "beats": [
+        "A row of arched shopfronts at street level with living quarters above, period detail",
+        "A cutaway feel of shops below and homes above along a market street"
+      ]
+    },
+    {
+      "n": "आप आगे बढ़ते हैं… और सड़क अचानक एक बड़े चौक में खुल जाती है।",
+      "beats": [
+        "A narrow busy street suddenly opening into a vast public square, a sense of release, golden hour"
+      ]
+    },
+    {
+      "n": "फिर वहां से दूसरी चौड़ी सड़क निकलती है। और उसके दोनों तरफ… फिर बाजार।",
+      "beats": [
+        "Another broad avenue leading off the square, lined again with markets",
+        "Continuous bazaar facades stretching down a wide street"
+      ]
+    },
+    {
+      "n": "यही जयपुर की असली planning थी। मुख्य सड़कों को केवल traffic movement के लिए नहीं बनाया गया था। वे व्यापार की धमनियां थीं।",
+      "beats": [
+        "Aerial of main streets acting as trade arteries thick with commerce",
+        "A bustling market artery seen from above, goods and crowds flowing"
+      ]
+    },
+    {
+      "n": "दुकानों के सामने एकरूप facades बनाए गए। बाजारों को व्यवस्थित तरीके से विकसित किया गया।",
+      "beats": [
+        "Perfectly uniform repeating shopfront facades along a street, a rhythmic order",
+        "A planned, orderly bazaar with regular bays, 18th century"
+      ]
+    },
+    {
+      "n": "और अलग-अलग व्यवसायों और समुदायों के लिए शहर के भीतर स्थान निर्धारित किए गए।",
+      "beats": [
+        "Different trade quarters laid out in the city plan, jewellers, cloth, metalwork"
+      ]
+    },
+    {
+      "n": "इसलिए आज जब हम— जौहरी बाजार… किशनपोल बाजार… चांदपोल बाजार… जैसे क्षेत्रों को देखते हैं…",
+      "beats": [
+        "A glittering jewellers' bazaar, gold and gemstones, warm light",
+        "A bustling cloth and goods market street",
+        "A market street leading toward the western city gate"
+      ]
+    },
+    {
+      "n": "तो हमें सिर्फ बाजार नहीं दिखाई देते। हमें लगभग तीन सौ साल पुरानी एक आर्थिक योजना दिखाई देती है।",
+      "beats": [
+        "Aerial of the market network overlaid faintly with the original economic plan, a sense of 300 years"
+      ]
+    },
+    {
+      "n": "सवाई जयसिंह द्वितीय जयपुर को केवल राजकीय राजधानी नहीं बनाना चाहते थे। वे इसे एक व्यापारिक और आर्थिक केंद्र के रूप में भी विकसित करना चाहते थे।",
+      "beats": [
+        "The maharaja gesturing over a city plan toward the market districts, a vision of commerce, lamplight",
+        "Aerial of markets and the palace together, a trade capital"
+      ]
+    },
+    {
+      "n": "इसलिए अलग-अलग क्षेत्रों से व्यापारियों और कारीगरों को यहां आकर बसने के लिए आमंत्रित किया गया।",
+      "beats": [
+        "Caravans of merchants and artisans arriving at the new city gates, 18th century",
+        "Newcomer traders setting up shop in fresh market streets"
+      ]
+    },
+    {
+      "n": "उन्हें व्यापार के अवसर दिए गए। काम के लिए स्थान उपलब्ध कराए गए। और नई राजधानी में आर्थिक गतिविधियों को बढ़ावा दिया गया।",
+      "beats": [
+        "Artisans at work in newly allotted workshops, metal, cloth and stone",
+        "A thriving new marketplace filling with activity",
+        "Ledgers, coins and goods changing hands, economic life beginning"
+      ]
+    },
+    {
+      "n": "ऐतिहासिक स्रोत बताते हैं कि जयपुर की स्थापना के शुरुआती वर्षों में व्यापारियों को यहां बसने के लिए विशेष रूप से प्रोत्साहित किया गया।",
+      "beats": [
+        "An old royal decree manuscript granting merchants incentives, close-up, warm light"
+      ]
+    },
+    {
+      "n": "यानी जयपुर को… राजा के लिए नहीं। बल्कि… एक जीवित शहर के रूप में बनाया जा रहा था।",
+      "beats": [
+        "A living city full of ordinary people, trade and daily life, warm bustle"
+      ]
+    },
+    {
+      "n": "जहां राजा था… लेकिन उसके साथ व्यापारी भी था। कारीगर भी था। मजदूर भी था। और सामान्य नागरिक भी।",
+      "beats": [
+        "A merchant weighing goods in his shop",
+        "An artisan carving stone and working metal",
+        "Labourers and ordinary citizens in a busy street, a cross-section of society"
+      ]
+    },
+    {
+      "n": "अब इन बड़ी चौकरियों के भीतर और गहराई से जाइए। मुख्य सड़क से निकलती छोटी सड़कें… उनसे निकलती गलियां… और उन गलियों के भीतर बने मोहल्ले।",
+      "beats": [
+        "Aerial descending from a main road into smaller streets within a block",
+        "Branching narrow lanes inside a neighbourhood, aerial",
+        "An intimate residential mohalla with courtyards and doorways, ground level"
+      ]
+    },
+    {
+      "n": "इन मोहल्लों में अलग-अलग समुदायों और पेशों से जुड़े लोग बसते थे। कारीगर… व्यापारी… शिल्पकार… और अलग-अलग सामाजिक समूह।",
+      "beats": [
+        "A craftsmen's neighbourhood with workshops opening onto a lane",
+        "A merchants' residential quarter with fine havelis",
+        "Diverse communities living in adjoining mohallas, daily life"
+      ]
+    },
+    {
+      "n": "यानी जयपुर की योजना में… एक बड़ा शहर था। उसके भीतर चौकरियां थीं। चौकरियों के भीतर बाजार और मोहल्ले थे। और मोहल्लों के भीतर… घर और आंगन।",
+      "beats": [
+        "Aerial nesting from whole city to block to market and mohalla",
+        "A single home's open courtyard at the smallest scale, warm light"
+      ]
+    },
+    {
+      "n": "और यहां आती है जयपुर की एक और महत्वपूर्ण वास्तु विशेषता— हवेली।",
+      "beats": [
+        "An ornate 18th-century haveli facade with carved jharokha balconies and a grand doorway, warm sandstone"
+      ]
+    },
+    {
+      "n": "राजस्थान की गर्म और शुष्क जलवायु के लिए… आंगन वाली हवेलियां एक उपयोगी आवासीय रूप थीं।",
+      "beats": [
+        "The shaded inner courtyard of a haveli, cool shadow against the harsh desert sun outside"
+      ]
+    },
+    {
+      "n": "घर के बीच में खुला आंगन। उसके चारों ओर कमरे। जिससे हवा और रोशनी घर के भीतर पहुंच सके।",
+      "beats": [
+        "Looking up from a haveli courtyard to open sky, arched rooms all around",
+        "Light and air flowing into rooms arranged around a central courtyard"
+      ]
+    },
+    {
+      "n": "बड़ी हवेलियों में एक से अधिक आंगन भी होते थे। और उनकी संरचना अक्सर उनके मालिक की सामाजिक स्थिति और परिवार के आकार से जुड़ी होती थी।",
+      "beats": [
+        "A large haveli with multiple courtyards seen from above",
+        "A grand, richly carved haveli signalling the owner's status"
+      ]
+    },
+    {
+      "n": "इस तरह… जयपुर में वास्तुकला भी केवल सुंदरता का विषय नहीं थी। वह… जलवायु, समाज और जीवनशैली का समाधान भी थी।",
+      "beats": [
+        "Haveli design responding to climate, shade, airflow and thick walls, warm light",
+        "Architecture as a solution to desert life, elegant and practical"
+      ]
+    },
+    {
+      "n": "अब एक शहर जितना बड़ा होता है… उसे सुरक्षित रखना भी उतना ही जरूरी होता है। इसलिए जयपुर को एक मजबूत परकोटे से घेरा गया।",
+      "beats": [
+        "Massive fortified city walls encircling the whole town, aerial, 18th century",
+        "A thick sandstone rampart running along the edge of the city, warm light"
+      ]
+    },
+    {
+      "n": "शहर की दीवारों में प्रवेश के लिए द्वार बनाए गए। और ये द्वार… शहर के भीतर आने वाली प्रमुख सड़कों से जुड़े थे।",
+      "beats": [
+        "A grand fortified gateway piercing the city wall with a main road passing through",
+        "Aerial showing gates set where main roads meet the wall"
+      ]
+    },
+    {
+      "n": "चांदपोल… सूरजपोल… अजमेरी गेट… सांगानेरी गेट… और दूसरे प्रवेश द्वार… पुराने जयपुर को आसपास के भूभाग से जोड़ते थे।",
+      "beats": [
+        "The western city gate in warm sandstone",
+        "The eastern city gate at sunrise",
+        "A grand arched city gateway with travellers passing through"
+      ]
+    },
+    {
+      "n": "इस तरह… शहर की दीवार केवल सुरक्षा की सीमा नहीं थी। वह… शहर और बाहर की दुनिया के बीच एक नियंत्रित interface थी।",
+      "beats": [
+        "A city gate as a controlled threshold, guards and travellers, goods being inspected"
+      ]
+    },
+    {
+      "n": "व्यापार भी इन्हीं रास्तों से आता था। लोग भी। सामान भी। और शहर की आर्थिक गतिविधियां भी।",
+      "beats": [
+        "Laden caravans and traders streaming in through a city gate",
+        "Goods and people flowing through the gateway into the market city"
+      ]
+    },
+    {
+      "n": "अब सबसे बड़ा सवाल। यह पूरा नक्शा जमीन पर उतारा कैसे गया होगा?",
+      "beats": [
+        "A vast plan on parchment beside the open empty ground it must become, lamplight and dawn"
+      ]
+    },
+    {
+      "n": "आज हमारे पास— Satellite imagery है। GIS है। CAD software है। 3D modelling है। Drone surveys हैं।",
+      "beats": [
+        "A faint modern wireframe grid and survey overlay hovering as an imagined idea, abstract, cool tint",
+        "A modern-feeling digital grid dissolving away to reveal only bare 18th-century earth"
+      ]
+    },
+    {
+      "n": "लेकिन 18वीं शताब्दी में… इनमें से कुछ भी नहीं था।",
+      "beats": [
+        "Only hand tools on a bare drafting table, rope, dividers and ink, nothing modern, lamplight"
+      ]
+    },
+    {
+      "n": "फिर भी… किसी को यह तय करना था कि— सड़क कहां जाएगी। कितनी चौड़ी होगी। किस दिशा में जाएगी।",
+      "beats": [
+        "Planners deciding a street's line, stretching rope across open ground",
+        "Measuring the width of a future road with a rod",
+        "Aligning a street to a cardinal direction with a compass at dawn"
+      ]
+    },
+    {
+      "n": "चौकरी कहां बनेगी। बाजार कहां होगा। महल कहां होगा। और शहर की दीवार किस दिशा में खड़ी होगी।",
+      "beats": [
+        "Marking out a block, a market, a palace site and the wall line with stakes, aerial",
+        "A plan with palace, market, blocks and walls each located deliberately"
+      ]
+    },
+    {
+      "n": "इसके लिए जमीन को मापा गया होगा। दिशाओं को निर्धारित किया गया होगा। भूभाग को समझा गया होगा।",
+      "beats": [
+        "Surveyors measuring the ground with a chain and rope",
+        "Fixing the cardinal directions with instruments at sunrise",
+        "Reading the terrain, slope, water and hills, before building"
+      ]
+    },
+    {
+      "n": "और फिर… एक ऐसी योजना तैयार की गई होगी… जिसे हजारों कारीगरों और मजदूरों ने धीरे-धीरे जमीन पर उतारा।",
+      "beats": [
+        "Thousands of labourers and artisans building the city stone by stone, a vast construction scene, 18th century",
+        "Masons raising walls as streets take shape across open ground"
+      ]
+    },
+    {
+      "n": "यही वजह है कि जयपुर की कहानी… सिर्फ architecture की कहानी नहीं है।",
+      "beats": [
+        "A finished stretch of planned city beside its plan, more than architecture"
+      ]
+    },
+    {
+      "n": "यह… measurement की कहानी है। planning की कहानी है। और… एक विचार को जमीन पर उतारने की कहानी है।",
+      "beats": [
+        "Close-up of measuring instruments resting on a plan",
+        "A plan transforming into a real street, an idea becoming ground",
+        "Aerial of the realized city, an idea made real"
+      ]
+    },
+    {
+      "n": "और यहां… सवाई जयसिंह द्वितीय की खगोल विज्ञान में रुचि फिर से महत्वपूर्ण हो जाती है।",
+      "beats": [
+        "The maharaja gazing at the night sky with an instrument, astronomy returning to the story"
+      ]
+    },
+    {
+      "n": "उन्होंने भारत के अलग-अलग स्थानों पर विशाल astronomical observatories बनवाईं।",
+      "beats": [
+        "Several giant masonry astronomical observatories across India, wide view"
+      ]
+    },
+    {
+      "n": "इनमें सबसे प्रसिद्ध है— जयपुर का जंतर-मंतर।",
+      "beats": [
+        "The Jantar Mantar observatory in Jaipur, monumental geometric stone instruments under a blue sky"
+      ]
+    },
+    {
+      "n": "यह केवल एक सुंदर स्मारक नहीं था। यह विशाल खगोलीय उपकरणों का परिसर था।",
+      "beats": [
+        "Walking among towering stone astronomical instruments, a sense of scale",
+        "The great sundial's ramp rising against the sky"
+      ]
+    },
+    {
+      "n": "पत्थर और चिनाई से बने इन यंत्रों की मदद से… आकाशीय पिंडों की स्थिति… समय… और खगोलीय गणनाओं का अध्ययन किया जाता था।",
+      "beats": [
+        "A masonry instrument's curved scale casting a precise shadow, measuring the sky",
+        "Astronomers reading positions off a giant stone instrument",
+        "Close-up of engraved measurement markings on stone"
+      ]
+    },
+    {
+      "n": "एक तरफ… जयसिंह जमीन को मापकर एक शहर बना रहे थे। और दूसरी तरफ… आकाश को मापने के लिए विशाल यंत्र बनवा रहे थे।",
+      "beats": [
+        "A city plan being staked out on the ground",
+        "Giant instruments measuring the sky above, the same precise mind"
+      ]
+    },
+    {
+      "n": "सोचिए… एक ही शासक। एक तरफ— शहर की सड़कें। दूसरी तरफ— आकाश की गति।",
+      "beats": [
+        "Aerial of city streets below",
+        "Star trails wheeling over the observatory above"
+      ]
+    },
+    {
+      "n": "एक तरफ— भूमि का मापन। दूसरी तरफ— समय और तारों की गणना।",
+      "beats": [
+        "Measuring the earth with rope and chain",
+        "Measuring time and stars with stone instruments"
+      ]
+    },
+    {
+      "n": "यह हमें उस दौर की एक खास सोच दिखाता है। दुनिया को समझो। दिशाओं को समझो। समय को समझो। भूमि को समझो।",
+      "beats": [
+        "A scholar-ruler studying maps and star charts together by lamplight",
+        "A compass, sundial, plan and star chart laid out together"
+      ]
+    },
+    {
+      "n": "और फिर… उस ज्ञान के आधार पर निर्माण करो।",
+      "beats": [
+        "Knowledge turning into construction, plans becoming the rising city at dawn"
+      ]
+    },
+    {
+      "n": "लेकिन जयपुर की योजना में केवल विज्ञान नहीं था। केवल वास्तु नहीं था। केवल व्यापार नहीं था।",
+      "beats": [
+        "The whole city at golden hour, more than the sum of its parts, aerial"
+      ]
+    },
+    {
+      "n": "यह सत्ता का भी एक बयान था।",
+      "beats": [
+        "The palace and city as a bold statement of royal power, imposing, warm light"
+      ]
+    },
+    {
+      "n": "एक नई राजधानी। एक नया राजकीय केंद्र। एक व्यवस्थित बाजार। एक मजबूत परकोटा।",
+      "beats": [
+        "A new capital rising on the plain",
+        "The royal centre with palace and temple",
+        "An orderly market district",
+        "The strong encircling city wall"
+      ]
+    },
+    {
+      "n": "और एक ऐसा शहर… जो अपने समय की दूसरी राजधानियों से अलग दिखाई देता था।",
+      "beats": [
+        "A geometric planned city contrasted with older organic capitals, aerial, distinctive"
+      ]
+    },
+    {
+      "n": "जयपुर में भारतीय परंपराओं… स्थानीय भूगोल… व्यापारिक जरूरतों… राजकीय शक्ति… और समकालीन नगर-योजना के विचारों का एक अनोखा मेल दिखाई देता है।",
+      "beats": [
+        "Layers blending, a Vastu mandala, Aravalli terrain, markets and royal power, into one city",
+        "A composite golden aerial of the unique synthesis that is Jaipur"
+      ]
+    },
+    {
+      "n": "और शायद यही वजह है कि… इसे सिर्फ एक “पुराना भारतीय शहर” कहना… इसकी असली कहानी को बहुत छोटा कर देता है।",
+      "beats": [
+        "The city glowing with hidden design, more than just old, aerial golden hour"
+      ]
+    },
+    {
+      "n": "यह एक planned city थी। और वह भी ऐसे समय में… जब modern urban planning की आज वाली भाषा और तकनीक मौजूद नहीं थी।",
+      "beats": [
+        "An 18th-century plan beside the realized grid city, planning ahead of its time"
+      ]
+    },
+    {
+      "n": "लेकिन क्या जयपुर की योजना बिल्कुल perfect थी? नहीं। कोई भी शहर perfect नहीं होता।",
+      "beats": [
+        "A planned grid meeting messy organic growth at its edges, honest imperfection, aerial"
+      ]
+    },
+    {
+      "n": "समय के साथ… शहर बदलता है। आबादी बढ़ती है। व्यापार बदलता है। नई इमारतें आती हैं। नई सड़कें बनती हैं।",
+      "beats": [
+        "Layers of newer buildings growing over the old grid, change over time",
+        "New roads and structures added among the historic fabric",
+        "A crowded, evolving city, growth and change"
+      ]
+    },
+    {
+      "n": "और पुराने ढांचे में नए लोग अपनी जरूरत के अनुसार बदलाव करते हैं। जयपुर भी बदला।",
+      "beats": [
+        "People adapting old houses and streets to new needs, lived-in change"
+      ]
+    },
+    {
+      "n": "लेकिन इसकी सबसे बड़ी उपलब्धि यह है कि… उसकी मूल शहरी संरचना का एक बड़ा हिस्सा आज भी पहचाना जा सकता है।",
+      "beats": [
+        "Despite change, the original grid still clearly readable from above, aerial"
+      ]
+    },
+    {
+      "n": "वही सीधी सड़कें। वही चौक। वही बाजार। वही दीवारें। वही द्वार। वही पुराने राजकीय और धार्मिक केंद्र। और… वही मूल Grid।",
+      "beats": [
+        "The same straight streets from above",
+        "The same squares and markets",
+        "The same walls and gates",
+        "The same palace-temple core and the original grid, golden aerial"
+      ]
+    },
+    {
+      "n": "लगभग तीन सौ साल बाद… जब हम आज जयपुर को satellite map पर देखते हैं… तो हमें एक अद्भुत चीज दिखाई देती है।",
+      "beats": [
+        "A breathtaking high overhead view of an entire old walled city, the grid revealed whole"
+      ]
+    },
+    {
+      "n": "जो चीज जमीन से देखने पर… अलग-अलग सड़कें और इमारतें लगती हैं… वही चीज ऊपर से देखने पर… एक पूरी योजना बन जाती है।",
+      "beats": [
+        "A ground-level street view dissolving upward into an aerial that reveals the whole plan"
+      ]
+    },
+    {
+      "n": "चांदपोल से सूरजपोल तक जाती धुरी। उससे जुड़ती हुई सड़कें। उनके बीच बनी चौकरियां।",
+      "beats": [
+        "Aerial tracing the main east-west axis from gate to gate",
+        "Connecting roads and the great blocks between them from above"
+      ]
+    },
+    {
+      "n": "चौकरियों के भीतर बाजार और मोहल्ले। बीच में राजकीय और धार्मिक केंद्र। और चारों ओर… शहर की दीवार।",
+      "beats": [
+        "Markets and neighbourhoods within the blocks, aerial",
+        "The royal-religious core glowing at the centre",
+        "The encircling wall framing the whole plan from above"
+      ]
+    },
+    {
+      "n": "यानी लगभग तीन सौ साल पहले बनाया गया एक विचार… आज भी satellite image पर पढ़ा जा सकता है।",
+      "beats": [
+        "An 18th-century idea still legible from the sky three centuries later, a grand aerial"
+      ]
+    },
+    {
+      "n": "और शायद… जयपुर की कहानी का सबसे खूबसूरत हिस्सा यही है।",
+      "beats": [
+        "The city glowing softly at golden hour from above, quiet beauty"
+      ]
+    },
+    {
+      "n": "आज हम जिस शहर को देखते हैं… वह सिर्फ पुरानी इमारतों का संग्रह नहीं है।",
+      "beats": [
+        "Not just old buildings but a living planned city, warm aerial"
+      ]
+    },
+    {
+      "n": "उसके पीछे… एक विचार है। एक योजना है। एक राजनीतिक vision है। एक व्यापारिक उद्देश्य है। एक वैज्ञानिक जिज्ञासा है।",
+      "beats": [
+        "An idea, a glowing plan on parchment",
+        "A political vision, palace and power",
+        "A commercial purpose, the markets",
+        "A scientific curiosity, instruments and stars"
+      ]
+    },
+    {
+      "n": "और एक ऐसी वास्तु परंपरा है… जिसे 18वीं शताब्दी में जमीन पर उतारा गया।",
+      "beats": [
+        "An architectural tradition realized on the ground in the 18th century, carved sandstone"
+      ]
+    },
+    {
+      "n": "इसलिए अगली बार जब आप जयपुर के पुराने शहर में चलें… तो सिर्फ उसकी गुलाबी दीवारों को मत देखिए।",
+      "beats": [
+        "Walking through the pink old city at street level, warm facades"
+      ]
+    },
+    {
+      "n": "सड़क को देखिए। उसकी दिशा को देखिए। बाजार की बनावट को देखिए। चौपड़ को देखिए। पुराने शहर के द्वारों को देखिए।",
+      "beats": [
+        "Look at the street and its direction",
+        "Look at the structure of the bazaar",
+        "Look at the chaupar square",
+        "Look at the old city gates"
+      ]
+    },
+    {
+      "n": "और एक पल के लिए कल्पना कीजिए… कि लगभग तीन सौ साल पहले… जब यहां आज जैसा शहर था ही नहीं…",
+      "beats": [
+        "The same place as bare open ground three centuries ago, before the city, dawn"
+      ]
+    },
+    {
+      "n": "तब किसी ने इसी जमीन पर खड़े होकर तय किया होगा— यहां से सड़क जाएगी। यहां बाजार होगा। यहां चौक होगा।",
+      "beats": [
+        "A lone planner standing on empty ground, envisioning a street",
+        "Pointing to where a market will be",
+        "Marking where a square will stand"
+      ]
+    },
+    {
+      "n": "यहां मंदिर होगा। यहां राजमहल होगा। यहां व्यापारी आएंगे। और इन सबको… एक ही शहर का हिस्सा बनाया जाएगा।",
+      "beats": [
+        "Envisioning a temple site on open ground",
+        "Envisioning the palace",
+        "All woven into one single planned city, an aerial vision over empty ground"
+      ]
+    },
+    {
+      "n": "जयपुर अचानक पैदा नहीं हुआ था। उसे पहले… कल्पना किया गया। फिर… मापा गया। फिर… नक्शे पर उतारा गया।",
+      "beats": [
+        "Imagined, a vision over empty ground",
+        "Measured, survey ropes and instruments",
+        "Drawn on the map, an ink plan on parchment"
+      ]
+    },
+    {
+      "n": "और अंत में… हजारों हाथों ने उसे पत्थर में बदल दिया।",
+      "beats": [
+        "Thousands of hands building the city in stone, an epic construction scene, golden light"
+      ]
+    },
+    {
+      "n": "और शायद इसी वजह से… लगभग तीन सौ साल बाद भी… जब हम जयपुर को ऊपर से देखते हैं… तो हमें सिर्फ एक शहर नहीं दिखाई देता।",
+      "beats": [
+        "A sweeping final aerial of the whole planned city at golden hour"
+      ]
+    },
+    {
+      "n": "हमें दिखाई देती है… एक सोच। एक ऐसी सोच… जिसने 18वीं शताब्दी में आने वाली पीढ़ियों के लिए… एक शहर की योजना जमीन पर छोड़ दी।",
+      "beats": [
+        "The city's grid glowing like a preserved thought from above, timeless",
+        "An 18th-century plan and the living city merging, a legacy left on the land"
+      ]
+    },
+    {
+      "n": "और यही है… जयपुर की असली कहानी।",
+      "beats": [
+        "A final serene golden-hour aerial of Jaipur's planned old city, slow and quiet"
+      ]
+    }
+  ]
+}

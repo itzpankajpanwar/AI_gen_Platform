@@ -1,0 +1,341 @@
+﻿scene,beat,start,end,kind,anim,ken_burns,transition,grade,card,narration,prompt
+—,—,0.0,3.5,INTRO CARD,intro_card,,fade,,,,जयपुर — एक शहर जिसे पहले नक्शे पर बनाया गया / 
+1,1/4,3.5,5.9 (est),image beat,ken-burns,zoom_out:1.14,fadeblack,warm,,"आज अगर आप जयपुर की किसी चौड़ी सड़क पर खड़े हों… और अपने आसपास की इमारतों, बाजारों और रास्तों को देखें… तो शायद आपको यह एक खूबसूरत ऐतिहासिक शहर ही दिखाई देगा।","Street-level view standing in the middle of a wide avenue in the old pink-sandstone city of Jaipur at golden hour, symmetrical carved facades and arched shopfronts receding on both sides, a lone figure seen from behind"
+1,2/4,5.9,8.2,image beat,ken-burns,pan_left,dissolve,warm,,,"Street-level view standing in the middle of a wide avenue in the old pink-sandstone city of Jaipur at golden hour, symmetrical carved facades and arched shopfronts receding on both sides, a lone figure seen from behind"
+1,3/4,8.2,10.6,image beat,ken-burns,pan_right,dissolve,warm,,,"Ground-level view of a bustling arched bazaar colonnade with uniform rose-coloured facades, hazy warm light, people small in frame"
+1,4/4,10.6,13.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"A historic Rajput sandstone gateway with lattice windows, wide cinematic frame, dust in low sun"
+2,1/2,13.0,15.0 (est),image beat,ken-burns,pan_left,dissolve,warm,,लेकिन कुछ सेकंड के लिए… ऊपर से पूरे जयपुर को देखने की कोशिश कीजिए।,"Slow aerial rising shot lifting up from a single street to reveal the vast layout of an old walled Indian city from above, golden haze"
+2,2/2,15.0,17.0,image beat,ken-burns,pan_right,dissolve,warm,,,"High overhead aerial of a dense historic walled city laid out in rectangular blocks, warm evening light"
+3,1/3,17.0,18.7 (est),image beat,ken-burns,pan_right,dissolve,warm,,सीधी सड़कें। एक-दूसरे को काटती हुई मुख्य सड़कें। उनके बीच बने बड़े-बड़े शहरी हिस्से।,"Top-down aerial of long perfectly straight avenues crossing at right angles in an old walled Indian city, sandstone rooftops"
+3,2/3,18.7,20.4,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Overhead view of two broad arterial roads intersecting at a grand crossroads
+3,3/3,20.4,22.1,image beat,ken-burns,pan_up,dissolve,warm,,,High aerial of large uniform urban blocks separated by straight wide streets
+4,1/3,22.1,24.0 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,बाजारों की एक जैसी अग्रभाग वाली इमारतें। चौक… गलियां… और चारों ओर फैला हुआ एक व्यवस्थित ढांचा।,"Aerial of a market street lined with identical repeating facades on both sides, orderly rhythm of arches"
+4,2/3,24.0,25.9,image beat,ken-burns,pan_up,dissolve,warm,,,"Overhead of a large public square where streets meet, surrounded by uniform buildings"
+4,3/3,25.9,27.8,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"High aerial revealing an orderly geometric lattice of squares, lanes and blocks across the whole city"
+5,1/2,27.8,29.6 (est),image beat,ken-burns,pan_up,dissolve,warm,,पूरा शहर… मानो किसी विशाल नक्शे पर पहले से खींच दिया गया हो।,"An antique hand-drawn 18th-century town plan on aged parchment, a ruled grid of streets and blocks in ink, brass dividers and a scale rule resting on it"
+5,2/2,29.6,31.4,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,A parchment city plan dissolving to align perfectly with an aerial view of the real walled city below
+6,1/3,31.4,33.7 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,लेकिन यहां सबसे दिलचस्प बात यह है… कि यह शहर आज से 20 या 50 साल पहले नहीं बना था। यह कहानी लगभग तीन सौ साल पुरानी है।,"A weathered carved stone foundation inscription in old masonry, extreme close-up, warm raking light"
+6,2/3,33.7,36.1,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"An aged manuscript page with faded 18th-century ink, antique paper texture"
+6,3/3,36.1,38.4,image beat,ken-burns,pan_left,dissolve,warm,,,"Wide aerial of the old city bathed in antique sepia-warm light, timeless"
+7,1/3,38.4,40.8 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,"जब हमारे पास— न satellite imagery थी, न GIS, न CAD software, न computer, और न ही आज जैसी आधुनिक urban-planning technology।","An empty 18th-century drafting table with quills, ink pots, brass dividers and a ruled sheet, no modern tools, lamplight"
+7,2/3,40.8,43.3,image beat,ken-burns,pan_left,dissolve,warm,,,Close-up of hand-drawn survey lines and measurements on parchment with a brass compass and plumb line
+7,3/3,43.3,45.7,image beat,ken-burns,pan_right,dissolve,warm,,,"A surveyor's rope, measuring chain and wooden stakes laid on bare earth at dawn"
+8,1/2,45.7,48.6 (est),image beat,ken-burns,pan_left,dissolve,warm,,और फिर भी… 18वीं शताब्दी में एक ऐसा शहर बसाया गया… जिसकी मूल योजना आज भी उसकी पहचान बनी हुई है।,"Sweeping aerial of a perfectly planned old walled city at sunrise, its grid unmistakable from above"
+8,2/2,48.6,51.4,image beat,ken-burns,pan_right,dissolve,warm,,,"Antique plan edges matching the modern city's streets, warm light"
+9,1/2,51.4,54.2 (est),image beat,ken-burns,pan_right,dissolve,warm,,सवाल है— आखिर यह कैसे संभव हुआ? और उससे भी बड़ा सवाल… जयपुर को बसाने की जरूरत ही क्यों पड़ी?,"A single oil lamp on a plan-covered 18th-century table at night, shallow focus, question hanging in the quiet"
+9,2/2,54.2,56.9,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Silhouette of a thoughtful robed figure studying a city plan by lamplight, seen from behind"
+10,1/2,56.9,59.2 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,इस कहानी को समझने के लिए… हमें वापस जाना होगा… 18वीं शताब्दी के राजस्थान में।,"Wide golden-hour landscape of 18th-century Rajasthan, Aravalli hills, a dusty caravan track, timeless"
+10,2/2,59.2,61.5,image beat,ken-burns,pan_up,dissolve,warm,,,"Aerial drift over arid Rajasthan hills and open plains at dawn, haze and warm dust"
+11,1/1,61.5,64.1 (est),image beat,ken-burns,pan_up,dissolve,warm,,उस समय कच्छवाहा राजवंश की राजधानी थी— आमेर।,"The hilltop fort-palace of Amer among rugged Aravalli hills at golden hour, 18th century, wide establishing shot"
+12,1/2,64.1,66.3 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,पहाड़ियों के बीच बसा आमेर… सुरक्षा और किलेबंदी के लिए एक शानदार स्थान था।,"Massive fortified ramparts of a Rajput hill fort hugging a ridge line, defensive walls winding over the hills"
+12,2/2,66.3,68.5,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"View from a fort watchtower over a narrow valley, a strong strategic vantage, warm light"
+13,1/2,68.5,70.1 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,ऊंचाई पर राजमहल और किला… और उसके नीचे फैली हुई बस्ती।,"A Rajput palace and fort crowning a hilltop, a cramped settlement spilling down the slope below"
+13,2/2,70.1,71.7,image beat,ken-burns,pan_left,dissolve,warm,,,Aerial of a dense hill-hugging town constrained by steep terrain
+14,1/2,71.7,73.6 (est),image beat,ken-burns,pan_left,dissolve,warm,,लेकिन समय के साथ… राजधानी के सामने एक नई समस्या खड़ी होने लगी।,"The crowded hill town at dusk, lamps flickering, a sense of pressure and limits"
+14,2/2,73.6,75.4,image beat,ken-burns,pan_right,dissolve,warm,,,"The crowded hill town at dusk, lamps flickering, a sense of pressure and limits"
+15,1/3,75.4,76.8 (est),image beat,ken-burns,pan_right,dissolve,warm,,आबादी बढ़ रही थी। व्यापार बढ़ रहा था। प्रशासनिक गतिविधियां बढ़ रही थीं।,"A teeming 18th-century market lane packed with people and goods, overcrowded"
+15,2/3,76.8,78.3,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Laden camels and bullock carts of a trade caravan crowding a narrow town entrance
+15,3/3,78.3,79.7,image beat,ken-burns,pan_up,dissolve,warm,,,"A busy courtly administrative courtyard with clerks, scrolls and petitioners"
+16,1/1,79.7,82.6 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,और पहाड़ी भूभाग में शहर का विस्तार आसान नहीं था।,"Houses jammed against steep rocky hillsides with no room to grow, 18th century"
+17,1/2,82.6,85.2 (est),image beat,ken-burns,pan_up,dissolve,warm,,नई बस्ती के लिए जगह सीमित थी… और बढ़ते हुए शहर के लिए संसाधनों की जरूरत भी बढ़ रही थी।,"A dry hillside with scarce flat ground and a few cramped dwellings, hard terrain"
+17,2/2,85.2,87.8,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"Women carrying water pots up a steep hill path, scarcity of water and space"
+18,1/2,87.8,90.7 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,ऐसे में एक सवाल सामने था— क्या राजधानी को उसी जगह लगातार फैलाया जाए? या… एक नई राजधानी बसाई जाए?,"A ruler and advisors on a fort terrace looking out over the constrained hill town, deliberating, seen from behind"
+18,2/2,90.7,93.6,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"Two paths diverging from a hill fort, one back into the crowded town, one toward the open plains below"
+19,1/2,93.6,95.2 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,यहीं से सामने आते हैं— महाराजा सवाई जयसिंह द्वितीय।,"A dignified 18th-century Rajput maharaja in royal attire standing on a palace terrace, commanding presence, warm light, face partly in shadow"
+19,2/2,95.2,96.7,image beat,ken-burns,pan_left,dissolve,warm,,,"A dignified 18th-century Rajput maharaja in royal attire standing on a palace terrace, commanding presence, warm light, face partly in shadow"
+20,1/2,96.7,99.3 (est),image beat,ken-burns,pan_left,dissolve,warm,,सवाई जयसिंह द्वितीय केवल एक शासक नहीं थे। उन्हें गणित और खगोल विज्ञान में गहरी रुचि थी।,"A royal study filled with astronomical instruments, astrolabes, star charts and geometry manuscripts, 18th century"
+20,2/2,99.3,101.9,image beat,ken-burns,pan_right,dissolve,warm,,,"Close-up of a brass astrolabe and compasses resting on a manuscript of geometric diagrams, lamplight"
+21,1/3,101.9,103.6 (est),image beat,ken-burns,pan_right,dissolve,warm,,वे समय की गणना… दिशाओं… आकाशीय पिंडों… और उनकी गति को समझने में विशेष रुचि रखते थे।,"Hands adjusting a large brass astronomical instrument, measuring the sky at dawn"
+21,2/3,103.6,105.2,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"An 18th-century star chart with planetary paths traced in ink, candlelight"
+21,3/3,105.2,106.9,image beat,ken-burns,pan_up,dissolve,warm,,,"A sundial casting a sharp shadow at a precise hour, close detail"
+22,1/2,106.9,109.2 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,और आगे चलकर… उनकी यह वैज्ञानिक जिज्ञासा जयपुर की कहानी में भी दिखाई देती है।,"A geometric city plan and an astronomical diagram lying side by side on a table, drawn by the same precise hand"
+22,2/2,109.2,111.5,image beat,ken-burns,pan_up,dissolve,warm,,,"A geometric city plan and an astronomical diagram lying side by side on a table, drawn by the same precise hand"
+23,1/3,111.5,113.7 (est),image beat,ken-burns,pan_up,dissolve,warm,,जयसिंह द्वितीय ने राजधानी को आमेर की पहाड़ियों से निकालकर… एक अपेक्षाकृत समतल क्षेत्र में बसाने का निर्णय लिया।,"Aerial moving from rugged hills down onto a broad open flat plain below, 18th-century Rajasthan, dawn"
+23,2/3,113.7,116.0,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"Aerial moving from rugged hills down onto a broad open flat plain below, 18th-century Rajasthan, dawn"
+23,3/3,116.0,118.2,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A ruler and planners on horseback surveying an open flat valley, pointing across empty ground"
+24,1/4,118.2,120.7 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,यह क्षेत्र आमेर के दक्षिण में था। चारों ओर अरावली की पहाड़ियां थीं… लेकिन बीच का भूभाग इतना खुला था… कि यहां एक नई राजधानी को योजनाबद्ध तरीके से विकसित किया जा सकता था।,"A wide flat valley ringed by Aravalli hills, open empty ground ready to be built, golden light"
+24,2/4,120.7,123.3,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A wide flat valley ringed by Aravalli hills, open empty ground ready to be built, golden light"
+24,3/4,123.3,125.8,image beat,ken-burns,pan_left,dissolve,warm,,,"High overhead of an empty flat plain enclosed by hills, a blank canvas for a city"
+24,4/4,125.8,128.3,image beat,ken-burns,pan_right,dissolve,warm,,,Surveyors planting stakes and stretching ropes across open ground to lay out a plan
+25,1/1,128.3,130.6 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,और यहीं से शुरू हुआ— जयपुर का निर्माण।,"First foundation stones and lime being laid on open ground, labourers at dawn, 18th century"
+26,1/1,130.6,132.0 (est),image beat,ken-burns,pan_left,dissolve,warm,,सन 1727। एक नई राजधानी।,"A weathered foundation stone beside an antique parchment, the year 1727 in faded ink, close-up, warm light"
+27,1/3,132.0,134.3 (est),image beat,ken-burns,pan_right,dissolve,warm,,लेकिन इस बार शहर को अपने आप बढ़ने के लिए नहीं छोड़ा गया। इसे… पहले योजना में बनाया गया। और फिर… जमीन पर उतारा गया।,A detailed ink city plan on parchment being drawn with a ruler and dividers
+27,2/3,134.3,136.6,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"The same plan's grid lines marked out with rope and lime on bare earth, aerial"
+27,3/3,136.6,138.9,image beat,ken-burns,pan_up,dissolve,warm,,,A dissolve between the drawn plan and the staked-out ground aligning
+28,1/2,138.9,140.9 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,लेकिन एक सवाल अभी भी बाकी था। इतने बड़े शहर की योजना बनाएगा कौन?,"An unrolled blank parchment and drafting tools waiting on a table, lamplight"
+28,2/2,140.9,142.8,image beat,ken-burns,pan_up,dissolve,warm,,,"An unrolled blank parchment and drafting tools waiting on a table, lamplight"
+29,1/3,142.8,144.3 (est),image beat,ken-burns,pan_up,dissolve,warm,,ऐसा शहर… जहां राजा का महल हो। प्रशासनिक केंद्र हों। मंदिर हों। बाजार हों।,Architectural elevation sketches of a royal palace on parchment
+29,2/3,144.3,145.7,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,Ink plan drawings of administrative halls and temples
+29,3/3,145.7,147.2,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,A drawn market street layout with repeating shopfronts
+30,1/3,147.2,149.2 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,कारीगरों के मोहल्ले हों। व्यापारियों के लिए जगह हो। और हजारों लोगों के रहने के लिए व्यवस्थित आवास हो।,An ink plan of artisan quarters and workshops
+30,2/3,149.2,151.3,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,A layout of merchant houses and courtyards on a city plan
+30,3/3,151.3,153.3,image beat,ken-burns,pan_left,dissolve,warm,,,A grid of residential blocks and courtyards drawn on parchment
+31,1/2,153.3,155.3 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,इस योजना में एक महत्वपूर्ण नाम सामने आता है— विद्याधर भट्टाचार्य।,"A learned 18th-century scholar-architect bent over a large city plan at a drafting table, lamplight, seen from the side"
+31,2/2,155.3,157.2,image beat,ken-burns,pan_left,dissolve,warm,,,"A learned 18th-century scholar-architect bent over a large city plan at a drafting table, lamplight, seen from the side"
+32,1/3,157.2,159.8 (est),image beat,ken-burns,pan_left,dissolve,warm,,"बंगाल से आए विद्याधर भट्टाचार्य एक विद्वान और वास्तुकार थे, जिन्होंने जयपुर की नगर योजना को आकार देने में महत्वपूर्ण भूमिका निभाई।",A scholar-architect's hands drawing precise streets with a ruler and compass on parchment
+32,2/3,159.8,162.4,image beat,ken-burns,pan_right,dissolve,warm,,,A scholar-architect's hands drawing precise streets with a ruler and compass on parchment
+32,3/3,162.4,165.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Shelves of manuscripts on architecture and geometry behind a working draftsman, 18th century"
+33,1/2,165.0,167.6 (est),image beat,ken-burns,pan_right,dissolve,warm,,सवाई जयसिंह द्वितीय और उनके नियोजकों के सामने चुनौती केवल सुंदर शहर बनाने की नहीं थी।,"The ruler and his planners gathered around a large plan in intense discussion, lamplight"
+33,2/2,167.6,170.1,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"The ruler and his planners gathered around a large plan in intense discussion, lamplight"
+34,1/3,170.1,172.5 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,उन्हें एक ऐसा शहर बनाना था… जो राजधानी भी हो। व्यापारिक केंद्र भी हो। और आने वाली पीढ़ियों के लिए… एक व्यवस्थित शहर भी हो।,"A plan showing a palace, markets and a residential grid all together"
+34,2/3,172.5,175.0,image beat,ken-burns,pan_up,dissolve,warm,,,"A plan showing a palace, markets and a residential grid all together"
+34,3/3,175.0,177.4,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,An aerial vision of a complete planned city overlaid faintly on open ground
+35,1/3,177.4,180.0 (est),image beat,ken-burns,pan_up,dissolve,warm,,इसके लिए जयपुर की योजना में भारतीय वास्तु परंपराओं के साथ-साथ उस समय की अन्य नगर-योजना परंपराओं के विचारों का भी उपयोग किया गया।,"An old Vastu Shastra manuscript with a mandala town-planning diagram, ink and ochre"
+35,2/3,180.0,182.5,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"An old Vastu Shastra manuscript with a mandala town-planning diagram, ink and ochre"
+35,3/3,182.5,185.1,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,Comparative plan sketches blending a mandala grid with practical street layouts
+36,1/2,185.1,187.4 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,अब अगर हम जयपुर को ऊपर से देखें… तो इसकी सबसे पहली खासियत सामने आती है— Grid।,"A dramatic top-down aerial revealing the city's clean rectangular grid of streets, warm rooftops"
+36,2/2,187.4,189.7,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A dramatic top-down aerial revealing the city's clean rectangular grid of streets, warm rooftops"
+37,1/2,189.7,192.3 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,सीधी सड़कें। एक-दूसरे को काटती हुई मुख्य सड़कें। और उनके बीच बने बड़े-बड़े शहरी हिस्से।,Overhead of long straight avenues meeting at right angles
+37,2/2,192.3,194.9,image beat,ken-burns,pan_left,dissolve,warm,,,Aerial of large rectangular city sectors between broad roads
+38,1/2,194.9,197.8 (est),image beat,ken-burns,pan_left,dissolve,warm,,"ऐतिहासिक जयपुर को मूल रूप से नौ प्रमुख चौकरियों, यानी नौ बड़े सेक्टरों में व्यवस्थित किया गया था।",Top-down aerial showing nine large rectangular sectors of a walled city in an ordered arrangement
+38,2/2,197.8,200.7,image beat,ken-burns,pan_right,dissolve,warm,,,An antique plan highlighting nine great blocks of the city in ink
+39,1/3,200.7,202.2 (est),image beat,ken-burns,pan_right,dissolve,warm,,इन बड़े हिस्सों के भीतर… फिर छोटी सड़कें बनीं। फिर गलियां। और फिर मोहल्ले।,Aerial zooming into one large block to reveal smaller streets within
+39,2/3,202.2,203.7,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Narrow lanes branching inside a city block, aerial"
+39,3/3,203.7,205.2,image beat,ken-burns,pan_up,dissolve,warm,,,"Dense residential neighbourhoods inside a block, rooftops and courtyards"
+40,1/2,205.2,208.0 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,यानी शहर को केवल एक स्तर पर नहीं बनाया गया था। एक बड़े Grid के भीतर छोटे-छोटे Grid बनाए गए।,"Aerial showing a large grid containing smaller nested grids, fractal order"
+40,2/2,208.0,210.7,image beat,ken-burns,pan_up,dissolve,warm,,,A plan diagram of grids within grids on parchment
+41,1/2,210.7,213.3 (est),image beat,ken-burns,pan_up,dissolve,warm,,और यही वह दृश्य है… जो आज भी satellite map पर जयपुर को बाकी शहरों से अलग पहचान देता है।,"A clean geometric grid city contrasted against an irregular organic town nearby, aerial comparison"
+41,2/2,213.3,215.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A clean geometric grid city contrasted against an irregular organic town nearby, aerial comparison"
+42,1/2,215.9,218.8 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,लेकिन जयपुर की यह योजना सिर्फ ज्यामिति नहीं थी। इसके पीछे धार्मिक और वास्तु संबंधी विचार भी थे।,"A Vastu mandala diagram glowing faintly over a city grid, sacred geometry"
+42,2/2,218.8,221.6,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A Vastu mandala diagram glowing faintly over a city grid, sacred geometry"
+43,1/2,221.6,224.5 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,शहर की योजना में वास्तु शास्त्र और प्राचीन भारतीय नगर-योजना की परंपराओं का प्रभाव दिखाई देता है।,An illuminated Vastu Shastra mandala manuscript in ochre and gold
+43,2/2,224.5,227.4,image beat,ken-burns,pan_left,dissolve,warm,,,A plan oriented to the cardinal directions with a compass rose on parchment
+44,1/2,227.4,229.7 (est),image beat,ken-burns,pan_left,dissolve,warm,,साथ ही… मुगल और समकालीन नगर-योजना के कुछ विचारों का भी प्रभाव देखा जाता है।,"A symmetrical charbagh garden and axial layout, Mughal influence, aerial"
+44,2/2,229.7,231.9,image beat,ken-burns,pan_right,dissolve,warm,,,"A symmetrical charbagh garden and axial layout, Mughal influence, aerial"
+45,1/3,231.9,234.1 (est),image beat,ken-burns,pan_right,dissolve,warm,,"यानी जयपुर किसी एक विचार की सीधी नकल नहीं था। यह था— परंपरा, विज्ञान, भूगोल और व्यावहारिक जरूरतों का एक मिश्रण।","Layers of a Vastu mandala, geometric survey lines and terrain contours blending into one city plan"
+45,2/3,234.1,236.4,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Layers of a Vastu mandala, geometric survey lines and terrain contours blending into one city plan"
+45,3/3,236.4,238.6,image beat,ken-burns,pan_up,dissolve,warm,,,"A composite plan on parchment weaving tradition, science and landscape"
+46,1/2,238.6,240.2 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,अब इस पूरे शहर के नक्शे पर… एक रेखा पर ध्यान दीजिए।,Aerial with one long straight main axis road standing out across the city grid
+46,2/2,240.2,241.7,image beat,ken-burns,pan_up,dissolve,warm,,,Aerial with one long straight main axis road standing out across the city grid
+47,1/2,241.7,243.0 (est),image beat,ken-burns,pan_up,dissolve,warm,,पश्चिम में— चांदपोल। और पूर्व में— सूरजपोल।,"An 18th-century fortified city gate in warm sandstone on the western edge, establishing shot"
+47,2/2,243.0,244.3,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,A grand 18th-century city gate on the east catching sunrise light
+48,1/3,244.3,246.3 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,इन दोनों दिशाओं को जोड़ने वाली प्रमुख सड़क… पुराने जयपुर की सबसे महत्वपूर्ण शहरी धुरियों में से एक थी।,"A long straight grand avenue running east-west across the old city, aerial"
+48,2/3,246.3,248.4,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A long straight grand avenue running east-west across the old city, aerial"
+48,3/3,248.4,250.4,image beat,ken-burns,pan_left,dissolve,warm,,,Ground view down a broad ceremonial main street lined with uniform facades
+49,1/2,250.4,253.4 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,और इसी मुख्य ढांचे से जुड़ती हुई उत्तर-दक्षिण दिशा की सड़कें… शहर को अलग-अलग हिस्सों में बांटती थीं।,Aerial showing north-south roads crossing the main axis and dividing the city into sectors
+49,2/2,253.4,256.4,image beat,ken-burns,pan_left,dissolve,warm,,,Aerial showing north-south roads crossing the main axis and dividing the city into sectors
+50,1/2,256.4,259.2 (est),image beat,ken-burns,pan_left,dissolve,warm,,यानी यहां सड़कें… शहर बनने के बाद धीरे-धीरे नहीं निकली थीं। सड़कें पहले से योजना का हिस्सा थीं।,"Rope lines and stakes marking future streets on open ground before any building, aerial"
+50,2/2,259.2,262.1,image beat,ken-burns,pan_right,dissolve,warm,,,A plan where the street network is drawn first and buildings come later
+51,1/2,262.1,263.7 (est),image beat,ken-burns,pan_right,dissolve,warm,,और उन्हीं सड़कों के बीच… जयपुर की चौकरियां विकसित हुईं।,"City blocks filling in between pre-laid streets, aerial"
+51,2/2,263.7,265.4,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"City blocks filling in between pre-laid streets, aerial"
+52,1/3,265.4,267.7 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,लेकिन जहां बड़ी सड़कें एक-दूसरे से मिलती थीं… वहां सिर्फ चौराहा नहीं बनाया गया। वहां बनाए गए— बड़े सार्वजनिक चौक।,"A large open public square where two grand avenues meet, 18th-century city, aerial"
+52,2/3,267.7,269.9,image beat,ken-burns,pan_up,dissolve,warm,,,"A large open public square where two grand avenues meet, 18th-century city, aerial"
+52,3/3,269.9,272.2,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,Ground view of a spacious ceremonial square framed by uniform sandstone facades
+53,1/1,272.2,273.5 (est),image beat,ken-burns,pan_up,dissolve,warm,,इन्हें कहा गया— चौपड़।,"A grand public square bustling at golden hour, wide view"
+54,1/3,273.5,276.5 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,आज भी जयपुर में बड़ी चौपड़ और छोटी चौपड़ इस ऐतिहासिक योजना की पहचान हैं। और रामगंज चौपड़ भी पुराने शहर के महत्वपूर्ण सार्वजनिक स्थानों में शामिल है।,Aerial of a major square at the crossing of main roads
+54,2/3,276.5,279.4,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"Another public square along the main axis with people gathering, warm light"
+54,3/3,279.4,282.4,image beat,ken-burns,pan_left,dissolve,warm,,,A busy historic square surrounded by market colonnades
+55,1/2,282.4,284.9 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,ये केवल सड़क के बीच खाली जगह नहीं थीं। ये शहर के सामाजिक और आर्थिक जीवन के केंद्र थे।,"A lively square full of traders, buyers and gatherings, the social heart of the city"
+55,2/2,284.9,287.5,image beat,ken-burns,pan_left,dissolve,warm,,,"A lively square full of traders, buyers and gatherings, the social heart of the city"
+56,1/3,287.5,290.4 (est),image beat,ken-burns,pan_left,dissolve,warm,,लोग यहां आते थे। बाजार इनके आसपास विकसित होते थे। व्यापारिक गतिविधियां होती थीं। और शहर की अलग-अलग सड़कों को जोड़ने में इनका महत्वपूर्ण स्थान था।,Crowds converging on a public square from several streets
+56,2/3,290.4,293.3,image beat,ken-burns,pan_right,dissolve,warm,,,Markets and stalls clustered around the edges of a square
+56,3/3,293.3,296.2,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Aerial showing a square as a hub connecting many radiating streets
+57,1/2,296.2,298.9 (est),image beat,ken-burns,pan_right,dissolve,warm,,यानी जयपुर में… सड़क सिर्फ आने-जाने का रास्ता नहीं थी। सड़क… खुद शहर के जीवन का हिस्सा थी।,"A broad street alive with commerce and people, a living space not just a passage, golden hour"
+57,2/2,298.9,301.6,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"A broad street alive with commerce and people, a living space not just a passage, golden hour"
+58,1/2,301.6,304.0 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,अब इस Grid के बीच… हम शहर के सबसे महत्वपूर्ण क्षेत्र की ओर आते हैं। सिटी पैलेस।,Aerial pushing toward a grand palace complex at the centre of the city grid
+58,2/2,304.0,306.4,image beat,ken-burns,pan_up,dissolve,warm,,,"City Palace courtyards and gateways in warm sandstone and stucco, 18th century"
+59,1/2,306.4,309.2 (est),image beat,ken-burns,pan_up,dissolve,warm,,राजसत्ता का केंद्र। और इसके आसपास… जयपुर की धार्मिक और राजकीय पहचान से जुड़े महत्वपूर्ण स्थल।,"An ornate palace audience hall with columns, the seat of royal power"
+59,2/2,309.2,312.0,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"Temples and royal buildings clustered around the palace, aerial"
+60,1/2,312.0,313.6 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,इन्हीं में एक प्रमुख स्थान था— गोविंद देव जी मंदिर।,"A serene 18th-century temple within palace gardens at dawn, devotees small in frame"
+60,2/2,313.6,315.1,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A serene 18th-century temple within palace gardens at dawn, devotees small in frame"
+61,1/2,315.1,317.3 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,जयपुर की योजना में धार्मिक और राजनीतिक केंद्र को विशेष महत्व दिया गया था।,A plan showing the palace and temple placed at the honoured centre of the city
+61,2/2,317.3,319.5,image beat,ken-burns,pan_left,dissolve,warm,,,A plan showing the palace and temple placed at the honoured centre of the city
+62,1/3,319.5,321.8 (est),image beat,ken-burns,pan_left,dissolve,warm,,यानी शहर केवल लोगों को बसाने के लिए नहीं बनाया जा रहा था। उसका एक केंद्र था। एक राजकीय पहचान थी। एक धार्मिक पहचान थी।,"The palace-and-temple core glowing at the heart of the city, aerial, golden light"
+62,2/3,321.8,324.2,image beat,ken-burns,pan_right,dissolve,warm,,,"The palace-and-temple core glowing at the heart of the city, aerial, golden light"
+62,3/3,324.2,326.5,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,A royal banner and a temple spire together above the city centre
+63,1/1,326.5,329.3 (est),image beat,ken-burns,pan_right,dissolve,warm,,और उसके आसपास… बाकी शहर को व्यवस्थित किया गया।,Aerial of the ordered city radiating outward from its central core
+64,1/3,329.3,331.7 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,बाद में इसी केंद्रीय क्षेत्र और उसके आसपास… जंतर-मंतर और हवा महल जैसे प्रतिष्ठित स्मारक भी जयपुर की पहचान का हिस्सा बने।,The geometric masonry instruments of the Jantar Mantar observatory under open sky
+64,2/3,331.7,334.1,image beat,ken-burns,pan_up,dissolve,warm,,,The geometric masonry instruments of the Jantar Mantar observatory under open sky
+64,3/3,334.1,336.5,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"The honeycombed pink facade of Hawa Mahal with its many lattice windows, warm light"
+65,1/2,336.5,338.6 (est),image beat,ken-burns,pan_up,dissolve,warm,,अब कल्पना कीजिए… 18वीं शताब्दी का जयपुर। आप एक मुख्य सड़क पर चल रहे हैं।,"A first-person-feel walk down a grand 18th-century Jaipur street, uniform shopfronts on both sides, warm bustle"
+65,2/2,338.6,340.8,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A first-person-feel walk down a grand 18th-century Jaipur street, uniform shopfronts on both sides, warm bustle"
+66,1/2,340.8,342.7 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,आपके दोनों तरफ दुकानें हैं। उनके पीछे और ऊपर आवासीय स्थान हैं।,"A row of arched shopfronts at street level with living quarters above, period detail"
+66,2/2,342.7,344.5,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,A cutaway feel of shops below and homes above along a market street
+67,1/2,344.5,346.3 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,आप आगे बढ़ते हैं… और सड़क अचानक एक बड़े चौक में खुल जाती है।,"A narrow busy street suddenly opening into a vast public square, a sense of release, golden hour"
+67,2/2,346.3,348.1,image beat,ken-burns,pan_left,dissolve,warm,,,"A narrow busy street suddenly opening into a vast public square, a sense of release, golden hour"
+68,1/2,348.1,350.2 (est),image beat,ken-burns,pan_left,dissolve,warm,,फिर वहां से दूसरी चौड़ी सड़क निकलती है। और उसके दोनों तरफ… फिर बाजार।,"Another broad avenue leading off the square, lined again with markets"
+68,2/2,350.2,352.3,image beat,ken-burns,pan_right,dissolve,warm,,,Continuous bazaar facades stretching down a wide street
+69,1/3,352.3,354.7 (est),image beat,ken-burns,pan_right,dissolve,warm,,यही जयपुर की असली planning थी। मुख्य सड़कों को केवल traffic movement के लिए नहीं बनाया गया था। वे व्यापार की धमनियां थीं।,Aerial of main streets acting as trade arteries thick with commerce
+69,2/3,354.7,357.2,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Aerial of main streets acting as trade arteries thick with commerce
+69,3/3,357.2,359.6,image beat,ken-burns,pan_up,dissolve,warm,,,"A bustling market artery seen from above, goods and crowds flowing"
+70,1/2,359.6,362.2 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,दुकानों के सामने एकरूप facades बनाए गए। बाजारों को व्यवस्थित तरीके से विकसित किया गया।,"Perfectly uniform repeating shopfront facades along a street, a rhythmic order"
+70,2/2,362.2,364.8,image beat,ken-burns,pan_up,dissolve,warm,,,"A planned, orderly bazaar with regular bays, 18th century"
+71,1/2,364.8,367.1 (est),image beat,ken-burns,pan_up,dissolve,warm,,और अलग-अलग व्यवसायों और समुदायों के लिए शहर के भीतर स्थान निर्धारित किए गए।,"Different trade quarters laid out in the city plan, jewellers, cloth, metalwork"
+71,2/2,367.1,369.3,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"Different trade quarters laid out in the city plan, jewellers, cloth, metalwork"
+72,1/3,369.3,371.0 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,इसलिए आज जब हम— जौहरी बाजार… किशनपोल बाजार… चांदपोल बाजार… जैसे क्षेत्रों को देखते हैं…,"A glittering jewellers' bazaar, gold and gemstones, warm light"
+72,2/3,371.0,372.8,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,A bustling cloth and goods market street
+72,3/3,372.8,374.5,image beat,ken-burns,pan_left,dissolve,warm,,,A market street leading toward the western city gate
+73,1/2,374.5,377.4 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,तो हमें सिर्फ बाजार नहीं दिखाई देते। हमें लगभग तीन सौ साल पुरानी एक आर्थिक योजना दिखाई देती है।,"Aerial of the market network overlaid faintly with the original economic plan, a sense of 300 years"
+73,2/2,377.4,380.2,image beat,ken-burns,pan_left,dissolve,warm,,,"Aerial of the market network overlaid faintly with the original economic plan, a sense of 300 years"
+74,1/3,380.2,383.1 (est),image beat,ken-burns,pan_left,dissolve,warm,,सवाई जयसिंह द्वितीय जयपुर को केवल राजकीय राजधानी नहीं बनाना चाहते थे। वे इसे एक व्यापारिक और आर्थिक केंद्र के रूप में भी विकसित करना चाहते थे।,"The maharaja gesturing over a city plan toward the market districts, a vision of commerce, lamplight"
+74,2/3,383.1,385.9,image beat,ken-burns,pan_right,dissolve,warm,,,"The maharaja gesturing over a city plan toward the market districts, a vision of commerce, lamplight"
+74,3/3,385.9,388.8,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Aerial of markets and the palace together, a trade capital"
+75,1/2,388.8,391.6 (est),image beat,ken-burns,pan_right,dissolve,warm,,इसलिए अलग-अलग क्षेत्रों से व्यापारियों और कारीगरों को यहां आकर बसने के लिए आमंत्रित किया गया।,"Caravans of merchants and artisans arriving at the new city gates, 18th century"
+75,2/2,391.6,394.4,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Newcomer traders setting up shop in fresh market streets
+76,1/3,394.4,396.8 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,उन्हें व्यापार के अवसर दिए गए। काम के लिए स्थान उपलब्ध कराए गए। और नई राजधानी में आर्थिक गतिविधियों को बढ़ावा दिया गया।,"Artisans at work in newly allotted workshops, metal, cloth and stone"
+76,2/3,396.8,399.2,image beat,ken-burns,pan_up,dissolve,warm,,,A thriving new marketplace filling with activity
+76,3/3,399.2,401.6,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"Ledgers, coins and goods changing hands, economic life beginning"
+77,1/3,401.6,404.3 (est),image beat,ken-burns,pan_up,dissolve,warm,,ऐतिहासिक स्रोत बताते हैं कि जयपुर की स्थापना के शुरुआती वर्षों में व्यापारियों को यहां बसने के लिए विशेष रूप से प्रोत्साहित किया गया।,"An old royal decree manuscript granting merchants incentives, close-up, warm light"
+77,2/3,404.3,406.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"An old royal decree manuscript granting merchants incentives, close-up, warm light"
+77,3/3,406.9,409.6,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"An old royal decree manuscript granting merchants incentives, close-up, warm light"
+78,1/2,409.6,412.0 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,यानी जयपुर को… राजा के लिए नहीं। बल्कि… एक जीवित शहर के रूप में बनाया जा रहा था।,"A living city full of ordinary people, trade and daily life, warm bustle"
+78,2/2,412.0,414.4,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A living city full of ordinary people, trade and daily life, warm bustle"
+79,1/3,414.4,416.3 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,जहां राजा था… लेकिन उसके साथ व्यापारी भी था। कारीगर भी था। मजदूर भी था। और सामान्य नागरिक भी।,A merchant weighing goods in his shop
+79,2/3,416.3,418.1,image beat,ken-burns,pan_left,dissolve,warm,,,An artisan carving stone and working metal
+79,3/3,418.1,420.0,image beat,ken-burns,pan_right,dissolve,warm,,,"Labourers and ordinary citizens in a busy street, a cross-section of society"
+80,1/3,420.0,422.7 (est),image beat,ken-burns,pan_left,dissolve,warm,,अब इन बड़ी चौकरियों के भीतर और गहराई से जाइए। मुख्य सड़क से निकलती छोटी सड़कें… उनसे निकलती गलियां… और उन गलियों के भीतर बने मोहल्ले।,Aerial descending from a main road into smaller streets within a block
+80,2/3,422.7,425.3,image beat,ken-burns,pan_right,dissolve,warm,,,"Branching narrow lanes inside a neighbourhood, aerial"
+80,3/3,425.3,428.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"An intimate residential mohalla with courtyards and doorways, ground level"
+81,1/3,428.0,430.3 (est),image beat,ken-burns,pan_right,dissolve,warm,,इन मोहल्लों में अलग-अलग समुदायों और पेशों से जुड़े लोग बसते थे। कारीगर… व्यापारी… शिल्पकार… और अलग-अलग सामाजिक समूह।,A craftsmen's neighbourhood with workshops opening onto a lane
+81,2/3,430.3,432.7,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,A merchants' residential quarter with fine havelis
+81,3/3,432.7,435.0,image beat,ken-burns,pan_up,dissolve,warm,,,"Diverse communities living in adjoining mohallas, daily life"
+82,1/3,435.0,437.7 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,यानी जयपुर की योजना में… एक बड़ा शहर था। उसके भीतर चौकरियां थीं। चौकरियों के भीतर बाजार और मोहल्ले थे। और मोहल्लों के भीतर… घर और आंगन।,Aerial nesting from whole city to block to market and mohalla
+82,2/3,437.7,440.4,image beat,ken-burns,pan_up,dissolve,warm,,,Aerial nesting from whole city to block to market and mohalla
+82,3/3,440.4,443.1,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A single home's open courtyard at the smallest scale, warm light"
+83,1/2,443.1,445.0 (est),image beat,ken-burns,pan_up,dissolve,warm,,और यहां आती है जयपुर की एक और महत्वपूर्ण वास्तु विशेषता— हवेली।,"An ornate 18th-century haveli facade with carved jharokha balconies and a grand doorway, warm sandstone"
+83,2/2,445.0,446.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"An ornate 18th-century haveli facade with carved jharokha balconies and a grand doorway, warm sandstone"
+84,1/2,446.9,449.5 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,राजस्थान की गर्म और शुष्क जलवायु के लिए… आंगन वाली हवेलियां एक उपयोगी आवासीय रूप थीं।,"The shaded inner courtyard of a haveli, cool shadow against the harsh desert sun outside"
+84,2/2,449.5,452.0,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"The shaded inner courtyard of a haveli, cool shadow against the harsh desert sun outside"
+85,1/2,452.0,454.6 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,घर के बीच में खुला आंगन। उसके चारों ओर कमरे। जिससे हवा और रोशनी घर के भीतर पहुंच सके।,"Looking up from a haveli courtyard to open sky, arched rooms all around"
+85,2/2,454.6,457.1,image beat,ken-burns,pan_left,dissolve,warm,,,Light and air flowing into rooms arranged around a central courtyard
+86,1/3,457.1,459.7 (est),image beat,ken-burns,pan_left,dissolve,warm,,बड़ी हवेलियों में एक से अधिक आंगन भी होते थे। और उनकी संरचना अक्सर उनके मालिक की सामाजिक स्थिति और परिवार के आकार से जुड़ी होती थी।,A large haveli with multiple courtyards seen from above
+86,2/3,459.7,462.4,image beat,ken-burns,pan_right,dissolve,warm,,,A large haveli with multiple courtyards seen from above
+86,3/3,462.4,465.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"A grand, richly carved haveli signalling the owner's status"
+87,1/3,465.0,467.1 (est),image beat,ken-burns,pan_right,dissolve,warm,,"इस तरह… जयपुर में वास्तुकला भी केवल सुंदरता का विषय नहीं थी। वह… जलवायु, समाज और जीवनशैली का समाधान भी थी।","Haveli design responding to climate, shade, airflow and thick walls, warm light"
+87,2/3,467.1,469.3,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Haveli design responding to climate, shade, airflow and thick walls, warm light"
+87,3/3,469.3,471.4,image beat,ken-burns,pan_up,dissolve,warm,,,"Architecture as a solution to desert life, elegant and practical"
+88,1/3,471.4,473.7 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,अब एक शहर जितना बड़ा होता है… उसे सुरक्षित रखना भी उतना ही जरूरी होता है। इसलिए जयपुर को एक मजबूत परकोटे से घेरा गया।,"Massive fortified city walls encircling the whole town, aerial, 18th century"
+88,2/3,473.7,476.1,image beat,ken-burns,pan_up,dissolve,warm,,,"Massive fortified city walls encircling the whole town, aerial, 18th century"
+88,3/3,476.1,478.4,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A thick sandstone rampart running along the edge of the city, warm light"
+89,1/3,478.4,480.6 (est),image beat,ken-burns,pan_up,dissolve,warm,,शहर की दीवारों में प्रवेश के लिए द्वार बनाए गए। और ये द्वार… शहर के भीतर आने वाली प्रमुख सड़कों से जुड़े थे।,A grand fortified gateway piercing the city wall with a main road passing through
+89,2/3,480.6,482.7,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,A grand fortified gateway piercing the city wall with a main road passing through
+89,3/3,482.7,484.9,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,Aerial showing gates set where main roads meet the wall
+90,1/3,484.9,487.1 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,चांदपोल… सूरजपोल… अजमेरी गेट… सांगानेरी गेट… और दूसरे प्रवेश द्वार… पुराने जयपुर को आसपास के भूभाग से जोड़ते थे।,The western city gate in warm sandstone
+90,2/3,487.1,489.4,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,The eastern city gate at sunrise
+90,3/3,489.4,491.6,image beat,ken-burns,pan_left,dissolve,warm,,,A grand arched city gateway with travellers passing through
+91,1/3,491.6,493.8 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,इस तरह… शहर की दीवार केवल सुरक्षा की सीमा नहीं थी। वह… शहर और बाहर की दुनिया के बीच एक नियंत्रित interface थी।,"A city gate as a controlled threshold, guards and travellers, goods being inspected"
+91,2/3,493.8,496.0,image beat,ken-burns,pan_left,dissolve,warm,,,"A city gate as a controlled threshold, guards and travellers, goods being inspected"
+91,3/3,496.0,498.2,image beat,ken-burns,pan_right,dissolve,warm,,,"A city gate as a controlled threshold, guards and travellers, goods being inspected"
+92,1/2,498.2,500.8 (est),image beat,ken-burns,pan_left,dissolve,warm,,व्यापार भी इन्हीं रास्तों से आता था। लोग भी। सामान भी। और शहर की आर्थिक गतिविधियां भी।,Laden caravans and traders streaming in through a city gate
+92,2/2,500.8,503.4,image beat,ken-burns,pan_right,dissolve,warm,,,Goods and people flowing through the gateway into the market city
+93,1/2,503.4,505.3 (est),image beat,ken-burns,pan_right,dissolve,warm,,अब सबसे बड़ा सवाल। यह पूरा नक्शा जमीन पर उतारा कैसे गया होगा?,"A vast plan on parchment beside the open empty ground it must become, lamplight and dawn"
+93,2/2,505.3,507.1,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"A vast plan on parchment beside the open empty ground it must become, lamplight and dawn"
+94,1/2,507.1,510.0 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,आज हमारे पास— Satellite imagery है। GIS है। CAD software है। 3D modelling है। Drone surveys हैं।,"A faint modern wireframe grid and survey overlay hovering as an imagined idea, abstract, cool tint"
+94,2/2,510.0,512.9,image beat,ken-burns,pan_up,dissolve,warm,,,A modern-feeling digital grid dissolving away to reveal only bare 18th-century earth
+95,1/1,512.9,515.9 (est),image beat,ken-burns,pan_up,dissolve,warm,,लेकिन 18वीं शताब्दी में… इनमें से कुछ भी नहीं था।,"Only hand tools on a bare drafting table, rope, dividers and ink, nothing modern, lamplight"
+96,1/3,515.9,517.7 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,फिर भी… किसी को यह तय करना था कि— सड़क कहां जाएगी। कितनी चौड़ी होगी। किस दिशा में जाएगी।,"Planners deciding a street's line, stretching rope across open ground"
+96,2/3,517.7,519.4,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,Measuring the width of a future road with a rod
+96,3/3,519.4,521.2,image beat,ken-burns,pan_left,dissolve,warm,,,Aligning a street to a cardinal direction with a compass at dawn
+97,1/2,521.2,523.9 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,चौकरी कहां बनेगी। बाजार कहां होगा। महल कहां होगा। और शहर की दीवार किस दिशा में खड़ी होगी।,"Marking out a block, a market, a palace site and the wall line with stakes, aerial"
+97,2/2,523.9,526.6,image beat,ken-burns,pan_left,dissolve,warm,,,"A plan with palace, market, blocks and walls each located deliberately"
+98,1/3,526.6,528.4 (est),image beat,ken-burns,pan_left,dissolve,warm,,इसके लिए जमीन को मापा गया होगा। दिशाओं को निर्धारित किया गया होगा। भूभाग को समझा गया होगा।,Surveyors measuring the ground with a chain and rope
+98,2/3,528.4,530.2,image beat,ken-burns,pan_right,dissolve,warm,,,Fixing the cardinal directions with instruments at sunrise
+98,3/3,530.2,532.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Reading the terrain, slope, water and hills, before building"
+99,1/2,532.0,535.0 (est),image beat,ken-burns,pan_right,dissolve,warm,,और फिर… एक ऐसी योजना तैयार की गई होगी… जिसे हजारों कारीगरों और मजदूरों ने धीरे-धीरे जमीन पर उतारा।,"Thousands of labourers and artisans building the city stone by stone, a vast construction scene, 18th century"
+99,2/2,535.0,537.9,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Masons raising walls as streets take shape across open ground
+100,1/2,537.9,539.9 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,यही वजह है कि जयपुर की कहानी… सिर्फ architecture की कहानी नहीं है।,"A finished stretch of planned city beside its plan, more than architecture"
+100,2/2,539.9,541.9,image beat,ken-burns,pan_up,dissolve,warm,,,"A finished stretch of planned city beside its plan, more than architecture"
+101,1/3,541.9,543.8 (est),image beat,ken-burns,pan_up,dissolve,warm,,यह… measurement की कहानी है। planning की कहानी है। और… एक विचार को जमीन पर उतारने की कहानी है।,Close-up of measuring instruments resting on a plan
+101,2/3,543.8,545.7,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A plan transforming into a real street, an idea becoming ground"
+101,3/3,545.7,547.6,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"Aerial of the realized city, an idea made real"
+102,1/2,547.6,550.1 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,और यहां… सवाई जयसिंह द्वितीय की खगोल विज्ञान में रुचि फिर से महत्वपूर्ण हो जाती है।,"The maharaja gazing at the night sky with an instrument, astronomy returning to the story"
+102,2/2,550.1,552.6,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"The maharaja gazing at the night sky with an instrument, astronomy returning to the story"
+103,1/2,552.6,554.9 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,उन्होंने भारत के अलग-अलग स्थानों पर विशाल astronomical observatories बनवाईं।,"Several giant masonry astronomical observatories across India, wide view"
+103,2/2,554.9,557.2,image beat,ken-burns,pan_left,dissolve,warm,,,"Several giant masonry astronomical observatories across India, wide view"
+104,1/1,557.2,559.8 (est),image beat,ken-burns,pan_left,dissolve,warm,,इनमें सबसे प्रसिद्ध है— जयपुर का जंतर-मंतर।,"The Jantar Mantar observatory in Jaipur, monumental geometric stone instruments under a blue sky"
+105,1/2,559.8,561.9 (est),image beat,ken-burns,pan_right,dissolve,warm,,यह केवल एक सुंदर स्मारक नहीं था। यह विशाल खगोलीय उपकरणों का परिसर था।,"Walking among towering stone astronomical instruments, a sense of scale"
+105,2/2,561.9,564.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,The great sundial's ramp rising against the sky
+106,1/3,564.0,566.3 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,पत्थर और चिनाई से बने इन यंत्रों की मदद से… आकाशीय पिंडों की स्थिति… समय… और खगोलीय गणनाओं का अध्ययन किया जाता था।,"A masonry instrument's curved scale casting a precise shadow, measuring the sky"
+106,2/3,566.3,568.6,image beat,ken-burns,pan_up,dissolve,warm,,,Astronomers reading positions off a giant stone instrument
+106,3/3,568.6,570.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,Close-up of engraved measurement markings on stone
+107,1/3,570.9,573.0 (est),image beat,ken-burns,pan_up,dissolve,warm,,एक तरफ… जयसिंह जमीन को मापकर एक शहर बना रहे थे। और दूसरी तरफ… आकाश को मापने के लिए विशाल यंत्र बनवा रहे थे।,A city plan being staked out on the ground
+107,2/3,573.0,575.2,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,A city plan being staked out on the ground
+107,3/3,575.2,577.3,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"Giant instruments measuring the sky above, the same precise mind"
+108,1/2,577.3,579.3 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,सोचिए… एक ही शासक। एक तरफ— शहर की सड़कें। दूसरी तरफ— आकाश की गति।,Aerial of city streets below
+108,2/2,579.3,581.2,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,Star trails wheeling over the observatory above
+109,1/2,581.2,582.9 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,एक तरफ— भूमि का मापन। दूसरी तरफ— समय और तारों की गणना।,Measuring the earth with rope and chain
+109,2/2,582.9,584.5,image beat,ken-burns,pan_left,dissolve,warm,,,Measuring time and stars with stone instruments
+110,1/2,584.5,587.5 (est),image beat,ken-burns,pan_left,dissolve,warm,,यह हमें उस दौर की एक खास सोच दिखाता है। दुनिया को समझो। दिशाओं को समझो। समय को समझो। भूमि को समझो।,A scholar-ruler studying maps and star charts together by lamplight
+110,2/2,587.5,590.4,image beat,ken-burns,pan_right,dissolve,warm,,,"A compass, sundial, plan and star chart laid out together"
+111,1/1,590.4,592.8 (est),image beat,ken-burns,pan_right,dissolve,warm,,और फिर… उस ज्ञान के आधार पर निर्माण करो।,"Knowledge turning into construction, plans becoming the rising city at dawn"
+112,1/2,592.8,595.5 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,लेकिन जयपुर की योजना में केवल विज्ञान नहीं था। केवल वास्तु नहीं था। केवल व्यापार नहीं था।,"The whole city at golden hour, more than the sum of its parts, aerial"
+112,2/2,595.5,598.2,image beat,ken-burns,pan_up,dissolve,warm,,,"The whole city at golden hour, more than the sum of its parts, aerial"
+113,1/1,598.2,599.8 (est),image beat,ken-burns,pan_up,dissolve,warm,,यह सत्ता का भी एक बयान था।,"The palace and city as a bold statement of royal power, imposing, warm light"
+114,1/3,599.8,601.3 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,एक नई राजधानी। एक नया राजकीय केंद्र। एक व्यवस्थित बाजार। एक मजबूत परकोटा।,A new capital rising on the plain
+114,2/3,601.3,602.7,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,The royal centre with palace and temple
+114,3/3,602.7,604.2,image beat,ken-burns,pan_left,dissolve,warm,,,An orderly market district
+115,1/2,604.2,606.2 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,और एक ऐसा शहर… जो अपने समय की दूसरी राजधानियों से अलग दिखाई देता था।,"A geometric planned city contrasted with older organic capitals, aerial, distinctive"
+115,2/2,606.2,608.3,image beat,ken-burns,pan_left,dissolve,warm,,,"A geometric planned city contrasted with older organic capitals, aerial, distinctive"
+116,1/3,608.3,611.1 (est),image beat,ken-burns,pan_left,dissolve,warm,,जयपुर में भारतीय परंपराओं… स्थानीय भूगोल… व्यापारिक जरूरतों… राजकीय शक्ति… और समकालीन नगर-योजना के विचारों का एक अनोखा मेल दिखाई देता है।,"Layers blending, a Vastu mandala, Aravalli terrain, markets and royal power, into one city"
+116,2/3,611.1,613.8,image beat,ken-burns,pan_right,dissolve,warm,,,"Layers blending, a Vastu mandala, Aravalli terrain, markets and royal power, into one city"
+116,3/3,613.8,616.6,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,A composite golden aerial of the unique synthesis that is Jaipur
+117,1/3,616.6,618.6 (est),image beat,ken-burns,pan_right,dissolve,warm,,और शायद यही वजह है कि… इसे सिर्फ एक “पुराना भारतीय शहर” कहना… इसकी असली कहानी को बहुत छोटा कर देता है।,"The city glowing with hidden design, more than just old, aerial golden hour"
+117,2/3,618.6,620.7,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"The city glowing with hidden design, more than just old, aerial golden hour"
+117,3/3,620.7,622.7,image beat,ken-burns,pan_up,dissolve,warm,,,"The city glowing with hidden design, more than just old, aerial golden hour"
+118,1/3,622.7,624.9 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,यह एक planned city थी। और वह भी ऐसे समय में… जब modern urban planning की आज वाली भाषा और तकनीक मौजूद नहीं थी।,"An 18th-century plan beside the realized grid city, planning ahead of its time"
+118,2/3,624.9,627.1,image beat,ken-burns,pan_up,dissolve,warm,,,"An 18th-century plan beside the realized grid city, planning ahead of its time"
+118,3/3,627.1,629.3,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"An 18th-century plan beside the realized grid city, planning ahead of its time"
+119,1/2,629.3,631.8 (est),image beat,ken-burns,pan_up,dissolve,warm,,लेकिन क्या जयपुर की योजना बिल्कुल perfect थी? नहीं। कोई भी शहर perfect नहीं होता।,"A planned grid meeting messy organic growth at its edges, honest imperfection, aerial"
+119,2/2,631.8,634.2,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A planned grid meeting messy organic growth at its edges, honest imperfection, aerial"
+120,1/3,634.2,636.2 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,समय के साथ… शहर बदलता है। आबादी बढ़ती है। व्यापार बदलता है। नई इमारतें आती हैं। नई सड़कें बनती हैं।,"Layers of newer buildings growing over the old grid, change over time"
+120,2/3,636.2,638.2,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,New roads and structures added among the historic fabric
+120,3/3,638.2,640.2,image beat,ken-burns,pan_left,dissolve,warm,,,"A crowded, evolving city, growth and change"
+121,1/2,640.2,642.5 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,और पुराने ढांचे में नए लोग अपनी जरूरत के अनुसार बदलाव करते हैं। जयपुर भी बदला।,"People adapting old houses and streets to new needs, lived-in change"
+121,2/2,642.5,644.9,image beat,ken-burns,pan_left,dissolve,warm,,,"People adapting old houses and streets to new needs, lived-in change"
+122,1/3,644.9,646.9 (est),image beat,ken-burns,pan_left,dissolve,warm,,लेकिन इसकी सबसे बड़ी उपलब्धि यह है कि… उसकी मूल शहरी संरचना का एक बड़ा हिस्सा आज भी पहचाना जा सकता है।,"Despite change, the original grid still clearly readable from above, aerial"
+122,2/3,646.9,649.0,image beat,ken-burns,pan_right,dissolve,warm,,,"Despite change, the original grid still clearly readable from above, aerial"
+122,3/3,649.0,651.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"Despite change, the original grid still clearly readable from above, aerial"
+123,1/4,651.0,652.7 (est),image beat,ken-burns,pan_right,dissolve,warm,,वही सीधी सड़कें। वही चौक। वही बाजार। वही दीवारें। वही द्वार। वही पुराने राजकीय और धार्मिक केंद्र। और… वही मूल Grid।,The same straight streets from above
+123,2/4,652.7,654.5,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,The same squares and markets
+123,3/4,654.5,656.2,image beat,ken-burns,pan_up,dissolve,warm,,,The same walls and gates
+123,4/4,656.2,657.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"The same palace-temple core and the original grid, golden aerial"
+124,1/3,657.9,660.0 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,लगभग तीन सौ साल बाद… जब हम आज जयपुर को satellite map पर देखते हैं… तो हमें एक अद्भुत चीज दिखाई देती है।,"A breathtaking high overhead view of an entire old walled city, the grid revealed whole"
+124,2/3,660.0,662.0,image beat,ken-burns,pan_up,dissolve,warm,,,"A breathtaking high overhead view of an entire old walled city, the grid revealed whole"
+124,3/3,662.0,664.1,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A breathtaking high overhead view of an entire old walled city, the grid revealed whole"
+125,1/3,664.1,666.3 (est),image beat,ken-burns,pan_up,dissolve,warm,,जो चीज जमीन से देखने पर… अलग-अलग सड़कें और इमारतें लगती हैं… वही चीज ऊपर से देखने पर… एक पूरी योजना बन जाती है।,A ground-level street view dissolving upward into an aerial that reveals the whole plan
+125,2/3,666.3,668.6,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,A ground-level street view dissolving upward into an aerial that reveals the whole plan
+125,3/3,668.6,670.8,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,A ground-level street view dissolving upward into an aerial that reveals the whole plan
+126,1/2,670.8,673.2 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,चांदपोल से सूरजपोल तक जाती धुरी। उससे जुड़ती हुई सड़कें। उनके बीच बनी चौकरियां।,Aerial tracing the main east-west axis from gate to gate
+126,2/2,673.2,675.6,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,Connecting roads and the great blocks between them from above
+127,1/3,675.6,677.5 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,चौकरियों के भीतर बाजार और मोहल्ले। बीच में राजकीय और धार्मिक केंद्र। और चारों ओर… शहर की दीवार।,"Markets and neighbourhoods within the blocks, aerial"
+127,2/3,677.5,679.4,image beat,ken-burns,pan_left,dissolve,warm,,,The royal-religious core glowing at the centre
+127,3/3,679.4,681.3,image beat,ken-burns,pan_right,dissolve,warm,,,The encircling wall framing the whole plan from above
+128,1/2,681.3,683.9 (est),image beat,ken-burns,pan_left,dissolve,warm,,यानी लगभग तीन सौ साल पहले बनाया गया एक विचार… आज भी satellite image पर पढ़ा जा सकता है।,"An 18th-century idea still legible from the sky three centuries later, a grand aerial"
+128,2/2,683.9,686.5,image beat,ken-burns,pan_right,dissolve,warm,,,"An 18th-century idea still legible from the sky three centuries later, a grand aerial"
+129,1/2,686.5,688.2 (est),image beat,ken-burns,pan_right,dissolve,warm,,और शायद… जयपुर की कहानी का सबसे खूबसूरत हिस्सा यही है।,"The city glowing softly at golden hour from above, quiet beauty"
+129,2/2,688.2,689.8,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"The city glowing softly at golden hour from above, quiet beauty"
+130,1/2,689.8,691.9 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,आज हम जिस शहर को देखते हैं… वह सिर्फ पुरानी इमारतों का संग्रह नहीं है।,"Not just old buildings but a living planned city, warm aerial"
+130,2/2,691.9,694.0,image beat,ken-burns,pan_up,dissolve,warm,,,"Not just old buildings but a living planned city, warm aerial"
+131,1/4,694.0,695.7 (est),image beat,ken-burns,pan_up,dissolve,warm,,उसके पीछे… एक विचार है। एक योजना है। एक राजनीतिक vision है। एक व्यापारिक उद्देश्य है। एक वैज्ञानिक जिज्ञासा है।,"An idea, a glowing plan on parchment"
+131,2/4,695.7,697.4,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,"A political vision, palace and power"
+131,3/4,697.4,699.0,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"A commercial purpose, the markets"
+131,4/4,699.0,700.7,image beat,ken-burns,pan_left,dissolve,warm,,,"A scientific curiosity, instruments and stars"
+132,1/2,700.7,702.8 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,और एक ऐसी वास्तु परंपरा है… जिसे 18वीं शताब्दी में जमीन पर उतारा गया।,"An architectural tradition realized on the ground in the 18th century, carved sandstone"
+132,2/2,702.8,704.9,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"An architectural tradition realized on the ground in the 18th century, carved sandstone"
+133,1/2,704.9,707.7 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,इसलिए अगली बार जब आप जयपुर के पुराने शहर में चलें… तो सिर्फ उसकी गुलाबी दीवारों को मत देखिए।,"Walking through the pink old city at street level, warm facades"
+133,2/2,707.7,710.4,image beat,ken-burns,pan_left,dissolve,warm,,,"Walking through the pink old city at street level, warm facades"
+134,1/4,710.4,712.0 (est),image beat,ken-burns,pan_left,dissolve,warm,,सड़क को देखिए। उसकी दिशा को देखिए। बाजार की बनावट को देखिए। चौपड़ को देखिए। पुराने शहर के द्वारों को देखिए।,Look at the street and its direction
+134,2/4,712.0,713.6,image beat,ken-burns,pan_right,dissolve,warm,,,Look at the structure of the bazaar
+134,3/4,713.6,715.2,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,Look at the chaupar square
+134,4/4,715.2,716.8,image beat,ken-burns,pan_up,dissolve,warm,,,Look at the old city gates
+135,1/2,716.8,719.4 (est),image beat,ken-burns,pan_right,dissolve,warm,,और एक पल के लिए कल्पना कीजिए… कि लगभग तीन सौ साल पहले… जब यहां आज जैसा शहर था ही नहीं…,"The same place as bare open ground three centuries ago, before the city, dawn"
+135,2/2,719.4,722.0,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"The same place as bare open ground three centuries ago, before the city, dawn"
+136,1/3,722.0,724.0 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,तब किसी ने इसी जमीन पर खड़े होकर तय किया होगा— यहां से सड़क जाएगी। यहां बाजार होगा। यहां चौक होगा।,"A lone planner standing on empty ground, envisioning a street"
+136,2/3,724.0,725.9,image beat,ken-burns,pan_up,dissolve,warm,,,Pointing to where a market will be
+136,3/3,725.9,727.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,Marking where a square will stand
+137,1/3,727.9,729.9 (est),image beat,ken-burns,pan_up,dissolve,warm,,यहां मंदिर होगा। यहां राजमहल होगा। यहां व्यापारी आएंगे। और इन सबको… एक ही शहर का हिस्सा बनाया जाएगा।,Envisioning a temple site on open ground
+137,2/3,729.9,731.9,image beat,ken-burns,zoom_in:1.12,dissolve,warm,,,Envisioning the palace
+137,3/3,731.9,733.9,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"All woven into one single planned city, an aerial vision over empty ground"
+138,1/3,733.9,735.8 (est),image beat,ken-burns,zoom_in:1.12,dissolve,warm,,जयपुर अचानक पैदा नहीं हुआ था। उसे पहले… कल्पना किया गया। फिर… मापा गया। फिर… नक्शे पर उतारा गया।,"Imagined, a vision over empty ground"
+138,2/3,735.8,737.8,image beat,ken-burns,zoom_out:1.14,dissolve,warm,,,"Measured, survey ropes and instruments"
+138,3/3,737.8,739.7,image beat,ken-burns,pan_left,dissolve,warm,,,"Drawn on the map, an ink plan on parchment"
+139,1/2,739.7,741.3 (est),image beat,ken-burns,zoom_out:1.14,dissolve,warm,,और अंत में… हजारों हाथों ने उसे पत्थर में बदल दिया।,"Thousands of hands building the city in stone, an epic construction scene, golden light"
+139,2/2,741.3,742.8,image beat,ken-burns,pan_left,dissolve,warm,,,"Thousands of hands building the city in stone, an epic construction scene, golden light"
+140,1/3,742.8,745.1 (est),image beat,ken-burns,pan_left,dissolve,warm,,और शायद इसी वजह से… लगभग तीन सौ साल बाद भी… जब हम जयपुर को ऊपर से देखते हैं… तो हमें सिर्फ एक शहर नहीं दिखाई देता।,A sweeping final aerial of the whole planned city at golden hour
+140,2/3,745.1,747.4,image beat,ken-burns,pan_right,dissolve,warm,,,A sweeping final aerial of the whole planned city at golden hour
+140,3/3,747.4,749.7,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,A sweeping final aerial of the whole planned city at golden hour
+141,1/3,749.7,752.1 (est),image beat,ken-burns,pan_right,dissolve,warm,,हमें दिखाई देती है… एक सोच। एक ऐसी सोच… जिसने 18वीं शताब्दी में आने वाली पीढ़ियों के लिए… एक शहर की योजना जमीन पर छोड़ दी।,"The city's grid glowing like a preserved thought from above, timeless"
+141,2/3,752.1,754.6,image beat,ken-burns,zoom_in:1.18,dissolve,warm,,,"The city's grid glowing like a preserved thought from above, timeless"
+141,3/3,754.6,757.0,image beat,ken-burns,pan_up,dissolve,warm,,,"An 18th-century plan and the living city merging, a legacy left on the land"
+142,1/1,757.0,758.9 (est),image beat,ken-burns,zoom_in:1.18,dissolve,warm,,और यही है… जयपुर की असली कहानी।,"A final serene golden-hour aerial of Jaipur's planned old city, slow and quiet"
+—,—,758.9,762.9,END CARD,end_card,,dissolve,,,,SUBSCRIBE / next chapter
