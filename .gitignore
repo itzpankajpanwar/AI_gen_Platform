@@ -43,3 +43,7 @@ assets/premium/
 # reproducible from scripts/qc/ — they stay local and are never re-spent on.
 assets/qc/
 assets/qc_narration/
+
+# Per-chapter parts are build intermediates; the deliverable is the joined
+# film and its single subtitle file (samples/film_premium/the-ten-minutes.srt).
+samples/film_premium/the-ten-minutes-ch*.srt
