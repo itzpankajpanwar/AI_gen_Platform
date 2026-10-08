@@ -35,8 +35,10 @@ export const T = {
   big: 0.044,
   num: 0.034,
   body: 0.021,
-  label: 0.0145,
-  micro: 0.0118,
+  // The two caption sizes are the floor of the film's legibility: below about
+  // 1.6% of frame height, all-caps tracked text stops reading on a phone.
+  label: 0.0175,
+  micro: 0.0148,
 } as const;
 
 /** Letter-spacing for the all-caps label style used throughout. */
