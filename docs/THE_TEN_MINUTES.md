@@ -16,6 +16,20 @@ scripts/qc/build_film.py  narration → timeline → picture → sound → mp4 +
 remotion/src/qc/          15 motion-graphics templates built for this film
 ```
 
+## The finished film
+
+`samples/film_premium/the-ten-minutes.mp4` — **14:34**, 1920x1080 at 30fps,
+H.264, AAC stereo 44.1 kHz, mastered to **-15.1 LUFS** (LRA 2.6), 283 MB,
+with `the-ten-minutes.srt` (128 cues) beside it.
+
+| | | | | |
+|-|-|-|-|-|
+| 01 THE ORDER | 69.3s | 06 THE PICK | 57.1s | 11 THE CITY AS A MACHINE · 63.3s |
+| 02 THE INVISIBLE SYSTEM | 63.2s | 07 PACKING | 40.5s | 12 THE ECONOMICS · 112.2s |
+| 03 LOCATION INTELLIGENCE | 62.6s | 08 THE DISPATCH | 54.7s | 13 WHY DARK STORES EXIST · 79.4s |
+| 04 THE DARK STORE | 78.7s | 09 THE ROAD | 46.4s | 14 TEN MINUTES · 56.6s |
+| 05 INVENTORY | 65.0s | 10 THE CLOCK | 25.6s | |
+
 ## Build it
 
 ```bash
@@ -79,6 +93,18 @@ is what reads as calm and unhurried rather than performed.
 Swapping it is one line in `.env` plus deleting `assets/qc_narration/` so the
 clips re-synthesise. The plates are language-independent and cost nothing to
 keep.
+
+To hear the film in another speaker without touching the cut:
+
+```bash
+python scripts/qc/make_voice_alt.py shubh
+```
+
+That reads every line again into its own cache and lays the clips at the
+film's own scene starts, giving a drop-in voice stem plus a CSV measuring each
+line against the slot the cut allows it. `shubh` reads faster than `tanya`
+(575s of speech against 843s of slot), so it fits with room to spare — only
+two of 128 lines run over, by 0.38s and 0.14s.
 
 All on-screen typography is **English and numeric only** — labels, counters,
 data — set in Inter and Inter Display. Nothing Devanagari is ever drawn.
