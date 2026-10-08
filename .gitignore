@@ -47,3 +47,10 @@ assets/qc_narration/
 # Per-chapter parts are build intermediates; the deliverable is the joined
 # film and its single subtitle file (samples/film_premium/the-ten-minutes.srt).
 samples/film_premium/the-ten-minutes-ch*.srt
+
+# Exported stems are large and regenerable from scripts/qc/export_audio.py.
+# The spoken script itself (narration.txt / narration.csv) is small and is
+# the one thing here worth keeping under version control, so it is tracked.
+deliverables/*
+!deliverables/narration.txt
+!deliverables/narration.csv
