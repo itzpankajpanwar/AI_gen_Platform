@@ -43,7 +43,7 @@ FILM = {
     "title": "THE TEN MINUTES",
     "subtitle": "How a 10-minute delivery actually works",
     "brand": "THE QUIET STORY",
-    "fps": 24,
+    "fps": 30,   # the pipeline renders and conforms everything at 30
     "width": 1920,
     "height": 1080,
     "grade": "cold_film",

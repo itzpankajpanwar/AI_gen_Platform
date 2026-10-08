@@ -222,7 +222,7 @@ def build_audio_track(
     for item, path in narration:
         inputs += ["-i", str(path)]
         delay_ms = int(item.start_seconds * 1000)
-        steps.append(f"[{stream}:a]aresample=44100,{voice_master},adelay={delay_ms}|{delay_ms}[v{stream}]")
+        steps.append(f"[{stream}:a]aresample=44100,aformat=channel_layouts=stereo,{voice_master},adelay={delay_ms}|{delay_ms}[v{stream}]")
         voice_labels.append(f"[v{stream}]")
         stream += 1
 
@@ -231,7 +231,7 @@ def build_audio_track(
         span = max(end - start, 0.1)
         inputs += ["-stream_loop", "-1", "-i", str(path)]
         steps.append(
-            f"[{stream}:a]aresample=44100,atrim=0:{span:.3f},asetpts=PTS-STARTPTS,"
+            f"[{stream}:a]aresample=44100,aformat=channel_layouts=stereo,atrim=0:{span:.3f},asetpts=PTS-STARTPTS,"
             f"afade=t=in:st=0:d=1.5,afade=t=out:st={max(span - 2.0, 0):.3f}:d=2.0,"
             f"volume={settings.music_level_db}dB,adelay={delay_ms}|{delay_ms}[s{stream}]"
         )
@@ -243,7 +243,7 @@ def build_audio_track(
         span = max(end - start, 0.1)
         inputs += ["-stream_loop", "-1", "-i", str(path)]
         steps.append(
-            f"[{stream}:a]aresample=44100,atrim=0:{span:.3f},asetpts=PTS-STARTPTS,"
+            f"[{stream}:a]aresample=44100,aformat=channel_layouts=stereo,atrim=0:{span:.3f},asetpts=PTS-STARTPTS,"
             f"afade=t=in:st=0:d=2.0,afade=t=out:st={max(span - 2.0, 0):.3f}:d=2.0,"
             f"volume={settings.ambience_level_db}dB,adelay={delay_ms}|{delay_ms}[s{stream}]"
         )
@@ -254,7 +254,7 @@ def build_audio_track(
         delay_ms = int(max(at, 0.0) * 1000)
         inputs += ["-i", str(path)]
         steps.append(
-            f"[{stream}:a]aresample=44100,volume={settings.sfx_level_db}dB,"
+            f"[{stream}:a]aresample=44100,aformat=channel_layouts=stereo,volume={settings.sfx_level_db}dB,"
             f"adelay={delay_ms}|{delay_ms}[s{stream}]"
         )
         sfx_labels.append(f"[s{stream}]")
