@@ -198,111 +198,134 @@ export const Sankey: React.FC<SceneProps> = ({ params }) => {
   const total = num(params, "total", 350);
   const cogs = num(params, "cogs", 300);
   const margin = num(params, "margin", 50);
-  const PX = 1180;                      // pixels representing the full order
-  const X0 = 300, Y0 = 430, BAR = 96;
 
+  // PX is sized so the full ₹64 of spending — the ₹50 available plus the
+  // ₹14 it runs over by — still fits inside the frame with its labels.
+  const PX = 1180, X0 = 240, Y0 = 430, BAR = 104;
   const a = (d: number, len = 22) => eased(frame, d, len, "power3.out");
 
-  const Bar: React.FC<{ x: number; y: number; w: number; h: number; fill: string;
-    o?: number; label?: string; value?: string; below?: boolean; delay?: number }> =
-  ({ x, y, w, h, fill, o = 1, label, value, below, delay = 0 }) => (
+  /** The four cost lines, in the order the narration spends them. */
+  const SPEND: [string, number][] = [
+    ["LAST-MILE DELIVERY", 32], ["PACKAGING", 7],
+    ["STORE LABOUR", 14], ["RENT · POWER · TECH", 11],
+  ];
+  const label = str(params, "label", "");
+  const value = num(params, "value", 0);
+  const running = num(params, "running", 0);
+
+  /**
+   * Once the supplier's share has left, the film stops drawing ₹350 and
+   * ₹50 at the same scale — at that scale the whole cost story happens in a
+   * 170px sliver. From `costs_begin` on, the ₹50 IS the frame, so each cost
+   * line is legible and the overspend can visibly run off the end.
+   */
+  const zoomed = ["costs_begin", "cost", "negative"].includes(mode);
+  const perRupee = zoomed ? PX / margin : PX / total;
+
+  const Caption: React.FC<{ x: number; w: number; top: string; right: string;
+    colour?: string; delay?: number; below?: boolean }> =
+  ({ x, w, top, right, colour = C.textDim, delay = 0, below }) => (
     <>
-      <rect x={x} y={y} width={w} height={h} fill={fill} opacity={o} />
-      {label ? <text x={x} y={below ? y + h + 34 : y - 16} fill={C.textDim}
-        style={{ ...mono, fontSize: 19, letterSpacing: TRACK }} opacity={a(delay)}>{label}</text> : null}
-      {value ? <text x={x + w} y={below ? y + h + 34 : y - 16} textAnchor="end" fill={C.text}
-        style={{ ...mono, fontSize: 24, fontWeight: 600 }} opacity={a(delay)}>{value}</text> : null}
+      <text x={x} y={below ? Y0 + BAR + 36 : Y0 - 18} fill={colour}
+        style={{ ...mono, fontSize: 19, letterSpacing: TRACK }} opacity={a(delay)}>{top}</text>
+      <text x={x + w} y={below ? Y0 + BAR + 36 : Y0 - 18} textAnchor="end" fill={C.text}
+        style={{ ...mono, fontSize: 25, fontWeight: 600 }} opacity={a(delay)}>{right}</text>
     </>
   );
-
-  // Progressive spend-down of the margin stream.
-  const SPEND: Record<string, number> = { "LAST-MILE DELIVERY": 32, PACKAGING: 7,
-    "STORE LABOUR": 14, "RENT · POWER · TECH": 11 };
-  const label = str(params, "label", ""), value = num(params, "value", 0);
-  const running = num(params, "running", 0);
 
   return (
     <Hold>
       <Ground />
       <AbsoluteFill>
         <svg width="100%" height="100%" viewBox="0 0 1920 1080">
-          {/* the whole order */}
-          {(mode === "order") && (
-            <Bar x={X0} y={Y0} w={PX * a(6, 30)} h={BAR} fill={C.systemDim}
-              label="ONE ORDER" value={`₹${total}`} delay={10} />
-          )}
+          {mode === "order" && (<>
+            <rect x={X0} y={Y0} width={PX * a(6, 30)} height={BAR} fill={C.systemDim} />
+            <Caption x={X0} w={PX} top="ONE ORDER" right={`₹${total}`} delay={12} />
+          </>)}
 
-          {/* splits into supplier cost + the company's margin */}
-          {["cogs", "margin", "costs_begin", "cost", "negative", "levers_intro", "lever"].includes(mode) && (() => {
+          {["cogs", "margin"].includes(mode) && (() => {
             const split = a(4, 26);
-            const wc = (cogs / total) * PX, wm = (margin / total) * PX;
-            const gap = 26 * split;
-            const faded = ["costs_begin", "cost", "negative", "levers_intro", "lever"].includes(mode) ? 0.26 : 1;
+            const wc = cogs * perRupee, wm = margin * perRupee, gap = 30 * split;
+            const leaving = mode === "margin" ? a(10, 30) : 0;
             return <g>
-              <Bar x={X0} y={Y0} w={wc} h={BAR} fill={C.systemDim} o={0.55 * faded}
-                label="GOODS · PAID TO SUPPLIERS" value={`₹${cogs}`} delay={10} />
-              <Bar x={X0 + wc + gap} y={Y0} w={wm} h={BAR} fill={C.system}
-                label={mode === "cogs" ? "" : "WHAT THE COMPANY KEEPS"}
-                value={mode === "cogs" ? "" : `₹${margin}`} below delay={16} />
+              <g opacity={1 - leaving * 0.78} transform={`translate(${-leaving * 130} 0)`}>
+                <rect x={X0} y={Y0} width={wc} height={BAR} fill={C.systemDim} opacity={0.5} />
+                <Caption x={X0} w={wc} top="GOODS · PAID TO SUPPLIERS" right={`₹${cogs}`} delay={10} />
+              </g>
+              <rect x={X0 + wc + gap} y={Y0} width={wm} height={BAR} fill={C.system} />
+              {mode === "margin" ? (
+                <text x={X0 + wc + gap + wm / 2} y={Y0 + BAR + 40} textAnchor="middle" fill={C.system}
+                  style={{ ...mono, fontSize: 21, letterSpacing: TRACK }} opacity={a(16)}>
+                  ₹{margin} · ALL OF IT</text>
+              ) : null}
             </g>;
           })()}
 
-          {/* the margin spent down, cost by cost */}
-          {["cost", "negative"].includes(mode) && (() => {
-            const wm = (margin / total) * PX, x = X0 + (cogs / total) * PX + 26;
-            const scale = wm / margin;                     // px per rupee of margin
+          {zoomed && (() => {
+            const grow = mode === "costs_begin" ? a(4, 26) : 1;
+            const upto = SPEND.findIndex(([k]) => k === label);
+            const shown = mode === "negative" ? SPEND.length : (upto < 0 ? 0 : upto + 1);
             let acc = 0;
-            const prior = Object.entries(SPEND);
-            const upto = prior.findIndex(([k]) => k === label);
-            const shown = mode === "negative" ? prior.length : (upto < 0 ? 0 : upto + 1);
             return <g>
-              {prior.slice(0, shown).map(([k, v], i) => {
-                const w = v * scale, bx = x + acc; acc += w;
+              {/* what there was to spend */}
+              <rect x={X0} y={Y0} width={PX * grow} height={BAR} fill={C.system}
+                opacity={shown ? 0.16 : 1} />
+              {SPEND.slice(0, shown).map(([k, v], i) => {
+                const w = v * perRupee, bx = X0 + acc; acc += w;
                 const live = i === shown - 1 && mode !== "negative";
-                const g = live ? a(6, 20) : 1;
+                const g = live ? a(4, 20) : 1;
                 return <g key={k}>
-                  <rect x={bx} y={Y0} width={w * g} height={BAR}
-                    fill={live ? C.human : C.humanDim} opacity={live ? 0.95 : 0.7} />
-                  <line x1={bx} y1={Y0} x2={bx} y2={Y0 + BAR} stroke={C.ink} strokeWidth={1.5} />
+                  <rect x={bx} y={Y0} width={w * g} height={BAR} fill={C.human}
+                    opacity={live ? 0.95 : 0.62} />
+                  <line x1={bx} y1={Y0} x2={bx} y2={Y0 + BAR} stroke={C.ink} strokeWidth={2} />
+                  {live || mode === "negative" ? (
+                    <text x={bx + 10} y={Y0 + BAR + 32} fill={live ? C.human : C.textFaint}
+                      style={{ ...mono, fontSize: 16, letterSpacing: "0.08em" }}
+                      opacity={live ? a(10) : 0.8}>{k}</text>
+                  ) : null}
                 </g>;
               })}
-              {/* the overspend, drawn past the end of what there was to spend */}
-              {acc > wm ? <rect x={x + wm} y={Y0} width={acc - wm} height={BAR}
-                fill={C.bad} opacity={0.85} /> : null}
-              <line x1={x + wm} y1={Y0 - 26} x2={x + wm} y2={Y0 + BAR + 26}
-                stroke={C.text} strokeWidth={1} strokeDasharray="4 5" opacity={0.6} />
+              {/* the overspend, past the end of what there was */}
+              {acc > PX ? <rect x={X0 + PX} y={Y0} width={acc - PX} height={BAR}
+                fill={C.bad} opacity={0.9} /> : null}
+              <line x1={X0 + PX} y1={Y0 - 34} x2={X0 + PX} y2={Y0 + BAR + 56}
+                stroke={C.text} strokeWidth={1.5} strokeDasharray="5 6" opacity={0.65} />
+              <text x={X0 + PX - 12} y={Y0 - 44} textAnchor="end" fill={C.textDim}
+                style={{ ...mono, fontSize: 18, letterSpacing: TRACK }} opacity={a(8)}>
+                ₹{margin} AVAILABLE</text>
             </g>;
           })()}
         </svg>
 
-        {/* the running tally, the number the chapter is really about */}
         {["cost", "negative"].includes(mode) && (
-          <div style={{ position: "absolute", right: "8%", top: "22%", textAlign: "right" }}>
-            <Kicker delay={8}>{mode === "negative" ? "PER ORDER" : label}</Kicker>
-            {mode !== "negative" && (
+          <div style={{ position: "absolute", right: "6%", top: "14%", textAlign: "right" }}>
+            {mode !== "negative" && (<>
+              <Kicker delay={8}>{label}</Kicker>
               <Num value={`−₹${value}`} size={T.big} colour={C.human} delay={12} />
-            )}
-            <div style={{ marginTop: 20 }}>
-              <Kicker delay={18} size={T.micro}>RUNNING</Kicker>
-              <Num value={`${running < 0 ? "−" : ""}₹${Math.abs(running)}`} size={T.hero}
+            </>)}
+            <div style={{ marginTop: mode === "negative" ? 0 : 26 }}>
+              <Kicker delay={18} size={T.micro}>{mode === "negative" ? "LEFT ON ONE ORDER" : "RUNNING"}</Kicker>
+              <Num value={`${running < 0 ? "−" : ""}₹${Math.abs(running)}`}
+                size={mode === "negative" ? T.hero : T.big}
                 colour={running < 0 ? C.bad : C.system} delay={20} />
             </div>
           </div>
         )}
 
         {["order", "cogs", "margin", "costs_begin"].includes(mode) && (
-          <div style={{ position: "absolute", left: "6%", top: "16%" }}>
-            <Kicker delay={6}>REPRESENTATIVE ILLUSTRATION · NOT ONE COMPANY</Kicker>
+          <div style={{ position: "absolute", left: "6%", top: "14%" }}>
+            <Kicker delay={6} size={T.micro}>REPRESENTATIVE ILLUSTRATION · NOT ONE COMPANY</Kicker>
           </div>
         )}
 
         {mode === "levers_intro" && (
           <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
-            <div style={{ display: "flex", gap: 90 }}>
+            <div style={{ display: "flex", gap: 110 }}>
               {["BASKET SIZE", "ORDER DENSITY", "ADVERTISING"].map((l, i) => (
-                <div key={l} style={{ textAlign: "center", opacity: eased(frame, 10 + i * 12, 20, "power3.out") }}>
+                <div key={l} style={{ textAlign: "center",
+                  opacity: eased(frame, 10 + i * 12, 20, "power3.out") }}>
                   <Num value={`0${i + 1}`} size={T.big} colour={C.system} delay={10 + i * 12} />
-                  <div style={{ marginTop: 10 }}><Kicker delay={14 + i * 12} size={T.micro}>{l}</Kicker></div>
+                  <div style={{ marginTop: 12 }}><Kicker delay={14 + i * 12} size={T.micro}>{l}</Kicker></div>
                 </div>
               ))}
             </div>

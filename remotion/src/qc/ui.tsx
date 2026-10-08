@@ -13,7 +13,7 @@ export const PhoneUI: React.FC<SceneProps> = ({ params }) => {
   const mode = str(params, "mode", "cart");
   const { frame, dur, H } = useT();
   const items = pipes(params.items), prices = pipes(params.prices);
-  const PW = 0.252, PH = 0.95;                  // phone size as a fraction of frame
+  const PW = 0.252, PH = 0.88;                  // phone size as a fraction of frame
   const w = PW * 1920, h = PH * 1080;
 
   const press = mode === "button" ? eased(frame, Math.round(dur * 0.56), 7, "power3.out") : 0;
@@ -77,6 +77,25 @@ export const PhoneUI: React.FC<SceneProps> = ({ params }) => {
               ) : null}
             </div>
           )}
+
+          {/* A real app puts its promise and its call to action at the bottom of
+              the screen. Showing them here fills the device honestly and sets up
+              the button the next beat presses. */}
+          {mode === "cart" ? (
+            <div style={{ position: "absolute", left: 30, right: 30, bottom: 44,
+              opacity: eased(frame, 52, 20, "power2.out") }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <div style={{ width: 6, height: 6, borderRadius: 3, background: C.system }} />
+                <span style={{ ...mono, fontSize: 16, color: C.textDim }}>
+                  Delivery in about 10 minutes</span>
+              </div>
+              <div style={{ height: 70, border: `1px solid ${C.line}`, borderRadius: 10,
+                display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ ...mono, fontSize: 21, fontWeight: 650, color: C.textFaint,
+                  letterSpacing: "0.1em" }}>PLACE ORDER</span>
+              </div>
+            </div>
+          ) : null}
 
           {mode === "button" && (
             <div style={{ position: "absolute", left: 30, right: 30, bottom: 46 }}>
