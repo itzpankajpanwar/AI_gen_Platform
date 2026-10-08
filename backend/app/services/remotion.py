@@ -197,6 +197,127 @@ TEMPLATES: dict[str, TemplateSpec] = {
             "r": "radius as a fraction of frame height (default 0.12)",
         },
     ),
+
+    # ------------------------------------------------ THE TEN MINUTES
+    # Built for the quick-commerce documentary. These draw their own
+    # scene or composite over a plate; see scripts/qc/script.py.
+    "city_map": TemplateSpec(
+        name="city_map",
+        summary="One procedurally built city, seen from a fixed axonometric camera, with "
+                "modes for store selection, rider dispatch, routing and the whole network.",
+        text="optional",
+        params={
+            "mode": "stores|candidates|evaluate|reject|select|node_zoom|riders|rider_eval|"
+                    "batch|rider_select|route|traffic|reroute|single_thread|pullback|network|"
+                    "flows|demand_curve|one_spark",
+            "metric": "label for the column being compared, e.g. DISTANCE",
+            "values": "pipe-separated values, one per candidate",
+            "label": "caption on the selected store or rider",
+            "counters": "pipe-separated 'NAME 1,234' pairs counted up over the network",
+            "legend": "pipe-separated 'WHEN · WHAT' rows for flows",
+            "eta": "ETA readout", "dist": "distance readout",
+            "intensity": "network density, 1-3", "radius": "1 to draw service radii",
+            "fade": "1 to settle the network down at the end of a scene",
+        },
+    ),
+    "system_diagram": TemplateSpec(
+        name="system_diagram",
+        summary="The backend as a space travelled through: receding nodes, the order "
+                "visible as one travelling point.",
+        text="optional",
+        params={"mode": "enter|payload|engine|checks|question|chain|chain_count",
+                "nodes": "pipe-separated chain nodes", "fields": "pipe-separated payload fields",
+                "steps": "pipe-separated checks", "q": "the question for mode=question"},
+    ),
+    "sankey": TemplateSpec(
+        name="sankey",
+        summary="Unit economics as a real flow: the order splits, the margin is spent "
+                "down cost by cost, and the running total is allowed to go negative.",
+        text="optional",
+        params={"mode": "order|cogs|margin|costs_begin|cost|negative|levers_intro|lever",
+                "total": "order value", "cogs": "cost of goods", "margin": "what is kept",
+                "label": "cost line name", "value": "cost line amount",
+                "running": "running total after this line", "n": "lever number",
+                "a": "lever headline", "b": "lever detail"},
+    ),
+    "compare_flow": TemplateSpec(
+        name="compare_flow",
+        summary="The old retail path and the quick-commerce path in one frame, then the "
+                "trade-offs that the inversion costs.",
+        text="optional",
+        params={"mode": "old|old_summary|flip|new|tradeoff_intro|tradeoff|conclusion",
+                "nodes": "pipe-separated chain nodes", "label": "headline",
+                "sub": "second line", "n": "trade-off number"},
+    ),
+    "store_cutaway": TemplateSpec(
+        name="store_cutaway",
+        summary="Takes the wall off a dark-store plate, then names the zones on the floor.",
+        text="optional", params={"mode": "reveal|zones"},
+    ),
+    "pick_route": TemplateSpec(
+        name="pick_route",
+        summary="The picking walk drawn over the real top-down plate of the store floor; "
+                "cart order against optimised order, with measured distances.",
+        text="optional",
+        params={"mode": "targets|naive|solve|optimal|repeat",
+                "bins": "pipe-separated bin codes in walk order",
+                "items": "pipe-separated item names", "label": "caption",
+                "dist": "walking distance readout"},
+    ),
+    "inventory_sync": TemplateSpec(
+        name="inventory_sync",
+        summary="The shelf and its database record side by side, moving together — or, "
+                "in drift mode, failing to.",
+        text="optional",
+        params={"mode": "field|locate|twin|decrement|drift", "items": "pipe-separated items",
+                "bins": "pipe-separated locations", "sku": "SKU name", "bin": "location",
+                "qty": "units on hand", "from": "count before", "to": "count after",
+                "shelf": "units actually on the shelf", "digital": "units the system believes"},
+    ),
+    "scan_confirm": TemplateSpec(
+        name="scan_confirm",
+        summary="Barcode verification at the packing bench. Deliberately undramatic: a "
+                "status line changes, nothing celebrates.",
+        text="optional",
+        params={"mode": "scanning|verified|status", "items": "pipe-separated items",
+                "count": "items verified", "of": "items expected",
+                "from": "previous status", "to": "new status"},
+    ),
+    "phone_ui": TemplateSpec(
+        name="phone_ui",
+        summary="A believable, boring quick-commerce app: a list and a button.",
+        text="optional",
+        params={"mode": "cart|button|confirmed", "items": "pipe-separated line items",
+                "prices": "pipe-separated prices", "total": "order total", "label": "button text"},
+    ),
+    "clock": TemplateSpec(
+        name="clock",
+        summary="The film's ten-minute motif: hero at milestones, a corner stamp over a "
+                "plate, or a split bar showing where the time actually went.",
+        text="optional",
+        params={"mode": "hero|corner|split", "value": "the time to show",
+                "label": "what just happened", "bar": "percent elapsed, for mode=split"},
+    ),
+    "ch_card": TemplateSpec(
+        name="ch_card", summary="Chapter opener: kicker, drawn rule, headline.",
+        text="required", params={"kicker": "small label above the rule"},
+    ),
+    "title_card": TemplateSpec(
+        name="title_card", summary="The film's main title.",
+        text="required", params={"brand": "channel name", "sub": "subtitle"},
+    ),
+    "metric_strip": TemplateSpec(
+        name="metric_strip", summary="One or two restrained data lines over a plate.",
+        text="optional", params={"items": "pipe-separated lines", "accentfirst": "unused"},
+    ),
+    "spec_strip": TemplateSpec(
+        name="spec_strip", summary="A row of specification figures under a plate.",
+        text="optional", params={"items": "pipe-separated figures"},
+    ),
+    "stat_big": TemplateSpec(
+        name="stat_big", summary="A single number given the whole frame.",
+        text="required", params={"label": "caption", "foot": "footnote"},
+    ),
 }
 
 TEMPLATE_NAMES = frozenset(TEMPLATES)
@@ -206,7 +327,12 @@ TEXT_REQUIRED = frozenset(name for name, spec in TEMPLATES.items() if spec.text 
 CUTOUT_TEMPLATES = frozenset({"cutout_reveal"})
 #: Templates that draw their own scene and never use a generated still, so
 #: a row using one needs no image and should not spend an API call.
-NO_IMAGE_TEMPLATES = frozenset({"geo_map", "intro_card", "end_card"})
+NO_IMAGE_TEMPLATES = frozenset({
+    "geo_map", "intro_card", "end_card",
+    # The quick-commerce templates that draw their own scene entirely.
+    "city_map", "system_diagram", "sankey", "compare_flow", "phone_ui",
+    "ch_card", "title_card", "stat_big",
+})
 
 
 def parse_params(raw: str) -> dict[str, str]:

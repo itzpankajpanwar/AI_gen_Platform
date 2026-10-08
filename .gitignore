@@ -1,5 +1,5 @@
 # runtime data: jobs, images, ZIPs, sqlite
-data/
+/data/
 *.db
 *.db-wal
 *.db-shm
@@ -38,3 +38,8 @@ samples/clips/
 # premium overnight build: large renders + image cache stay local (cached, reused)
 samples/film_premium/*.mp4
 assets/premium/
+
+# THE TEN MINUTES: the generated plate library and narration are large and
+# reproducible from scripts/qc/ — they stay local and are never re-spent on.
+assets/qc/
+assets/qc_narration/

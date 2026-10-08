@@ -115,6 +115,10 @@ class Settings(BaseSettings):
     remotion_concurrency: int = 0  # 0 = let Remotion size it to the machine
     remotion_timeout_seconds: float = 900.0
     remotion_crf: int = 16
+    # Remotion downloads its own Chrome Headless Shell by default. On a host
+    # that already has one — or has no egress to fetch it — point this at the
+    # binary instead. Empty means "let Remotion manage it".
+    remotion_browser_executable: str = ""
     remotion_accent: str = "#E0A65C"
     remotion_ink: str = "#0B0D10"
 

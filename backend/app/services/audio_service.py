@@ -61,6 +61,47 @@ def _sfx_events(ordered: list[JobItem], sfx_dir: Path) -> list[tuple[Path, float
         elif anim.startswith("beat"):
             if sb := sfx("sub"):
                 events.append((sb, start + 0.1))
+
+        # --- THE TEN MINUTES vocabulary. Each sound is tied to something the
+        # picture actually does, rather than decorating the cut.
+        elif anim == "city_map":
+            if t := sfx("thud"):            # a pin meeting the ground
+                events.append((t, start + 0.30))
+            if sw := sfx("sweep"):          # the system reading the city
+                events.append((sw, start + 0.10))
+        elif anim in {"system_diagram", "compare_flow"}:
+            if sw := sfx("sweep"):
+                events.append((sw, start + 0.12))
+        elif anim == "pick_route":
+            if t := sfx("tick"):            # one tick per stop on the walk
+                for k in range(4):
+                    at = start + 0.6 + k * max((end - start - 1.0) / 4, 0.3)
+                    if at < end:
+                        events.append((t, at))
+        elif anim == "scan_confirm":
+            if bp := sfx("beep"):           # the barcode reader, four times
+                for k in range(4):
+                    at = start + 0.5 + k * max((end - start - 0.9) / 4, 0.32)
+                    if at < end:
+                        events.append((bp, at))
+        elif anim == "inventory_sync":
+            if bp := sfx("beep"):
+                events.append((bp, start + max((end - start) * 0.38, 0.4)))
+        elif anim == "phone_ui":
+            if tp := sfx("tap"):
+                events.append((tp, start + max((end - start) * 0.56, 0.3)))
+        elif anim == "clock":
+            if t := sfx("tick"):
+                events.append((t, start + 0.2))
+        elif anim == "sankey":
+            if sh := sfx("shimmer"):
+                events.append((sh, start + 0.25))
+        elif anim in {"ch_card", "title_card", "stat_big"}:
+            if im := sfx("impact"):         # the film's only heavy hits
+                events.append((im, start + 0.08))
+        elif anim == "store_cutaway":
+            if w := sfx("whoosh"):
+                events.append((w, start + 0.15))
     return events
 
 

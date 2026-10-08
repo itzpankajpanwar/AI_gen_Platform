@@ -127,6 +127,16 @@ class RemotionSession:
                 raise RemotionError(f"font not found: {source}")
             shutil.copyfile(source, fonts_dir / source.name)
 
+        # Templates may also ask for faces beyond the configured pair — the
+        # quick-commerce film sets its English data typography in Inter, in
+        # several weights. Stage every typeface that sits beside them rather
+        # than making each one a setting.
+        for extra in sorted(self.settings.asset_path(self.settings.font_sans).parent.glob("*")):
+            if extra.suffix.lower() in {".ttf", ".otf", ".woff", ".woff2"}:
+                target = fonts_dir / extra.name
+                if not target.exists():
+                    shutil.copyfile(extra, target)
+
         _run(
             [
                 self.settings.remotion_binary, "remotion", "bundle", "src/index.ts",
@@ -167,6 +177,8 @@ class RemotionSession:
         ]
         if self.settings.remotion_concurrency > 0:
             command.append(f"--concurrency={self.settings.remotion_concurrency}")
+        if self.settings.remotion_browser_executable:
+            command.append(f"--browser-executable={self.settings.remotion_browser_executable}")
 
         try:
             _run(

@@ -3,6 +3,7 @@ import { AbsoluteFill } from "remotion";
 
 import { DEFAULT_SCENE, type SceneProps } from "./lib/types";
 import { useDevanagariFonts } from "./lib/useFont";
+import { useFilmFonts } from "./qc/fonts";
 import { TEMPLATES } from "./templates";
 
 /**
@@ -12,6 +13,7 @@ import { TEMPLATES } from "./templates";
 export const Scene: React.FC<Partial<SceneProps>> = (incoming) => {
   const props: SceneProps = { ...DEFAULT_SCENE, ...incoming, params: incoming.params ?? {} };
   useDevanagariFonts();
+  useFilmFonts();
 
   const Template = TEMPLATES[props.template];
   if (!Template) {
